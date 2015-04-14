@@ -1,0 +1,1 @@
+$(document).foundation();var images=["background-1.jpg","background-2.jpg","background-3.jpg","background-4.jpg"];$("head").append('<style>body:before{ background-image: url( "assets/images/'+images[Math.floor(Math.random()*images.length)]+'") }</style>');

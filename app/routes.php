@@ -11,7 +11,24 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+
+/**
+ * Prefix group for the api
+ */
+Route::group(array('prefix' => 'api'), function(){
+
+	Route::get('/', function()
+	{
+		return Response::json(array('reply' => 'oh hi there'));
+	});
+
 });
+
+/**
+ * Frontend
+ */
+Route::get('/', function(){
+	return 'cool frontend here';
+});
+
+

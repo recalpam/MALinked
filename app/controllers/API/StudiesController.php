@@ -39,7 +39,7 @@ class StudiesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		Response::json(Study::findOrFail($id));
+		return Response::json(Study::findOrFail($id));
 	}
 
 	/**
@@ -61,7 +61,7 @@ class StudiesController extends \BaseController {
 
 		$study->update($data);
 
-		Response::json($study);
+		return Response::json($study);
 	}
 
 }

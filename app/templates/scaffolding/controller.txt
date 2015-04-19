@@ -39,7 +39,7 @@ class $NAME$ extends \BaseController {
 	 */
 	public function show($id)
 	{
-		Response::json($MODEL$::findOrFail($id));
+		return Response::json($MODEL$::findOrFail($id));
 	}
 
 	/**
@@ -61,7 +61,7 @@ class $NAME$ extends \BaseController {
 
 		$$RESOURCE$->update($data);
 
-		Response::json($$RESOURCE$);
+		return	Response::json($$RESOURCE$);
 	}
 
 }

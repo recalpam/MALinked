@@ -39,7 +39,7 @@ class GroupsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		Response::json(Group::findOrFail($id));
+		return Response::json(Group::findOrFail($id));
 	}
 
 	/**
@@ -61,7 +61,7 @@ class GroupsController extends \BaseController {
 
 		$group->update($data);
 
-		Response::json($group);
+		return Response::json($group);
 	}
 
 }

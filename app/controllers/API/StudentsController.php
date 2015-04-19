@@ -1,6 +1,6 @@
 <?php namespace API;
 
-use View, Validator, Redirect, Input, Student, Response, Student;
+use View, Validator, Redirect, Input, Student, Response;
 
 class StudentsController extends \BaseController {
 

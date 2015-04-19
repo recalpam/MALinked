@@ -15,12 +15,9 @@
 /**
  * Prefix group for the api
  */
-Route::group(array('prefix' => 'api'), function(){
+Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destroy')), function(){
 
-	Route::get('/', function()
-	{
-		return Response::json(array('reply' => 'oh hi there'));
-	});
+	Route::resource('student', 'API\StudentsController', array());
 
 });
 

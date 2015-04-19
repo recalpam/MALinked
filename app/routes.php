@@ -18,6 +18,9 @@
 Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destroy')), function(){
 
 	Route::resource('student', 'API\StudentsController', array());
+	Route::resource('study', 'API\StudiesController', array());
+	Route::resource('group', 'API\GroupsController', array());
+
 
 });
 

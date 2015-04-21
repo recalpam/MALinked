@@ -1,6 +1,6 @@
 <?php namespace API;
 
-use View, Validator, Redirect, Input, Student, Response, Group;
+use View, Validator, Redirect, Input, Student, Response, Group, Study;
 
 class StudyGroupController extends \BaseController {
 
@@ -11,7 +11,10 @@ class StudyGroupController extends \BaseController {
 	 */
 	public function index($id)
 	{
-		return Response::json( Group::where('study_id', '=', $id)->get() );
+		return Response::json( array(
+			'study'		=> Study::where('id', '=', $id)->get(), 
+			'groups'	=> Group::where('study_id', '=', $id)->get() 
+		));
 	}
 
 
@@ -24,7 +27,10 @@ class StudyGroupController extends \BaseController {
 	 */
 	public function show($id, $second)
 	{
-		return Response::json( Group::where('study_id', '=', $id)->get() );
+		return Response::json( array(
+			'study'		=> Study::where('id', '=', $id)->get(), 
+			'groups'	=> Group::where('study_id', '=', $id)->get() 
+		));
 	}
 
 

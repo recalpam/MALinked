@@ -19,9 +19,11 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 
 	Route::resource('student', 'API\StudentsController', array());
 	Route::resource('study', 'API\StudiesController', array());
-	Route::resource('study.groups', 'API\StudyGroupController', array());
+	Route::resource('study.groups', 'API\StudiesController@getGroupsByStudy', array());	
 	Route::resource('group', 'API\GroupsController',  array());
-	Route::resource('group.students', 'API\GroupStudentsController', array());
+	Route::resource('group.students', 'API\GroupsController@getStudentsByGroup', array());
+
+	Route::resource('search', 'API\SearchController',  array());
 
 
 });

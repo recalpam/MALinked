@@ -1,6 +1,6 @@
 <?php namespace API;
 
-use View, Validator, Redirect, Input, Student, Response;
+use View, Validator, Redirect, Input, Student, Response, Auth;
 
 class StudentsController extends \BaseController {
 
@@ -11,7 +11,7 @@ class StudentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Student::all());
+		return Response::json(Auth::user()->email);
 	}
 
 	/**

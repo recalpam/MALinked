@@ -14,8 +14,7 @@ class GroupsTableSeeder extends Seeder {
 			$study = Study::orderByRaw("RAND()")->firstOrFail();
 			Group::create([
 				'study_id'		=>	$study->id,
-				'nameShort' 	=> "{$study->nameShort}4",
-				'nameFull'		=> "{$study->nameFull}4",
+				'grade' 	=> "4",
 				'description'	=>	$faker->sentence(12)
 			]);
 		}

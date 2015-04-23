@@ -31,6 +31,15 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 
 });
 
+
+/**
+ * Dev4Donny (c)
+ */
+Route::get('donny', function(){
+	ini_set('xdebug.remote_autostart', 0);
+	return Response::json(Student::with('group')->find(1), 200, array(), JSON_PRETTY_PRINT);
+});
+
 /**
  * Frontend
  */

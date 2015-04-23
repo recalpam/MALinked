@@ -17,8 +17,8 @@ class CreateGroupsTable extends Migration {
 			$table->increments('id');
 			$table->integer('study_id')->unsigned();
 			$table->foreign('study_id')->references('id')->on('studies');
-			$table->string('nameShort');
-			$table->string('nameFull');
+			$table->integer('parent_id')->nullable();
+			$table->string('grade');
 			$table->string('description');
 			$table->timestamps();
 		});

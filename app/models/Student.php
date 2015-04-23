@@ -1,8 +1,8 @@
 <?php
 
-class Student extends \Eloquent implements UserInterface, RemindableInterface  {
+class Student extends \Eloquent implements \UserInterface, \RemindableInterface  {
 
-	use UserTrait, RemindableTrait;
+	use \UserTrait, \RemindableTrait;
 
 	// Add your validation rules here
 	public static $rules = [

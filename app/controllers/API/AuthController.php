@@ -1,16 +1,18 @@
 <?php namespace API;
 
+use GuzzleHttp\Client;
 use View, Validator, Redirect, Input, Student, Response, Auth;
 
 class AuthController extends \BaseController {
+	private $student, $password, $studentResult;
 
 	public function postLogin()
 	{
-		$student = Input::get('student');
-		$password = Input::get('password');
+		$this->student = Input::get('student');
+		$this->password = Input::get('password');
 
 		// Check if data is set
-		if( !$student || !$password ){
+		if( !$this->student || !$this->password ){
 			return Response::json(array(
 				'error' => true,
 				'message' => 'Missing username and/or password'
@@ -18,17 +20,56 @@ class AuthController extends \BaseController {
 		}
 
 		// Check if user is registered
-		$studentResult = Student::where('student', '=', $student)->firstOrFail();
-
-		if ( $studentResult->password == 0){
-			return 'geen passowrd';
+		try{
+			$this->studentResult = Student::where('student', '=', $this->student)->firstOrFail();
+		} catch (\Exception $e) {
+			return Response::json(array(
+				'error' => true,
+				'message' => 'Student not found'
+			));
+		}
+		
+		if ( !$this->studentResult->password ){
+			if( !$this->registerUser() ){
+				return Response::json(array(
+					'error' => true,
+					'message' => 'Incorrect password'
+				));
+			}
 		}
 
 		// Check for authentication
-		if( Auth::attempt(array('student' => $student, 'password' => md5($password))) ){
-			return 'true';
+		if( Auth::attempt(array('student' => $this->student, 'password' => md5($this->password))) ){
+			return Response::json(array(
+				'error' => false,
+				'message' => 'Session created',
+				'token' => Auth::user()->student
+			));
 		}
 		return 'false';
+	}
+
+	private function registerUser()
+	{
+		// Ma-net login
+		$client = new Client();
+		try{
+			$response = $client->get('http://ma-net.nl', 
+							array('config' => array(
+									'curl' => array(
+										CURLOPT_HTTPAUTH => CURLAUTH_NTLM,
+										CURLOPT_USERPWD => $this->student.':'.$this->password,
+										CURLOPT_SSL_VERIFYPEER => false,
+										CURLOPT_SSL_VERIFYHOST => 2
+									)
+								)
+							));
+		} catch(\Exception $e) {
+			return false;
+		}
+		$this->studentResult->password = \Hash::make(md5($this->password));
+		$this->studentResult->save();
+		return true;
 	}
 
 }

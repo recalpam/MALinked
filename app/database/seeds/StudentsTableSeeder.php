@@ -9,7 +9,7 @@ class StudentsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create('nl_NL');
 
-		foreach(range(50, 100) as $index)
+		/*foreach(range(50, 100) as $index)
 		{
 			Student::create([
 				'group_id'	=>	Group::orderByRaw("RAND()")->firstOrFail()->id,
@@ -19,7 +19,16 @@ class StudentsTableSeeder extends Seeder {
 				'nameLast'	=>	$faker->lastName,
 				'birthday'	=>	$faker->dateTime
 			]);
-		}
+		}*/
+
+		Student::create([
+			'group_id'	=>	Group::orderByRaw("RAND()")->firstOrFail()->id,
+			'student' 	=> 	12623,
+			'password'	=> 	Hash::make(md5('nklvwvxh')),
+			'nameFirst'	=>	'Alex',
+			'nameLast'	=>	'Lisenkov',
+			'birthday'	=>	$faker->dateTime
+		]);
 	}
 
 }

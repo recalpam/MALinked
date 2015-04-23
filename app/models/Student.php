@@ -35,10 +35,6 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface  {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
-	public function study(){
-		return "yop";
-	}
-
 	public function group(){
 		return $this->belongsTo('group');
 	}

@@ -4,26 +4,31 @@ use View, Validator, Redirect, Input, Student, Response, Auth;
 
 class AuthController extends \BaseController {
 
-	public function postIndex()
+	public function postLogin()
 	{
-		$username = Input::get('username');
+		$student = Input::get('student');
 		$password = Input::get('password');
 
-		if( !$username || !$password ){
+		// Check if data is set
+		if( !$student || !$password ){
 			return Response::json(array(
 				'error' => true,
 				'message' => 'Missing username and/or password'
 			));
 		}
 
-		$student = Student::where('student', '=', $username)->get();
+		// Check if user is registered
+		$studentResult = Student::where('student', '=', $student)->firstOrFail();
 
-		//return $student;
-		//if( $student->password )
-
-		if( Auth::attempt(array('student' => $username, 'password' => md5($password))) ){
-
+		if ( $studentResult->password == 0){
+			return 'geen passowrd';
 		}
+
+		// Check for authentication
+		if( Auth::attempt(array('student' => $student, 'password' => md5($password))) ){
+			return 'true';
+		}
+		return 'false';
 	}
 
 }

@@ -11,13 +11,9 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		$this->command->info("Calling StudiesTableSeeder..");
-		$this->call('StudiesTableSeeder');
-		$this->command->info("Calling GroupsTableSeeder..");
-		$this->call('GroupsTableSeeder');
-		$this->command->info("Calling StudentsTableSeeder..");
-		$this->call('StudentsTableSeeder');
-		$this->command->info("Done.");
+		$this->command->info("Importing 'Studies' batch operation");
+		$this->call('StudiesBatch');
+		$this->command->info("Done! Credits @ AlexLisenkov & DonnyHegener.");
 	}
 
 }

@@ -12,9 +12,12 @@ class CreateFilesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Files', function(Blueprint $table)
+		Schema::create('files', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('fileHash');
+			$table->string('fileExtension');
+			$table->string('fileName');
 			$table->timestamps();
 		});
 	}
@@ -27,7 +30,7 @@ class CreateFilesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Files');
+		Schema::drop('files');
 	}
 
 }

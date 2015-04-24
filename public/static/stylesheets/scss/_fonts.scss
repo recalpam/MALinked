@@ -1,0 +1,12 @@
+// Akzidenz Grotesk
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: url('/static/fonts/akzidenz-grotesk-bold.eot'); /* IE9 Compat Modes */
+  src: url('/static/fonts/akzidenz-grotesk-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/static/fonts/akzidenz-grotesk-bold.woff') format('woff'), /* Modern Browsers */
+       url('/static/fonts/akzidenz-grotesk-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/static/fonts/akzidenz-grotesk-bold.svg#3d6626e1984b0bce955a6071e99fbbc7') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  700;
+}

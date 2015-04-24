@@ -21,7 +21,7 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 	Route::controller('auth', 'API\AuthController');
 
 	Route::resource('study', 'API\StudiesController', array());
-	Route::resource('study.groups', 'API\StudiesController@getGroupsByStudy', array());	
+	Route::resource('study.groups', 'API\StudiesController@getGroupsByStudy', array());
 
 	Route::resource('group', 'API\GroupsController',  array());
 	Route::resource('group.students', 'API\GroupsController@getStudentsByGroup', array());
@@ -44,7 +44,16 @@ Route::get('donny', function(){
  * Frontend
  */
 Route::get('/', function(){
-	return 'cool frontend here';
+	// return 'cool frontend here';
+	return Redirect::to("/homepage");
 });
+Route::get('{url}', function(){
+	// return 'cool frontend here';
+	return View::make("template");
+});
+// Route::get('/', function(){
+// 	// return 'cool frontend here';
+// 	return View::make("template");
+// });
 
 

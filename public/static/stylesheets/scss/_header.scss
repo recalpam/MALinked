@@ -1,0 +1,61 @@
+header {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  z-index: 99;
+  @include background-image( linear-gradient( $black, transparent ) );
+  nav {
+    &.top-bar {
+      width: 100%; max-width: $row-width;
+      margin: 0 auto;
+      background-color: transparent;
+      ul {
+        li {
+          background-color: transparent;
+          a {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .name {
+    .logo {
+      overflow: auto;
+      display: inline-block;
+      color: #fff;
+      font-size: 35px;
+      cursor: pointer;
+
+      span {
+        &.icon {
+          display: inline-block;
+          height: 45px; width: 45px;
+          background-image: url("/static/images/icon.png");
+          background-size: 35px;
+          background-position: center;
+          background-repeat: no-repeat;
+
+        }
+
+        &:not(.icon) {
+          overflow: hidden;
+          display: block;
+          float: left;
+          margin-left: 45px;
+          max-width: 0px;
+          height: 45px;
+          @include transition( all .3s );
+
+        }
+      }
+
+      &:hover {
+          max-width: 120px;
+
+      }
+    }
+  }
+}

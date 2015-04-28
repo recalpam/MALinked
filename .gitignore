@@ -1,5 +1,5 @@
-/vendor
-/vendor/composer
+/vendor/*
+
 /bootstrap/compiled.php
 .env.*.php
 .env.php

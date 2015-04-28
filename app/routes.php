@@ -17,18 +17,29 @@
  */
 Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destroy')), function(){
 
-	Route::resource('student', 'API\StudentsController', array());
-	Route::controller('auth', 'API\AuthController');
+	/**
+	 * Backend-oriented
+	 */
+	Route::group(array('prefix' => 'db'), function(){
+		Route::resource('student', 'API\StudentsController', array());
+		Route::controller('auth', 'API\AuthController');
 
-	Route::resource('study', 'API\StudiesController', array());
-	Route::resource('study.groups', 'API\StudiesController@getGroupsByStudy', array());
+		Route::resource('study', 'API\StudiesController', array());
+		Route::resource('study.groups', 'API\StudiesController@getGroupsByStudy', array());
 
-	Route::resource('group', 'API\GroupsController',  array());
-	Route::resource('group.students', 'API\GroupsController@getStudentsByGroup', array());
+		Route::resource('group', 'API\GroupsController',  array());
+		Route::resource('group.students', 'API\GroupsController@getStudentsByGroup', array());
 
-	Route::resource('search', 'API\SearchController',  array());
+		Route::resource('search', 'API\SearchController',  array());
+	});
 
-
+	/**
+	 * Frontend-oriented
+	 */
+	Route::group(array('prefix' => 'frontend'), function(){
+		Route::controller('file', 'API\Frontend\Asset');
+	});
+	
 });
 
 
@@ -37,7 +48,8 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
  */
 Route::get('donny', function(){
 	//return Response::json(Group::with('study')->find(1), 200, array(), JSON_PRETTY_PRINT);
-	return Response::json(Student::with('group.study')->find(1), 200, array(), JSON_PRETTY_PRINT);
+	//return Response::json(Student::with('group.study')->find(1), 200, array(), JSON_PRETTY_PRINT);
+	//return Config::get('butler::dir.scripts');
 });
 
 /**

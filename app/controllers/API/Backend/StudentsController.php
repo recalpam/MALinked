@@ -11,7 +11,7 @@ class StudentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Auth::user()->email);
+		return Response::json(Student::all());
 	}
 
 	/**

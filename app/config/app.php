@@ -120,8 +120,8 @@ return array(
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'Illuminate\Workbench\WorkbenchServiceProvider'
-
+		'Recalpam\Butler\ButlerServiceProvider',
+		'Illuminate\Workbench\WorkbenchServiceProvider',
 	),
 
 	/*
@@ -188,6 +188,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+		'Butler'		  => 'Recalpam\Butler\ButlerFacade',
 
 	),
 

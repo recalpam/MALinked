@@ -6,11 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'API\\AuthController' => $baseDir . '/app/controllers/API/AuthController.php',
-    'API\\GroupsController' => $baseDir . '/app/controllers/API/GroupsController.php',
-    'API\\SearchController' => $baseDir . '/app/controllers/API/SearchController.php',
-    'API\\StudentsController' => $baseDir . '/app/controllers/API/StudentsController.php',
-    'API\\StudiesController' => $baseDir . '/app/controllers/API/StudiesController.php',
+    'API\\AuthController' => $baseDir . '/app/controllers/API/Backend/AuthController.php',
+    'API\\Frontend\\Asset' => $baseDir . '/app/controllers/API/Frontend/Asset.php',
+    'API\\GroupsController' => $baseDir . '/app/controllers/API/Backend/GroupsController.php',
+    'API\\SearchController' => $baseDir . '/app/controllers/API/Backend/SearchController.php',
+    'API\\StudentsController' => $baseDir . '/app/controllers/API/Backend/StudentsController.php',
+    'API\\StudiesController' => $baseDir . '/app/controllers/API/Backend/StudiesController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'CreateFileCouples' => $baseDir . '/app/database/migrations/2015_04_23_125226_create_file_couples.php',
     'CreateFilesTable' => $baseDir . '/app/database/migrations/2015_04_23_113105_create_Files_table.php',
@@ -21,6 +22,7 @@ return array(
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'File' => $baseDir . '/app/models/File.php',
     'Group' => $baseDir . '/app/models/Group.php',
+    'GroupsBatch' => $baseDir . '/app/database/seeds/batch/GroupsTable.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'Student' => $baseDir . '/app/models/Student.php',

@@ -3,7 +3,7 @@
 // Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
-class GroupsBatch extends Seeder {
+class PoepBatch extends Seeder {
 
 	public function run()
 	{
@@ -39,7 +39,7 @@ class GroupsBatch extends Seeder {
 		foreach($studies as $study)
 		{
 			//echo $study['nameShort'];
-			Study::create($study);
+			//Study::create($study);
 		}
 	}
 

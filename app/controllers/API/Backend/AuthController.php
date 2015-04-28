@@ -46,7 +46,7 @@ class AuthController extends \BaseController {
 				'token' => Auth::user()->student
 			));
 		}
-		return 'false';
+		return;
 	}
 
 	private function registerUser()

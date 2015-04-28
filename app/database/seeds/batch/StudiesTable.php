@@ -5,7 +5,7 @@ class StudiesBatch extends Seeder {
 	public function run()
 	{
 		$singles = array(
-			array('name' => 'Grafisch vormgever','color' => 'EFEBEC'),
+			array('name' => 'Grafisch vormgever','color' => '4fbe96'),
 			array('name' => 'Interactief vormgever','color' => 'f4793b'),
 			array('name' => 'Audiovisueel vormgever/Animatie','color' => '4f5f8f'),
 			array('name' => 'Ruimtelijk vormgever','color' => 'edb032'),

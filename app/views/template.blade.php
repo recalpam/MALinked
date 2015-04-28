@@ -10,6 +10,7 @@
     <!-- Angularjs library -->
     <script type="text/javascript" src="/static/components/angular/angular.min.js"></script>
     <script type="text/javascript" src="/static/components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="http://malinked.dev/api/frontend/file/script/test">
 
     <base href="/">
   </head>

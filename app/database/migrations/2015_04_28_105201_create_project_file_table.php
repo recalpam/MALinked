@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFileCouples extends Migration {
+class CreateProjectFileTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,10 @@ class CreateFileCouples extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('file_couples', function(Blueprint $table)
+		Schema::create('project_file', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('couple_id');
-			$table->string('couple_type');
-			$table->timestamps();
+			$table->increments('project_id');
+			$table->integer('file_id');
 		});
 	}
 
@@ -28,7 +26,7 @@ class CreateFileCouples extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('file_couples');
+		//
 	}
 
 }

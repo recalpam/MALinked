@@ -73,8 +73,8 @@ class StudiesController extends \BaseController {
 	 */
 	public function getGroupsByStudy($id, $second = null) {
 		return Response::json( array( 
-			'group' => Group::where('id', '=', $id)->get(), 
-			'students' => Student::where('group_id', '=', $id)->get() 
+			'study' => Study::where('id', '=', $id)->get(), 
+			'groups' => Group::where('study_id', '=', $id)->get() 
 		));
 	}
 

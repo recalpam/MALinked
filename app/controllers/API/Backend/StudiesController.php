@@ -11,7 +11,7 @@ class StudiesController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Study::all());
+		return Response::json(Study::all(), 200, array(), JSON_PRETTY_PRINT);
 	}
 
 	/**
@@ -39,7 +39,7 @@ class StudiesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return Response::json(Study::findOrFail($id));
+		return Response::json(Study::findOrFail($id), 200, array(), JSON_PRETTY_PRINT);
 	}
 
 	/**
@@ -75,7 +75,7 @@ class StudiesController extends \BaseController {
 		return Response::json( array( 
 			'study' => Study::where('id', '=', $id)->get(), 
 			'groups' => Group::where('study_id', '=', $id)->get() 
-		));
+		), 200, array(), JSON_PRETTY_PRINT);
 	}
 
 }

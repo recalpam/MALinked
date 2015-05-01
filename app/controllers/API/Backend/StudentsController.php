@@ -1,6 +1,6 @@
 <?php namespace API;
 
-use View, Validator, Redirect, Input, Student, Response, Auth;
+use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study;
 
 class StudentsController extends \BaseController {
 
@@ -11,7 +11,8 @@ class StudentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Student::all());
+		//return Response::json(Student::all());
+		return Response::json(array('error' => true, 'message' => 'Illigal request: cannon gather all students'));
 	}
 
 	/**
@@ -39,7 +40,12 @@ class StudentsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return Response::json(Student::findOrFail($id));
+		$student = array();
+		$student = Student::findOrFail($id);
+		$student['info'] = StudentInfo::where('student_id', '=', $id)->firstOrFail();
+		$student['group'] = Group::findOrFail($student['group_id']);
+		$student['study'] = Study::findOrFail($student['group']['study_id']);
+		return Response::json($student, 200, array(), JSON_PRETTY_PRINT);
 	}
 
 	/**

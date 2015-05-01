@@ -4,7 +4,8 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface; 
 
-class Student extends \Eloquent implements UserInterface, RemindableInterface  {
+
+class Student extends \Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
@@ -20,6 +21,7 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface  {
 	{
 		return DB::select( DB::raw("select `students`.`id` as `studentID`, `students`.`nameFirst` as `studentFirstname`, `students`.`nameInsertion` as `studentInsertion`, `students`.`nameLast` as `studentLastname`, `groups`.`name` as `groupName`, `groups`.`fullname` as `groupNameFull`, `studies`.`name` as `studyName`, `studies`.`color` as `studyColor` from `students` left join `groups` on `students`.`group_id` = `groups`.`id` left join `studies` on `groups`.`study_id` = `studies`.`id` where CONCAT_WS(' ', `nameFirst`, `nameInsertion`, `nameLast`) LIKE '%$term%' OR CONCAT_WS(' ', `nameFirst`, `nameLast`) LIKE '%$term%' limit 25 offset 0" ) );
 	}
+
 	/**
 	 * The database table used by the model.
 	 *

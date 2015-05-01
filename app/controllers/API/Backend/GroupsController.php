@@ -11,7 +11,7 @@ class GroupsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Group::all());
+		return Response::json(Group::all(), 200, array(), JSON_PRETTY_PRINT);
 	}
 
 	/**
@@ -39,7 +39,7 @@ class GroupsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return Response::json(Group::findOrFail($id));
+		return Response::json(Group::findOrFail($id), 200, array(), JSON_PRETTY_PRINT);
 	}
 
 	/**
@@ -76,7 +76,7 @@ class GroupsController extends \BaseController {
 		return Response::json( array(
 			'group'		=> Group::where('id', '=', $id)->get(), 
 			'students'	=> Student::where('group_id', '=', $id)->get() 
-		));
+		), 200, array(), JSON_PRETTY_PRINT);
 	}
 
 }

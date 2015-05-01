@@ -12,7 +12,7 @@ class SearchController extends \BaseController {
 	public function index()
 	{
 		return Response::json(
-					array('error' => true, 'message' => 'No search query specified')
+					array('error' => true, 'message' => 'No search query specified',200, array(), JSON_PRETTY_PRINT)
 				);
 	}
 
@@ -25,7 +25,7 @@ class SearchController extends \BaseController {
 	 */
 	public function show($term)
 	{
-		return Response::json(Student::search($term));
+		return Response::json(Student::search($term), 200, array(), JSON_PRETTY_PRINT);
 	}
 
 

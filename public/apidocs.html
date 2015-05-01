@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Malinked Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <style>
+        .requirement {
+            display: block;
+        }
+
+        pre {
+            word-break: normal;
+            word-wrap: normal;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Malinked API</h1>
+                    <h2>Version: 0.1 DEV (docs: 1.0) <small>(1 mei 2015)</small></h2>
+                    <hr>
+                    <h2>Index</h2>
+                    <ul>
+                        <li><a href="#get_studies">GET /study</a> - Get list of all studies</li>
+                        <li><a href="#get_single_study">GET /study/{id}</a> - Get single study</li>
+                        <li><a href="#get_single_study_groups">GET /study/{id}/groups</a> - Get all groups from single study</li>
+                    </ul>
+                    <ul>
+                        <li><a href="#get_groups">GET /group</a> - Get list of all groups</li>
+                        <li><a href="#get_single_group">GET /group/{id}</a> - Get single group</li>
+                        <li><a href="#get_single_group_students">GET /group/{id}/students</a> - Get all students from single group</li>
+                    </ul>
+                    <ul>
+                        <li><a href="#get_student">GET /student/{id}</a> - Get single student information</li>
+                    </ul>
+                    <ul>
+                        <li><a href="#search_students">GET /search/{term}</a> - Search for students by term</li>
+                    </ul>
+                    <hr>
+                    <h2>Changelog</h2>
+                    <h4 class="text-muted">---</h4>
+                    <hr>
+                    <!-- -->
+                    <h2><a href="#get_studies" name="get_studies">GET <strong>/study</strong></a></h2>
+                    <p>Get list of all studies</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>
+                    <pre>
+[
+    {
+        "id": 1,
+        "name": "Grafisch vormgever",
+        "color": "4fbe96",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 2,
+        "name": "Interactief vormgever",
+        "color": "f4793b",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 3,
+        "name": "Audiovisueel vormgever\/Animatie",
+        "color": "4f5f8f",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 4,
+        "name": "Ruimtelijk vormgever",
+        "color": "edb032",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 5,
+        "name": "Filmacteur",
+        "color": "0db5d9",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    }
+]</pre>
+                    <hr>
+                    <!-- -->
+                    <h2><a href="#get_single_study" name="get_single_study">GET <strong>/study/{id}</strong></a></h2>
+                    <p>Get single study</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                <td>id</td>
+                                <td>integer</td>
+                                <td>The id of the group to be gathered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>   
+                    <pre>
+{
+    "id": 1,
+    "name": "Grafisch vormgever",
+    "color": "4fbe96",
+    "created_at": "2015-04-28 13:00:38",
+    "updated_at": "2015-04-28 13:00:38"
+}</pre>
+                    <hr>
+                    <!-- -->
+                    <h2><a href="#get_single_study_groups" name="get_single_study_groups">GET <strong>/study/{id}/groups</strong></a></h2>
+                    <p>Get all groups from single study</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                <td>id</td>
+                                <td>integer</td>
+                                <td>The id of the group to be gathered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>   
+                    <pre>
+{
+    "study": [
+        {
+            "id": 4,
+            "name": "Ruimtelijk vormgever",
+            "color": "edb032",
+            "created_at": "2015-04-28 13:00:38",
+            "updated_at": "2015-04-28 13:00:38"
+        }
+    ],
+    "groups": [
+        {
+            "id": 14,
+            "study_id": 4,
+            "name": "RV4A",
+            "fullname": "Vormgever productpresentatie",
+            "created_at": "2015-04-28 13:00:38",
+            "updated_at": "2015-04-28 13:00:38"
+        },
+        {
+            "id": 15,
+            "study_id": 4,
+            "name": "RV4B",
+            "fullname": "Stand-,winkel-en decorvormgever",
+            "created_at": "2015-04-28 13:00:38",
+            "updated_at": "2015-04-28 13:00:38"
+        }
+    ]
+}</pre>
+                    <hr>
+                    <!-- -->
+                    <h2><a href="#get_groups" name="get_groups">GET <strong>/group</strong></a></h2>
+                    <p>Get list of all groups</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>
+                    <pre>
+[
+    {
+        "id": 1,
+        "study_id": 1,
+        "name": "GV4A",
+        "fullname": "Grafisch vormgever",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 2,
+        "study_id": 1,
+        "name": "GV4B",
+        "fullname": "Grafisch vormgever",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 3,
+        "study_id": 1,
+        "name": "GV4C",
+        "fullname": "Grafisch vormgever",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 4,
+        "study_id": 1,
+        "name": "GV4D",
+        "fullname": "Grafisch vormgever",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    {
+        "id": 5,
+        "study_id": 1,
+        "name": "GV4E",
+        "fullname": "Grafisch vormgever",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    }
+]</pre>
+                <hr>
+                    <!-- -->
+                    <h2><a href="#get_single_group" name="get_single_group">GET <strong>/group/{id}</strong></a></h2>
+                    <p>Get one group</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>id <span class="requirement text-muted">required</span></td>
+                                <td>integer</td>
+                                <td>The id of the group to be gathered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>
+                    <pre>
+{
+    "id": 1,
+    "study_id": 1,
+    "name": "GV4A",
+    "fullname": "Grafisch vormgever",
+    "created_at": "2015-04-28 13:00:38",
+    "updated_at": "2015-04-28 13:00:38"
+}</pre>
+                    <hr>
+                    <!-- -->
+                    <h2><a href="#get_single_group_students" name="get_single_group_students">GET <strong>/group/{id}/students</strong></a></h2>
+                    <p>Get all students from single group</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>id <span class="requirement text-muted">required</span></td>
+                                <td>integer</td>
+                                <td>The id of the group to be gathered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>
+                    <pre>
+{
+    "group": [
+        {
+            "id": 1,
+            "study_id": 1,
+            "name": "GV4A",
+            "fullname": "Grafisch vormgever",
+            "created_at": "2015-04-28 13:00:38",
+            "updated_at": "2015-04-28 13:00:38"
+        }
+    ],
+    "students": [
+        {
+            "id": 1,
+            "group_id": 1,
+            "student": 1,
+            "nameFirst": "test",
+            "nameLast": "Geitenkaas",
+            "nameInsertion": "de",
+            "file_id": "0",
+            "birthday": "0000-00-00 00:00:00",
+            "created_at": "-0001-11-30 00:00:00",
+            "updated_at": "-0001-11-30 00:00:00"
+        },
+        {
+            "id": 2,
+            "group_id": 1,
+            "student": 2,
+            "nameFirst": "Klaas",
+            "nameLast": "Geitenkaas",
+            "nameInsertion": "",
+            "file_id": "0",
+            "birthday": "0000-00-00 00:00:00",
+            "created_at": "-0001-11-30 00:00:00",
+            "updated_at": "-0001-11-30 00:00:00"
+        }
+    ]</pre>
+                <hr>
+                    <!-- -->
+                    <h2><a href="#get_student" name="get_student">GET <strong>/student/{id}</strong></a></h2>
+                    <p>Get single student information</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>id <span class="requirement text-muted">required</span></td>
+                                <td>integer</td>
+                                <td>The id of the student to be gathered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>
+                    <pre>
+{
+    "id": 1,
+    "group_id": 1,
+    "student": 1,
+    "nameFirst": "test",
+    "nameLast": "Geitenkaas",
+    "nameInsertion": "de",
+    "file_id": "0",
+    "birthday": "0000-00-00 00:00:00",
+    "created_at": "-0001-11-30 00:00:00",
+    "updated_at": "-0001-11-30 00:00:00",
+    "info": {
+        "id": 1,
+        "student_id": 1,
+        "fav_teacher": "a:3:{i:0;s:14:\"Jelle Sjollema\";i:1;s:15:\"Laurence Candel\";i:2;s:8:\"Jim Dunk\";}",
+        "fav_class": "Backend Programmeren",
+        "fav_project": "Webshop",
+        "rate_school": 8,
+        "rate_internship": 9,
+        "specialize": "Programmeren",
+        "school_match_ambitions": "Ik wil uiteindelijk werken als software programmeur, en ik heb met deze opleiding een goede basis gelegd.",
+        "future_vision": "Ik wil na deze opleiding HBO doen op het HVA, ik wil de studie Software Engineering volgen om uiteindelijk aan het werk te gaan als software ingenieur. ",
+        "linkedin": "nl.linkedin.com\/pub\/jasper-olaf-de-vries\/33\/9a4\/561\/en",
+        "email": "jasper.olaf.de.vries@gmail.com",
+        "hobbies": "a:3:{i:0;s:9:\"Concerten\";i:1;s:9:\"Festivals\";i:2;s:7:\"Theater\";}",
+        "portfolio": "www.yldaudeboer.nl",
+        "why_ma": "Ik heb voor het Mediacollege gekozen omdat het mij een leuke school leek toen ik op de opendag kwam kijken in 2011. Ik wilde de theater richting op en dat was met deze opleiding mogelijk. ",
+        "created_at": "-0001-11-30 00:00:00",
+        "updated_at": "-0001-11-30 00:00:00"
+    },
+    "group": {
+        "id": 1,
+        "study_id": 1,
+        "name": "GV4A",
+        "fullname": "Grafisch vormgever",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    },
+    "study": {
+        "id": 1,
+        "name": "Grafisch vormgever",
+        "color": "4fbe96",
+        "created_at": "2015-04-28 13:00:38",
+        "updated_at": "2015-04-28 13:00:38"
+    }
+}</pre>
+                <hr>
+                    <!-- -->
+                    <h2><a href="#search_students" name="search_students">GET <strong>/search/{term}</strong></a></h2>
+                    <p>Search for students by term</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>term <span class="requirement text-muted">required</span></td>
+                                <td>string</td>
+                                <td>The search query</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>
+                    <pre>
+[
+    {
+        "studentID": 1,
+        "studentFirstname": "test",
+        "studentInsertion": "de",
+        "studentLastname": "Geitenkaas",
+        "groupName": "GV4A",
+        "groupNameFull": "Grafisch vormgever",
+        "studyName": "Grafisch vormgever",
+        "studyColor": "4fbe96"
+    },
+    {
+        "studentID": 2,
+        "studentFirstname": "Klaas",
+        "studentInsertion": "",
+        "studentLastname": "Geitenkaas",
+        "groupName": "MD4A",
+        "groupNameFull": "Media Developer",
+        "studyName": "Media- en Gamedeveloper",
+        "studyColor": "932545"
+    }
+]</pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

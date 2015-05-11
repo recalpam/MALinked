@@ -36,8 +36,35 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
-	public function group(){
-		return $this->belongsTo('group');
+	/**
+	 * Display the specified student.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public static function getComplete($id)
+	{
+		$student = array();
+		$student = Student::find($id)->firstOrFail();
+		$student['info'] = StudentInfo::where('student_id', '=', $id)->firstOrFail();
+		$student['group'] = Group::find($student['group_id'])->firstOrFail();
+		$student['study'] = Study::find($student['group']['study_id'])->firstOrFail();
+		return $student;
+	}
+
+	public function info()
+	{
+		return $this->hasOne('StudentInfo');
+	}
+
+	public function group()
+	{
+		return $this->belongsTo('Group');
+	}
+
+	public function study()
+	{
+		return $this->group->study;
 	}
 
 }

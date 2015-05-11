@@ -14,4 +14,8 @@ class Group extends \Eloquent {
 		return $this->belongsTo('Study');
 	}
 
+	public function students(){
+		return $this->hasMany('Student');
+	}
+
 }

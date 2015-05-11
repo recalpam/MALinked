@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Malinked API</h1>
-                    <h2>Version: 0.1 DEV (docs: 1.0) <small>(1 mei 2015)</small></h2>
+                    <h2>Version: 0.1 DEV (docs: 0.2) <small>(May 11th 2015)</small></h2>
                     <hr>
                     <h2>Index</h2>
                     <ul>
@@ -41,25 +41,26 @@
                     <ul>
                         <li><a href="#search_students">GET /search/{term}</a> - Search for students by term</li>
                     </ul>
+                    <ul>
+                        <li><a href="#auth">POST /auth</a> - Generate authentication key for user login</li>
+                    </ul>
                     <hr>
                     <h2>Changelog</h2>
-                    <h4 class="text-muted">---</h4>
+                    <ul>
+                        <li>Added AUTH to docs and edited results for <a href="#get_single_study_groups">GET /study/{id}/groups</a> and <a href="#get_single_group_students">GET /group/{id}/students</a></li>
+                    </ul>
                     <hr>
-                    <!-- -->
+                    <p>
+                        <strong>Note:</strong> 
+                        All the requests are refixed with /api/db in the url. So /search/{term} would be /api/db/search/{term}.<br>
+                        The part enclosed with brackets "{}" are GET parameters.
+                    </p>
+                    <hr>
+
                     <h2><a href="#get_studies" name="get_studies">GET <strong>/study</strong></a></h2>
                     <p>Get list of all studies</p>
                     <h3>Request</h3>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Parameter</th>
-                                <th>Type</th>
-                                <th>Description</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <p>This request does not require any parameters</p>
                     <h3>Response</h3>
                     <pre>
 [
@@ -153,31 +154,27 @@
                     <h3>Response</h3>   
                     <pre>
 {
-    "study": [
-        {
-            "id": 4,
-            "name": "Ruimtelijk vormgever",
-            "color": "edb032",
-            "created_at": "2015-04-28 13:00:38",
-            "updated_at": "2015-04-28 13:00:38"
-        }
-    ],
+    "id": 4,
+    "name": "Ruimtelijk vormgever",
+    "color": "edb032",
+    "created_at": "2015-05-11 12:25:43",
+    "updated_at": "2015-05-11 12:25:43",
     "groups": [
         {
             "id": 14,
             "study_id": 4,
             "name": "RV4A",
             "fullname": "Vormgever productpresentatie",
-            "created_at": "2015-04-28 13:00:38",
-            "updated_at": "2015-04-28 13:00:38"
+            "created_at": "2015-05-11 12:25:43",
+            "updated_at": "2015-05-11 12:25:43"
         },
         {
             "id": 15,
             "study_id": 4,
             "name": "RV4B",
             "fullname": "Stand-,winkel-en decorvormgever",
-            "created_at": "2015-04-28 13:00:38",
-            "updated_at": "2015-04-28 13:00:38"
+            "created_at": "2015-05-11 12:25:43",
+            "updated_at": "2015-05-11 12:25:43"
         }
     ]
 }</pre>
@@ -186,18 +183,7 @@
                     <h2><a href="#get_groups" name="get_groups">GET <strong>/group</strong></a></h2>
                     <p>Get list of all groups</p>
                     <h3>Request</h3>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Parameter</th>
-                                <th>Type</th>
-                                <th>Description</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
+                    <p>This request does not require any parameters</p>
                     <h3>Response</h3>
                     <pre>
 [
@@ -297,42 +283,27 @@
                     <h3>Response</h3>
                     <pre>
 {
-    "group": [
-        {
-            "id": 1,
-            "study_id": 1,
-            "name": "GV4A",
-            "fullname": "Grafisch vormgever",
-            "created_at": "2015-04-28 13:00:38",
-            "updated_at": "2015-04-28 13:00:38"
-        }
-    ],
+    "id": 3,
+    "study_id": 1,
+    "name": "GV4C",
+    "fullname": "Grafisch vormgever",
+    "created_at": "2015-05-11 12:25:43",
+    "updated_at": "2015-05-11 12:25:43",
     "students": [
         {
             "id": 1,
-            "group_id": 1,
-            "student": 1,
-            "nameFirst": "test",
-            "nameLast": "Geitenkaas",
-            "nameInsertion": "de",
-            "file_id": "0",
-            "birthday": "0000-00-00 00:00:00",
-            "created_at": "-0001-11-30 00:00:00",
-            "updated_at": "-0001-11-30 00:00:00"
-        },
-        {
-            "id": 2,
-            "group_id": 1,
-            "student": 2,
-            "nameFirst": "Klaas",
-            "nameLast": "Geitenkaas",
+            "group_id": 3,
+            "student": 12623,
+            "nameFirst": "Alex",
+            "nameLast": "Lisenkov",
             "nameInsertion": "",
-            "file_id": "0",
-            "birthday": "0000-00-00 00:00:00",
+            "file_id": "",
+            "birthday": "1995-02-22 00:00:00",
             "created_at": "-0001-11-30 00:00:00",
-            "updated_at": "-0001-11-30 00:00:00"
+            "updated_at": "2015-05-11 12:53:04"
         }
-    ]</pre>
+    ]
+}</pre>
                 <hr>
                     <!-- -->
                     <h2><a href="#get_student" name="get_student">GET <strong>/student/{id}</strong></a></h2>
@@ -358,48 +329,48 @@
                     <pre>
 {
     "id": 1,
-    "group_id": 1,
-    "student": 1,
-    "nameFirst": "test",
-    "nameLast": "Geitenkaas",
-    "nameInsertion": "de",
-    "file_id": "0",
-    "birthday": "0000-00-00 00:00:00",
+    "group_id": 3,
+    "student": 12623,
+    "nameFirst": "Alex",
+    "nameLast": "Lisenkov",
+    "nameInsertion": "",
+    "file_id": "",
+    "birthday": "1995-02-22 00:00:00",
     "created_at": "-0001-11-30 00:00:00",
-    "updated_at": "-0001-11-30 00:00:00",
+    "updated_at": "2015-05-11 12:53:04",
     "info": {
         "id": 1,
         "student_id": 1,
-        "fav_teacher": "a:3:{i:0;s:14:\"Jelle Sjollema\";i:1;s:15:\"Laurence Candel\";i:2;s:8:\"Jim Dunk\";}",
+        "fav_teacher": "a:3:{i:0;s:14:\\\"Jelle Sjollema\\\";i:1;s:15:\\\"Laurence Candel\\\";i:2;s:8:\\\"Jim Dunk\\\";}",
         "fav_class": "Backend Programmeren",
         "fav_project": "Webshop",
-        "rate_school": 8,
-        "rate_internship": 9,
+        "rate_school": 6,
+        "rate_internship": 7,
         "specialize": "Programmeren",
         "school_match_ambitions": "Ik wil uiteindelijk werken als software programmeur, en ik heb met deze opleiding een goede basis gelegd.",
         "future_vision": "Ik wil na deze opleiding HBO doen op het HVA, ik wil de studie Software Engineering volgen om uiteindelijk aan het werk te gaan als software ingenieur. ",
-        "linkedin": "nl.linkedin.com\/pub\/jasper-olaf-de-vries\/33\/9a4\/561\/en",
-        "email": "jasper.olaf.de.vries@gmail.com",
-        "hobbies": "a:3:{i:0;s:9:\"Concerten\";i:1;s:9:\"Festivals\";i:2;s:7:\"Theater\";}",
+        "linkedin": "nl.linkedin.com\\\/pub\\\/jasper-olaf-de-vries\\\/33\\\/9a4\\\/561\\\/en",
+        "email": "hallo@voorbeeld.nl",
+        "hobbies": "a:3:{i:0;s:9:\\\"Concerten\\\";i:1;s:9:\\\"Festivals\\\";i:2;s:7:\\\"Theater\\\";}",
         "portfolio": "www.yldaudeboer.nl",
         "why_ma": "Ik heb voor het Mediacollege gekozen omdat het mij een leuke school leek toen ik op de opendag kwam kijken in 2011. Ik wilde de theater richting op en dat was met deze opleiding mogelijk. ",
-        "created_at": "-0001-11-30 00:00:00",
-        "updated_at": "-0001-11-30 00:00:00"
+        "created_at": "2015-05-11 00:00:00",
+        "updated_at": "2015-05-11 00:00:00"
     },
     "group": {
-        "id": 1,
+        "id": 3,
         "study_id": 1,
-        "name": "GV4A",
+        "name": "GV4C",
         "fullname": "Grafisch vormgever",
-        "created_at": "2015-04-28 13:00:38",
-        "updated_at": "2015-04-28 13:00:38"
-    },
-    "study": {
-        "id": 1,
-        "name": "Grafisch vormgever",
-        "color": "4fbe96",
-        "created_at": "2015-04-28 13:00:38",
-        "updated_at": "2015-04-28 13:00:38"
+        "created_at": "2015-05-11 12:25:43",
+        "updated_at": "2015-05-11 12:25:43",
+        "study": {
+            "id": 1,
+            "name": "Grafisch vormgever",
+            "color": "4fbe96",
+            "created_at": "2015-05-11 12:25:43",
+            "updated_at": "2015-05-11 12:25:43"
+        }
     }
 }</pre>
                 <hr>
@@ -447,6 +418,87 @@
         "studyColor": "932545"
     }
 ]</pre>
+                <hr>
+                    <!-- -->
+                    <h2><a href="#auth" name="auth">GET <strong>/auth</strong></a></h2>
+                    <p>Generate authentication key for user login</p>
+                    <h3>Request</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>student <span class="requirement text-muted">required</span></td>
+                                <td>string</td>
+                                <td>The student number (eg. 12345)</td>
+                            </tr>
+                             <tr>
+                                <td>password <span class="requirement text-muted">required</span></td>
+                                <td>string</td>
+                                <td>The student password</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Response</h3>
+                    <pre>
+{
+   "error":false,
+   "message":"Session created",
+   "token":"dyXc0MiFHeIPLBG0rkcqSELqaWTViARe9Wehay8g1jiO8zD9RBLtOeCZLdMC",
+   "student":[
+      {
+         "id":1,
+         "group_id":3,
+         "student":12623,
+         "nameFirst":"Alex",
+         "nameLast":"Lisenkov",
+         "nameInsertion":"",
+         "file_id":"",
+         "birthday":"1995-02-22 00:00:00",
+         "created_at":"-0001-11-30 00:00:00",
+         "updated_at":"2015-05-11 12:53:04",
+         "info":{
+            "id":1,
+            "student_id":1,
+            "fav_teacher":"1",
+            "fav_class":"1",
+            "fav_project":"1",
+            "rate_school":1,
+            "rate_internship":1,
+            "specialize":"1",
+            "school_match_ambitions":"1",
+            "future_vision":"1",
+            "linkedin":"1",
+            "email":"1",
+            "hobbies":"1",
+            "portfolio":"1",
+            "why_ma":"1",
+            "created_at":"2015-05-11 00:00:00",
+            "updated_at":"2015-05-11 00:00:00"
+         },
+         "group":{
+            "id":3,
+            "study_id":1,
+            "name":"GV4C",
+            "fullname":"Grafisch vormgever",
+            "created_at":"2015-05-11 12:25:43",
+            "updated_at":"2015-05-11 12:25:43",
+            "study":{
+               "id":1,
+               "name":"Grafisch vormgever",
+               "color":"4fbe96",
+               "created_at":"2015-05-11 12:25:43",
+               "updated_at":"2015-05-11 12:25:43"
+            }
+         }
+      }
+   ]
+}</pre>
                 </div>
             </div>
         </div>

@@ -73,10 +73,14 @@ class GroupsController extends \BaseController {
 	 */
 	public function getStudentsByGroup($id, $second = null)
 	{
-		return Response::json( array(
-			'group'		=> Group::where('id', '=', $id)->get(), 
-			'students'	=> Student::where('group_id', '=', $id)->get() 
-		), 200, array(), JSON_PRETTY_PRINT);
+		return Response::json( 
+			Group::with(array('students'))->find($id)
+			, 200, array(), JSON_PRETTY_PRINT);
+	}
+
+	public function study()
+	{
+		return $this->belongsTo('Study');
 	}
 
 }

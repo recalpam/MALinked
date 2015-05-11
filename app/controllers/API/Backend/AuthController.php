@@ -39,12 +39,14 @@ class AuthController extends \BaseController {
 		}
 
 		// Check for authentication
-		if( Auth::attempt(array('student' => $this->student, 'password' => md5($this->password))) ){
+		if( Auth::attempt(array('student' => $this->student, 'password' => md5($this->password)), true) ){
 			return Response::json(array(
 				'error' => false,
 				'message' => 'Session created',
-				'token' => Auth::user()->student
+				'token' => Auth::user()->remember_token,
+				'student' => Auth::user()->with(array('info', 'group', 'group.study'))->get()
 			));
+			
 		}
 		return;
 	}

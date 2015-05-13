@@ -37,6 +37,6 @@ angular.module('MaLinked', [
 ============================*/
 .run(function($rootScope, API){
 	API.sync().then(function(value){
-		$rootScope.students = value;
+		$rootScope.db = value;
 	});
 })

@@ -16,8 +16,8 @@ angular.module('MaLinked.Controllers', [])
 }])
 
 /*==========  Zoeken  ==========*/
-.controller('zoeken', [function(API, $scope){
-
+.controller('zoeken', [function($scope){
+	
 }])
 
 /*==========  Beheer  ==========*/

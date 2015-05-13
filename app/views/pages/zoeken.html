@@ -7,8 +7,18 @@
 			<legend>Specificaties</legend>
 			
 			<div class="form-group">
-				<label for="name" class="col-lg-2 control-label">Naam</label>
-				<div class="col-lg-10"><input ng-model="searchName" class="form-control"></div>
+				<label for="nameFirst" class="col-lg-3 control-label">Voornaam</label>
+				<div class="col-lg-8"><input id="nameFirst" ng-model="search.nameFirst" class="form-control" /></div>
+			</div>
+
+			<div class="form-group">
+				<label for="nameLast" class="col-lg-3 control-label">Achternaam</label>
+				<div class="col-lg-8"><input id="nameLast" ng-model="search.nameLast" class="form-control" /></div>
+			</div>
+
+			<div class="form-group">
+				<label for="study" class="col-lg-3 control-label">Opleiding</label>
+				<div class="col-lg-8"><select name="study" ng-model="search.group.study_id" class="form-control"><option ng-repeat="study in db.studies" value="{{study.id}}">{{study.name}}</option></select></div>
 			</div>
 
 		</fieldset>
@@ -25,7 +35,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="student in students | filter:searchName">
+			<tr ng-repeat="student in db.students | filter:search">
 				<td>{{ student.id }}</td>
 				<td>{{ student.nameFirst }} {{student.nameLast}}</td>
 				<td>{{ student.group.name }}</td>

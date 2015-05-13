@@ -24,7 +24,7 @@ angular.module('MaLinked.Factories', [])
 	return {
 		sync: function(){
 			if(!sync){
-				sync = get('student').then(function(response){
+				sync = get('sync').then(function(response){
 					return response.data
 				});
 			}

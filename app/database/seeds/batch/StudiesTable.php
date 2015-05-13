@@ -4,6 +4,11 @@ class StudiesBatch extends Seeder {
 
 	public function run()
 	{
+		$this->command->comment("Truncating Studies");
+		Study::truncate();
+		$this->command->comment("Truncating Groups");
+		Group::truncate();
+
 		$singles = array(
 			array('name' => 'Grafisch vormgever','color' => '4fbe96'),
 			array('name' => 'Interactief vormgever','color' => 'f4793b'),

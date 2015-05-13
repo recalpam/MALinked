@@ -4,6 +4,10 @@ class StudentsBatch extends Seeder {
 
   public function run()
   {
+
+    $this->command->comment("Truncating Students");
+    Student::truncate();
+
     $this->command->info("Preparing to insert students");
     $students_old = array(
       array('id' => '1','student' => '11226','password' => '17d16439ebdceae9155f5f9822edae12','class_id' => '1','firstname' => 'Abigail','lastname' => 'Abasery','insertion' => 'al','birthday' => '26-10-1991'),
@@ -533,9 +537,22 @@ class StudentsBatch extends Seeder {
     );
 
     $this->command->info("Inserting students.");
-    $this->command->info("\t Student count: ". count($students_old));
+
+    $count_students = count($students_old);
+    $this->command->info("\t Student count: ". $count_students);
+
+    $i = 0;
+    $last = -1;
     foreach( $students_old as $student ){
       $insertion = array();
+
+      $i++;
+
+      $count_percentage = round(($i/$count_students) *100);
+      if( $count_percentage % 25 == 0 && $count_percentage != $last ){
+        $this->command->info("\t" .$count_percentage . "%");
+        $last = $count_percentage;
+      }
 
       $insertion['id'] = $student['id']; // Keep same id for file convertion
 

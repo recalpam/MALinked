@@ -13,6 +13,14 @@ class DatabaseSeeder extends Seeder {
 
 		$this->command->info("Importing 'Studies' batch operation");
 		$this->call('StudiesBatch');
+
+		$this->command->info("\n----------------------------------------------------\n");
+
+		$this->command->info("Importing 'Students' batch operation");
+		$this->call('StudentsBatch');
+
+		$this->command->info("\n----------------------------------------------------\n");
+
 		$this->command->info("Done! Credits @ AlexLisenkov & DonnyHegener.");
 	}
 

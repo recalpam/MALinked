@@ -51,6 +51,10 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::missing(function($e){
+	return App::make("API\Frontend\Page")->callAction("getIndex", []);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

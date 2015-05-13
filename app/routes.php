@@ -56,17 +56,5 @@ Route::get('donny', function(){
 /**
  * Frontend
  */
-Route::get('/', function(){
-	// return 'cool frontend here';
-	return Redirect::to("/homepage");
-});
-Route::get('{url}', function(){
-	// return 'cool frontend here';
-	return View::make("template");
-});
-// Route::get('/', function(){
-// 	// return 'cool frontend here';
-// 	return View::make("template");
-// });
-
+Route::controller('/', 'API\Frontend\Page');
 

@@ -32,6 +32,8 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 		Route::resource('group.students', 'API\GroupsController@getStudentsByGroup', array());
 
 		Route::resource('search', 'API\SearchController',  array());
+
+		Route::controller('sync', 'API\Sync');
 	});
 
 	/**

@@ -12,11 +12,14 @@ angular.module('MaLinked.Routes', [])
 		this.url = '/' + name;
 		this.templateUrl = '/api/frontend/file/view/'+name;
 		this.controller = name;
+		this.controllerAs = name;
 	}
 
 	$stateProvider
 	.state(new state('home'))
 	.state(new state('profiel'))
+	.state(new state('zoeken'))
+	.state(new state('beheer'))
 	
 
 }])

@@ -14,3 +14,13 @@ angular.module('MaLinked.Controllers', [])
 .controller('profiel', [function(){
 	
 }])
+
+/*==========  Zoeken  ==========*/
+.controller('zoeken', [function(API, $scope){
+
+}])
+
+/*==========  Beheer  ==========*/
+.controller('beheer', [function(){
+	
+}])

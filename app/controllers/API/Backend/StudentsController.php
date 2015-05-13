@@ -11,8 +11,8 @@ class StudentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//return Response::json(Student::all());
-		return Response::json(array('error' => true, 'message' => 'Illigal request: can not gather all students'));
+		return Response::json(Student::with(array('info', 'group', 'group.study'))->get(),200, array(), JSON_PRETTY_PRINT);
+		//return Response::json(array('error' => true, 'message' => 'Illigal request: can not gather all students'));
 	}
 
 	/**

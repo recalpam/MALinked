@@ -4,12 +4,20 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<title>MaLinked</title>
+		<link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css">
 		<base href="/">
 	</head>
 	<body ng-app="MaLinked">
+		
+		<!-- PAGE CONTAINER -->
+		<div class="container">
 
-		<!-- DYNAMIC VIEW -->
-		<div ui-view></div>
+			<!-- NAVBAR -->
+			@include('template.navbar')
+			
+			<!-- DYNAMIC PAGE -->
+			<ui-view></div>
+		</div>	
 
 		<!-- ANGULARJS -->
 		<script type="text/javascript" src="/packages/angular/angular.js"></script>

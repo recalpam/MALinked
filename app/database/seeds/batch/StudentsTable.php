@@ -549,7 +549,7 @@ class StudentsBatch extends Seeder {
       $insertion['birthday'] = date('Y-m-d H:i:s', strtotime($student['birthday']));
 
       if( $student['password'] != 0 ){
-        $insertion['password'] = \Hash::make(student['password']);
+        $insertion['password'] = \Hash::make($student['password']);
       } else {
         $insertion['password'] = '0';
       }

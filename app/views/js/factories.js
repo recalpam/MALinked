@@ -13,13 +13,22 @@ angular.module('MaLinked.Factories', [])
 /*==========  work in zhe progress  ==========*/
 .factory('API', ['$http', function($http){
 
+	// $http promise
+	var sync;
+
+	// $http get
 	var get = function(action){
 		return $http.get('/api/db/' + action);
 	}
 
 	return {
 		sync: function(){
-			return get('study');
+			if(!sync){
+				sync = get('student').then(function(response){
+					return response.data
+				});
+			}
+			return sync;
 		}
 	}
 }]);

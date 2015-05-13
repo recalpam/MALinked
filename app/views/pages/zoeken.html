@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Zoeken <small> angular.js</small></h1>
+</div>
+<div class="col-md-4">
+	<form class="form-horizontal">
+		<fieldset>
+			<legend>Specificaties</legend>
+			
+			<div class="form-group">
+				<label for="name" class="col-lg-2 control-label">Naam</label>
+				<div class="col-lg-10"><input ng-model="searchName" class="form-control"></div>
+			</div>
+
+		</fieldset>
+	</form>
+</div>
+<div class="col-md-8">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Naam</th>
+				<th>Klas</th>
+				<th>Opleiding</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="student in students | filter:searchName">
+				<td>{{ student.id }}</td>
+				<td>{{ student.nameFirst }} {{student.nameLast}}</td>
+				<td>{{ student.group.name }}</td>
+				<td>{{ student.group.fullname }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+   

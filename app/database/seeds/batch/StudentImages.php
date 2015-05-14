@@ -1,9 +1,11 @@
 <?php
-
+use Intervention\Image\ImageManager;
 class StudentImages extends Seeder {
 
 	public function run()
 	{
+		ini_set('memory_limit', '-1');
+
 		$student_with_images = array(
 		  array('student_id' => '2'),
 		  array('student_id' => '14'),
@@ -233,33 +235,113 @@ class StudentImages extends Seeder {
 		  array('student_id' => '6882')
 		);
 		
+		$filepath = public_path(). '/dynamic/files/';
 
+		// Create writeable dir if not exists
+  	 	if( !file_exists($filepath) ){
+  	 		$this->command->info($filepath. ' not found, creating directory..');
+  	 		if( mkdir($filepath, 0777, true) ){
+  	 			$this->command->info("\t Success");
+  	 		} else {
+  	 			$this->command->error("\t Failed, aborting operation");
+  	 			return false;
+  	 		}
+  	 	}
+
+  	 	$mediumpath = public_path(). '/dynamic/files/medium/';
+
+  	 	// Create writeable thumbnails dir if not exists
+  	 	if( !file_exists($mediumpath) ){
+  	 		$this->command->info($mediumpath. ' not found, creating directory..');
+  	 		if( mkdir($mediumpath, 0777, true) ){
+  	 			$this->command->info("\t Success");
+  	 		} else {
+  	 			$this->command->error("\t Failed, aborting operation");
+  	 			return false;
+  	 		}
+  	 	}
+
+  	 	$thumbspath = public_path(). '/dynamic/files/thumbnails/';
+
+  	 	// Create writeable thumbnails dir if not exists
+  	 	if( !file_exists($thumbspath) ){
+  	 		$this->command->info($thumbspath. ' not found, creating directory..');
+  	 		if( mkdir($thumbspath, 0777, true) ){
+  	 			$this->command->info("\t Success");
+  	 		} else {
+  	 			$this->command->error("\t Failed, aborting operation");
+  	 			return false;
+  	 		}
+  	 	}
+
+
+		$count_students = count($student_with_images);
+  		$this->command->info("\n--------------- Starting progress, this might take a while ---------------\n");
+		$i = 0;
+		$broke = 0;
+  	 	$last = -1;
+
+  	 	// Loop trough the students
 		foreach($student_with_images as $grab){
+			
 			$hash = md5(str_random(40). time());
 
+			 $i++;
 
+			// Percentage counter
+			$count_percentage = round(($i/$count_students) *100);
+			if( $count_percentage % 25 == 0 && $count_percentage != $last ){
+				$this->command->info("Progress: " .$count_percentage . "%");
+				$last = $count_percentage;
+			}
+
+			// Get the image from url
 			$url = "http://inschrijven.ma-jaarboek.nl/profilepicture.php?id=" . $grab['student_id'];
 			$file = file_get_contents($url);
 
-			$student = Student::find($grab['student_id'])->firstOrFail();
+			if( !strlen($file) ){
+				$this->command->error("- Broken image found. Student ID: " .$grab['student_id']);
+				$this->command->info("continuing..");
+				$broke++;
+				continue;
+			}
 
+			// Get the student
+			$student = Student::where('id', '=', $grab['student_id'])->firstOrFail();
+
+			// Get the filetype from response headers
 		    $typeHeader = $http_response_header[3];
 		    $typeArray = explode('/', $typeHeader);
 		    $type = end($typeArray);
 
-		    $myfile = fopen('W:\localweb\malinked\public\dynamic\files/'. $hash.'.'.$type, "w");
-			fwrite($myfile, $file);
-			fclose($myfile);
+		    // Save the file
+			$manager = new ImageManager();
+			$thumb = $manager->make($file)->fit(500)->save($filepath . $hash.'.'.$type);
 
+			// Create thumbnail
+			$manager = new ImageManager();
+			$thumb = $manager->make($file)->fit(250)->save($mediumpath . $hash.'.'.$type, 80);
+
+			// Create icons
+			$manager = new ImageManager();
+			$thumb = $manager->make($file)->fit(80)->save($thumbspath . $hash.'.'.$type, 60);
+
+			// Store file in database
 			$insert = array(
 					'fileHash' => $hash,
 					'fileExtension' => $type,
 					'fileName' => 'Profielfoto van '. $student['nameFirst']
 				);
 
-			//$file = File::create($insert);
-			
+			// Link stored file to student
+			if( DB::table('files')->insert($insert) ){
+				$file_id = DB::getPdo()->lastInsertId();
+				$student->file_id = $file_id;
+				$student->save();
+			}
 		}
+
+		$this->command->info("\nCompleted, created " .($i-$broke)*3 . " images.\n");
 	}
 
 }

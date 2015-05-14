@@ -1,6 +1,6 @@
 <?php
 
-class File extends \Eloquent {
+class Files extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [

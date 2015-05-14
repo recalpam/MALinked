@@ -53,12 +53,17 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public static function nested(){
-		return self::with(array('info', 'group', 'group.study'));
+		return self::with(array('info', 'group', 'group.study', 'file'));
 	}
 
 	public function info()
 	{
 		return $this->hasOne('StudentInfo');
+	}
+
+	public function file()
+	{
+		return $this->belongsTo('Files');
 	}
 
 	public function group()

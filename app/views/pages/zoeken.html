@@ -28,6 +28,7 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
+				<th></th>
 				<th>#</th>
 				<th>Naam</th>
 				<th>Klas</th>
@@ -36,6 +37,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="student in db.students | filter:search">
+				<td><img src="dynamic/files/thumbnails/{{ student.file.fileHash }}.{{ student.file.fileExtension }}" alt="{{ student.file.fileName }}"/ style="width: 50px; height: 50px;"></td>
 				<td>{{ student.id }}</td>
 				<td>{{ student.nameFirst }} {{student.nameLast}}</td>
 				<td>{{ student.group.name }}</td>

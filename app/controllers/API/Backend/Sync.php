@@ -1,6 +1,6 @@
 <?php namespace API;
 
-use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study;
+use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study, Project;
 
 class Sync extends \BaseController {
 
@@ -9,6 +9,7 @@ class Sync extends \BaseController {
 		$data->students = Student::nested()->get();
 		$data->studies = Study::all();
 		$data->group = Group::all();
+
 		return Response::json($data, 200, array(), JSON_PRETTY_PRINT);
 	}
 }

@@ -14,8 +14,8 @@ class CreateProjectFileTable extends Migration {
 	{
 		Schema::create('project_file', function(Blueprint $table)
 		{
-			$table->increments('project_id');
-			$table->integer('file_id');
+			$table->integer('project_id');
+			$table->integer('files_id');
 		});
 	}
 

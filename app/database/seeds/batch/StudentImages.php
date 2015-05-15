@@ -237,6 +237,18 @@ class StudentImages extends Seeder {
 		
 		$filepath = public_path(). '/dynamic/files/';
 
+		$doRemove = $this->command->ask("Do you want to remove all existing images? (Y/n): ", 'n');
+
+		if( $doRemove === 'Y' ){
+			$this->command->comment("\nRemoving file");
+			if( file_exists($filepath) )
+				rmdir($filepath);
+
+			Files::truncate();
+		} else {
+			$this->command->comment("Skipping file removing");
+		}
+
 		// Create writeable dir if not exists
   	 	if( !file_exists($filepath) ){
   	 		$this->command->info($filepath. ' not found, creating directory..');

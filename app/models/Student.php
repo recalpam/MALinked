@@ -53,7 +53,7 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public static function nested(){
-		return self::with(array('info', 'group', 'group.study', 'file'));
+		return self::with(array('info', 'group', 'group.study', 'file', 'projects', 'projects.projectFile'));
 	}
 
 	public function info()
@@ -74,6 +74,11 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface {
 	public function study()
 	{
 		return $this->group->study;
+	}
+
+	public function projects()
+	{
+		return $this->hasMany('project');
 	}
 
 }

@@ -3,11 +3,19 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface; 
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
 
-class Student extends \Eloquent implements UserInterface, RemindableInterface {
+class Student extends \Eloquent implements UserInterface, RemindableInterface, SluggableInterface {
 
-	use UserTrait, RemindableTrait;
+	use UserTrait, RemindableTrait, SluggableTrait;
+
+	protected $sluggable = array(
+		'save_to'		=> 'slug',
+        'build_from' 	=> 'fullname',
+        'unique'		=> true
+    );
 
 	// Add your validation rules here
 	public static $rules = [
@@ -51,6 +59,16 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface {
 		$student['study'] = Study::find($student['group']['study_id'])->firstOrFail();
 		return $student;
 	}
+
+	/**
+	 * Get the full name of a student
+	 * 
+	 * @example $student->fullname;
+	 * @return string
+	 */
+	public function getFullnameAttribute(){
+        return $this->nameFirst . ' ' . $this->nameLast;
+    }
 
 	public static function nested(){
 		return self::with(array('info', 'group', 'group.study', 'file', 'projects', 'projects.projectFile'));

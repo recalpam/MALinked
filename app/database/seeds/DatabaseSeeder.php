@@ -31,6 +31,11 @@ class DatabaseSeeder extends Seeder {
 
 		$this->command->info("\n----------------------------------------------------\n");
 
+		$this->command->info("Generating slugs");
+		$this->call('GenerateSlugs');
+
+		$this->command->info("\n----------------------------------------------------\n");
+
 		$this->command->info("Done! Credits @ AlexLisenkov & DonnyHegener.");
 	}
 

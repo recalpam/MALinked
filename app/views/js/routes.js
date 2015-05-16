@@ -7,17 +7,31 @@ angular.module('MaLinked.Routes', [])
 .config(['$stateProvider', function($stateProvider) {
 
 	/*==========  State generator  ==========*/
-	var state = function state(name, url){
-		this.name = name;
-		this.templateUrl = '/api/frontend/file/view/'+name;
-		this.controller = name;
-		this.controllerAs = name;
+	var state = function state(name, action){
 
-		if(!angular.isUndefined(url)){
-			this.url = url;
-		}else{
-			this.url = '/' + name;
+		// if an action is not defined, default it to the state name
+		if(angular.isUndefined(action)){
+			action = '/' + name;
 		}
+
+		// return the state
+		return {
+
+			// always include the db because its cached anyway
+			resolve: {
+				db: function(API, $http){
+					return API.sync();
+				}
+			},
+			name: name,
+			url: action,
+			templateUrl: '/api/frontend/file/view/'+name,
+			controller: name,
+			controllerAs: name,
+			
+		}
+
+		
 	}
 
 	$stateProvider
@@ -25,7 +39,6 @@ angular.module('MaLinked.Routes', [])
 	.state(new state('profiel', 'profiel/{groep}/{student}'))
 	.state(new state('zoeken'))
 	.state(new state('beheer'))
-	
 
 }])
 

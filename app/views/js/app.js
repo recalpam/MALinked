@@ -31,12 +31,3 @@ angular.module('MaLinked', [
 .config(['$locationProvider',function($locationProvider) {
 	$locationProvider.html5Mode(true);
 }])
-
-/*============================
-=            Boot            =
-============================*/
-.run(function($rootScope, API){
-	API.sync().then(function(value){
-		$rootScope.db = value;
-	});
-})

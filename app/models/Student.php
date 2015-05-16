@@ -71,11 +71,6 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface {
 		return $this->belongsTo('Group');
 	}
 
-	public function study()
-	{
-		return $this->group->study;
-	}
-
 	public function projects()
 	{
 		return $this->hasMany('project');

@@ -7,7 +7,10 @@ class ProjectFile extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = [
+		'project_id',
+		'files_id'
+	];
 
 	protected $table = 'project_file';
 

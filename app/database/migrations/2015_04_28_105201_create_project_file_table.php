@@ -26,7 +26,7 @@ class CreateProjectFileTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('project_file');
 	}
 
 }

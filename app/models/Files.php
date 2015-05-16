@@ -8,7 +8,11 @@ class Files extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = [
+		'fileHash',
+		'fileExtension',
+		'fileName'
+	];
 
 	/**
 	 * The database table used by the model.

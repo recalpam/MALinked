@@ -1,5 +1,6 @@
 <?php
 use Intervention\Image\ImageManager;
+
 class StudentImages extends Seeder {
 
 	public function run()

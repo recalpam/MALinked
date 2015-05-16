@@ -15,10 +15,12 @@ class CreateProjectTable extends Migration {
 		Schema::create('project', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('project_id_old');
 			$table->integer('student_id');
 			$table->string('title');
 			$table->text('description');
 			$table->string('url');
+			$table->boolean('batch_done');
 			$table->timestamps();
 		});
 	}
@@ -30,7 +32,7 @@ class CreateProjectTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('project');
 	}
 
 }

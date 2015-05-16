@@ -53,6 +53,7 @@ Route::get('donny', function(){
 	//return Response::json(Group::with('study')->find(1), 200, array(), JSON_PRETTY_PRINT);
 	//return Response::json(Student::with('group.study')->find(1), 200, array(), JSON_PRETTY_PRINT);
 	//return Config::get('butler::dir.scripts');
+	
 });
 
 /**

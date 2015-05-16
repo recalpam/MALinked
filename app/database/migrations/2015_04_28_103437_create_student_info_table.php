@@ -40,6 +40,7 @@ class CreateStudentInfoTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::drop('student_info');
 		//
 	}
 

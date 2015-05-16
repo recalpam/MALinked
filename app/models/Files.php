@@ -1,6 +1,10 @@
 <?php
 
-class Files extends \Eloquent {
+class Files extends \Eloquent {	
+
+	protected $appends = [
+		'thumbnail'
+	]; 
 
 	// Add your validation rules here
 	public static $rules = [
@@ -20,5 +24,9 @@ class Files extends \Eloquent {
 	 * @var string
 	 */
 	protected $table = 'files';
+
+	public function getThumbnailAttribute(){
+		return url()."/dynamic/files/thumbnails/{$this->fileHash}.{$this->fileExtension}";
+	}
 
 }

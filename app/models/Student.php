@@ -11,6 +11,10 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
 
 	use UserTrait, RemindableTrait, SluggableTrait;
 
+	protected $appends = [
+		'fullname'
+	];
+
 	protected $sluggable = array(
 		'save_to'		=> 'slug',
         'build_from' 	=> 'fullname',
@@ -25,10 +29,6 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
 	// Don't forget to fill this array
 	protected $fillable = [];
 
-	public static function search($term)
-	{
-		return DB::select( DB::raw("select `students`.`id` as `studentID`, `students`.`nameFirst` as `studentFirstname`, `students`.`nameInsertion` as `studentInsertion`, `students`.`nameLast` as `studentLastname`, `groups`.`name` as `groupName`, `groups`.`fullname` as `groupNameFull`, `studies`.`name` as `studyName`, `studies`.`color` as `studyColor` from `students` left join `groups` on `students`.`group_id` = `groups`.`id` left join `studies` on `groups`.`study_id` = `studies`.`id` where CONCAT_WS(' ', `nameFirst`, `nameInsertion`, `nameLast`) LIKE '%$term%' OR CONCAT_WS(' ', `nameFirst`, `nameLast`) LIKE '%$term%' limit 25 offset 0" ) );
-	}
 
 	/**
 	 * The database table used by the model.
@@ -67,7 +67,8 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
 	 * @return string
 	 */
 	public function getFullnameAttribute(){
-        return $this->nameFirst . ' ' . $this->nameLast;
+		// trim whitey
+		return preg_replace('/( )+/', ' ', "{$this->nameFirst} {$this->nameInsertion} {$this->nameLast}");
     }
 
 	public static function nested(){
@@ -92,6 +93,10 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
 	public function projects()
 	{
 		return $this->hasMany('project');
+	}
+
+	public static function search($term){
+		return DB::select( DB::raw("select `students`.`id` as `studentID`, `students`.`nameFirst` as `studentFirstname`, `students`.`nameInsertion` as `studentInsertion`, `students`.`nameLast` as `studentLastname`, `groups`.`name` as `groupName`, `groups`.`fullname` as `groupNameFull`, `studies`.`name` as `studyName`, `studies`.`color` as `studyColor` from `students` left join `groups` on `students`.`group_id` = `groups`.`id` left join `studies` on `groups`.`study_id` = `studies`.`id` where CONCAT_WS(' ', `nameFirst`, `nameInsertion`, `nameLast`) LIKE '%$term%' OR CONCAT_WS(' ', `nameFirst`, `nameLast`) LIKE '%$term%' limit 25 offset 0" ) );
 	}
 
 }

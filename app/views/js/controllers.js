@@ -17,7 +17,7 @@ angular.module('MaLinked.Controllers', [])
 	API.sync().then(function(value){
 
 		// filter based upon id that we get from the url
-		$scope.student = $filter('filter')(value.students, {id: parseInt($stateParams.id)}, true);
+		$scope.student = $filter('filter')(value.students, {slug: $stateParams.student}, true);
 
 		// if no results, we assume the user is trying to screw around with the app
 		if($scope.student.length!=1){
@@ -32,7 +32,13 @@ angular.module('MaLinked.Controllers', [])
 
 /*==========  Zoeken  ==========*/
 .controller('zoeken', ['$scope', function($scope){
-	
+	$scope.thumbnail = function(url){
+		if(angular.isUndefined(url)){
+			return "/static/anon.jpg";
+		}else{
+			return url;
+		}
+	}
 }])
 
 /*==========  Beheer  ==========*/

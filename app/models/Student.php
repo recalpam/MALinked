@@ -92,7 +92,7 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
 
 	public function projects()
 	{
-		return $this->hasMany('project');
+		return $this->hasMany('Project');
 	}
 
 	public static function search($term){

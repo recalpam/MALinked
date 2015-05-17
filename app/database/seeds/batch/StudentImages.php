@@ -236,7 +236,7 @@ class StudentImages extends Seeder {
 		  array('student_id' => '6882')
 		);
 		
-		$filepath = public_path(). '/dynamic/files/';
+		$filepath = Config::get('files.path');
 
 		$doRemove = $this->command->ask("Do you want to remove all existing images? (Y/n): ", 'n');
 
@@ -251,41 +251,55 @@ class StudentImages extends Seeder {
 		}
 
 		// Create writeable dir if not exists
-  	 	if( !file_exists($filepath) ){
-  	 		$this->command->info($filepath. ' not found, creating directory..');
-  	 		if( mkdir($filepath, 0777, true) ){
-  	 			$this->command->info("\t Success");
-  	 		} else {
-  	 			$this->command->error("\t Failed, aborting operation");
-  	 			return false;
-  	 		}
-  	 	}
+		if (!file_exists(Config::get('files.path'))) {
+			$this->command->info($filepath . ' not found, creating directory..');
+			if (mkdir($filepath, 0777, true)) {
+				$this->command->info("\t Success");
+			}
+			else {
+				$this->command->error("\t Failed, aborting operation");
+				return false;
+			}
+		}
+		$largepath = Config::get('files.images.large');
 
-  	 	$mediumpath = public_path(). '/dynamic/files/medium/';
+		// Create writeable dir if not exists
+		if (!file_exists($largepath)) {
+			$this->command->info($largepath . ' not found, creating directory..');
+			if (mkdir($largepath, 0777, true)) {
+				$this->command->info("\t Success");
+			}
+			else {
+				$this->command->error("\t Failed, aborting operation");
+				return false;
+			}
+		}
+		$mediumpath = Config::get('files.images.medium');
 
-  	 	// Create writeable thumbnails dir if not exists
-  	 	if( !file_exists($mediumpath) ){
-  	 		$this->command->info($mediumpath. ' not found, creating directory..');
-  	 		if( mkdir($mediumpath, 0777, true) ){
-  	 			$this->command->info("\t Success");
-  	 		} else {
-  	 			$this->command->error("\t Failed, aborting operation");
-  	 			return false;
-  	 		}
-  	 	}
+		// Create writeable thumbnails dir if not exists
+		if (!file_exists($mediumpath)) {
+			$this->command->info($mediumpath . ' not found, creating directory..');
+			if (mkdir($mediumpath, 0777, true)) {
+				$this->command->info("\t Success");
+			}
+			else {
+				$this->command->error("\t Failed, aborting operation");
+				return false;
+			}
+		}
+		$thumbspath = Config::get('files.images.thumbnails');
 
-  	 	$thumbspath = public_path(). '/dynamic/files/thumbnails/';
-
-  	 	// Create writeable thumbnails dir if not exists
-  	 	if( !file_exists($thumbspath) ){
-  	 		$this->command->info($thumbspath. ' not found, creating directory..');
-  	 		if( mkdir($thumbspath, 0777, true) ){
-  	 			$this->command->info("\t Success");
-  	 		} else {
-  	 			$this->command->error("\t Failed, aborting operation");
-  	 			return false;
-  	 		}
-  	 	}
+		// Create writeable thumbnails dir if not exists
+		if (!file_exists($thumbspath)) {
+			$this->command->info($thumbspath . ' not found, creating directory..');
+			if (mkdir($thumbspath, 0777, true)) {
+				$this->command->info("\t Success");
+			}
+			else {
+				$this->command->error("\t Failed, aborting operation");
+				return false;
+			}
+		}
 
 
 		$count_students = count($student_with_images);
@@ -319,6 +333,9 @@ class StudentImages extends Seeder {
 				continue;
 			}
 
+			// intervention image lib
+			$manager = new ImageManager();
+
 			// Get the student
 			$student = Student::where('id', '=', $grab['student_id'])->firstOrFail();
 
@@ -327,17 +344,19 @@ class StudentImages extends Seeder {
 		    $typeArray = explode('/', $typeHeader);
 		    $type = end($typeArray);
 
+			$filename = $hash.'.'.$type;
+
 		    // Save the file
-			$manager = new ImageManager();
-			$thumb = $manager->make($file)->fit(500)->save($filepath . $hash.'.'.$type);
+			$manager->make($remoteFile)->save( Config::get('files.path') . $fileName);
 
-			// Create thumbnail
-			$manager = new ImageManager();
-			$thumb = $manager->make($file)->fit(250)->save($mediumpath . $hash.'.'.$type, 80);
+			// large
+			$manager->make($remoteFile)->fit(500)->save( Config::get('files.images.large') . $fileName);
 
-			// Create icons
-			$manager = new ImageManager();
-			$thumb = $manager->make($file)->fit(80)->save($thumbspath . $hash.'.'.$type, 60);
+			// medium
+			$manager->make($remoteFile)->fit(250)->save(Config::get('files.path.medium') .$fileName, 80);
+
+			// thumbail
+			$manager->make($remoteFile)->fit(80)->save( Config::get('files.path.thumbnail') .$fileName, 60);
 
 			// Store file in database
 			$insert = array(

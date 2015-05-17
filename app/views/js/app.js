@@ -36,17 +36,17 @@ angular.module('MaLinked', [
 /*==============================
 =            Events            =
 ==============================*/
-.run(['$rootScope', function($rootScope){
-    $rootScope
-        .$on('$stateChangeStart', 
-            function(event, toState, toParams, fromState, fromParams){ 
-                $("#ui-view").html("");
-                $(".page-loading").removeClass("hidden");
-        });
+.run(['$rootScope','$timeout', function($rootScope){
+	$rootScope
+		.$on('$viewContentLoading', 
+			function(event, toState, toParams, fromState, fromParams){ 
+				$("#ui-view").html("");
+				$(".page-loading").removeClass("hidden");
+			});
 
-    $rootScope
-        .$on('$viewContentLoaded',
-            function(event, toState, toParams, fromState, fromParams){ 
-                $(".page-loading").addClass("hidden");
-        });
+	$rootScope
+		.$on('$viewContentLoaded',
+			function(event, toState, toParams, fromState, fromParams){ 
+				$(".page-loading").addClass("hidden");	
+			});
 }]);

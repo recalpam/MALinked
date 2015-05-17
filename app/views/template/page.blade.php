@@ -6,6 +6,11 @@
 		<title>MaLinked</title>
 		<link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css">
 		<link rel="stylesheet" href="http://select2.github.io/select2/select2-3.5.2/select2.css">
+		<link rel="stylesheet" href="/packages/angular-material/angular-material.css">
+
+		<style>
+		
+		</style>
 		<base href="/">
 	</head>
 	<body ng-app="MaLinked">
@@ -16,8 +21,15 @@
 			<!-- NAVBAR -->
 			@include('template.navbar')
 			
+			<!-- LOADER -->
+			<center>
+				<div class="page-loading center-block">
+				 <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+				</div>
+			</center>
+
 			<!-- DYNAMIC PAGE -->
-			<ui-view></div>
+			<ui-view id="ui-view"></div>
 		</div>	
 		
 		<!-- JQUERY TRASH -->
@@ -27,6 +39,9 @@
 		<!-- ANGULARJS -->
 		<script type="text/javascript" src="/packages/angular/angular.js"></script>
 		<script type="text/javascript" src="/packages/angular-ui-router/release/angular-ui-router.js"></script>
+		<script type="text/javascript" src="/packages/angular-aria/angular-aria.js"></script>
+		<script type="text/javascript" src="/packages/angular-animate/angular-animate.js"></script>
+		<script type="text/javascript" src="/packages/angular-material/angular-material.js"></script>
 
 		<!-- MALINKED CLIENT -->
 		<script type="text/javascript" src="/api/frontend/file/script/controllers"></script>

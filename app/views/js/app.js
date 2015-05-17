@@ -7,6 +7,7 @@ angular.module('MaLinked', [
 
 	/*==========  Third Party  ==========*/
 	'ui.router',
+	'ngMaterial',
 
 	/*==========  Native  ==========*/
 	'MaLinked.Controllers',
@@ -31,3 +32,21 @@ angular.module('MaLinked', [
 .config(['$locationProvider',function($locationProvider) {
 	$locationProvider.html5Mode(true);
 }])
+
+/*==============================
+=            Events            =
+==============================*/
+.run(['$rootScope', function($rootScope){
+    $rootScope
+        .$on('$stateChangeStart', 
+            function(event, toState, toParams, fromState, fromParams){ 
+                $("#ui-view").html("");
+                $(".page-loading").removeClass("hidden");
+        });
+
+    $rootScope
+        .$on('$viewContentLoaded',
+            function(event, toState, toParams, fromState, fromParams){ 
+                $(".page-loading").addClass("hidden");
+        });
+}]);

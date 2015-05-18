@@ -21,6 +21,11 @@ class DatabaseSeeder extends Seeder {
 
 		$this->command->info("\n----------------------------------------------------\n");
 
+		$this->command->info("Importing 'StudentsInfo' batch operation");
+		$this->call('StudentinfoBatch');
+
+		$this->command->info("\n----------------------------------------------------\n");
+
 		$this->command->info("Converting profile pictures");
 		$this->call('StudentImages');
 

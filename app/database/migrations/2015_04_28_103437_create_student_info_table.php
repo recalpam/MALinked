@@ -16,19 +16,20 @@ class CreateStudentInfoTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('student_id');
-			$table->string('fav_teacher');
-			$table->string('fav_class');
-			$table->text('fav_project');
-			$table->integer('rate_school');
-			$table->integer('rate_internship');
-			$table->string('specialize');
-			$table->string('school_match_ambitions');
-			$table->text('future_vision');
-			$table->string('linkedin');
-			$table->string('email');
-			$table->string('hobbies');
-			$table->string('portfolio');
-			$table->text('why_ma');
+			$table->string('fav_teacher')->nullable();
+			$table->string('fav_class')->nullable();
+			$table->text('fav_project')->nullable();
+			$table->integer('rate_school')->nullable();
+			$table->integer('rate_internship')->nullable();
+			$table->string('specialize')->nullable();
+			$table->string('school_match_ambitions')->nullable();
+			$table->text('future_vision')->nullable();
+			$table->string('linkedin')->nullable();
+			$table->string('email')->nullable();
+			$table->string('hobbies')->nullable();
+			$table->string('portfolio')->nullable();
+			$table->text('why_ma')->nullable();
+			$table->string('best_experience')->nullable();
 			$table->timestamps();
 		});
 	}

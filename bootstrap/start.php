@@ -28,7 +28,7 @@ $env = $app->detectEnvironment(array(
 
 	'local' => array('homestead'),
 	'alex' => array('Alex-PC'),
-
+	'docker' => array('0da796e53309'),
 ));
 
 /*

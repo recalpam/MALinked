@@ -38,8 +38,28 @@ angular.module('MaLinked', [
 /*==============================
 =            Events            =
 ==============================*/
-.run(['$rootScope', function($rootScope){
+.run(['$rootScope', '$timeout', 'ngProgress', function($rootScope, $timeout, ngProgress){
+	$rootScope.show = false;
 
+	ngProgress.start();
+	$timeout(function(){
+        ngProgress.complete();
+        $rootScope.show = true;
+    }, 2000);
+
+	$rootScope
+		.$watch('$stateChangeStart', function() {
+			console.log('Start loading..');
+			ngProgress.start();
+		});
+
+
+    $rootScope
+        .$on('$stateChangeSuccess',
+            function(event, toState, toParams, fromState, fromParams){ 
+            	ngProgress.complete();
+               
+        });
 
 }]);
 

@@ -7,27 +7,7 @@ angular.module('MaLinked.Controllers', ['ngRoute'])
 
 /*==========  Home  ==========*/
 .controller('MainCtrl', ['$scope', '$state', '$stateParams', '$route', '$routeParams', '$location', '$timeout', 'ngProgress' ,function($scope, $state, $stateParams, $route, $routeParams, $location, $timeout, ngProgress){
-	$scope.show = false;
-
-	ngProgress.start();
-	$timeout(function(){
-        ngProgress.complete();
-        $scope.show = true;
-    }, 2000);
-
-	$scope
-		.$watch('$stateChangeStart', function() {
-			console.log('Start loading..');
-			ngProgress.start();
-		});
-
-
-    $scope
-        .$on('$stateChangeSuccess',
-            function(event, toState, toParams, fromState, fromParams){ 
-            	ngProgress.complete();
-               
-        });
+	
 
 
     //80x80

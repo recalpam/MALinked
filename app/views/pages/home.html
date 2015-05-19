@@ -1,8 +1,8 @@
 
 <div class="row">
-  <a href="#" ng-repeat="studies in db.studies">
-    <div class="small-12 medium-3 columns block grafischvormgeven">
-      <div class="title">Grafisch Vormgeven</div>
+  <a href="#" ng-repeat="study in studies">
+    <div class="small-12 medium-3 columns block {{study.htmlClass}}">
+      <div class="title">{{study.htmlClass}}</div>
 
       <div class="naarklas">Bekijk de klas &rsaquo;</div>
     </div>

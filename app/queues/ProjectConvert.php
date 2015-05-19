@@ -33,10 +33,10 @@ class ProjectConvert {
 				$manager->make($remoteFile)->fit(500)->save( Config::get('files.images.large') . $fileName);
 
 				// medium
-				$manager->make($remoteFile)->fit(250)->save(Config::get('files.path.medium') .$fileName, 80);
+				$manager->make($remoteFile)->fit(250)->save(Config::get('files.images.medium') .$fileName, 90);
 
 				// thumbail
-				$manager->make($remoteFile)->fit(80)->save( Config::get('files.path.thumbnail') .$fileName, 60);
+				$manager->make($remoteFile)->fit(80)->save( Config::get('files.images.thumbnails') .$fileName, 75);
 			} catch (\Exception $e){
 				$job->delete();
 			}

@@ -657,7 +657,9 @@ In de toekomst zie mij als zelfstandig ondernemer en dan te gaan touren met veel
 			$insert['best_experience'] = $student['best_experience'];
 
 			Studentinfo::create($insert);
-		}	
+		}
+
+    $this->command->info("Finished inserting student inserted information\n");	
 	}
 
 }

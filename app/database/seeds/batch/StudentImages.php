@@ -243,7 +243,7 @@ class StudentImages extends Seeder {
 		if( $doRemove === 'Y' ){
 			$this->command->comment("\nRemoving file");
 			if( file_exists($filepath) )
-				rmdir($filepath);
+				$this->Delete($filepath);
 
 			Files::truncate();
 		} else {
@@ -324,9 +324,9 @@ class StudentImages extends Seeder {
 
 			// Get the image from url
 			$url = "http://inschrijven.ma-jaarboek.nl/profilepicture.php?id=" . $grab['student_id'];
-			$file = file_get_contents($url);
+			$remoteFile = file_get_contents($url);
 
-			if( !strlen($file) ){
+			if( !strlen($remoteFile) ){
 				$this->command->error("- Broken image found. Student ID: " .$grab['student_id']);
 				$this->command->info("continuing..");
 				$broke++;
@@ -344,7 +344,7 @@ class StudentImages extends Seeder {
 		    $typeArray = explode('/', $typeHeader);
 		    $type = end($typeArray);
 
-			$filename = $hash.'.'.$type;
+			$fileName = $hash.'.'.$type;
 
 		    // Save the file
 			$manager->make($remoteFile)->save( Config::get('files.path') . $fileName);
@@ -353,10 +353,10 @@ class StudentImages extends Seeder {
 			$manager->make($remoteFile)->fit(500)->save( Config::get('files.images.large') . $fileName);
 
 			// medium
-			$manager->make($remoteFile)->fit(250)->save(Config::get('files.path.medium') .$fileName, 80);
+			$manager->make($remoteFile)->fit(250)->save(Config::get('files.images.medium') .$fileName, 90);
 
 			// thumbail
-			$manager->make($remoteFile)->fit(80)->save( Config::get('files.path.thumbnail') .$fileName, 60);
+			$manager->make($remoteFile)->fit(80)->save( Config::get('files.images.thumbnails') .$fileName, 75);
 
 			// Store file in database
 			$insert = array(
@@ -375,5 +375,27 @@ class StudentImages extends Seeder {
 
 		$this->command->info("\nCompleted, created " .($i-$broke)*3 . " images.\n");
 	}
+
+	  private function Delete($path)
+	  {
+	      if (is_dir($path) === true)
+	      {
+	          $files = array_diff(scandir($path), array('.', '..'));
+
+	          foreach ($files as $file)
+	          {
+	              $this->Delete(realpath($path) . '/' . $file);
+	          }
+
+	          return rmdir($path);
+	      }
+
+	      else if (is_file($path) === true)
+	      {
+	          return unlink($path);
+	      }
+
+	      return false;
+	  }
 
 }

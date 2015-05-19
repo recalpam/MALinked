@@ -347,10 +347,10 @@ class StudentImages extends Seeder {
 			$fileName = $hash.'.'.$type;
 
 		    // Save the file
-			$manager->make($remoteFile)->save( Config::get('files.path') . $fileName);
+			$manager->make($remoteFile)->save( Config::get('files.path') . $fileName, 90);
 
 			// large
-			$manager->make($remoteFile)->fit(500)->save( Config::get('files.images.large') . $fileName);
+			$manager->make($remoteFile)->fit(500)->save( Config::get('files.images.large') . $fileName, 90);
 
 			// medium
 			$manager->make($remoteFile)->fit(250)->save(Config::get('files.images.medium') .$fileName, 90);

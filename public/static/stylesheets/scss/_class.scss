@@ -1,0 +1,197 @@
+header {
+  background-size: cover;
+  background: url(/static/images/klassen/gv4a.jpg) center no-repeat;
+  height: 75vh;
+  overflow: hidden;
+  position: relative;
+
+  .content {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    .align {
+      background-color: rgba(0, 0, 0, 0.75);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+
+      .row {
+        min-height: 55px;
+
+        h1 {
+          color: $white;
+          font-size: rem-calc(18);
+        }
+
+        p {
+          color: $white;
+          font-size: rem-calc(15);
+        }
+      }
+
+      &:after {
+        @include background-image(linear-gradient(transparent, rgba(0, 0, 0, 0.75)));
+        content: "";
+        height: 55px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: -55px;
+      }
+    }
+  }
+
+  .overlay {
+    @include background-image(linear-gradient($black-40, $black-60));
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:after {
+    @include background-image(linear-gradient(transparent, $black));
+    bottom: 0;
+    content: "";
+    height: 55px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.site {
+  background-color: $black;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+
+  .block {
+    @include backface-visibility(hidden);
+    @include transition(all 0.5s ease);
+    background-position: right bottom;
+    background-size: cover;
+    float: left;
+    padding: 15px;
+    position: relative;
+
+    &:hover {
+      @include backface-visibility(hidden);
+      @include transform(scale(1.1));
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    figure {
+      @include backface-visibility(hidden);
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &:after {
+        @include background-image(linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%));
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      figcaption {
+        @include backface-visibility(hidden);
+        bottom: 0;
+        left: 0;
+        padding: 15px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+
+        .title {
+          @include backface-visibility(hidden);
+          font-size: rem-calc(17);
+          padding-right: 45%;
+        }
+
+        .naarprofiel {
+          @include backface-visibility(hidden);
+          bottom: 15px;
+          font-size: rem-calc(12);
+          position: absolute;
+        }
+      }
+    }
+
+    &.grafischvormgeven {
+      background-color: $grafischvormgeven;
+    }
+
+    &.interactiefvormgeven {
+      background-color: $interactiefvormgeven;
+    }
+
+    &.audiovisueel {
+      background-color: $audiovisueelvormgeven;
+    }
+
+    &.dtper {
+      background-color: $dtp;
+    }
+
+    &.mediamanager {
+      background-color: $mediamanager;
+    }
+
+    &.audiovisueeltechnicus {
+      background-color: $audiovisueeltechnicus;
+    }
+
+    &.evenemententechnicus {
+      background-color: $evenemententechnicus;
+    }
+
+    &.geluidtechnicus {
+      background-color: $geluidtechnicus;
+    }
+
+    &.mediaengamedeveloper {
+      background-color: $mediaengamedevelopment;
+    }
+
+    &.ruimtelijkvormgeven {
+      background-color: $ruimtelijkvormgeven;
+    }
+
+    &.podiumtechnicus {
+      background-color: $podiumtechnicus;
+    }
+
+    &.filmacteur {
+      background-color: $filmacteur;
+    }
+
+    &.signmaker {
+      background-color: $signmaker;
+    }
+
+    &.gameartist {
+      background-color: $gameartist;
+    }
+  }
+}

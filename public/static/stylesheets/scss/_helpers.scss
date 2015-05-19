@@ -1,3 +1,13 @@
+#outdated {
+  // display: block !important;
+  height: 100%  !important;
+  background-color: $magenta  !important;
+  color: $white  !important;
+  .content {
+    @include vertical-align;
+  }
+}
+
 .megadiv {
-  height: 1000000px;
+  height: 10000px;
 }

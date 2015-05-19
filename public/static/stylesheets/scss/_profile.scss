@@ -1,179 +1,337 @@
-
-.profile--header {
-  min-height: 400px;
-  height: 100%;
-  max-height: 900px;
-  position: relative;
-  overflow: hidden;
-  @include background-image(
-    linear-gradient(top, rgba(black, 0.25) 0%,
-    rgba(black, 0.1) 27.33%,
-    rgba(black, 0.2) 66.67%,
-    rgba(black, 0.65) 100%),
-    url('/static/images/profile-header.png')
-  );
+header {
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: white;
+  background: url(https://dl.dropboxusercontent.com/u/16657557/scripts/blur/bg.jpg) center no-repeat;
+  height: 75vh;
+  overflow: hidden;
+  position: relative;
 
-  .bar {
+  .content {
+    bottom: 0;
+    left: 0;
     position: absolute;
-    right: 0; bottom: 10%; left: 0;
-    max-height: 55px;
-    background-color: rgba(0,0,0,0.75);
-    font-size: rem-calc(25);
-    line-height: 55px;
+    right: 0;
+    top: 0;
+    z-index: 1;
 
-    .profile--name {
-      position: relative;
-      padding-left: 15px; padding-right: 15px;
-      float: left;
-      @media #{$small-only} {
-        width: 100%;
-      }
-      @media #{$medium-up} {
-        width: 33.33333%;
-      }
-    }
-    .profile--photo {
-      position: relative;
-      padding-left: 15px; padding-right: 15px;
-      float: left;
-      @media #{$small-only} {
-        width: 100%;
-      }
-      @media #{$medium-up} {
-        width: 33.33333%;
-      }
-      img {
-        display: block;
-        margin: -105px auto 0;
-        border-radius: 100px;
-      }
-    }
-    .profile--social {
-      position: relative;
-      padding-left: 15px; padding-right: 15px;
-      float: left;
-      @media #{$small-only} {
-        width: 100%;
-      }
-      @media #{$medium-up} {
-        width: 33.33333%;
-      }
-      ul {
-        float: right;
-        list-style: none;
-        li {
-          float: left;
-          margin-left: 5px;
-          &:first-of-type {
-            margin-left: 0;
+    .bar {
+      @include transform(translateY(-75%));
+      background-color: rgba(0, 0, 0, 0.75);
+      color: $white;
+      font-size: rem-calc(25);
+      height: 55px;
+      left: 0;
+      line-height: 55px;
+      position: absolute;
+      right: 0;
+      top: 75%;
+
+      .social {
+        a {
+          display: inline-block;
+          height: 30px;
+          margin: 12.5px 0;
+          width: 30px;
+
+          &.website {
+            background-image: url(../images/social/website.png);
+          }
+
+          &.linkedin {
+            background-image: url(../images/social/linkedin.png);
+          }
+
+          &.dribbble {
+            background-image: url(../images/social/dribbble.png);
+          }
+
+          &.behance {
+            background-image: url(../images/social/behance.png);
+          }
+
+          &.vimeo {
+            background-image: url(../images/social/vimeo.png);
+          }
+
+          &.youtube {
+            background-image: url(../images/social/youtube.png);
+          }
+
+          &.facebook {
+            background-image: url(../images/social/facebook.png);
           }
         }
       }
     }
+
+    .image {
+      @include transform(translate(-50%, -75%));
+      border-radius: 125px;
+      height: 250px;
+      left: 50%;
+      position: absolute;
+      top: 75%;
+      width: 250px;
+    }
   }
 
-  .hide {
-    visibility: hidden;
+  .overlay {
+    @include background-image(linear-gradient($black-40, $black-60));
+    height: 100%;
     opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
 
+  &:after {
+    @include background-image(linear-gradient(transparent, $black));
+    bottom: 0;
+    content: "";
+    height: 55px;
+    left: 0;
+    position: absolute;
+    right: 0;
   }
 }
 
-.profile--content {
-  .block {
-    position: relative;
-    padding-left: 15px; padding-right: 15px;
-    float: left;
-    @media #{$small-only} {
-      width: 100%;
+.site {
+  background-color: $black;
+  color: $white;
+
+  .profile-content {
+    .block {
+      float: left;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+
+      h2 {
+        font-size: rem-calc(25);
+      }
+
+      p {
+        font-size: rem-calc(14);
+      }
+
+      a {
+        font-size: rem-calc(14);
+      }
+
+      @media #{$small-only} {
+        width: 100%;
+      }
+
+      @media #{$medium-up} {
+        width: 33.33333%;
+      }
     }
-    @media #{$medium-up} {
-      width: 33.33333%;
+
+    .double-block {
+      float: left;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+
+      @media #{$small-only} {
+        width: 100%;
+      }
+
+      @media #{$medium-up} {
+        width: 66.66666%;
+      }
     }
-  }
-  .double-block {
-    position: relative;
-    padding-left: 15px; padding-right: 15px;
-    float: left;
-    @media #{$small-only} {
-      width: 100%;
-    }
-    @media #{$medium-up} {
-      width: 66.66666%;
-    }
-  }
-  .toekomstbeeld {
-    h2 {
-      font-size: rem-calc(25);
-    }
-    p {
-      font-size: rem-calc(16);
-    }
-  }
-  .hoewas {
-    h2 {
-      font-size: rem-calc(25);
-    }
-    p {
-      font-size: rem-calc(16);
-    }
-    span {
-      color: white;
-      font-size: 15vw;
-      display: block;
-      bottom: 0px;
-      position: absolute;
-      left: 0;
-      margin-bottom: -10vw;
-    }
-  }
-  .project--info {
-    h2 {
-      font-size: rem-calc(25);
-    }
-    p {
-      font-size: rem-calc(16);
-    }
-    background-color: $white;
-  }
-  .project--image {
-    padding: 0;
-    overflow: hidden;
-    img {
-      position: absolute;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -1000;
-      overflow: hidden;
-    }
-    &:after {
-      position: absolute;
-      content: "";
-      margin-top: 65%; margin-left: -12.5px;
-      width: 25px; height: 25px;
-      background: $white;
-      @include transform( rotate(45deg) );
-    }
-  }
-  &.grafischvormgeven {
+
     .toekomstbeeld {
-      background-color: $grafischvormgeven;
-      h2, p {
-        color: white;
+      background-image: url(../images/background/malinked-block-dark.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2 {}
+      p {}
+    }
+
+    .hoewas {
+      h2 {}
+      p {}
+
+      span {
+        bottom: 0px;
+        color: $white;
+        display: block;
+        font-size: 15vw;
+        left: 0;
+        margin-bottom: -10vw;
+        position: absolute;
       }
     }
-    .hoewas {
-      background-color: $grafischvormgeven;
+
+    .project--info {
+      h2 {
+        color: $tuatara;
+      }
+
+      p {
+        color: $tuatara;
+      }
+
+      a {
+        bottom: 20px;
+        color: $tuatara;
+        position: absolute;
+      }
+      background-color: $white;
+    }
+
+    .project--image {
       overflow: hidden;
-      h2, p {
-        color: white;
+      padding: 0;
+
+      img {
+        height: auto;
+        min-height: 100%;
+        min-width: 100%;
+        overflow: hidden;
+        position: absolute;
+        width: auto;
+      }
+
+      &:after {
+        @include transform(rotate(45deg));
+        background: $white;
+        content: "";
+        height: 25px;
+        margin-left: -12.5px;
+        margin-top: 65%;
+        position: absolute;
+        width: 25px;
+      }
+    }
+
+    .hobby {
+      background-color: $black;
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+
+      p {
+        color: $white;
+      }
+    }
+
+    .favoriet {
+      h2 {}
+
+      p {
+        span {
+          font-size: rem-calc(35);
+        }
+      }
+    }
+
+    .maps {
+      #map-canvas {
+        bottom: -200px;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+      }
+
+      #pin {
+        position: relative;
+        z-index: 100;
+      }
+    }
+
+    &.grafischvormgeven {
+      .toekomstbeeld {
+        background-color: $grafischvormgeven;
+
+        h2, p {
+          color: $white;
+        }
+      }
+
+      .hoewas {
+        &.een {
+          background-image: url(../images/background/hoewas-1.png);
+        }
+
+        &.twee {
+          background-image: url(../images/background/hoewas-2.png);
+        }
+
+        &.drie {
+          background-image: url(../images/background/hoewas-3.png);
+        }
+
+        &.vier {
+          background-image: url(../images/background/hoewas-4.png);
+        }
+
+        &.vijf {
+          background-image: url(../images/background/hoewas-5.png);
+        }
+
+        &.zes {
+          background-image: url(../images/background/hoewas-6.png);
+        }
+
+        &.zeven {
+          background-image: url(../images/background/hoewas-7.png);
+        }
+
+        &.acht {
+          background-image: url(../images/background/hoewas-8.png);
+        }
+
+        &.negen {
+          background-image: url(../images/background/hoewas-9.png);
+        }
+
+        &.tien {
+          background-image: url(../images/background/hoewas-10.png);
+        }
+        background-color: $grafischvormgeven;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+
+        h2, p {
+          color: $white;
+        }
+      }
+
+      .favoriet {
+        background-color: $grafischvormgeven;
+        color: $white;
+
+        h2 {
+          color: $white;
+        }
+
+        p {
+          color: $white;
+        }
       }
     }
   }
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $black-40;
+  text-align: center;
+  z-index: 10000;
 }

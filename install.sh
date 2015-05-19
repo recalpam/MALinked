@@ -1,4 +1,5 @@
-php artisan migrate:reset
-php artisan migrate
-php artisan db:seed
-php artisan queue:listen 
+composer du -vvv
+php artisan migrate:reset -vvv
+php artisan migrate -vvv
+php artisan db:seed -vvv
+php artisan queue:listen -vvv 

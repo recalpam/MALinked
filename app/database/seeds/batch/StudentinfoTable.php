@@ -656,7 +656,7 @@ In de toekomst zie mij als zelfstandig ondernemer en dan te gaan touren met veel
 			$insert['why_ma'] = $student['whyma_answer'];
 			$insert['best_experience'] = $student['best_experience'];
 
-			Studentinfo::create($insert);
+			StudentInfo::create($insert);
 		}
 
     $this->command->info("Finished inserting student inserted information\n");	

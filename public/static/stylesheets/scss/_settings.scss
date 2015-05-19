@@ -70,6 +70,7 @@
 
 // We use this to control whether or not CSS classes come through in the gem files.
 $include-html-classes: true;
+
 // $include-print-styles: true;
 $include-html-global-classes: $include-html-classes;
 
@@ -95,10 +96,12 @@ $include-html-global-classes: $include-html-classes;
 // $font-weight-normal: normal !default;
 // $font-weight-bold: bold !default;
 
-// $white       : #FFFFFF;
+$white: #FFFFFF;
+
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
-// $vapor       : #F6F6F6;
+$vapor: #F6F6F6;
+
 // $white-smoke : #F5F5F5;
 // $silver      : #EFEFEF;
 // $smoke       : #EEEEEE;
@@ -110,27 +113,30 @@ $include-html-global-classes: $include-html-classes;
 // $monsoon     : #777777;
 // $steel       : #666666;
 // $charcoal    : #555555;
-// $tuatara     : #444444;
+$tuatara: #444444;
+
 // $oil         : #333333;
 // $jet         : #222222;
-// $black       : #000000;
-$magenta      : #E5047E;
+$black: #000000;
+$black-40: rgba(0, 0, 0, 0.4);
+$black-60: rgba(0, 0, 0, 0.6);
+$magenta: #E5047E;
 
 // training
-$grafischvormgeven       : #4fbe96;
-$interactiefvormgeven    : #f4793b;
-$audiovisueelvormgeven   : #4f5f8f;
-$dtp                     : #cd4c60;
-$mediamanager            : #dc7f82;
-$audiovisueeltechnicus   : #ef492c;
-$evenemententechnicus    : #8db83f;
-$geluidtechnicus         : #edb030;
-$mediaengamedevelopment  : #932545;
-$gameartist              : #4f2b78;
-$podiumtechnicus         : #3e3b68;
-$filmacteur              : #0db5d9;
-$signmaker               : #218841;
-$ruimtelijkvormgeven     : #edb032;
+$grafischvormgeven: #4fbe96;
+$interactiefvormgeven: #f4793b;
+$audiovisueelvormgeven: #4f5f8f;
+$dtp: #cd4c60;
+$mediamanager: #dc7f82;
+$audiovisueeltechnicus: #ef492c;
+$evenemententechnicus: #8db83f;
+$geluidtechnicus: #edb030;
+$mediaengamedevelopment: #932545;
+$gameartist: #4f2b78;
+$podiumtechnicus: #3e3b68;
+$filmacteur: #0db5d9;
+$signmaker: #218841;
+$ruimtelijkvormgeven: #edb032;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -570,7 +576,6 @@ $ruimtelijkvormgeven     : #edb032;
 
 // Default radius for dropdown.
 // $f-dropdown-radius: $global-radius;
-
 
 // 09. Dropdown Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -

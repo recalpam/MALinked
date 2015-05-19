@@ -2,14 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
 	    <title>Ma linked</title>
-	    {{ HTML::style('/static/stylesheets/homepage-app.css') }}
+
+	    {{-- OUTDATED BROWSER & JS --}}
 	    {{ HTML::script('/packages/modernizr/modernizr.js') }}
 	    {{ HTML::style('/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.css') }}
-	    <!-- Angularjs library -->
-	    {{ HTML::script('/packages/angular/angular.min.js') }}
-	    {{ HTML::script('/packages/angular-ui-router/release/angular-ui-router.min.js') }}
+
+		{{-- PAGE CSS --}}
+	    {{ HTML::style('/static/stylesheets/homepage-app.css') }}
+
 	    <base href="/">
 		<style>
 			/* Styling for the ngProgress itself */
@@ -43,12 +47,14 @@
 		</style>
 		<base href="/">
 	</head>
-	<body ng-app="MaLinked" ng-controller="MainCtrl">
+	<body ng-app="MaLinked">
 		
 		<!-- PAGE CONTAINER -->
-		<div class="container">
+		<div class="site">
+			@include('template.header')
+
 			<!-- DYNAMIC PAGE -->
-			<ui-view id="ui-view" class="site"></div>
+			<ui-view></ui-view>
 		</div>	
 		
 		<!-- JQUERY TRASH -->
@@ -63,6 +69,12 @@
 		<script type="text/javascript" src="/packages/angular-animate/angular-animate.js"></script>
 		<script type="text/javascript" src="/packages/angular-material/angular-material.js"></script>
 		<script type="text/javascript" src="/packages/angular-ngprogress/ngProgress.js"></script>
+
+		{{-- FOUNDATION --}}		
+		<script src="/packages/foundation/js/foundation.min.js"></script>
+
+		{{-- OUTDATED BROWSER JS --}}
+		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
 
 		<!-- MALINKED CLIENT -->
 		<script type="text/javascript" src="/api/frontend/file/script/progress"></script>

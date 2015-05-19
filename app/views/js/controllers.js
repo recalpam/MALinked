@@ -48,8 +48,16 @@ angular.module('MaLinked.Controllers', ['ngRoute'])
 }])
 
 /*==========  Home  ==========*/
-.controller('home', [function(){
+.controller('home', ['$scope', 'db', function($scope, db){
+	$scope.db = db;
 	
+	$scope.getStudyFromSlug = function(slug){
+		var result = $filter('filter')(db.studies, {slug: slug}, true);
+
+		if(result.length == 1){
+			return result[0];
+		}
+	}
 }])
 
 /*==========  Profiel  ==========*/

@@ -1,0 +1,1106 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"env",
+				"enviroments_path"
+			],
+			[
+				"dir",
+				"require-dir"
+			],
+			[
+				"c-s",
+				"comm-section-header	Comment - Section header comment"
+			],
+			[
+				"requi",
+				"require"
+			],
+			[
+				"$state",
+				"$stateParams (?)"
+			],
+			[
+				"$filter",
+				"$filterProvider (?)"
+			],
+			[
+				"$fil",
+				"$filterProvider (?)"
+			],
+			[
+				"$window",
+				"$window	AngularJS"
+			],
+			[
+				"$http",
+				"$httpProvider (?)"
+			],
+			[
+				"pro",
+				"prototype (obj)"
+			],
+			[
+				"get",
+				"get (fn/2)"
+			],
+			[
+				"tern",
+				"tree_animation_enabled	setting"
+			],
+			[
+				"node",
+				"node.http.createServer	Snippet: HTTP Create Server"
+			],
+			[
+				"p",
+				"process.getuid();"
+			],
+			[
+				"auto_fie",
+				"auto_complete_with_fields	setting"
+			],
+			[
+				"auto_com",
+				"auto_complete_cycle	setting"
+			],
+			[
+				"b",
+				"match_brackets	setting"
+			],
+			[
+				"a",
+				"auto_indent	setting"
+			],
+			[
+				"word",
+				"word_wrap	setting"
+			],
+			[
+				"http",
+				"http.createServer(requestListener);"
+			],
+			[
+				"c-",
+				"comm-html	Comment - HTML comment"
+			],
+			[
+				"$",
+				"$logProvider	AngularJS"
+			],
+			[
+				"ang",
+				"angular	AngularJS"
+			],
+			[
+				"r",
+				"run	AngularJS"
+			],
+			[
+				"rou",
+				"$urlRouterProvider"
+			],
+			[
+				"com",
+				"comm-html	Comment - HTML comment"
+			],
+			[
+				"c",
+				"comm	HTML - Comment"
+			],
+			[
+				"styl",
+				"style	HTML - Stylesheet link"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"applica",
+				"application"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n	<head>\n		<meta charset=\"utf-8\">\n		<title>Malinked Documentation</title>\n\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n		<link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css\">\n		<style>\n		.requirement {\n			display: block;\n		}\n\n		pre {\n			word-break: normal;\n			word-wrap: normal;\n		}\n		</style>\n	</head>\n	<body>\n		<div class=\"container\">\n			<div class=\"row\">\n				<div class=\"col-md-12\">\n					<h1>Malinked API</h1>\n					<h2>Version: 0.1 DEV (docs: 0.2) <small>(May 11th 2015)</small></h2>\n					<hr>\n					<h2>Index</h2>\n					<ul>\n						<li><a href=\"#get_studies\">GET /study</a> - Get list of all studies</li>\n						<li><a href=\"#get_single_study\">GET /study/{id}</a> - Get single study</li>\n						<li><a href=\"#get_single_study_groups\">GET /study/{id}/groups</a> - Get all groups from single study</li>\n					</ul>\n					<ul>\n						<li><a href=\"#get_groups\">GET /group</a> - Get list of all groups</li>\n						<li><a href=\"#get_single_group\">GET /group/{id}</a> - Get single group</li>\n						<li><a href=\"#get_single_group_students\">GET /group/{id}/students</a> - Get all students from single group</li>\n					</ul>\n					<ul>\n						<li><a href=\"#get_student\">GET /student/{id}</a> - Get single student information</li>\n					</ul>\n					<ul>\n						<li><a href=\"#search_students\">GET /search/{term}</a> - Search for students by term</li>\n					</ul>\n					<ul>\n						<li><a href=\"#auth\">POST /auth</a> - Generate authentication key for user login</li>\n					</ul>\n					<hr>\n					<h2>Changelog</h2>\n					<ul>\n						<li>Added AUTH to docs and edited results for <a href=\"#get_single_study_groups\">GET /study/{id}/groups</a> and <a href=\"#get_single_group_students\">GET /group/{id}/students</a></li>\n					</ul>\n					<hr>\n					<p>\n						<strong>Note:</strong> \n						All the requests are refixed with /api/db in the url. So /search/{term} would be /api/db/search/{term}.<br>\n						The part enclosed with brackets \"{}\" are GET parameters.\n					</p>\n					<hr>\n\n					<h2><a href=\"#get_studies\" name=\"get_studies\">GET <strong>/study</strong></a></h2>\n					<p>Get list of all studies</p>\n					<h3>Request</h3>\n					<p>This request does not require any parameters</p>\n					<h3>Response</h3>\n					<pre>\n[\n	{\n		\"id\": 1,\n		\"name\": \"Grafisch vormgever\",\n		\"color\": \"4fbe96\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 2,\n		\"name\": \"Interactief vormgever\",\n		\"color\": \"f4793b\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 3,\n		\"name\": \"Audiovisueel vormgever\\/Animatie\",\n		\"color\": \"4f5f8f\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 4,\n		\"name\": \"Ruimtelijk vormgever\",\n		\"color\": \"edb032\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 5,\n		\"name\": \"Filmacteur\",\n		\"color\": \"0db5d9\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	}\n]</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_study\" name=\"get_single_study\">GET <strong>/study/{id}</strong></a></h2>\n					<p>Get single study</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							 <tr>\n								<td>id</td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>   \n					<pre>\n{\n	\"id\": 1,\n	\"name\": \"Grafisch vormgever\",\n	\"color\": \"4fbe96\",\n	\"created_at\": \"2015-04-28 13:00:38\",\n	\"updated_at\": \"2015-04-28 13:00:38\"\n}</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_study_groups\" name=\"get_single_study_groups\">GET <strong>/study/{id}/groups</strong></a></h2>\n					<p>Get all groups from single study</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							 <tr>\n								<td>id</td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>   \n					<pre>\n{\n	\"id\": 4,\n	\"name\": \"Ruimtelijk vormgever\",\n	\"color\": \"edb032\",\n	\"created_at\": \"2015-05-11 12:25:43\",\n	\"updated_at\": \"2015-05-11 12:25:43\",\n	\"groups\": [\n		{\n			\"id\": 14,\n			\"study_id\": 4,\n			\"name\": \"RV4A\",\n			\"fullname\": \"Vormgever productpresentatie\",\n			\"created_at\": \"2015-05-11 12:25:43\",\n			\"updated_at\": \"2015-05-11 12:25:43\"\n		},\n		{\n			\"id\": 15,\n			\"study_id\": 4,\n			\"name\": \"RV4B\",\n			\"fullname\": \"Stand-,winkel-en decorvormgever\",\n			\"created_at\": \"2015-05-11 12:25:43\",\n			\"updated_at\": \"2015-05-11 12:25:43\"\n		}\n	]\n}</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_groups\" name=\"get_groups\">GET <strong>/group</strong></a></h2>\n					<p>Get list of all groups</p>\n					<h3>Request</h3>\n					<p>This request does not require any parameters</p>\n					<h3>Response</h3>\n					<pre>\n[\n	{\n		\"id\": 1,\n		\"study_id\": 1,\n		\"name\": \"GV4A\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 2,\n		\"study_id\": 1,\n		\"name\": \"GV4B\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 3,\n		\"study_id\": 1,\n		\"name\": \"GV4C\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 4,\n		\"study_id\": 1,\n		\"name\": \"GV4D\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 5,\n		\"study_id\": 1,\n		\"name\": \"GV4E\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	}\n]</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_group\" name=\"get_single_group\">GET <strong>/group/{id}</strong></a></h2>\n					<p>Get one group</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>id <span class=\"requirement text-muted\">required</span></td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	\"id\": 1,\n	\"study_id\": 1,\n	\"name\": \"GV4A\",\n	\"fullname\": \"Grafisch vormgever\",\n	\"created_at\": \"2015-04-28 13:00:38\",\n	\"updated_at\": \"2015-04-28 13:00:38\"\n}</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_group_students\" name=\"get_single_group_students\">GET <strong>/group/{id}/students</strong></a></h2>\n					<p>Get all students from single group</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>id <span class=\"requirement text-muted\">required</span></td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	\"id\": 3,\n	\"study_id\": 1,\n	\"name\": \"GV4C\",\n	\"fullname\": \"Grafisch vormgever\",\n	\"created_at\": \"2015-05-11 12:25:43\",\n	\"updated_at\": \"2015-05-11 12:25:43\",\n	\"students\": [\n		{\n			\"id\": 1,\n			\"group_id\": 3,\n			\"student\": 12623,\n			\"nameFirst\": \"Alex\",\n			\"nameLast\": \"Lisenkov\",\n			\"nameInsertion\": \"\",\n			\"file_id\": \"\",\n			\"birthday\": \"1995-02-22 00:00:00\",\n			\"created_at\": \"-0001-11-30 00:00:00\",\n			\"updated_at\": \"2015-05-11 12:53:04\"\n		}\n	]\n}</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#get_student\" name=\"get_student\">GET <strong>/student/{id}</strong></a></h2>\n					<p>Get single student information</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>id <span class=\"requirement text-muted\">required</span></td>\n								<td>integer</td>\n								<td>The id of the student to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	\"id\": 1,\n	\"group_id\": 3,\n	\"student\": 12623,\n	\"nameFirst\": \"Alex\",\n	\"nameLast\": \"Lisenkov\",\n	\"nameInsertion\": \"\",\n	\"file_id\": \"\",\n	\"birthday\": \"1995-02-22 00:00:00\",\n	\"created_at\": \"-0001-11-30 00:00:00\",\n	\"updated_at\": \"2015-05-11 12:53:04\",\n	\"info\": {\n		\"id\": 1,\n		\"student_id\": 1,\n		\"fav_teacher\": \"a:3:{i:0;s:14:\\\\\\\"Jelle Sjollema\\\\\\\";i:1;s:15:\\\\\\\"Laurence Candel\\\\\\\";i:2;s:8:\\\\\\\"Jim Dunk\\\\\\\";}\",\n		\"fav_class\": \"Backend Programmeren\",\n		\"fav_project\": \"Webshop\",\n		\"rate_school\": 6,\n		\"rate_internship\": 7,\n		\"specialize\": \"Programmeren\",\n		\"school_match_ambitions\": \"Ik wil uiteindelijk werken als software programmeur, en ik heb met deze opleiding een goede basis gelegd.\",\n		\"future_vision\": \"Ik wil na deze opleiding HBO doen op het HVA, ik wil de studie Software Engineering volgen om uiteindelijk aan het werk te gaan als software ingenieur. \",\n		\"linkedin\": \"nl.linkedin.com\\\\\\/pub\\\\\\/jasper-olaf-de-vries\\\\\\/33\\\\\\/9a4\\\\\\/561\\\\\\/en\",\n		\"email\": \"hallo@voorbeeld.nl\",\n		\"hobbies\": \"a:3:{i:0;s:9:\\\\\\\"Concerten\\\\\\\";i:1;s:9:\\\\\\\"Festivals\\\\\\\";i:2;s:7:\\\\\\\"Theater\\\\\\\";}\",\n		\"portfolio\": \"www.yldaudeboer.nl\",\n		\"why_ma\": \"Ik heb voor het Mediacollege gekozen omdat het mij een leuke school leek toen ik op de opendag kwam kijken in 2011. Ik wilde de theater richting op en dat was met deze opleiding mogelijk. \",\n		\"created_at\": \"2015-05-11 00:00:00\",\n		\"updated_at\": \"2015-05-11 00:00:00\"\n	},\n	\"group\": {\n		\"id\": 3,\n		\"study_id\": 1,\n		\"name\": \"GV4C\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-05-11 12:25:43\",\n		\"updated_at\": \"2015-05-11 12:25:43\",\n		\"study\": {\n			\"id\": 1,\n			\"name\": \"Grafisch vormgever\",\n			\"color\": \"4fbe96\",\n			\"created_at\": \"2015-05-11 12:25:43\",\n			\"updated_at\": \"2015-05-11 12:25:43\"\n		}\n	}\n}</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#search_students\" name=\"search_students\">GET <strong>/search/{term}</strong></a></h2>\n					<p>Search for students by term</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>term <span class=\"requirement text-muted\">required</span></td>\n								<td>string</td>\n								<td>The search query</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n[\n	{\n		\"studentID\": 1,\n		\"studentFirstname\": \"test\",\n		\"studentInsertion\": \"de\",\n		\"studentLastname\": \"Geitenkaas\",\n		\"groupName\": \"GV4A\",\n		\"groupNameFull\": \"Grafisch vormgever\",\n		\"studyName\": \"Grafisch vormgever\",\n		\"studyColor\": \"4fbe96\"\n	},\n	{\n		\"studentID\": 2,\n		\"studentFirstname\": \"Klaas\",\n		\"studentInsertion\": \"\",\n		\"studentLastname\": \"Geitenkaas\",\n		\"groupName\": \"MD4A\",\n		\"groupNameFull\": \"Media Developer\",\n		\"studyName\": \"Media- en Gamedeveloper\",\n		\"studyColor\": \"932545\"\n	}\n]</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#auth\" name=\"auth\">GET <strong>/auth</strong></a></h2>\n					<p>Generate authentication key for user login</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>student <span class=\"requirement text-muted\">required</span></td>\n								<td>string</td>\n								<td>The student number (eg. 12345)</td>\n							</tr>\n							 <tr>\n								<td>password <span class=\"requirement text-muted\">required</span></td>\n								<td>string</td>\n								<td>The student password</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	 \"error\":false,\n	 \"message\":\"Session created\",\n	 \"token\":\"dyXc0MiFHeIPLBG0rkcqSELqaWTViARe9Wehay8g1jiO8zD9RBLtOeCZLdMC\",\n	 \"student\":[\n		{\n		 \"id\":1,\n		 \"group_id\":3,\n		 \"student\":12623,\n		 \"nameFirst\":\"Alex\",\n		 \"nameLast\":\"Lisenkov\",\n		 \"nameInsertion\":\"\",\n		 \"file_id\":\"\",\n		 \"birthday\":\"1995-02-22 00:00:00\",\n		 \"created_at\":\"-0001-11-30 00:00:00\",\n		 \"updated_at\":\"2015-05-11 12:53:04\",\n		 \"info\":{\n			\"id\":1,\n			\"student_id\":1,\n			\"fav_teacher\":\"1\",\n			\"fav_class\":\"1\",\n			\"fav_project\":\"1\",\n			\"rate_school\":1,\n			\"rate_internship\":1,\n			\"specialize\":\"1\",\n			\"school_match_ambitions\":\"1\",\n			\"future_vision\":\"1\",\n			\"linkedin\":\"1\",\n			\"email\":\"1\",\n			\"hobbies\":\"1\",\n			\"portfolio\":\"1\",\n			\"why_ma\":\"1\",\n			\"created_at\":\"2015-05-11 00:00:00\",\n			\"updated_at\":\"2015-05-11 00:00:00\"\n		 },\n		 \"group\":{\n			\"id\":3,\n			\"study_id\":1,\n			\"name\":\"GV4C\",\n			\"fullname\":\"Grafisch vormgever\",\n			\"created_at\":\"2015-05-11 12:25:43\",\n			\"updated_at\":\"2015-05-11 12:25:43\",\n			\"study\":{\n				 \"id\":1,\n				 \"name\":\"Grafisch vormgever\",\n				 \"color\":\"4fbe96\",\n				 \"created_at\":\"2015-05-11 12:25:43\",\n				 \"updated_at\":\"2015-05-11 12:25:43\"\n			}\n		 }\n		}\n	 ]\n}</pre>\n				</div>\n			</div>\n		</div>\n	</body>\n</html>",
+			"file": "public/apidocs.html",
+			"file_size": 18634,
+			"file_write_time": 130765174030000000,
+			"settings":
+			{
+				"buffer_size": 13141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/js/controllers.js",
+			"settings":
+			{
+				"buffer_size": 1382,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n<div class=\"row\">\n  <a href=\"#\" ng-repeat=\"study in studies\">\n    <div class=\"small-12 medium-3 columns block {{study.htmlClass}}\">\n      <div class=\"title\">{{study.htmlClass}}</div>\n\n      <div class=\"naarklas\">Bekijk de klas &rsaquo;</div>\n    </div>\n  </a>\n\n</div>page",
+			"file": "app/views/pages/home.html",
+			"file_size": 278,
+			"file_write_time": 130765366702594544,
+			"settings":
+			{
+				"buffer_size": 272,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/static/stylesheets/homepage-app.css",
+			"settings":
+			{
+				"buffer_size": 210623,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rec/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 644,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 151.0,
+		"last_filter": "open",
+		"selected_items":
+		[
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"sideb",
+				"View: Toggle Side Bar"
+			],
+			[
+				"files",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"package remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"tweak",
+				"Theme Tweaker: Toggle Tweak Mode"
+			],
+			[
+				"theme",
+				"Theme Tweaker: Toggle Tweak Mode"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"bea",
+				"Javascript Beautify"
+			],
+			[
+				"beat",
+				"Javascript Beautify"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"beau",
+				"Javascript Beautify"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"beaut",
+				"Javascript Beautify"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"floobits work",
+				"Floobits - Join Recent Workspace"
+			],
+			[
+				"floo",
+				"Floobits - Join Workspace"
+			],
+			[
+				"intell",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"server",
+				"Snippet: for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"js",
+				"JSHint: Clear Annotations"
+			],
+			[
+				"join wo",
+				"Floobits - Join Workspace"
+			],
+			[
+				"floob",
+				"Floobits - Settings (~/.floorc.json)"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"list pack",
+				"Package Control: List Packages"
+			],
+			[
+				"floobits co",
+				"Floobits - Complete Sign Up"
+			],
+			[
+				"php",
+				"phpfmt: refactor"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"scan",
+				"PHPIntel: Scan Project"
+			],
+			[
+				"align",
+				"AlignTab"
+			]
+		],
+		"width": 538.0
+	},
+	"console":
+	{
+		"height": 174.0,
+		"history":
+		[
+			"tern_command",
+			"node_js",
+			"tern_command",
+			"tern",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js"
+	],
+	"file_history":
+	[
+		"/usr/share/fonts/X11/util/map-ISO8859-6",
+		"/home/rec/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/rec/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/rec/.cache/.fr-3FZJeC/terminus-font-4.39/75-yes-terminus.conf",
+		"/a/dm/server/lib/log.js",
+		"/usr/share/themes/XGTK-3.14/gtk-3.0/settings.ini",
+		"/usr/share/themes/XGTK-3.14/index.theme",
+		"/home/rec/.config/sublime-text-3/Packages/ThemeTweaker/theme_tweaker.sublime-settings",
+		"/home/rec/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/a/dm/server/app.js",
+		"/a/dm/enviroments/rec-N76VJ.env.json",
+		"/a/dm/server/lib/env.js",
+		"/a/dm/server/lib/http.js",
+		"/a/dm/enviroments/default.env.json",
+		"/a/dm/boot.js",
+		"/a/dm/default.env.json",
+		"/a/dm/package.json",
+		"/a/dm/.bowerrc",
+		"/a/dm/server/var/logs/dev.log",
+		"/a/dm/server/var/logs/dev.json",
+		"/a/dm/server/lib/index.node",
+		"/a/dm/server/lib/docker.js",
+		"/a/dm/server/lib/api.js",
+		"/a/dm/server/lib/mongodb.js",
+		"/a/dm/bower.json",
+		"/a/dm/partials/index.html",
+		"/a/dm/logs/dev.log",
+		"/a/dm/server.js",
+		"/a/dm/gulpfile.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/public/packages/underscore/underscore.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/app.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/home.html",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/routes.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/template/page.blade.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/dev.html",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/factories.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/gitlab/public/views/homepage.html",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/progress.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/gitlab/public/static/angular-js/app.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/controllers/API/Frontend/Page.php",
+		"/home/rec/Downloads/kut.zip",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/gitlab/public/static/angular-js/routes.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/database/seeds/essential/GenerateSlugs.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/database/seeds/batch/StudiesTable.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/opleiding.html",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/groep.html",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/profiel.html",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/database/seeds/batch/GroupsTable.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/public/packages/modernizr/feature-detects/json.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/composer.json",
+		"/var/lib/docker/containers",
+		"/a/dm/foo.js",
+		"/home/rec/Documents/Advance/manifest.webapp",
+		"/home/rec/Documents/Advance/CMakeLists.txt",
+		"/a/dm/.tern-project",
+		"/home/rec/.floorc.json",
+		"/home/rec/.config/sublime-text-3/Packages/tern_for_sublime/package.json",
+		"/home/rec/.config/sublime-text-3/Packages/tern_for_sublime/JavaScript.sublime-settings",
+		"/home/rec/.config/sublime-text-3/Packages/tern_for_sublime/Default.sublime-keymap",
+		"/a/dm/.settings",
+		"/a/dm/nodemon.json",
+		"/home/rec/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/rec/vm/a/vhost/ug.dev.conf.erb",
+		"/home/rec/floobits/welcome.md",
+		"/home/rec/vm/a/vhost/knowl.dev.conf.erb",
+		"/home/rec/vm/a/www/ug-site/app/Http/Middleware/API.php",
+		"/home/rec/vm/a/vhost/malinked.dev.conf.erb",
+		"/home/rec/vm/a/www/ug-site/public/static/client/boot.js",
+		"/home/rec/vm/a/www/knowl/readme.md",
+		"/home/rec/.cache/.fr-kKVkiJ/PhpStorm-139.1348/build.txt",
+		"/home/rec/Downloads/PhpStorm-139.1348/Install-Linux-tar.txt",
+		"/home/rec/.cache/.fr-4HXHZZ/PhpStorm-139.1348/Install-Linux-tar.txt",
+		"/home/rec/.cache/.fr-f5ZHCo/PhpStorm-139.1348/Install-Linux-tar.txt",
+		"/etc/hosts",
+		"/home/rec/Downloads/PhpStorm-139.1348/bin/phpstorm.vmoptions",
+		"/home/rec/vm/a/www/CloudPad/public/static/client/app.js",
+		"/home/rec/vm/a/www/CloudPad/public/index.php",
+		"/home/rec/vm/a/www/CloudPad/public/static/vendor/angular/package.json",
+		"/home/rec/vm/a/www/CloudPad/public/static/vendor/angular/bower.json",
+		"/home/rec/vm/a/www/CloudPad/public/static/vendor/angular/.bower.json",
+		"/home/rec/vm/a/www/CloudPad/public/static/vendor/angularjs/bower.json",
+		"/home/rec/vm/a/www/CloudPad/public/static/vendor/angular-ui-router/bower.json",
+		"/home/rec/vm/a/www/CloudPad/public/static/vendor/angular-ui-router/.bower.json",
+		"/home/rec/vm/a/www/CloudPad/public/static/vendor/angular-ui-router/api/angular-ui-router.d.ts",
+		"/home/rec/vm/a/vhost/dev",
+		"/home/rec/vm/a/www/router/public/index.php",
+		"/home/rec/vm/a/www/router/composer.json",
+		"/home/rec/vm/a/www/router/bootstrap/app.php",
+		"/home/rec/vm/a/www/router/app/kitchen.php",
+		"/home/rec/vm/a/www/CloudPad/vendor/illuminate/bus/BusServiceProvider.php",
+		"/home/rec/vm/a/www/router/bootstrap/start.php",
+		"/home/rec/.config/sublime-text-3/Packages/User/phpfmt.sublime-settings",
+		"/home/rec/vm/a/www/router/app/Http/Controllers/Domain.php",
+		"/home/rec/vm/a/www/router/app/Http/routes.php",
+		"/home/rec/vm/a/www/router/vendor/laravel/lumen-framework/src/Application.php",
+		"/home/rec/Documents/skype"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 94.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"absolute",
+			"tweak",
+			"o",
+			"fs.readdir('./', function(err, files){\n	_.each(files, function(k,v,l){\n		if(_.indexOf(k, 'e', 'n', 'v') > -1){\n			exports.enviroments.push(k);\n		}\n	});\n})\n",
+			"'",
+			"-",
+			"object",
+			"data",
+			"root",
+			"method_name",
+			"UgCLient",
+			"UgClient",
+			"ugClient",
+			"$STATE",
+			"UgClient",
+			"'',",
+			"auto_complete",
+			"App",
+			"domains"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/apidocs.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1322,
+								1322
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/js/controllers.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								737,
+								737
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/pages/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								272,
+								272
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/static/stylesheets/homepage-app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 210623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207562,
+								207562
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 123055.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/rec/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								252,
+								252
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.settings_documentation_panel":
+	{
+		"height": 0.0
+	},
+	"output.textarea":
+	{
+		"height": 137.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 92.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"homep",
+				"public/static/stylesheets/homepage-app.css"
+			],
+			[
+				"log",
+				"server/lib/log.js"
+			],
+			[
+				"page",
+				"fs/malinked/app/views/template/page.blade.php"
+			],
+			[
+				"dev",
+				"fs/malinked/app/views/pages/dev.html"
+			],
+			[
+				"fact",
+				"fs/malinked/app/views/js/factories.js"
+			],
+			[
+				"facto",
+				"fs/malinked/app/views/js/factories.js"
+			],
+			[
+				"home",
+				"fs/malinked/app/views/pages/home.html"
+			],
+			[
+				"app.js",
+				"fs/gitlab/public/static/angular-js/app.js"
+			],
+			[
+				"progr",
+				"fs/malinked/app/views/js/progress.js"
+			],
+			[
+				"page.",
+				"fs/malinked/app/controllers/API/Frontend/Page.php"
+			],
+			[
+				"routes.js",
+				"fs/malinked/app/views/js/routes.js"
+			],
+			[
+				"groups",
+				"fs/malinked/app/database/seeds/batch/GroupsTable.php"
+			],
+			[
+				"routes",
+				"fs/malinked/app/views/js/routes.js"
+			],
+			[
+				"js",
+				"fs/malinked/public/packages/modernizr/feature-detects/json.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

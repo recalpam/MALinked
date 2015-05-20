@@ -6501,7 +6501,7 @@ header {
     .site .block .naarklas {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      position: absolute;
+     
       bottom: 15px;
       font-size: 0.75rem; }
     .site .block.grafischvormgeven {

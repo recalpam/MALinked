@@ -46,7 +46,7 @@ angular.module('MaLinked.Controllers', [])
 
 /*==========  Profiel  ==========*/
 .controller('profiel', ['$scope', '$state', '$stateParams', '$filter', 'db', function($scope, $state, $stateParams, $filter, db){
-	$scope.student = db.students.single({id: $stateParams.id});
+
 }])
 
 /*==========  Zoeken  ==========*/

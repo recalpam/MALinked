@@ -3,6 +3,15 @@
  * MaLinked Services
  *
  **/
+
+
+ /**
+ 
+ 	TODO:
+ 	- Meer
+ 	 
+ **/
+ 
 angular.module('MaLinked.Services', [])
     .directive('profielfoto', ['API',
         function(API) {
@@ -13,16 +22,18 @@ angular.module('MaLinked.Services', [])
                 controller: function($scope, $element, $attrs, $transclude) {
                     $scope.uri = '';
                     sync.then(function(db) {
-                    	if($attrs.studentId){
-                    		console.log(db.students.single({id: $attrs.studentId}));
-                    		/**
-                    		
-                    			TODO:
-                    			- img url @ uri 
-                    			- op basis van size attribute                    		
-                    		**/
-                    		
-                    	}
+                        if ($attrs.studentId) {
+                            var student = db.students.single({
+                                id: $attrs.studentId
+                            });
+
+                            if (!student.file || !student.file.thumbnail) {
+                                $scope.uri = "/static/anon.jpg";
+                            } else {
+                            	console.log(student);
+                                $scope.uri = student.file.thumbnail;
+                            }
+                        }
                     });
 
                 }

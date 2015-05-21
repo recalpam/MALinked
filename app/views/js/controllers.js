@@ -50,7 +50,7 @@ angular.module('MaLinked.Controllers', [])
 		}
 	}
 
-	var htmlClasses = {
+	var overview = {
 		'Aa' : {
 			'object': getStudyBySlug('grafisch-vormgever'), 
 			'htmlClass': 'grafischvormgeven'
@@ -111,7 +111,7 @@ angular.module('MaLinked.Controllers', [])
 		}
 	};
 
-	$scope.studies = htmlClasses;
+	$scope.studies = overview;
 
 	
 

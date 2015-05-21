@@ -12,8 +12,8 @@
     </div>
   </nav>
   <video preload="auto" autoplay poster="/static/images/video-background.png" loop muted>
-    <source src="/static/videos/video-background.mp4" type="video/mp4">
     <source src="/static/videos/video-background.webm" type="video/webm">
+    <source src="/static/videos/video-background.mp4" type="video/mp4">
     Sorry, your browser does not support HTML5 video.
   </video>
   <div class="content">

@@ -58,12 +58,10 @@
 		</div>	
 		
 		<!-- JQUERY TRASH -->
-		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/packages/jquery/dist/jquery.js"></script>
 
 		<!-- ANGULARJS -->
 		<script type="text/javascript" src="/packages/angular/angular.js"></script>
-		<script type="text/javascript" src="https://code.angularjs.org/1.4.0-rc.2/angular-route.min.js"></script>
 		<script type="text/javascript" src="/packages/angular-ui-router/release/angular-ui-router.js"></script>
 		<script type="text/javascript" src="/packages/angular-aria/angular-aria.js"></script>
 		<script type="text/javascript" src="/packages/angular-animate/angular-animate.js"></script>

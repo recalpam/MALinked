@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"$state",
+				"$stateParams"
+			],
+			[
 				"env",
 				"enviroments_path"
 			],
@@ -18,10 +22,6 @@
 			[
 				"requi",
 				"require"
-			],
-			[
-				"$state",
-				"$stateParams (?)"
 			],
 			[
 				"$filter",
@@ -128,49 +128,38 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html>\n	<head>\n		<meta charset=\"utf-8\">\n		<title>Malinked Documentation</title>\n\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n		<link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css\">\n		<style>\n		.requirement {\n			display: block;\n		}\n\n		pre {\n			word-break: normal;\n			word-wrap: normal;\n		}\n		</style>\n	</head>\n	<body>\n		<div class=\"container\">\n			<div class=\"row\">\n				<div class=\"col-md-12\">\n					<h1>Malinked API</h1>\n					<h2>Version: 0.1 DEV (docs: 0.2) <small>(May 11th 2015)</small></h2>\n					<hr>\n					<h2>Index</h2>\n					<ul>\n						<li><a href=\"#get_studies\">GET /study</a> - Get list of all studies</li>\n						<li><a href=\"#get_single_study\">GET /study/{id}</a> - Get single study</li>\n						<li><a href=\"#get_single_study_groups\">GET /study/{id}/groups</a> - Get all groups from single study</li>\n					</ul>\n					<ul>\n						<li><a href=\"#get_groups\">GET /group</a> - Get list of all groups</li>\n						<li><a href=\"#get_single_group\">GET /group/{id}</a> - Get single group</li>\n						<li><a href=\"#get_single_group_students\">GET /group/{id}/students</a> - Get all students from single group</li>\n					</ul>\n					<ul>\n						<li><a href=\"#get_student\">GET /student/{id}</a> - Get single student information</li>\n					</ul>\n					<ul>\n						<li><a href=\"#search_students\">GET /search/{term}</a> - Search for students by term</li>\n					</ul>\n					<ul>\n						<li><a href=\"#auth\">POST /auth</a> - Generate authentication key for user login</li>\n					</ul>\n					<hr>\n					<h2>Changelog</h2>\n					<ul>\n						<li>Added AUTH to docs and edited results for <a href=\"#get_single_study_groups\">GET /study/{id}/groups</a> and <a href=\"#get_single_group_students\">GET /group/{id}/students</a></li>\n					</ul>\n					<hr>\n					<p>\n						<strong>Note:</strong> \n						All the requests are refixed with /api/db in the url. So /search/{term} would be /api/db/search/{term}.<br>\n						The part enclosed with brackets \"{}\" are GET parameters.\n					</p>\n					<hr>\n\n					<h2><a href=\"#get_studies\" name=\"get_studies\">GET <strong>/study</strong></a></h2>\n					<p>Get list of all studies</p>\n					<h3>Request</h3>\n					<p>This request does not require any parameters</p>\n					<h3>Response</h3>\n					<pre>\n[\n	{\n		\"id\": 1,\n		\"name\": \"Grafisch vormgever\",\n		\"color\": \"4fbe96\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 2,\n		\"name\": \"Interactief vormgever\",\n		\"color\": \"f4793b\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 3,\n		\"name\": \"Audiovisueel vormgever\\/Animatie\",\n		\"color\": \"4f5f8f\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 4,\n		\"name\": \"Ruimtelijk vormgever\",\n		\"color\": \"edb032\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 5,\n		\"name\": \"Filmacteur\",\n		\"color\": \"0db5d9\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	}\n]</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_study\" name=\"get_single_study\">GET <strong>/study/{id}</strong></a></h2>\n					<p>Get single study</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							 <tr>\n								<td>id</td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>   \n					<pre>\n{\n	\"id\": 1,\n	\"name\": \"Grafisch vormgever\",\n	\"color\": \"4fbe96\",\n	\"created_at\": \"2015-04-28 13:00:38\",\n	\"updated_at\": \"2015-04-28 13:00:38\"\n}</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_study_groups\" name=\"get_single_study_groups\">GET <strong>/study/{id}/groups</strong></a></h2>\n					<p>Get all groups from single study</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							 <tr>\n								<td>id</td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>   \n					<pre>\n{\n	\"id\": 4,\n	\"name\": \"Ruimtelijk vormgever\",\n	\"color\": \"edb032\",\n	\"created_at\": \"2015-05-11 12:25:43\",\n	\"updated_at\": \"2015-05-11 12:25:43\",\n	\"groups\": [\n		{\n			\"id\": 14,\n			\"study_id\": 4,\n			\"name\": \"RV4A\",\n			\"fullname\": \"Vormgever productpresentatie\",\n			\"created_at\": \"2015-05-11 12:25:43\",\n			\"updated_at\": \"2015-05-11 12:25:43\"\n		},\n		{\n			\"id\": 15,\n			\"study_id\": 4,\n			\"name\": \"RV4B\",\n			\"fullname\": \"Stand-,winkel-en decorvormgever\",\n			\"created_at\": \"2015-05-11 12:25:43\",\n			\"updated_at\": \"2015-05-11 12:25:43\"\n		}\n	]\n}</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_groups\" name=\"get_groups\">GET <strong>/group</strong></a></h2>\n					<p>Get list of all groups</p>\n					<h3>Request</h3>\n					<p>This request does not require any parameters</p>\n					<h3>Response</h3>\n					<pre>\n[\n	{\n		\"id\": 1,\n		\"study_id\": 1,\n		\"name\": \"GV4A\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 2,\n		\"study_id\": 1,\n		\"name\": \"GV4B\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 3,\n		\"study_id\": 1,\n		\"name\": \"GV4C\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 4,\n		\"study_id\": 1,\n		\"name\": \"GV4D\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	},\n	{\n		\"id\": 5,\n		\"study_id\": 1,\n		\"name\": \"GV4E\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-04-28 13:00:38\",\n		\"updated_at\": \"2015-04-28 13:00:38\"\n	}\n]</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_group\" name=\"get_single_group\">GET <strong>/group/{id}</strong></a></h2>\n					<p>Get one group</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>id <span class=\"requirement text-muted\">required</span></td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	\"id\": 1,\n	\"study_id\": 1,\n	\"name\": \"GV4A\",\n	\"fullname\": \"Grafisch vormgever\",\n	\"created_at\": \"2015-04-28 13:00:38\",\n	\"updated_at\": \"2015-04-28 13:00:38\"\n}</pre>\n					<hr>\n					<!-- -->\n					<h2><a href=\"#get_single_group_students\" name=\"get_single_group_students\">GET <strong>/group/{id}/students</strong></a></h2>\n					<p>Get all students from single group</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>id <span class=\"requirement text-muted\">required</span></td>\n								<td>integer</td>\n								<td>The id of the group to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	\"id\": 3,\n	\"study_id\": 1,\n	\"name\": \"GV4C\",\n	\"fullname\": \"Grafisch vormgever\",\n	\"created_at\": \"2015-05-11 12:25:43\",\n	\"updated_at\": \"2015-05-11 12:25:43\",\n	\"students\": [\n		{\n			\"id\": 1,\n			\"group_id\": 3,\n			\"student\": 12623,\n			\"nameFirst\": \"Alex\",\n			\"nameLast\": \"Lisenkov\",\n			\"nameInsertion\": \"\",\n			\"file_id\": \"\",\n			\"birthday\": \"1995-02-22 00:00:00\",\n			\"created_at\": \"-0001-11-30 00:00:00\",\n			\"updated_at\": \"2015-05-11 12:53:04\"\n		}\n	]\n}</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#get_student\" name=\"get_student\">GET <strong>/student/{id}</strong></a></h2>\n					<p>Get single student information</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>id <span class=\"requirement text-muted\">required</span></td>\n								<td>integer</td>\n								<td>The id of the student to be gathered</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	\"id\": 1,\n	\"group_id\": 3,\n	\"student\": 12623,\n	\"nameFirst\": \"Alex\",\n	\"nameLast\": \"Lisenkov\",\n	\"nameInsertion\": \"\",\n	\"file_id\": \"\",\n	\"birthday\": \"1995-02-22 00:00:00\",\n	\"created_at\": \"-0001-11-30 00:00:00\",\n	\"updated_at\": \"2015-05-11 12:53:04\",\n	\"info\": {\n		\"id\": 1,\n		\"student_id\": 1,\n		\"fav_teacher\": \"a:3:{i:0;s:14:\\\\\\\"Jelle Sjollema\\\\\\\";i:1;s:15:\\\\\\\"Laurence Candel\\\\\\\";i:2;s:8:\\\\\\\"Jim Dunk\\\\\\\";}\",\n		\"fav_class\": \"Backend Programmeren\",\n		\"fav_project\": \"Webshop\",\n		\"rate_school\": 6,\n		\"rate_internship\": 7,\n		\"specialize\": \"Programmeren\",\n		\"school_match_ambitions\": \"Ik wil uiteindelijk werken als software programmeur, en ik heb met deze opleiding een goede basis gelegd.\",\n		\"future_vision\": \"Ik wil na deze opleiding HBO doen op het HVA, ik wil de studie Software Engineering volgen om uiteindelijk aan het werk te gaan als software ingenieur. \",\n		\"linkedin\": \"nl.linkedin.com\\\\\\/pub\\\\\\/jasper-olaf-de-vries\\\\\\/33\\\\\\/9a4\\\\\\/561\\\\\\/en\",\n		\"email\": \"hallo@voorbeeld.nl\",\n		\"hobbies\": \"a:3:{i:0;s:9:\\\\\\\"Concerten\\\\\\\";i:1;s:9:\\\\\\\"Festivals\\\\\\\";i:2;s:7:\\\\\\\"Theater\\\\\\\";}\",\n		\"portfolio\": \"www.yldaudeboer.nl\",\n		\"why_ma\": \"Ik heb voor het Mediacollege gekozen omdat het mij een leuke school leek toen ik op de opendag kwam kijken in 2011. Ik wilde de theater richting op en dat was met deze opleiding mogelijk. \",\n		\"created_at\": \"2015-05-11 00:00:00\",\n		\"updated_at\": \"2015-05-11 00:00:00\"\n	},\n	\"group\": {\n		\"id\": 3,\n		\"study_id\": 1,\n		\"name\": \"GV4C\",\n		\"fullname\": \"Grafisch vormgever\",\n		\"created_at\": \"2015-05-11 12:25:43\",\n		\"updated_at\": \"2015-05-11 12:25:43\",\n		\"study\": {\n			\"id\": 1,\n			\"name\": \"Grafisch vormgever\",\n			\"color\": \"4fbe96\",\n			\"created_at\": \"2015-05-11 12:25:43\",\n			\"updated_at\": \"2015-05-11 12:25:43\"\n		}\n	}\n}</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#search_students\" name=\"search_students\">GET <strong>/search/{term}</strong></a></h2>\n					<p>Search for students by term</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>term <span class=\"requirement text-muted\">required</span></td>\n								<td>string</td>\n								<td>The search query</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n[\n	{\n		\"studentID\": 1,\n		\"studentFirstname\": \"test\",\n		\"studentInsertion\": \"de\",\n		\"studentLastname\": \"Geitenkaas\",\n		\"groupName\": \"GV4A\",\n		\"groupNameFull\": \"Grafisch vormgever\",\n		\"studyName\": \"Grafisch vormgever\",\n		\"studyColor\": \"4fbe96\"\n	},\n	{\n		\"studentID\": 2,\n		\"studentFirstname\": \"Klaas\",\n		\"studentInsertion\": \"\",\n		\"studentLastname\": \"Geitenkaas\",\n		\"groupName\": \"MD4A\",\n		\"groupNameFull\": \"Media Developer\",\n		\"studyName\": \"Media- en Gamedeveloper\",\n		\"studyColor\": \"932545\"\n	}\n]</pre>\n				<hr>\n					<!-- -->\n					<h2><a href=\"#auth\" name=\"auth\">GET <strong>/auth</strong></a></h2>\n					<p>Generate authentication key for user login</p>\n					<h3>Request</h3>\n					<table class=\"table\">\n						<thead>\n							<tr>\n								<th>Parameter</th>\n								<th>Type</th>\n								<th>Description</td>\n							</tr>\n						</thead>\n						<tbody>\n							<tr>\n								<td>student <span class=\"requirement text-muted\">required</span></td>\n								<td>string</td>\n								<td>The student number (eg. 12345)</td>\n							</tr>\n							 <tr>\n								<td>password <span class=\"requirement text-muted\">required</span></td>\n								<td>string</td>\n								<td>The student password</td>\n							</tr>\n						</tbody>\n					</table>\n					<h3>Response</h3>\n					<pre>\n{\n	 \"error\":false,\n	 \"message\":\"Session created\",\n	 \"token\":\"dyXc0MiFHeIPLBG0rkcqSELqaWTViARe9Wehay8g1jiO8zD9RBLtOeCZLdMC\",\n	 \"student\":[\n		{\n		 \"id\":1,\n		 \"group_id\":3,\n		 \"student\":12623,\n		 \"nameFirst\":\"Alex\",\n		 \"nameLast\":\"Lisenkov\",\n		 \"nameInsertion\":\"\",\n		 \"file_id\":\"\",\n		 \"birthday\":\"1995-02-22 00:00:00\",\n		 \"created_at\":\"-0001-11-30 00:00:00\",\n		 \"updated_at\":\"2015-05-11 12:53:04\",\n		 \"info\":{\n			\"id\":1,\n			\"student_id\":1,\n			\"fav_teacher\":\"1\",\n			\"fav_class\":\"1\",\n			\"fav_project\":\"1\",\n			\"rate_school\":1,\n			\"rate_internship\":1,\n			\"specialize\":\"1\",\n			\"school_match_ambitions\":\"1\",\n			\"future_vision\":\"1\",\n			\"linkedin\":\"1\",\n			\"email\":\"1\",\n			\"hobbies\":\"1\",\n			\"portfolio\":\"1\",\n			\"why_ma\":\"1\",\n			\"created_at\":\"2015-05-11 00:00:00\",\n			\"updated_at\":\"2015-05-11 00:00:00\"\n		 },\n		 \"group\":{\n			\"id\":3,\n			\"study_id\":1,\n			\"name\":\"GV4C\",\n			\"fullname\":\"Grafisch vormgever\",\n			\"created_at\":\"2015-05-11 12:25:43\",\n			\"updated_at\":\"2015-05-11 12:25:43\",\n			\"study\":{\n				 \"id\":1,\n				 \"name\":\"Grafisch vormgever\",\n				 \"color\":\"4fbe96\",\n				 \"created_at\":\"2015-05-11 12:25:43\",\n				 \"updated_at\":\"2015-05-11 12:25:43\"\n			}\n		 }\n		}\n	 ]\n}</pre>\n				</div>\n			</div>\n		</div>\n	</body>\n</html>",
-			"file": "public/apidocs.html",
-			"file_size": 18634,
-			"file_write_time": 130765174030000000,
+			"file": "app/views/pages/opleiding.html",
 			"settings":
 			{
-				"buffer_size": 13141,
+				"buffer_size": 1020,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/js/controllers.js",
+			"file": "app/views/template/page.blade.php",
 			"settings":
 			{
-				"buffer_size": 1382,
-				"line_ending": "Windows"
+				"buffer_size": 2890,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\n<div class=\"row\">\n  <a href=\"#\" ng-repeat=\"study in studies\">\n    <div class=\"small-12 medium-3 columns block {{study.htmlClass}}\">\n      <div class=\"title\">{{study.htmlClass}}</div>\n\n      <div class=\"naarklas\">Bekijk de klas &rsaquo;</div>\n    </div>\n  </a>\n\n</div>page",
 			"file": "app/views/pages/home.html",
-			"file_size": 278,
-			"file_write_time": 130765366702594544,
 			"settings":
 			{
-				"buffer_size": 272,
+				"buffer_size": 299,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "public/static/stylesheets/homepage-app.css",
+			"contents": "/**\n *\n * MaLinked Controllers\n *\n **/\nangular.module('MaLinked.Controllers', [])\n\n/*==========  Home  ==========*/\n.controller('home', ['$scope', 'db',\n    function($scope, db) {\n        $scope.db = db;\n\n        var htmlClasses = {\n            0: {\n                'slug': 'grafisch-vormgever',\n                'htmlClass': 'grafischvorgever'\n            },\n            1: {\n                'slug': 'interactief-vormgever',\n                'htmlClass': 'interactiefvormgeven'\n            },\n            2: {\n                'slug': 'audiovisueel-vormgeveranimatie',\n                'htmlClass': 'audiovisueel'\n            },\n            3: {\n                'slug': 'dtp-er',\n                'htmlClass': 'dtper'\n            },\n            4: {\n                'slug': 'mediamanager',\n                'htmlClass': 'mediamanager'\n            },\n            5: {\n                'slug': 'av-technicus',\n                'htmlClass': 'audiovisueeltechnicus'\n            },\n            6: {\n                'slug': 'evenemententechnicus',\n                'htmlClass': 'evenemententechnicus'\n            },\n            7: {\n                'slug': 'geluidstechnicus',\n                'htmlClass': 'geluidtechnicus'\n            },\n            8: {\n                'slug': 'media-en-gamedeveloper',\n                'htmlClass': 'mediaengamedeveloper'\n            },\n            9: {\n                'slug': 'ruimtelijkvormgeven',\n                'htmlClass': 'ruimtelijkvormgeven'\n            },\n            10: {\n                'slug': 'podiumtechnicus',\n                'htmlClass': 'podiumtechnicus'\n            },\n            11: {\n                'slug': 'filmacteur',\n                'htmlClass': 'filmacteur'\n            },\n            12: {\n                'slug': 'signmaker',\n                'htmlClass': 'signmaker'\n            },\n            13: {\n                'slug': 'game-artist',\n                'htmlClass': 'gameartist'\n            }\n        };\n\n        $scope.studies = htmlClasses;\n    }\n])\n\n/*==========  Profiel  ==========*/\n.controller('profiel', ['$scope', '$state', '$stateParams', '$filter', 'db',\n    function($scope, $state, $stateParams, $filter, db) {\n\n    }\n])\n\n/*==========  Zoeken  ==========*/\nnnh.controller('zoeken', ['$scope', 'db',\n    function($scope, db) {\n        $scope.db = db;\n    }\n])\n\n/*==========  Zoeken  ==========*/\n.controller('opleiding', ['$scope', 'db', '$stateParams',\n    function($scope, db, $stateParams) {\n        $scope.db = db;\n        $scope.params = $stateParams\n        console.log(db.studies.where({slug: $stateParams.slug}) );\n    }\n])\n\n/*==========  Beheer  ==========*/\n.controller('dev', [\n    function() {\n\n    }\n])",
+			"file": "app/views/js/controllers.js",
+			"file_size": 2783,
+			"file_write_time": 130766355515491836,
 			"settings":
 			{
-				"buffer_size": 210623,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rec/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 644,
-				"line_ending": "Unix"
+				"buffer_size": 2683,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -181,10 +170,26 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 151.0,
-		"last_filter": "open",
+		"height": 36.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"floo",
+				"Floobits - Join Recent Workspace"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"toggle",
+				"View: Toggle Menu"
+			],
 			[
 				"open",
 				"View: Toggle Open Files in Side Bar"
@@ -200,10 +205,6 @@
 			[
 				"files",
 				"View: Toggle Open Files in Side Bar"
-			],
-			[
-				"menu",
-				"View: Toggle Menu"
 			],
 			[
 				"package remo",
@@ -256,10 +257,6 @@
 			[
 				"floobits work",
 				"Floobits - Join Recent Workspace"
-			],
-			[
-				"floo",
-				"Floobits - Join Workspace"
 			],
 			[
 				"intell",
@@ -344,15 +341,28 @@
 	"expanded_folders":
 	[
 		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked",
-		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app",
 		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views",
 		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js"
 	],
 	"file_history":
 	[
-		"/usr/share/fonts/X11/util/map-ISO8859-6",
-		"/home/rec/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/models/Study.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/controllers/API/Backend/StudiesController.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/public/packages/jquery/dist/jquery.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/controllers/API/Backend/Sync.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/config/docker/database.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/app.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/routes.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/home.html",
 		"/home/rec/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/template/header.blade.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/routes.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/controllers.js",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/public/apidocs.html",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/template/page.blade.php",
+		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/public/static/stylesheets/homepage-app.css",
+		"/home/rec/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/usr/share/fonts/X11/util/map-ISO8859-6",
 		"/home/rec/.cache/.fr-3FZJeC/terminus-font-4.39/75-yes-terminus.conf",
 		"/a/dm/server/lib/log.js",
 		"/usr/share/themes/XGTK-3.14/gtk-3.0/settings.ini",
@@ -380,10 +390,6 @@
 		"/a/dm/server.js",
 		"/a/dm/gulpfile.js",
 		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/public/packages/underscore/underscore.js",
-		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/app.js",
-		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/home.html",
-		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/routes.js",
-		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/template/page.blade.php",
 		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/pages/dev.html",
 		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/malinked/app/views/js/factories.js",
 		"/var/lib/docker/vfs/dir/ae0a70f93c8878002cd5d454c5a2ef5cb5bcab94e9de92f6305c3143a9a038ef/fs/gitlab/public/views/homepage.html",
@@ -511,19 +517,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "public/apidocs.html",
+					"file": "app/views/pages/opleiding.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13141,
+						"buffer_size": 1020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1322,
-								1322
+								3,
+								3
 							]
 						],
 						"settings":
@@ -589,30 +595,30 @@
 							],
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/js/controllers.js",
-					"semi_transient": true,
+					"file": "app/views/template/page.blade.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1382,
+						"buffer_size": 2890,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								737,
-								737
+								1537,
+								1537
 							]
 						],
 						"settings":
@@ -676,14 +682,14 @@
 								"bh_double_quote_close",
 								"bh_double_quote_content"
 							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 746.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -692,15 +698,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 272,
+						"buffer_size": 299,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								272,
-								272
+								77,
+								77
 							]
 						],
 						"settings":
@@ -770,24 +776,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "public/static/stylesheets/homepage-app.css",
+					"file": "app/views/js/controllers.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 210623,
+						"buffer_size": 2683,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								207562,
-								207562
+								2229,
+								2229
 							]
 						],
 						"settings":
@@ -851,103 +857,16 @@
 								"bh_double_quote_close",
 								"bh_double_quote_content"
 							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
+							"spell_check": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 123055.0,
+						"translation.y": 1152.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/rec/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 644,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								252,
-								252
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -955,7 +874,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -983,7 +902,7 @@
 			1.0
 		]
 	},
-	"menu_visible": true,
+	"menu_visible": false,
 	"output.find_results":
 	{
 		"height": 0.0
@@ -1004,7 +923,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 50.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1014,16 +933,68 @@
 		"selected_items":
 		[
 			[
+				"studies",
+				"app/controllers/API/Backend/StudiesController.php"
+			],
+			[
+				"study",
+				"app/models/Study.php"
+			],
+			[
+				"home",
+				"app/views/pages/home.html"
+			],
+			[
+				"sync",
+				"app/controllers/API/Backend/Sync.php"
+			],
+			[
+				"database",
+				"app/config/docker/database.php"
+			],
+			[
+				"jqu",
+				"public/packages/jquery/dist/jquery.js"
+			],
+			[
+				"app.js",
+				"app/views/js/app.js"
+			],
+			[
+				"page.bl",
+				"app/views/template/page.blade.php"
+			],
+			[
+				"routes",
+				"app/views/js/routes.js"
+			],
+			[
+				"control",
+				"app/views/js/controllers.js"
+			],
+			[
+				"opleidin",
+				"app/views/pages/opleiding.html"
+			],
+			[
+				"header",
+				"app/views/template/header.blade.php"
+			],
+			[
+				"page",
+				"app/views/template/page.blade.php"
+			],
+			[
+				"route",
+				"app/views/js/routes.js"
+			],
+			[
 				"homep",
 				"public/static/stylesheets/homepage-app.css"
 			],
 			[
 				"log",
 				"server/lib/log.js"
-			],
-			[
-				"page",
-				"fs/malinked/app/views/template/page.blade.php"
 			],
 			[
 				"dev",
@@ -1036,14 +1007,6 @@
 			[
 				"facto",
 				"fs/malinked/app/views/js/factories.js"
-			],
-			[
-				"home",
-				"fs/malinked/app/views/pages/home.html"
-			],
-			[
-				"app.js",
-				"fs/gitlab/public/static/angular-js/app.js"
 			],
 			[
 				"progr",
@@ -1060,10 +1023,6 @@
 			[
 				"groups",
 				"fs/malinked/app/database/seeds/batch/GroupsTable.php"
-			],
-			[
-				"routes",
-				"fs/malinked/app/views/js/routes.js"
 			],
 			[
 				"js",
@@ -1094,12 +1053,12 @@
 	"settings":
 	{
 	},
-	"show_minimap": false,
+	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 177.0,
-	"status_bar_visible": true,
+	"status_bar_visible": false,
 	"template_settings":
 	{
 	}

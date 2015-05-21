@@ -1,6 +1,6 @@
 
 <div class="row">
-  <a ng-repeat="study in studies" ui-sref="opleiding({naam: study.slug})">
+  <a ng-repeat="study in studies" ui-sref="opleiding({slug: study.slug})">
     <div class="small-12 medium-3 columns block {{study.htmlClass}}">
       <div class="title">{{study.htmlClass}}</div>
 
@@ -8,4 +8,4 @@
     </div>
   </a>
 
-</div>page
+</div>

@@ -92,6 +92,7 @@ angular.module('MaLinked.Controllers', [])
     function($scope, db, $stateParams) {
         $scope.db = db;
         $scope.params = $stateParams
+        console.log(db.studies.where({slug: $stateParams.slug}) );
     }
 ])
 

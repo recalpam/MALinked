@@ -43,7 +43,6 @@ angular.module('MaLinked.Controllers', [])
 
 	var getStudyBySlug = function(slug){
 		var result = $filter('filter')(db.studies, {slug: slug}, true);
-		result[0]['isFact'] = false;
 
 		if(result.length == 1){
 			return result[0];

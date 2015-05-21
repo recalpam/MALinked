@@ -12,7 +12,7 @@
 	    {{ HTML::style('/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.css') }}
 
 		{{-- PAGE CSS --}}
-	    {{ HTML::style('/static/stylesheets/homepage-app.css') }}
+	    {{ HTML::style('/static/stylesheets/app.css') }}
 
 	    <base href="/">
 		<style>

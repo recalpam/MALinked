@@ -1,0 +1,357 @@
+#searchModal{
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $black-80;
+
+  &.reveal-modal {
+    border: none;
+    outline: none;
+    a {
+      &.close-reveal-modal{
+        color: $white;
+        font-size: rem-calc(18);
+        text-transform: uppercase;
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.search{
+ margin-bottom: 85px;
+}
+
+span.search-icon{
+  height: 19px;
+  width: 19px;
+
+ }
+
+  input{
+    width: 100%;
+    max-width: rem-calc(620);
+    height: 35px;
+    font-size: rem-calc(28);
+    color: $white;
+    background: transparent url("/static/images/search-icon.png") no-repeat scroll 600px;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+    &.search-bar{
+      @include transform(translateY(-50%));
+      background-color: transparent;
+      color: $white;
+      padding-top: 25px;
+      font-size: rem-calc(25);
+      line-height: 35px;
+      margin-bottom: 50px;
+      top: 0;
+      // z-index: 1000;
+  }
+}
+
+  .border{
+    height: 1px;
+    width: 100%;
+    max-width: rem-calc(620);
+    background-color: $white;
+    margin: 0 auto;
+  }
+
+a.close-reveal-modal {
+  padding-top: 25px;
+}
+
+.opleidingen-menu{
+  position: absolute;
+  z-index: 100000;
+  ul {
+    margin-left: 0;
+    a {
+      font-size: rem-calc(16);
+      text-transform: uppercase;
+      color: $white;
+
+      li {
+        list-style-type: none;
+        margin-bottom: 20px;
+
+        &.grafischvormgeven {
+          &.active {
+            color: $grafischvormgeven;
+          }
+        }
+
+        &.interactiefvormgeven {
+          &.active {
+            color: $interactiefvormgeven;
+          }
+        }
+
+        &.audiovisueelvormgeven {
+          &.active {
+            color: $audiovisueelvormgeven;
+          }
+        }
+
+        &.ruimtelijkvormgeven {
+          &.active {
+            color: $ruimtelijkvormgeven;
+          }
+        }
+
+        &.filmacteur {
+          &.active {
+            color: $filmacteur;
+          }
+        }
+
+        &.audiovisueeltechnicus {
+          &.active {
+            color: $audiovisueeltechnicus;
+          }
+        }
+
+        &.podiumtechnicus {
+          &.active {
+            color: $podiumtechnicus;
+          }
+        }
+
+        &.evenemententechnicus {
+          &.active {
+            color: $evenemententechnicus;
+          }
+        }
+
+        &.geluidtechnicus {
+          &.active {
+            color: $geluidtechnicus;
+          }
+        }
+
+        &.mediaengamedevelopment {
+          &.active {
+            color: $mediaengamedevelopment;
+          }
+        }
+
+        &.gameartist {
+          &.active {
+            color: $gameartist;
+          }
+        }
+
+        &.mediamanager {
+          &.active {
+            color: $mediamanager;
+          }
+        }
+
+        &.dtp {
+          &.active {
+            color: $dtp;
+          }
+        }
+
+        &.signmaker {
+          &.active {
+            color: $signmaker;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.hamburger {
+  @include btn(0px, 0);
+  top: 30px;
+  left: 30px;
+
+  .icon-left {
+    @include icon(4px, 15px);
+    left: 0px;
+
+    &:before{
+      @include icon-before(4px, 15px, -10px);
+    }
+
+    &:after{
+      @include icon-after(4px, 15px, 10px);
+    }
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  .icon-right {
+    @include icon(4px, 15px);
+    left: 15px;
+
+    &:before{
+      @include icon-before(4px, 15px, -10px);
+    }
+
+    &:after{
+      @include icon-after(4px, 15px, 10px);
+    }
+  }
+
+  &.open {
+    .icon-left {
+      transition-duration: 0.5s;
+      background: transparent;
+
+      &:before{
+        transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+      }
+
+      &:after{
+        transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+      }
+    }
+
+    .icon-right {
+      transition-duration: 0.5s;
+      background: transparent;
+
+      &:before{
+        transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+      }
+
+      &:after{
+        transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.student {
+  width: 100%;
+  height: 155px;
+  position: relative;
+  margin-bottom: 10px;
+  top: -15px;
+
+    &.grafischvormgeven{
+      background-color: $grafischvormgeven;
+    }
+
+     &.interactiefvormgeven{
+      background-color: $interactiefvormgeven;
+    }
+
+     &.ruimtelijkvormgeven{
+      background-color: $ruimtelijkvormgeven;
+    }
+
+     &.audiovisueelvormgeven{
+      background-color: $audiovisueelvormgeven;
+    }
+
+     &.filmacteur{
+      background-color: $filmacteur;
+    }
+
+     &.audiovisueeltechnicus{
+      background-color: $audiovisueeltechnicus;
+    }
+
+     &.podiumtechnicus{
+      background-color: $podiumtechnicus;
+    }
+
+     &.evenemententechnicus{
+      background: $evenemententechnicus url("/static/images/profile-background.png") no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+     &.geluidtechnicus{
+      background-color: $geluidtechnicus;
+    }
+
+     &.mediaengamedevelopment{
+      background-color: $mediaengamedevelopment;
+    }
+
+     &.gameartist{
+      background: $gameartist url("/static/images/profile-background.png") no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+     &.mediamanager{
+      background-color: $mediamanager;
+    }
+
+     &.dtp{
+      background-color: $dtp;
+    }
+
+     &.signmaker{
+      background-color: $signmaker;
+    }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 83px;
+        @include background-image(linear-gradient(transparent, $black));
+        z-index: 50;
+      }
+
+  .info{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 100px;
+    z-index: 100;
+    h4 {
+      font-size: rem-calc(20);
+      color: $white;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: rem-calc(12  );
+      color: $white;
+    }
+  }
+  figure {
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      position: absolute;
+      left: 3px;
+      bottom: 3px;
+      float: left;
+      z-index: 100;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,19 +1,19 @@
-
-<div class="row" >
-  <div ng-repeat="study in studies">
-      <!-- Load random fact block -->
-      <div class="small-12 medium-3 columns block" style="height: 250px;" ng-if="study.isFact">
-        <div class="title">Weet je wat het is? ...</div>
-        <br>
-        <span>{{ study.answer }}</span>
-      </div>
-      <!-- Load study -->
-      <a ui-sref="opleiding({naam: study.object.slug})" ng-if="!study.isFact">
-        <div class="small-12 medium-3 columns block {{study.htmlClass}}" style="height: 250px;" >
-          <div class="title">{{ study.object.name }}</div>
-
-          <div class="naarklas">Bekijk de klas &rsaquo;</div>
+<section class="homepage">
+  <div class="row" >
+    <div ng-repeat="study in studies">
+        <!-- Load random fact block -->
+        <div class="medium-3 columns block wistjedat nohover" style="height: 250px;" ng-if="study.isFact">
+          <div class="title">Wist je dat?!</div>
+          <p><strong>80%</strong> {{ study.answer }}</p>
         </div>
-      </a>
-    </div>
-</div>
+        <!-- Load study -->
+        <a ui-sref="opleiding({naam: study.object.slug})" ng-if="!study.isFact">
+          <div class="small-12 medium-3 columns block {{study.htmlClass}}" style="height: 250px;" >
+            <div class="title">{{ study.object.name }}</div>
+
+            <div class="naarklas">Bekijk de klas &rsaquo;</div>
+          </div>
+        </a>
+      </div>
+  </div>
+</section>

@@ -1,8 +1,834 @@
+/*==============================
+=            Global            =
+==============================*/
+
 body {
-  background-color: $black;
   font-family: 'AkzidenzGrotesk';
+
+  background-color: $black;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
   font-family: 'AkzidenzGrotesk';
 }
+
+#lightbox {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  background: $black-40;
+}
+
+/*-----  End of Global  ------*/
+
+.site {
+  color: $white;
+  background-color: $black;
+  a {
+    color: $white;
+  }
+}
+
+
+/*===============================================
+=            Homepage + Klassen Page            =
+===============================================*/
+
+/*==========  Global  ==========*/
+.homepage, .class {
+  .block {
+    @include backface-visibility(hidden);
+    @include transition(all 0.5s ease);
+
+    position: relative;
+
+    float: left;
+
+    padding: 15px;
+
+    background-position: right bottom;
+    background-size: cover;
+    &:hover {
+      @include backface-visibility(hidden);
+      @include transform(scale(1.1));
+      // @include transform(rotate(-370deg));
+
+      z-index: 1;
+
+      cursor: pointer;
+    }
+    &.nohover {
+      &:hover {
+        @include transform(scale(1));
+
+        z-index: -1;
+
+        cursor: default;
+      }
+    }
+    .title {
+      @include backface-visibility(hidden);
+
+      font-size: rem-calc(17);
+
+      padding-right: 45%;
+    }
+    .naarklas, .naarprofiel {
+      @include backface-visibility(hidden);
+
+      font-size: rem-calc(12);
+
+      position: absolute;
+      bottom: 15px;
+    }
+    &.grafischvormgeven {
+      background-color: $grafischvormgeven;
+    }
+    &.interactiefvormgeven {
+      background-color: $interactiefvormgeven;
+    }
+    &.audiovisueel {
+      background-color: $audiovisueelvormgeven;
+    }
+    &.dtper {
+      background-color: $dtp;
+    }
+    &.mediamanager {
+      background-color: $mediamanager;
+    }
+    &.audiovisueeltechnicus {
+      background-color: $audiovisueeltechnicus;
+    }
+    &.evenemententechnicus {
+      background-color: $evenemententechnicus;
+    }
+    &.geluidtechnicus {
+      background-color: $geluidtechnicus;
+    }
+    &.mediaengamedeveloper {
+      background-color: $mediaengamedevelopment;
+    }
+    &.ruimtelijkvormgeven {
+      background-color: $ruimtelijkvormgeven;
+    }
+    &.podiumtechnicus {
+      background-color: $podiumtechnicus;
+    }
+    &.filmacteur {
+      background-color: $filmacteur;
+    }
+    &.signmaker {
+      background-color: $signmaker;
+    }
+    &.gameartist {
+      background-color: $gameartist;
+    }
+  }
+}
+
+
+/*==========  Homepage  ==========*/
+.homepage {
+  .block {
+    &.wistjedat {
+      background-color: $black;
+      background-image: url(../images/background/malinked-block-light.png);
+      p {
+        font-size: rem-calc(12);
+
+        padding-top: 10px;
+        padding-right: 30%;
+        strong {
+          font-size: rem-calc(14);
+        }
+      }
+    }
+    &.overhetma {
+      background-color: $black;
+      background-image: url(../images/background/malinked-block-light.png);
+      p {
+        font-size: rem-calc(12);
+
+        padding-top: 10px;
+      }
+    }
+    &.grafischvormgeven {
+      background-image: url(../images/background/homepage_grafischvormgeven.png);
+    }
+    &.interactiefvormgeven {
+      background-image: url(../images/background/homepage_interactiefvormgeven.png);
+    }
+    &.audiovisueel {
+      background-image: url(../images/background/homepage_audiovisueelvormgeven.png);
+    }
+    &.dtper {
+      background-image: url(../images/background/homepage_dtp.png);
+    }
+    &.mediamanager {
+      background-image: url(../images/background/homepage_mediamanager.png);
+    }
+    &.audiovisueeltechnicus {
+      background-image: url(../images/background/homepage_audiovisueeltechnicus.png);
+    }
+    &.evenemententechnicus {
+      background-image: url(../images/background/homepage_evenemententechnicus.png);
+    }
+    &.geluidtechnicus {
+      background-image: url(../images/background/homepage_dtp.png);
+    }
+    &.mediaengamedeveloper {
+      background-image: url(../images/background/homepage_mediaengamedeveloper.png);
+    }
+    &.ruimtelijkvormgeven {
+      background-image: url(../images/background/homepage_ruimtelijkvormgeven.png);
+    }
+    &.podiumtechnicus {
+      background-image: url(../images/background/homepage_podiumtechnicus.png);
+    }
+    &.filmacteur {
+      background-image: url(../images/background/homepage_filmacteur.png);
+    }
+    &.signmaker {
+      background-image: url(../images/background/homepage_signmaker.png);
+    }
+    &.gameartist {
+      background-image: url(../images/background/homepage_gameartist.png);
+    }
+  }
+}
+
+
+/*==========  Class  ==========*/
+.homepage, .class {
+  .block {
+    figure {
+      @include backface-visibility(hidden);
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      margin: 0;
+      &:after {
+        @include background-image(linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%));
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        content: "";
+      }
+      figcaption {
+        @include backface-visibility(hidden);
+
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 15px;
+      }
+    }
+  }
+}
+/*-----  End of Homepage + Klassen Page  ------*/
+
+
+/*======================================
+=            Opleiding Page            =
+======================================*/
+.opleidingen {
+  figure {
+    margin: 0;
+    padding-bottom: 30px;
+    figcaption {
+      @include background-image(linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%));
+
+      line-height: 1.33em;
+
+      position: absolute;
+      bottom: 0;
+
+      display: block;
+
+      width: calc(100% - 30px);
+      height: 100%;
+      margin: 0 auto;
+      padding: 15px;
+
+      transition: background-color 0.3s ease;
+      transition: background-color 0.5s linear;
+
+      color: #ffffff;
+    }
+  }
+}
+/*-----  End of Opleiding Page  ------*/
+
+
+
+/*====================================
+=            Profile page            =
+====================================*/
+
+
+.profile {
+  .block {
+    position: relative;
+
+    float: left;
+
+    padding-right: 15px;
+    padding-left: 15px;
+    h2 {
+      font-size: rem-calc(25);
+    }
+    p {
+      font-size: rem-calc(14);
+    }
+    a {
+      font-size: rem-calc(14);
+    }
+    @media #{$small-only} {
+      width: 100%;
+    }
+    @media #{$medium-up} {
+      width: 33.33333%;
+    }
+  }
+  .double-block {
+    position: relative;
+
+    float: left;
+
+    padding-right: 15px;
+    padding-left: 15px;
+    @media #{$small-only} {
+      width: 100%;
+    }
+    @media #{$medium-up} {
+      width: 66.66666%;
+    }
+  }
+  .toekomstbeeld {
+    background-image: url(../images/background/malinked-block-dark.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hoewas {
+    span {
+      font-size: 15vw;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      display: block;
+
+      margin-bottom: -10vw;
+
+      color: $white;
+    }
+  }
+  .project--info {
+    background-color: $white;
+    h2 {
+      color: $tuatara;
+    }
+    p {
+      color: $tuatara;
+    }
+    a {
+      position: absolute;
+      bottom: 20px;
+
+      color: $tuatara;
+    }
+  }
+  .project--image {
+    overflow: hidden;
+
+    padding: 0;
+    img {
+      position: absolute;
+
+      overflow: hidden;
+
+      width: auto;
+      min-width: 100%;
+      height: auto;
+      min-height: 100%;
+    }
+    &:after {
+      @include transform(rotate(45deg));
+
+      position: absolute;
+
+      width: 25px;
+      height: 25px;
+      margin-top: 65%;
+      margin-left: -12.5px;
+
+      content: "";
+
+      background: $white;
+    }
+  }
+  .hobby {
+    color: $white;
+    background-color: $black;
+    h2 {
+      color: $white;
+    }
+    p {
+      color: $white;
+    }
+  }
+  .favoriet {
+    p {
+      span {
+        font-size: rem-calc(35);
+      }
+    }
+  }
+  .maps {
+    #map-canvas {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      bottom: -200px;
+      left: 0;
+
+      height: 100%;
+    }
+    #pin {
+      position: relative;
+      z-index: 100;
+    }
+  }
+  &.grafischvormgeven {
+    .toekomstbeeld {
+      background-color: $grafischvormgeven;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $grafischvormgeven;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &.een {
+        background-image: url(../images/background/hoewas-1.png);
+      }
+      &.twee {
+        background-image: url(../images/background/hoewas-2.png);
+      }
+      &.drie {
+        background-image: url(../images/background/hoewas-3.png);
+      }
+      &.vier {
+        background-image: url(../images/background/hoewas-4.png);
+      }
+      &.vijf {
+        background-image: url(../images/background/hoewas-5.png);
+      }
+      &.zes {
+        background-image: url(../images/background/hoewas-6.png);
+      }
+      &.zeven {
+        background-image: url(../images/background/hoewas-7.png);
+      }
+      &.acht {
+        background-image: url(../images/background/hoewas-8.png);
+      }
+      &.negen {
+        background-image: url(../images/background/hoewas-9.png);
+      }
+      &.tien {
+        background-image: url(../images/background/hoewas-10.png);
+      }
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $grafischvormgeven;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+}
+/*-----  End of Profile page  ------*/
+
+
+/*==============================
+=            Search            =
+==============================*/
+#searchModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  overflow: auto;
+
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+
+  background-color: $black-80;
+  &.reveal-modal {
+    border: none;
+    outline: none;
+    a {
+      &.close-reveal-modal {
+        font-size: rem-calc(18);
+
+        padding-right: 20px;
+        padding-left: 20px;
+
+        text-transform: uppercase;
+
+        color: $white;
+      }
+    }
+  }
+  .search {
+    margin-bottom: 85px;
+  }
+
+  span.search-icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  input {
+    font-size: rem-calc(28);
+
+    display: block;
+
+    width: 100%;
+    max-width: rem-calc(620);
+    height: 35px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+    color: $white;
+    border: none;
+    outline: none;
+    background: transparent url("/static/images/search-icon.png") no-repeat scroll 600px;
+    &.search-bar {
+      @include transform(translateY(-50%));
+
+      font-size: rem-calc(25);
+      line-height: 35px;
+
+      top: 0;
+
+      margin-bottom: 50px;
+      padding-top: 25px;
+
+      color: $white;
+      background-color: transparent;
+      // z-index: 1000;
+    }
+  }
+
+  .border {
+    width: 100%;
+    max-width: rem-calc(620);
+    height: 1px;
+    margin: 0 auto;
+
+    background-color: $white;
+  }
+
+  a.close-reveal-modal {
+    padding-top: 25px;
+  }
+
+  .opleidingen-menu {
+    position: absolute;
+    z-index: 100000;
+    ul {
+      margin-left: 0;
+      a {
+        font-size: rem-calc(16);
+
+        text-transform: uppercase;
+
+        color: $white;
+        li {
+          margin-bottom: 20px;
+
+          list-style-type: none;
+          &.grafischvormgeven {
+            &.active {
+              color: $grafischvormgeven;
+            }
+          }
+          &.interactiefvormgeven {
+            &.active {
+              color: $interactiefvormgeven;
+            }
+          }
+          &.audiovisueelvormgeven {
+            &.active {
+              color: $audiovisueelvormgeven;
+            }
+          }
+          &.ruimtelijkvormgeven {
+            &.active {
+              color: $ruimtelijkvormgeven;
+            }
+          }
+          &.filmacteur {
+            &.active {
+              color: $filmacteur;
+            }
+          }
+          &.audiovisueeltechnicus {
+            &.active {
+              color: $audiovisueeltechnicus;
+            }
+          }
+          &.podiumtechnicus {
+            &.active {
+              color: $podiumtechnicus;
+            }
+          }
+          &.evenemententechnicus {
+            &.active {
+              color: $evenemententechnicus;
+            }
+          }
+          &.geluidtechnicus {
+            &.active {
+              color: $geluidtechnicus;
+            }
+          }
+          &.mediaengamedevelopment {
+            &.active {
+              color: $mediaengamedevelopment;
+            }
+          }
+          &.gameartist {
+            &.active {
+              color: $gameartist;
+            }
+          }
+          &.mediamanager {
+            &.active {
+              color: $mediamanager;
+            }
+          }
+          &.dtp {
+            &.active {
+              color: $dtp;
+            }
+          }
+          &.signmaker {
+            &.active {
+              color: $signmaker;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .hamburger {
+    @include btn(0px, 0);
+
+    top: 30px;
+    left: 30px;
+    .icon-left {
+      @include icon(4px, 15px);
+
+      left: 0;
+      &:before {
+        @include icon-before(4px, 15px, -10px);
+      }
+      &:after {
+        @include icon-after(4px, 15px, 10px);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .icon-right {
+      @include icon(4px, 15px);
+
+      left: 15px;
+      &:before {
+        @include icon-before(4px, 15px, -10px);
+      }
+      &:after {
+        @include icon-after(4px, 15px, 10px);
+      }
+    }
+    &.open {
+      .icon-left {
+        @include transition-duration(0.5s);
+
+        background: transparent;
+        &:before {
+          @include transform(rotateZ(45deg) scaleX(1.4) translate(2px, 2px));
+        }
+        &:after {
+          @include transform(rotateZ(-45deg) scaleX(1.4) translate(2px, -2px));
+        }
+      }
+      .icon-right {
+        @include transition-duration(0.5s);
+
+        background: transparent;
+        &:before {
+          @include transform(rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px));
+        }
+        &:after {
+          @include transform(rotateZ(45deg) scaleX(1.4) translate(-2px, -2px));
+        }
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .student {
+    position: relative;
+    top: -15px;
+
+    width: 100%;
+    height: 155px;
+    margin-bottom: 10px;
+    &.grafischvormgeven {
+      background-color: $grafischvormgeven;
+    }
+    &.interactiefvormgeven {
+      background-color: $interactiefvormgeven;
+    }
+    &.ruimtelijkvormgeven {
+      background-color: $ruimtelijkvormgeven;
+    }
+    &.audiovisueelvormgeven {
+      background-color: $audiovisueelvormgeven;
+    }
+    &.filmacteur {
+      background-color: $filmacteur;
+    }
+    &.audiovisueeltechnicus {
+      background-color: $audiovisueeltechnicus;
+    }
+    &.podiumtechnicus {
+      background-color: $podiumtechnicus;
+    }
+    &.evenemententechnicus {
+      @include background-size(cover);
+
+      background-color: $evenemententechnicus;
+      background-image: url("/static/images/profile-background.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    &.geluidtechnicus {
+      background-color: $geluidtechnicus;
+    }
+    &.mediaengamedevelopment {
+      background-color: $mediaengamedevelopment;
+    }
+    &.gameartist {
+      @include background-size(cover);
+
+      background-color: $evenemententechnicus;
+      background-image: url("/static/images/profile-background.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    &.mediamanager {
+      background-color: $mediamanager;
+    }
+    &.dtp {
+      background-color: $dtp;
+    }
+    &.signmaker {
+      background-color: $signmaker;
+    }
+    &:after {
+      @include background-image(linear-gradient(transparent, $black));
+
+      position: absolute;
+      z-index: 50;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      height: 83px;
+
+      content: "";
+    }
+    .info {
+      position: absolute;
+      z-index: 100;
+      right: 0;
+      bottom: 0;
+
+      margin-right: 100px;
+      h4 {
+        font-size: rem-calc(20);
+
+        margin-bottom: 0;
+
+        color: $white;
+      }
+      p {
+        font-size: rem-calc(12  );
+
+        color: $white;
+      }
+    }
+    figure {
+      img {
+        position: absolute;
+        z-index: 100;
+        bottom: 3px;
+        left: 3px;
+
+        float: left;
+
+        width: 80px;
+        height: 80px;
+        margin-top: 0;
+
+        border-radius: 100%;
+      }
+    }
+  }
+}
+/*-----  End of Search  ------*/

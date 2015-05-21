@@ -133,9 +133,6 @@ $(document).ready(function () {
 
     // Check IE version
     msieversion();
-
-    // Fire lightbox
-    lightbox();
   }, 200);
 });
 /*-----  End of Global  ------*/

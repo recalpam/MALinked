@@ -1,7 +1,57 @@
 @mixin vertical-align {
+  @include transform(translateY(-50%));
+
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+}
+
+@mixin btn($left, $top) {
+  @include transition-duration(0.5s);
+
+  position: absolute;
+  top: $top;
+  left: $left;
+
+  width: 30px;
+  height: 30px;
+}
+
+@mixin icon($height, $width) {
+  @include transition-duration(0.5s);
+
+  position: absolute;
+  top: 15px;
+
+  width: $width;
+  height: $height;
+
+  background-color: $white;
+}
+
+@mixin icon-before($height, $width, $top) {
+  @include transition-duration(0.5s);
+
+  position: absolute;
+  top: $top;
+
+  width: $width;
+  height: $height;
+
+  content: "";
+
+  background-color: $white;
+}
+
+@mixin icon-after($height, $width, $top) {
+  @include transition-duration(0.5s);
+
+  position: absolute;
+  top: $top;
+
+  width: $width;
+  height: $height;
+
+  content: "";
+
+  background-color: $white;
 }

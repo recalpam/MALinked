@@ -6,7 +6,6 @@
 angular.module('MaLinked', [
 
     /*==========  Third Party  ==========*/
-    'ngRoute',
     'ui.router',
     'ngMaterial',
     'progressApp',

@@ -1,7 +1,7 @@
 <header class="homepage">
   <nav class="menu" role="navigation">
     <div class="row">
-      <div class="logo">
+      <div class="logo" ui-sref="home">
         <span class="icon"></span>
         <span class="text">Ma Linked</span>
       </div>

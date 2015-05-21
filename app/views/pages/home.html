@@ -1,8 +1,13 @@
 
 <div class="row">
   <a href="#" ng-repeat="study in studies">
-    <div class="small-12 medium-3 columns block {{study.htmlClass}}">
-      <div class="title">{{study.htmlClass}}</div>
+    <div class="small-12 medium-3 columns block {{study.htmlClass}}" style="height: 250px;" ng-if="study.isFact">
+      <div class="title">Weet je wat het is? ...</div>
+      <br>
+      <span>{{ study.answer }}</span>
+    </div>
+    <div class="small-12 medium-3 columns block {{study.htmlClass}}" style="height: 250px;" ng-if="!study.isFact">
+      <div class="title">{{ study.object.name }}</div>
 
       <div class="naarklas">Bekijk de klas &rsaquo;</div>
     </div>

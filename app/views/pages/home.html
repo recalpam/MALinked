@@ -1,17 +1,17 @@
-<div class="row">
-  <a href="#" ng-repeat="study in studies">
-    <!-- Load random fact block -->
-    <div class="small-12 medium-3 columns block {{study.htmlClass}}" style="height: 250px;" ng-if="study.isFact">
-      <div class="title">Weet je wat het is? ...</div>
-      <br>
-      <span>{{ study.answer }}</span>
-    </div>
-    <!-- Load study -->
-    <div class="small-12 medium-3 columns block {{study.htmlClass}}" style="height: 250px;" ng-if="!study.isFact" ui-sref="opleiding({naam: study.slug})">
-      <div class="title">{{ study.object.name }}</div>
+<div class="row" ng-repeat="row in studies">
+      <!-- Load random fact block -->
+      <div class="small-12 medium-3 columns block" style="height: 250px;" ng-if="row.isFact">
+        <div class="title">Weet je wat het is? ...</div>
+        <br>
+        <span>{{ row.answer }}</span>
+      </div>
 
-      <div class="naarklas">Bekijk de klas &rsaquo;</div>
-    </div>
-  </a>
+      <!-- Load study -->
+      <a ui-sref="opleiding({slug: row.study.slug})" ng-if="!row.isFact">
+        <div class="small-12 medium-3 columns block {{row.htmlClass}}" style="height: 250px;" >
+          <div class="title">{{ row.study.name }}</div>
 
+          <div class="naarklas">Bekijk de klas &rsaquo;</div>
+        </div>
+      </a>
 </div>

@@ -1,13 +1,12 @@
-@import "compass/css3",
-        "settings",
-        "foundation",
-        "fonts",
-        "mixins",
+@import "compass/css3";
+@import "settings";
+@import "foundation";
+@import "fonts";
+@import "mixins";
 
-        "base",
-        "header",
-        "profile",
-        "helpers";
+@import "base";
+@import "header";
+@import "helpers";
 
 // Or selectively include components
 // @import

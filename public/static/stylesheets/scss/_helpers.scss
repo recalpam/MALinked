@@ -1,11 +1,18 @@
 #outdated {
   // display: block !important;
   height: 100%  !important;
-  background-color: $magenta  !important;
+
   color: $white  !important;
+  background-color: $magenta  !important;
   .content {
     @include vertical-align;
   }
+}
+
+.full-row {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .megadiv {

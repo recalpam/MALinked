@@ -139,29 +139,17 @@ $(document).ready(function () {
 
 
 /*================================
-=            Homepage            =
+=             Search             =
 ================================*/
 
 
-/*==========  Play/Pause  ==========*/
-var video = $("video").get(0);
-
-function playVid() {
-  video.play();
-}
-
-function pauseVid() {
-  video.pause();
-}
+/*==========  Hamburger Menu  ==========*/
+$(".hamburger").click(function () {
+  console.log('hamburger click 1');
+  $(this).toggleClass('open');
+  $(".opleidingen-menu").slideToggle("slow");
+  // $( ".opleidingen-menu" ).toggle("slide", "left", "slow");
+});
 
 
-/*==========  Header Scroll  ==========*/
-// binnen te standaard Header Scroll in "Do The Dirty Work Here"
-if ((blurScroll / (wHeight / 2)) > 1) {
-  pauseVid();
-} else {
-  playVid();
-}
-
-
-/*-----  End of Homepage  ------*/
+/*-----  End of Search  ------*/

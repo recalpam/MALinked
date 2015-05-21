@@ -6,8 +6,6 @@
 angular.module('MaLinked.Controllers', [])
 
 /*==========  Home  ==========*/
-
-/*==========  Home  ==========*/
 .controller('home', ['$scope', '$filter', 'db', function($scope, $filter, db){
     $scope.db = db;
 
@@ -41,9 +39,11 @@ angular.module('MaLinked.Controllers', [])
         
     }
 
-
-
     var overview = {
+        'Aa' : {
+            'study': db.studies.single( { slug: 'grafisch-vormgever' } ),
+            'htmlClass': 'grafischvormgeven'
+        },
         'Ab' : {
             'study': db.studies.single( { slug: 'interactief-vormgever' } ),
             'htmlClass': 'interactiefvormgeven'
@@ -64,7 +64,7 @@ angular.module('MaLinked.Controllers', [])
             'htmlClass': 'evenemententechnicus'
         },
         'Ah' : getRandomFact(),
-        'Ah' : getRandomFact(),
+        'Ai' : getRandomFact(),
         'Aj' : {
             'study': db.studies.single( { slug: 'geluidstechnicus' } ),
             'htmlClass': 'geluidtechnicus'
@@ -87,67 +87,9 @@ angular.module('MaLinked.Controllers', [])
             'study': db.studies.single( { slug: 'game-artist' } ),
             'htmlClass': 'gameartist'
         }
-
-
-        // 'Ab' : {
-        //     'study': ('interactief-vormgever'), 
-        //     'htmlClass': ''
-        // },
-        // 'Ac' : {
-        //     'study': ('audiovisueel-vormgeveranimatie'), 
-        //     'htmlClass': ''
-        // },
-        // 'Ad': {
-        //     'study': ('dtp-er'), 
-        //     'htmlClass': ''
-        // },
-        // 'Ae': {
-        //     'study': ('mediamanager'),
-        //     'htmlClass': ''
-        // },
-        // 'Af': {
-        //     'study': ('av-technicus'),
-        //     'htmlClass': ''
-        // },
-        // 'Ag': {
-        //     'study': ('evenemententechnicus'),
-        //     'htmlClass': ''
-        // },
-        // 'Ah': getRandomFact(),
-        // 'Ai': getRandomFact(),
-        // 'Aj': {
-        //     'study': (''),
-        //     'htmlClass': 'geluidtechnicus'
-        // },
-        // 'Ak': {
-        //     'study': (''),
-        //     'htmlClass': 'mediaengamedeveloper'
-        // },
-        // 'Al': {
-        //     'study': (''),
-        //     'htmlClass': 'ruimtelijkvormgeven'
-        // },
-        // 'Am': {
-        //     'study': (''),
-        //     'htmlClass': 'podiumtechnicus'
-        // },
-        // 'An': {
-        //     'study': ('),
-        //     'htmlClass': 'filmacteur'
-        // },
-        // 'Ao': {
-        //     'study': (''),
-        //     'htmlClass': 'signmaker'
-        // },
-        // 'Ap': {
-        //     'study': (''),
-        //     'htmlClass': 'gameartist'
-        // }
     };
 
     $scope.studies = overview;
-
-    
 
 }])
 

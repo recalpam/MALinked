@@ -6,14 +6,14 @@
         <span class="text">Ma Linked</span>
       </div>
       <ul>
-        <a href="#"><li>Opleidingen</li></a>
-        <a href="#"><li>Zoeken</li></a>
+        <a ui-sref="opleidingen"><li>Opleidingen</li></a>
+        <a href="#" data-reveal-id="searchModal"><li>Zoeken</li></a>
       </ul>
     </div>
   </nav>
   <video preload="auto" autoplay poster="/static/images/video-background.png" loop muted>
-    <source src="/static/videos/video-background.mp4" type="video/mp4">
     <source src="/static/videos/video-background.webm" type="video/webm">
+    <source src="/static/videos/video-background.mp4" type="video/mp4">
     Sorry, your browser does not support HTML5 video.
   </video>
   <div class="content">

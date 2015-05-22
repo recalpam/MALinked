@@ -53,6 +53,8 @@
 		<div class="site">
 			@include('template.header')
 
+			@include('template.modals.zoeken')
+
 			<!-- DYNAMIC PAGE -->
 			<ui-view></ui-view>
 		</div>	
@@ -70,6 +72,9 @@
 
 		{{-- FOUNDATION --}}		
 		<script src="/packages/foundation/js/foundation.min.js"></script>
+
+		{{-- ZOEK MODAL --}}
+		<script src="/static/scripts/zoeken.js"></script>
 
 		{{-- OUTDATED BROWSER JS --}}
 		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>

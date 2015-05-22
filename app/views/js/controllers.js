@@ -107,7 +107,7 @@ angular.module('MaLinked.Controllers', [])
     }
 ])
 
-/*==========  Zoeken  ==========*/
+/*==========  Opleiding  ==========*/
 .controller('opleiding', ['$scope', 'db', '$stateParams',
     function($scope, db, $stateParams) {
         $scope.db = db;

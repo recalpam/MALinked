@@ -3,3 +3,5 @@ vendor/
 /bootstrap/compiled.php
 .env.*.php
 .env.php
+composer.lock
+dump.rdb

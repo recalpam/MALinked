@@ -45,9 +45,11 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 /*==========  Global  ==========*/
 .homepage, .class {
+  @include animation(fadein 2s);
   .block {
     @include backface-visibility(hidden);
     @include transition(all 0.5s ease);
+    @include animation(fadein 2s);
 
     position: relative;
 
@@ -57,7 +59,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
     background-position: right bottom;
     background-size: cover;
-    &:hover {
+    &:hover:not(.nohover) {
       @include backface-visibility(hidden);
       @include transform(scale(1.1));
       // @include transform(rotate(-370deg));
@@ -65,15 +67,6 @@ h1, h2, h3, h4, h5, h6, p, a {
       z-index: 1;
 
       cursor: pointer;
-    }
-    &.nohover {
-      &:hover {
-        @include transform(scale(1));
-
-        z-index: -1;
-
-        cursor: default;
-      }
     }
     .title {
       @include backface-visibility(hidden);
@@ -253,6 +246,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 =            Opleiding Page            =
 ======================================*/
 .opleidingen {
+  @include animation(fadein 2s);
   figure {
     margin: 0;
     padding-bottom: 30px;
@@ -288,7 +282,9 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 
 .profile {
+  @include animation(fadein 2s);
   .block {
+    @include animation(fadein 2s);
     position: relative;
 
     float: left;

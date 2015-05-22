@@ -6302,6 +6302,16 @@ th.hide-for-touch {
   /* Legacy iOS */
   font-style: normal;
   font-weight: 700; }
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 /*==============================
 =            Global            =
 ==============================*/
@@ -6334,69 +6344,68 @@ h1, h2, h3, h4, h5, h6, p, a {
 =            Homepage + Klassen Page            =
 ===============================================*/
 /*==========  Global  ==========*/
-.homepage .block, .class .block {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative;
-  float: left;
-  padding: 15px;
-  background-position: right bottom;
-  background-size: cover; }
-  .homepage .block:hover, .class .block:hover {
+.homepage, .class {
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s; }
+  .homepage .block, .class .block {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    z-index: 1;
-    cursor: pointer; }
-  .homepage .block.nohover:hover, .class .block.nohover:hover {
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    z-index: -1;
-    cursor: default; }
-  .homepage .block .title, .class .block .title {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    font-size: 1.0625rem;
-    padding-right: 45%; }
-  .homepage .block .naarklas, .homepage .block .naarprofiel, .class .block .naarklas, .class .block .naarprofiel {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    font-size: 0.75rem;
-    position: absolute;
-    bottom: 15px; }
-  .homepage .block.grafischvormgeven, .class .block.grafischvormgeven {
-    background-color: #4fbe96; }
-  .homepage .block.interactiefvormgeven, .class .block.interactiefvormgeven {
-    background-color: #f4793b; }
-  .homepage .block.audiovisueel, .class .block.audiovisueel {
-    background-color: #4f5f8f; }
-  .homepage .block.dtper, .class .block.dtper {
-    background-color: #cd4c60; }
-  .homepage .block.mediamanager, .class .block.mediamanager {
-    background-color: #dc7f82; }
-  .homepage .block.audiovisueeltechnicus, .class .block.audiovisueeltechnicus {
-    background-color: #ef492c; }
-  .homepage .block.evenemententechnicus, .class .block.evenemententechnicus {
-    background-color: #8db83f; }
-  .homepage .block.geluidtechnicus, .class .block.geluidtechnicus {
-    background-color: #edb030; }
-  .homepage .block.mediaengamedeveloper, .class .block.mediaengamedeveloper {
-    background-color: #932545; }
-  .homepage .block.ruimtelijkvormgeven, .class .block.ruimtelijkvormgeven {
-    background-color: #edb032; }
-  .homepage .block.podiumtechnicus, .class .block.podiumtechnicus {
-    background-color: #3e3b68; }
-  .homepage .block.filmacteur, .class .block.filmacteur {
-    background-color: #0db5d9; }
-  .homepage .block.signmaker, .class .block.signmaker {
-    background-color: #218841; }
-  .homepage .block.gameartist, .class .block.gameartist {
-    background-color: #4f2b78; }
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-animation: fadein 2s;
+    animation: fadein 2s;
+    position: relative;
+    float: left;
+    padding: 15px;
+    background-position: right bottom;
+    background-size: cover; }
+    .homepage .block:hover:not(.nohover), .class .block:hover:not(.nohover) {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -ms-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      z-index: 1;
+      cursor: pointer; }
+    .homepage .block .title, .class .block .title {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      font-size: 1.0625rem;
+      padding-right: 45%; }
+    .homepage .block .naarklas, .homepage .block .naarprofiel, .class .block .naarklas, .class .block .naarprofiel {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      font-size: 0.75rem;
+      position: absolute;
+      bottom: 15px; }
+    .homepage .block.grafischvormgeven, .class .block.grafischvormgeven {
+      background-color: #4fbe96; }
+    .homepage .block.interactiefvormgeven, .class .block.interactiefvormgeven {
+      background-color: #f4793b; }
+    .homepage .block.audiovisueel, .class .block.audiovisueel {
+      background-color: #4f5f8f; }
+    .homepage .block.dtper, .class .block.dtper {
+      background-color: #cd4c60; }
+    .homepage .block.mediamanager, .class .block.mediamanager {
+      background-color: #dc7f82; }
+    .homepage .block.audiovisueeltechnicus, .class .block.audiovisueeltechnicus {
+      background-color: #ef492c; }
+    .homepage .block.evenemententechnicus, .class .block.evenemententechnicus {
+      background-color: #8db83f; }
+    .homepage .block.geluidtechnicus, .class .block.geluidtechnicus {
+      background-color: #edb030; }
+    .homepage .block.mediaengamedeveloper, .class .block.mediaengamedeveloper {
+      background-color: #932545; }
+    .homepage .block.ruimtelijkvormgeven, .class .block.ruimtelijkvormgeven {
+      background-color: #edb032; }
+    .homepage .block.podiumtechnicus, .class .block.podiumtechnicus {
+      background-color: #3e3b68; }
+    .homepage .block.filmacteur, .class .block.filmacteur {
+      background-color: #0db5d9; }
+    .homepage .block.signmaker, .class .block.signmaker {
+      background-color: #218841; }
+    .homepage .block.gameartist, .class .block.gameartist {
+      background-color: #4f2b78; }
 
 /*==========  Homepage  ==========*/
 .homepage .block.wistjedat {
@@ -6479,161 +6488,169 @@ h1, h2, h3, h4, h5, h6, p, a {
 /*======================================
 =            Opleiding Page            =
 ======================================*/
-.opleidingen figure {
-  margin: 0;
-  padding-bottom: 30px; }
-  .opleidingen figure figcaption {
-    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-    background-size: 100%;
-    background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
-    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
-    line-height: 1.33em;
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: calc(100% - 30px);
-    height: 100%;
-    margin: 0 auto;
-    padding: 15px;
-    -webkit-transition: background-color 0.3s ease;
-            transition: background-color 0.3s ease;
-    -webkit-transition: background-color 0.5s linear;
-            transition: background-color 0.5s linear;
-    color: #ffffff; }
+.opleidingen {
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s; }
+  .opleidingen figure {
+    margin: 0;
+    padding-bottom: 30px; }
+    .opleidingen figure figcaption {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+      background-size: 100%;
+      background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+      background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+      line-height: 1.33em;
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: calc(100% - 30px);
+      height: 100%;
+      margin: 0 auto;
+      padding: 15px;
+      -webkit-transition: background-color 0.3s ease;
+              transition: background-color 0.3s ease;
+      -webkit-transition: background-color 0.5s linear;
+              transition: background-color 0.5s linear;
+      color: #ffffff; }
 
 /*-----  End of Opleiding Page  ------*/
 /*====================================
 =            Profile page            =
 ====================================*/
-.profile .block {
-  position: relative;
-  float: left;
-  padding-right: 15px;
-  padding-left: 15px; }
-  .profile .block h2 {
-    font-size: 1.5625rem; }
-  .profile .block p {
-    font-size: 0.875rem; }
-  .profile .block a {
-    font-size: 0.875rem; }
-  @media only screen and (max-width: 40em) {
-    .profile .block {
-      width: 100%; } }
-  @media only screen and (min-width: 40.0625em) {
-    .profile .block {
-      width: 33.33333%; } }
-.profile .double-block {
-  position: relative;
-  float: left;
-  padding-right: 15px;
-  padding-left: 15px; }
-  @media only screen and (max-width: 40em) {
-    .profile .double-block {
-      width: 100%; } }
-  @media only screen and (min-width: 40.0625em) {
-    .profile .double-block {
-      width: 66.66666%; } }
-.profile .toekomstbeeld {
-  background-image: url(../images/background/malinked-block-dark.png);
-  background-repeat: no-repeat;
-  background-size: cover; }
-.profile .hoewas span {
-  font-size: 15vw;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: block;
-  margin-bottom: -10vw;
-  color: #FFFFFF; }
-.profile .project--info {
-  background-color: #FFFFFF; }
-  .profile .project--info h2 {
-    color: #444444; }
-  .profile .project--info p {
-    color: #444444; }
-  .profile .project--info a {
+.profile {
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s; }
+  .profile .block {
+    -webkit-animation: fadein 2s;
+    animation: fadein 2s;
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px; }
+    .profile .block h2 {
+      font-size: 1.5625rem; }
+    .profile .block p {
+      font-size: 0.875rem; }
+    .profile .block a {
+      font-size: 0.875rem; }
+    @media only screen and (max-width: 40em) {
+      .profile .block {
+        width: 100%; } }
+    @media only screen and (min-width: 40.0625em) {
+      .profile .block {
+        width: 33.33333%; } }
+  .profile .double-block {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px; }
+    @media only screen and (max-width: 40em) {
+      .profile .double-block {
+        width: 100%; } }
+    @media only screen and (min-width: 40.0625em) {
+      .profile .double-block {
+        width: 66.66666%; } }
+  .profile .toekomstbeeld {
+    background-image: url(../images/background/malinked-block-dark.png);
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .profile .hoewas span {
+    font-size: 15vw;
     position: absolute;
-    bottom: 20px;
-    color: #444444; }
-.profile .project--image {
-  overflow: hidden;
-  padding: 0; }
-  .profile .project--image img {
-    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    margin-bottom: -10vw;
+    color: #FFFFFF; }
+  .profile .project--info {
+    background-color: #FFFFFF; }
+    .profile .project--info h2 {
+      color: #444444; }
+    .profile .project--info p {
+      color: #444444; }
+    .profile .project--info a {
+      position: absolute;
+      bottom: 20px;
+      color: #444444; }
+  .profile .project--image {
     overflow: hidden;
-    width: auto;
-    min-width: 100%;
-    height: auto;
-    min-height: 100%; }
-  .profile .project--image:after {
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+    padding: 0; }
+    .profile .project--image img {
+      position: absolute;
+      overflow: hidden;
+      width: auto;
+      min-width: 100%;
+      height: auto;
+      min-height: 100%; }
+    .profile .project--image:after {
+      -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      margin-top: 65%;
+      margin-left: -12.5px;
+      content: "";
+      background: #FFFFFF; }
+  .profile .hobby {
+    color: #FFFFFF;
+    background-color: #000000; }
+    .profile .hobby h2 {
+      color: #FFFFFF; }
+    .profile .hobby p {
+      color: #FFFFFF; }
+  .profile .favoriet p span {
+    font-size: 2.1875rem; }
+  .profile .maps #map-canvas {
     position: absolute;
-    width: 25px;
-    height: 25px;
-    margin-top: 65%;
-    margin-left: -12.5px;
-    content: "";
-    background: #FFFFFF; }
-.profile .hobby {
-  color: #FFFFFF;
-  background-color: #000000; }
-  .profile .hobby h2 {
-    color: #FFFFFF; }
-  .profile .hobby p {
-    color: #FFFFFF; }
-.profile .favoriet p span {
-  font-size: 2.1875rem; }
-.profile .maps #map-canvas {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  right: 0;
-  bottom: -200px;
-  left: 0;
-  height: 100%; }
-.profile .maps #pin {
-  position: relative;
-  z-index: 100; }
-.profile.grafischvormgeven .toekomstbeeld {
-  background-color: #4fbe96; }
-  .profile.grafischvormgeven .toekomstbeeld h2, .profile.grafischvormgeven .toekomstbeeld p {
-    color: #FFFFFF; }
-.profile.grafischvormgeven .hoewas {
-  overflow: hidden;
-  background-color: #4fbe96;
-  background-repeat: no-repeat;
-  background-size: cover; }
-  .profile.grafischvormgeven .hoewas.een {
-    background-image: url(../images/background/hoewas-1.png); }
-  .profile.grafischvormgeven .hoewas.twee {
-    background-image: url(../images/background/hoewas-2.png); }
-  .profile.grafischvormgeven .hoewas.drie {
-    background-image: url(../images/background/hoewas-3.png); }
-  .profile.grafischvormgeven .hoewas.vier {
-    background-image: url(../images/background/hoewas-4.png); }
-  .profile.grafischvormgeven .hoewas.vijf {
-    background-image: url(../images/background/hoewas-5.png); }
-  .profile.grafischvormgeven .hoewas.zes {
-    background-image: url(../images/background/hoewas-6.png); }
-  .profile.grafischvormgeven .hoewas.zeven {
-    background-image: url(../images/background/hoewas-7.png); }
-  .profile.grafischvormgeven .hoewas.acht {
-    background-image: url(../images/background/hoewas-8.png); }
-  .profile.grafischvormgeven .hoewas.negen {
-    background-image: url(../images/background/hoewas-9.png); }
-  .profile.grafischvormgeven .hoewas.tien {
-    background-image: url(../images/background/hoewas-10.png); }
-  .profile.grafischvormgeven .hoewas h2, .profile.grafischvormgeven .hoewas p {
-    color: #FFFFFF; }
-.profile.grafischvormgeven .favoriet {
-  color: #FFFFFF;
-  background-color: #4fbe96; }
-  .profile.grafischvormgeven .favoriet h2 {
-    color: #FFFFFF; }
-  .profile.grafischvormgeven .favoriet p {
-    color: #FFFFFF; }
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: -200px;
+    left: 0;
+    height: 100%; }
+  .profile .maps #pin {
+    position: relative;
+    z-index: 100; }
+  .profile.grafischvormgeven .toekomstbeeld {
+    background-color: #4fbe96; }
+    .profile.grafischvormgeven .toekomstbeeld h2, .profile.grafischvormgeven .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profile.grafischvormgeven .hoewas {
+    overflow: hidden;
+    background-color: #4fbe96;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profile.grafischvormgeven .hoewas.een {
+      background-image: url(../images/background/hoewas-1.png); }
+    .profile.grafischvormgeven .hoewas.twee {
+      background-image: url(../images/background/hoewas-2.png); }
+    .profile.grafischvormgeven .hoewas.drie {
+      background-image: url(../images/background/hoewas-3.png); }
+    .profile.grafischvormgeven .hoewas.vier {
+      background-image: url(../images/background/hoewas-4.png); }
+    .profile.grafischvormgeven .hoewas.vijf {
+      background-image: url(../images/background/hoewas-5.png); }
+    .profile.grafischvormgeven .hoewas.zes {
+      background-image: url(../images/background/hoewas-6.png); }
+    .profile.grafischvormgeven .hoewas.zeven {
+      background-image: url(../images/background/hoewas-7.png); }
+    .profile.grafischvormgeven .hoewas.acht {
+      background-image: url(../images/background/hoewas-8.png); }
+    .profile.grafischvormgeven .hoewas.negen {
+      background-image: url(../images/background/hoewas-9.png); }
+    .profile.grafischvormgeven .hoewas.tien {
+      background-image: url(../images/background/hoewas-10.png); }
+    .profile.grafischvormgeven .hoewas h2, .profile.grafischvormgeven .hoewas p {
+      color: #FFFFFF; }
+  .profile.grafischvormgeven .favoriet {
+    color: #FFFFFF;
+    background-color: #4fbe96; }
+    .profile.grafischvormgeven .favoriet h2 {
+      color: #FFFFFF; }
+    .profile.grafischvormgeven .favoriet p {
+      color: #FFFFFF; }
 
 /*-----  End of Profile page  ------*/
 /*==============================

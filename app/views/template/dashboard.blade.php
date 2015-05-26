@@ -49,12 +49,67 @@
 	</head>
 	<body ng-app="Dashboard">
 
-		<!-- PAGE CONTAINER -->
+		<div ng-switch on="state.current.name">
+			<div ng-switch-when="login">
+				<!-- DYNAMIC PAGE -->
+				<ui-view></ui-view>
+			</div>
+
+			<div ng-switch-default>
+				<!-- PAGE CONTAINER -->
+				<header>
+				  <div class="row">
+				    <div class="medium-3 columns logo">
+				      <img src="/static/images/logo.png"> Ma linked
+				    </div>
+				    <div class="medium-5 columns welcome">
+				      <h1>Welkom Nathan Keyzer</h1>
+				      <a href="#" class="profiel-bekijken">Bekijk je profiel</a>
+				    </div>
+				    <div class="medium-4 columns logout">
+				      <a href="#" class="button">Uitloggen</a>
+				    </div>
+				  </div>
+				</header>
+
+				<section class="dashboard">
+				  <div class="row">
+				    <nav>
+				      <div class="medium-3 columns">
+				        <div class="nav">
+				          <ul>
+				            <a href="/dashboard/waarom-het-ma">
+				              <li class="active">Waarom het Ma?</li>
+				            </a>
+				            <a href="/dashboard/hobbys-en-gegevens">
+				              <li>Hobby’s en gegevens</li>
+				            </a>
+				            <a href="/dashboard/projecten">
+				              <li>Projecten</li>
+				            </a>
+				            <a href="/dashboard/over-de-school">
+				              <li>Over de school</li>
+				            </a>
+				            <a href="/dashboard/toekomstbeeld">
+				              <li>Toekomstbeeld</li>
+				            </a>
+				            <div class="copyright">
+				              &copy; 2015 - Ma Linked
+				            </div>
+				          </ul>
+				        </div>
+				      </div>
+				    </nav>
 
 
+						<!-- DYNAMIC PAGE -->
+						<ui-view></ui-view>
 
-		<!-- DYNAMIC PAGE -->
-		<ui-view></ui-view>
+
+				  </div>
+				</section>
+			</div>
+		</div>
 
 		<!-- JQUERY TRASH -->
 		<script type="text/javascript" src="/packages/jquery/dist/jquery.js"></script>
@@ -78,7 +133,7 @@
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.controllers"></script>
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.routes"></script>
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.app"></script>
-		
+
 
 	</body>
 </html>

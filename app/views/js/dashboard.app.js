@@ -1,13 +1,13 @@
 angular.module('Dashboard', [
 
-    /*==========  Third Party  ==========*/
-    'ui.router',
-    'ngMaterial',
-    'progressApp',
+  /*==========  Third Party  ==========*/
+  'ui.router',
+  'ngMaterial',
+  'progressApp',
 
-    /*==========  Native  ==========*/
-    'Dashboard.Controllers',
-    'Dashboard.Routes'
+  /*==========  Native  ==========*/
+  'Dashboard.Controllers',
+  'Dashboard.Routes'
 ])
 
 
@@ -16,16 +16,22 @@ angular.module('Dashboard', [
 =            $locationProvider            =
 =========================================*/
 .config(['$locationProvider',
-    function($locationProvider) {
-        $locationProvider.html5Mode(true);
-    }
+  function ($locationProvider) {
+    $locationProvider.html5Mode(true);
+  }
 ])
 
 /*=========================================
 =            $urlRouteProvider            =
 =========================================*/
 .config(['$urlRouterProvider',
-    function($urlRouterProvider) {
-        $urlRouterProvider.otherwise("/dashboard/login");
-    }
+  function ($urlRouterProvider) {
+    $urlRouterProvider.otherwise("/dashboard/login");
+  }
+])
+
+.run(['$rootScope', '$state',
+  function ($rootScope, $state) {
+    $rootScope.state = $state;
+  }
 ])

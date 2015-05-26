@@ -18,6 +18,7 @@ class CreateGroupsTable extends Migration {
 			$table->integer('study_id');
 			$table->string('name');
 			$table->string('fullname');
+			$table->integer('file_id')->nullable();
 			$table->timestamps();
 		});
 	}

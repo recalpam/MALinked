@@ -41,8 +41,8 @@ angular.module('MaLinked', [
 /*==============================
 =            Events            =
 ==============================*/
-.run(['$rootScope', '$timeout', 'ngProgress',
-    function($rootScope, $timeout, ngProgress) {
+.run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state',
+    function($rootScope, $timeout, ngProgress, $rootScope, $state) {
         $rootScope.show = false;
 
         ngProgress.start();
@@ -53,7 +53,7 @@ angular.module('MaLinked', [
 
         $rootScope
             .$watch('$stateChangeStart', function() {
-                console.log('Start loading..');
+                $rootScope.currentState = $state.current.name;
                 ngProgress.start();
             });
 
@@ -64,4 +64,47 @@ angular.module('MaLinked', [
                     ngProgress.complete();
                 });
     }
-]);
+])
+
+
+/*==================================================
+=            Accessable outside ui-view            =
+==================================================*/
+.run(['$rootScope', '$http',
+    function($rootScope, $http) {
+
+        // $http get
+        var get = function(action) {
+            return $http.get('/api/db/' + action);
+        }
+
+        // appends query-like methods to a local object!
+        querify = function(object) {
+            if (typeof(object) == "object") {
+                for (var candidate in object) {
+
+                    /* Filter based upon params */
+                    object[candidate].where = function(params) {
+                        return $filter('filter')(this, params, true);
+                    };
+
+                    /* Filter but only return a single value */
+                    object[candidate].single = function(params) {
+                        var result = this.where(params);
+                        if (result.length > 0) return result[0];
+                    };
+                }
+            }
+
+            // return the modified (contains appended functionality)
+            return object;
+        };
+
+        get('sync').then(function(response) {
+            $rootScope.db = querify(response.data);
+        });
+
+  
+
+    }
+])

@@ -41,8 +41,8 @@ angular.module('MaLinked', [
 /*==============================
 =            Events            =
 ==============================*/
-.run(['$rootScope', '$timeout', 'ngProgress', '$rootScope',
-    function($rootScope, $timeout, ngProgress, $rootScope) {
+.run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state',
+    function($rootScope, $timeout, ngProgress, $rootScope, $state) {
         $rootScope.show = false;
 
         ngProgress.start();
@@ -53,7 +53,7 @@ angular.module('MaLinked', [
 
         $rootScope
             .$watch('$stateChangeStart', function() {
-                console.log()
+                $rootScope.currentState = $state.current.name;
                 ngProgress.start();
             });
 
@@ -104,9 +104,7 @@ angular.module('MaLinked', [
             $rootScope.db = querify(response.data);
         });
 
-        /* template -> header needs to have data about the state  */
-        $rootScope.header = {};
-        $rootScope.header.class = "homepage";
+  
 
     }
 ])

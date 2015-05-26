@@ -1,4 +1,4 @@
-<header class="@{{ header.class }}">
+<header class="@{{ currentState }}">
 	<nav class="menu" role="navigation">
 		<div class="row">
 			<div class="logo" ui-sref="home">
@@ -11,7 +11,7 @@
 			</ul>
 		</div>
 	</nav>
-	<div id="headerHome" class="hidden">
+	<div ng-if="currentState=='home'" >
 		<video preload="auto" autoplay poster="/static/images/video-background.png" loop muted>
 			<source src="/static/videos/video-background.webm" type="video/webm">
 			<source src="/static/videos/video-background.mp4" type="video/mp4">
@@ -25,7 +25,7 @@
 		<div class="overlay" style="background-image: url(/static/images/video-background.png);"></div>
 	</div>
 	
-	<div id="headerHome" class="hidden">
+	<div ng-if="currentState=='profiel'">
 		<div class="content">
 			<div class="bar">
 				<div class="row">

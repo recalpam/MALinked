@@ -6,8 +6,11 @@
 angular.module('MaLinked.Controllers', [])
 
 /*==========  Home  ==========*/
-.controller('home', ['$scope', '$filter', 'db',
-    function($scope, $filter, db) {
+.controller('home', ['$scope', '$filter', 'db', '$rootScope',
+    function($scope, $filter, db, $rootScope) {
+
+        $rootScope.currentState = "home";
+
         $scope.db = db;
 
         var facts = {
@@ -137,6 +140,7 @@ angular.module('MaLinked.Controllers', [])
 /*==========  Profiel  ==========*/
 .controller('profiel', ['$scope', '$state', '$stateParams', '$filter', 'db', '$rootScope',
     function($scope, $state, $stateParams, $filter, db, $rootScope) {
+        $rootScope.currentState = "profiel";
         $('#searchModal').foundation('reveal', 'close');
         var blockEqualize = $('.block');
         var blockEqualizeWidth = blockEqualize.width();

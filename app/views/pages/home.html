@@ -1,4 +1,4 @@
-<section class="homepage">
+<section class="{{ currentState }}">
 	<!-- ROW START -->
 	<div class="row">
 		<div ng-repeat="row in studies">
@@ -10,7 +10,7 @@
 		</div>
 		<!-- Load study -->
 		<a ui-sref="opleiding({slug: row.study.slug})" ng-if="!row.isFact">
-			<div class="small-12 medium-3 columns block {{row.htmlClass}}" style="height: 250px;" >
+			<div class="small-12 medium-3 columns block {{row.study.slug}}" style="height: 250px;" >
 				<div class="title">{{ row.study.name }}</div>
 				<div class="naarklas">Bekijk de klas &rsaquo;</div>
 			</div>
@@ -18,5 +18,4 @@
 		</div>
 	</div>
 	<!-- ROW STOP -->
-	
 </section>

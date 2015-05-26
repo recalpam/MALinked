@@ -6378,25 +6378,25 @@ h1, h2, h3, h4, h5, h6, p, a {
       font-size: 0.75rem;
       position: absolute;
       bottom: 15px; }
-    .homepage .block.grafischvormgeven, .class .block.grafischvormgeven {
+    .homepage .block.grafisch-vormgever, .class .block.grafisch-vormgever {
       background-color: #4fbe96; }
-    .homepage .block.interactiefvormgeven, .class .block.interactiefvormgeven {
+    .homepage .block.interactief-vormgever, .class .block.interactief-vormgever {
       background-color: #f4793b; }
-    .homepage .block.audiovisueel, .class .block.audiovisueel {
+    .homepage .block.audiovisueel-vormgeveranimatie, .class .block.audiovisueel-vormgeveranimatie {
       background-color: #4f5f8f; }
-    .homepage .block.dtper, .class .block.dtper {
+    .homepage .block.dtp-er, .class .block.dtp-er {
       background-color: #cd4c60; }
     .homepage .block.mediamanager, .class .block.mediamanager {
       background-color: #dc7f82; }
-    .homepage .block.audiovisueeltechnicus, .class .block.audiovisueeltechnicus {
+    .homepage .block.av-technicus, .class .block.av-technicus {
       background-color: #ef492c; }
     .homepage .block.evenemententechnicus, .class .block.evenemententechnicus {
       background-color: #8db83f; }
-    .homepage .block.geluidtechnicus, .class .block.geluidtechnicus {
+    .homepage .block.geluidstechnicus, .class .block.geluidstechnicus {
       background-color: #edb030; }
-    .homepage .block.mediaengamedeveloper, .class .block.mediaengamedeveloper {
+    .homepage .block.media-en-gamedeveloper, .class .block.media-en-gamedeveloper {
       background-color: #932545; }
-    .homepage .block.ruimtelijkvormgeven, .class .block.ruimtelijkvormgeven {
+    .homepage .block.ruimtelijk-vormgever, .class .block.ruimtelijk-vormgever {
       background-color: #edb032; }
     .homepage .block.podiumtechnicus, .class .block.podiumtechnicus {
       background-color: #3e3b68; }
@@ -6404,7 +6404,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       background-color: #0db5d9; }
     .homepage .block.signmaker, .class .block.signmaker {
       background-color: #218841; }
-    .homepage .block.gameartist, .class .block.gameartist {
+    .homepage .block.game-artist, .class .block.game-artist {
       background-color: #4f2b78; }
 
 /*==========  Homepage  ==========*/
@@ -6423,17 +6423,17 @@ h1, h2, h3, h4, h5, h6, p, a {
   .homepage .block.overhetma p {
     font-size: 0.75rem;
     padding-top: 10px; }
-.homepage .block.grafischvormgeven {
+.homepage .block.grafisch-vormgever {
   background-image: url(../images/background/homepage_grafischvormgeven.png); }
-.homepage .block.interactiefvormgeven {
+.homepage .block.interactief-vormgever {
   background-image: url(../images/background/homepage_interactiefvormgeven.png); }
-.homepage .block.audiovisueel {
+.homepage .block.audiovisueel-vormgeveranimatie {
   background-image: url(../images/background/homepage_audiovisueelvormgeven.png); }
-.homepage .block.dtper {
+.homepage .block.dtp-er {
   background-image: url(../images/background/homepage_dtp.png); }
 .homepage .block.mediamanager {
   background-image: url(../images/background/homepage_mediamanager.png); }
-.homepage .block.audiovisueeltechnicus {
+.homepage .block.av-technicus {
   background-image: url(../images/background/homepage_audiovisueeltechnicus.png); }
 .homepage .block.evenemententechnicus {
   background-image: url(../images/background/homepage_evenemententechnicus.png); }
@@ -6613,43 +6613,43 @@ h1, h2, h3, h4, h5, h6, p, a {
   .profile .maps #pin {
     position: relative;
     z-index: 100; }
-  .profile.grafischvormgeven .toekomstbeeld {
+  .profile.grafisch-vormgever .toekomstbeeld {
     background-color: #4fbe96; }
-    .profile.grafischvormgeven .toekomstbeeld h2, .profile.grafischvormgeven .toekomstbeeld p {
+    .profile.grafisch-vormgever .toekomstbeeld h2, .profile.grafisch-vormgever .toekomstbeeld p {
       color: #FFFFFF; }
-  .profile.grafischvormgeven .hoewas {
+  .profile.grafisch-vormgever .hoewas {
     overflow: hidden;
     background-color: #4fbe96;
     background-repeat: no-repeat;
     background-size: cover; }
-    .profile.grafischvormgeven .hoewas.een {
+    .profile.grafisch-vormgever .hoewas.een {
       background-image: url(../images/background/hoewas-1.png); }
-    .profile.grafischvormgeven .hoewas.twee {
+    .profile.grafisch-vormgever .hoewas.twee {
       background-image: url(../images/background/hoewas-2.png); }
-    .profile.grafischvormgeven .hoewas.drie {
+    .profile.grafisch-vormgever .hoewas.drie {
       background-image: url(../images/background/hoewas-3.png); }
-    .profile.grafischvormgeven .hoewas.vier {
+    .profile.grafisch-vormgever .hoewas.vier {
       background-image: url(../images/background/hoewas-4.png); }
-    .profile.grafischvormgeven .hoewas.vijf {
+    .profile.grafisch-vormgever .hoewas.vijf {
       background-image: url(../images/background/hoewas-5.png); }
-    .profile.grafischvormgeven .hoewas.zes {
+    .profile.grafisch-vormgever .hoewas.zes {
       background-image: url(../images/background/hoewas-6.png); }
-    .profile.grafischvormgeven .hoewas.zeven {
+    .profile.grafisch-vormgever .hoewas.zeven {
       background-image: url(../images/background/hoewas-7.png); }
-    .profile.grafischvormgeven .hoewas.acht {
+    .profile.grafisch-vormgever .hoewas.acht {
       background-image: url(../images/background/hoewas-8.png); }
-    .profile.grafischvormgeven .hoewas.negen {
+    .profile.grafisch-vormgever .hoewas.negen {
       background-image: url(../images/background/hoewas-9.png); }
-    .profile.grafischvormgeven .hoewas.tien {
+    .profile.grafisch-vormgever .hoewas.tien {
       background-image: url(../images/background/hoewas-10.png); }
-    .profile.grafischvormgeven .hoewas h2, .profile.grafischvormgeven .hoewas p {
+    .profile.grafisch-vormgever .hoewas h2, .profile.grafisch-vormgever .hoewas p {
       color: #FFFFFF; }
-  .profile.grafischvormgeven .favoriet {
+  .profile.grafisch-vormgever .favoriet {
     color: #FFFFFF;
     background-color: #4fbe96; }
-    .profile.grafischvormgeven .favoriet h2 {
+    .profile.grafisch-vormgever .favoriet h2 {
       color: #FFFFFF; }
-    .profile.grafischvormgeven .favoriet p {
+    .profile.grafisch-vormgever .favoriet p {
       color: #FFFFFF; }
 
 /*-----  End of Profile page  ------*/
@@ -6724,31 +6724,31 @@ h1, h2, h3, h4, h5, h6, p, a {
         #searchModal .opleidingen-menu ul a li {
           margin-bottom: 20px;
           list-style-type: none; }
-          #searchModal .opleidingen-menu ul a li.grafischvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.grafisch-vormgever.active {
             color: #4fbe96; }
-          #searchModal .opleidingen-menu ul a li.interactiefvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.interactief-vormgever.active {
             color: #f4793b; }
-          #searchModal .opleidingen-menu ul a li.audiovisueelvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.audiovisueel-vormgeveranimatie.active {
             color: #4f5f8f; }
-          #searchModal .opleidingen-menu ul a li.ruimtelijkvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.ruimtelijk-vormgever.active {
             color: #edb032; }
           #searchModal .opleidingen-menu ul a li.filmacteur.active {
             color: #0db5d9; }
-          #searchModal .opleidingen-menu ul a li.audiovisueeltechnicus.active {
+          #searchModal .opleidingen-menu ul a li.av-technicus.active {
             color: #ef492c; }
           #searchModal .opleidingen-menu ul a li.podiumtechnicus.active {
             color: #3e3b68; }
           #searchModal .opleidingen-menu ul a li.evenemententechnicus.active {
             color: #8db83f; }
-          #searchModal .opleidingen-menu ul a li.geluidtechnicus.active {
+          #searchModal .opleidingen-menu ul a li.geluidstechnicus.active {
             color: #edb030; }
-          #searchModal .opleidingen-menu ul a li.mediaengamedevelopment.active {
+          #searchModal .opleidingen-menu ul a li.media-en-gamedeveloper.active {
             color: #932545; }
-          #searchModal .opleidingen-menu ul a li.gameartist.active {
+          #searchModal .opleidingen-menu ul a li.game-artist.active {
             color: #4f2b78; }
           #searchModal .opleidingen-menu ul a li.mediamanager.active {
             color: #dc7f82; }
-          #searchModal .opleidingen-menu ul a li.dtp.active {
+          #searchModal .opleidingen-menu ul a li.dtp-er.active {
             color: #cd4c60; }
           #searchModal .opleidingen-menu ul a li.signmaker.active {
             color: #218841; }
@@ -6845,44 +6845,39 @@ h1, h2, h3, h4, h5, h6, p, a {
     #searchModal .hamburger:hover {
       cursor: pointer; }
   #searchModal .student {
+    background-size: cover;
     position: relative;
     top: -15px;
     width: 100%;
     height: 155px;
-    margin-bottom: 10px; }
-    #searchModal .student.grafischvormgeven {
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    #searchModal .student.grafisch-vormgever {
       background-color: #4fbe96; }
-    #searchModal .student.interactiefvormgeven {
+    #searchModal .student.interactief-vormgever {
       background-color: #f4793b; }
-    #searchModal .student.ruimtelijkvormgeven {
+    #searchModal .student.ruimtelijk-vormgever {
       background-color: #edb032; }
-    #searchModal .student.audiovisueelvormgeven {
+    #searchModal .student.audiovisueel-vormgeveranimatie {
       background-color: #4f5f8f; }
     #searchModal .student.filmacteur {
       background-color: #0db5d9; }
-    #searchModal .student.audiovisueeltechnicus {
+    #searchModal .student.av-technicus {
       background-color: #ef492c; }
     #searchModal .student.podiumtechnicus {
       background-color: #3e3b68; }
     #searchModal .student.evenemententechnicus {
-      background-size: cover;
-      background-color: #8db83f;
-      background-image: url("/static/images/profile-background.png");
-      background-position: center center;
-      background-repeat: no-repeat; }
-    #searchModal .student.geluidtechnicus {
+      background-color: #8db83f; }
+    #searchModal .student.geluidstechnicus {
       background-color: #edb030; }
-    #searchModal .student.mediaengamedevelopment {
+    #searchModal .student.media-en-gamedeveloper {
       background-color: #932545; }
-    #searchModal .student.gameartist {
-      background-size: cover;
-      background-color: #8db83f;
-      background-image: url("/static/images/profile-background.png");
-      background-position: center center;
-      background-repeat: no-repeat; }
+    #searchModal .student.game-artist {
+      background-color: #4f2b78; }
     #searchModal .student.mediamanager {
       background-color: #dc7f82; }
-    #searchModal .student.dtp {
+    #searchModal .student.dtp-er {
       background-color: #cd4c60; }
     #searchModal .student.signmaker {
       background-color: #218841; }
@@ -7186,5 +7181,4 @@ header .content {
 
 .megadiv {
   height: 10000px; }
-
 /*# sourceMappingURL=app.css.map */

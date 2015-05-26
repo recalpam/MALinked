@@ -1,170 +1,169 @@
-#searchModal{
+#searchModal {
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  overflow: auto;
+
   width: 100%;
   max-width: 100%;
   min-height: 100%;
-  overflow: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: $black-80;
 
+  background-color: $black-80;
   &.reveal-modal {
     border: none;
     outline: none;
     a {
-      &.close-reveal-modal{
-        color: $white;
+      &.close-reveal-modal {
         font-size: rem-calc(18);
-        text-transform: uppercase;
+
         padding-right: 20px;
         padding-left: 20px;
+
+        text-transform: uppercase;
+
+        color: $white;
       }
     }
   }
 }
 
-.search{
- margin-bottom: 85px;
+.search {
+  margin-bottom: 85px;
 }
 
-span.search-icon{
-  height: 19px;
+span.search-icon {
   width: 19px;
+  height: 19px;
+}
 
- }
+input {
+  font-size: rem-calc(28);
 
-  input{
-    width: 100%;
-    max-width: rem-calc(620);
-    height: 35px;
-    font-size: rem-calc(28);
+  display: block;
+
+  width: 100%;
+  max-width: rem-calc(620);
+  height: 35px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+
+  color: $white;
+  border: none;
+  outline: none;
+  background: transparent url("/static/images/search-icon.png") no-repeat scroll 600px;
+  &.search-bar {
+    @include transform(translateY(-50%));
+
+    font-size: rem-calc(25);
+    line-height: 35px;
+
+    top: 0;
+
+    margin-bottom: 50px;
+    padding-top: 25px;
+
     color: $white;
-    background: transparent url("/static/images/search-icon.png") no-repeat scroll 600px;
-    border: none;
-    outline: none;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 5px;
-
-    &.search-bar{
-      @include transform(translateY(-50%));
-      background-color: transparent;
-      color: $white;
-      padding-top: 25px;
-      font-size: rem-calc(25);
-      line-height: 35px;
-      margin-bottom: 50px;
-      top: 0;
-      // z-index: 1000;
+    background-color: transparent;
+    // z-index: 1000;
   }
 }
 
-  .border{
-    height: 1px;
-    width: 100%;
-    max-width: rem-calc(620);
-    background-color: $white;
-    margin: 0 auto;
-  }
+.border {
+  width: 100%;
+  max-width: rem-calc(620);
+  height: 1px;
+  margin: 0 auto;
+
+  background-color: $white;
+}
 
 a.close-reveal-modal {
   padding-top: 25px;
 }
 
-.opleidingen-menu{
+.opleidingen-menu {
   position: absolute;
   z-index: 100000;
   ul {
     margin-left: 0;
     a {
       font-size: rem-calc(16);
-      text-transform: uppercase;
-      color: $white;
 
+      text-transform: uppercase;
+
+      color: $white;
       li {
-        list-style-type: none;
         margin-bottom: 20px;
 
-        &.grafischvormgeven {
+        list-style-type: none;
+        &.grafisch-vormgever {
           &.active {
-            color: $grafischvormgeven;
+            color: $grafisch-vormgever;
           }
         }
-
-        &.interactiefvormgeven {
+        &.interactief-vormgever {
           &.active {
-            color: $interactiefvormgeven;
+            color: $interactief-vormgever;
           }
         }
-
-        &.audiovisueelvormgeven {
+        &.audiovisueel-vormgeveranimatie {
           &.active {
-            color: $audiovisueelvormgeven;
+            color: $audiovisueel-vormgeveranimatie;
           }
         }
-
-        &.ruimtelijkvormgeven {
+        &.ruimtelijk-vormgever {
           &.active {
-            color: $ruimtelijkvormgeven;
+            color: $ruimtelijk-vormgever;
           }
         }
-
         &.filmacteur {
           &.active {
             color: $filmacteur;
           }
         }
-
-        &.audiovisueeltechnicus {
+        &.av-technicus {
           &.active {
-            color: $audiovisueeltechnicus;
+            color: $av-technicus;
           }
         }
-
         &.podiumtechnicus {
           &.active {
             color: $podiumtechnicus;
           }
         }
-
         &.evenemententechnicus {
           &.active {
             color: $evenemententechnicus;
           }
         }
-
-        &.geluidtechnicus {
+        &.geluidstechnicus {
           &.active {
-            color: $geluidtechnicus;
+            color: $geluidstechnicus;
           }
         }
-
-        &.mediaengamedevelopment {
+        &.media-en-gamedeveloper {
           &.active {
-            color: $mediaengamedevelopment;
+            color: $media-en-gamedeveloper;
           }
         }
-
-        &.gameartist {
+        &.game-artist {
           &.active {
-            color: $gameartist;
+            color: $game-artist;
           }
         }
-
         &.mediamanager {
           &.active {
             color: $mediamanager;
           }
         }
-
-        &.dtp {
+        &.dtp-er {
           &.active {
-            color: $dtp;
+            color: $dtp-er;
           }
         }
-
         &.signmaker {
           &.active {
             color: $signmaker;
@@ -178,62 +177,54 @@ a.close-reveal-modal {
 
 .hamburger {
   @include btn(0px, 0);
+
   top: 30px;
   left: 30px;
-
   .icon-left {
     @include icon(4px, 15px);
-    left: 0px;
 
-    &:before{
+    left: 0;
+    &:before {
       @include icon-before(4px, 15px, -10px);
     }
-
-    &:after{
+    &:after {
       @include icon-after(4px, 15px, 10px);
     }
-
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
-
   .icon-right {
     @include icon(4px, 15px);
-    left: 15px;
 
-    &:before{
+    left: 15px;
+    &:before {
       @include icon-before(4px, 15px, -10px);
     }
-
-    &:after{
+    &:after {
       @include icon-after(4px, 15px, 10px);
     }
   }
-
   &.open {
     .icon-left {
       transition-duration: 0.5s;
-      background: transparent;
 
-      &:before{
+      background: transparent;
+      &:before {
         transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
       }
-
-      &:after{
+      &:after {
         transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
       }
     }
-
     .icon-right {
       transition-duration: 0.5s;
-      background: transparent;
 
-      &:before{
+      background: transparent;
+      &:before {
         transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
       }
-
-      &:after{
+      &:after {
         transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
       }
     }
@@ -244,114 +235,106 @@ a.close-reveal-modal {
 }
 
 .student {
-  width: 100%;
-  height: 155px;
+  @include background-size(cover);
+
   position: relative;
-  margin-bottom: 10px;
   top: -15px;
 
-    &.grafischvormgeven{
-      background-color: $grafischvormgeven;
-    }
+  width: 100%;
+  height: 155px;
+  margin-bottom: 10px;
 
-     &.interactiefvormgeven{
-      background-color: $interactiefvormgeven;
-    }
+  background-repeat: no-repeat;
+  background-position: center center;
+  &.grafisch-vormgever {
+    background-color: $grafisch-vormgever;
+  }
+  &.interactief-vormgever {
+    background-color: $interactief-vormgever;
+  }
+  &.ruimtelijk-vormgever {
+    background-color: $ruimtelijk-vormgever;
+  }
+  &.audiovisueel-vormgeveranimatie {
+    background-color: $audiovisueel-vormgeveranimatie;
+  }
+  &.filmacteur {
+    background-color: $filmacteur;
+  }
+  &.av-technicus {
+    background-color: $av-technicus;
+  }
+  &.podiumtechnicus {
+    background-color: $podiumtechnicus;
+  }
+  &.evenemententechnicus {
+    background-color: $evenemententechnicus;
+  }
+  &.geluidtechnicus {
+    background-color: $geluidtechnicus;
+  }
+  &.media-en-gamedeveloper {
+    background-color: $media-en-gamedeveloper;
+  }
+  &.game-artist {
+    background-color: $game-artist;
+  }
+  &.mediamanager {
+    background-color: $mediamanager;
+  }
+  &.dtp-er {
+    background-color: $dtp-er;
+  }
+  &.signmaker {
+    background-color: $signmaker;
+  }
+  &:after {
+    @include background-image(linear-gradient(transparent, $black));
 
-     &.ruimtelijkvormgeven{
-      background-color: $ruimtelijkvormgeven;
-    }
-
-     &.audiovisueelvormgeven{
-      background-color: $audiovisueelvormgeven;
-    }
-
-     &.filmacteur{
-      background-color: $filmacteur;
-    }
-
-     &.audiovisueeltechnicus{
-      background-color: $audiovisueeltechnicus;
-    }
-
-     &.podiumtechnicus{
-      background-color: $podiumtechnicus;
-    }
-
-     &.evenemententechnicus{
-      background: $evenemententechnicus url("/static/images/profile-background.png") no-repeat center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-
-     &.geluidtechnicus{
-      background-color: $geluidtechnicus;
-    }
-
-     &.mediaengamedevelopment{
-      background-color: $mediaengamedevelopment;
-    }
-
-     &.gameartist{
-      background: $gameartist url("/static/images/profile-background.png") no-repeat center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-
-     &.mediamanager{
-      background-color: $mediamanager;
-    }
-
-     &.dtp{
-      background-color: $dtp;
-    }
-
-     &.signmaker{
-      background-color: $signmaker;
-    }
-
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 83px;
-        @include background-image(linear-gradient(transparent, $black));
-        z-index: 50;
-      }
-
-  .info{
     position: absolute;
+    z-index: 50;
     right: 0;
     bottom: 0;
-    margin-right: 100px;
+    left: 0;
+
+    height: 83px;
+
+    content: "";
+  }
+  .info {
+    position: absolute;
     z-index: 100;
+    right: 0;
+    bottom: 0;
+
+    margin-right: 100px;
     h4 {
       font-size: rem-calc(20);
-      color: $white;
+
       margin-bottom: 0;
+
+      color: $white;
     }
     p {
       font-size: rem-calc(12  );
+
       color: $white;
     }
   }
   figure {
     img {
+      position: absolute;
+      z-index: 100;
+      bottom: 3px;
+      left: 3px;
+
+      float: left;
+
       width: 80px;
       height: 80px;
-      border-radius: 100%;
-      position: absolute;
-      left: 3px;
-      bottom: 3px;
-      float: left;
-      z-index: 100;
       margin-top: 0;
+
+      border-radius: 100%;
     }
   }
 }

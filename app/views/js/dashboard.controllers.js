@@ -1,7 +1,7 @@
 /**
  * Dashboard.Controllers Module
  *
- * COntrollers
+ * Controllers
  */
 angular.module('Dashboard.Controllers', [])
 
@@ -11,13 +11,9 @@ angular.module('Dashboard.Controllers', [])
 =============================*/
 .controller('login', ['$scope',
   function ($scope) {
-    $scope.foo = "bar";
-  }
-])
-
-.controller('foo', [
-
-  function () {
+    $scope.login = function(){
+    	alert('asda');
+    }
 
   }
 ])

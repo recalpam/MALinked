@@ -131,7 +131,7 @@ header {
 
 /*==========  Homepage  ==========*/
 header {
-  &.homepage {
+  &.home {
     video {
       @include transform(translateY(-50%));
       // @include filter(sepia(0.35) contrast(0.9) brightness(1.1) hue-rotate(-10deg) saturate(1.5));
@@ -196,13 +196,11 @@ header {
 
 /*==========  Klas en Opleiding  ==========*/
 header {
-  &.class, &.training {
+  &.klas, &.opleidingen {
     // Fallback image
-    background-image: url(../images/klassen/gv4a.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    background-size: cover;
+    @include background-size(cover);
     .content {
       .align {
         position: absolute;
@@ -243,12 +241,11 @@ header {
 
 /*==========  Profile  ==========*/
 header {
-  &.profile {
+  &.profiel {
     // Fallback image
-    background-image: url(../images/klassen/gv4a.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    @include background-size(cover);
     .content {
       .bar {
         @include transform(translateY(-75%));

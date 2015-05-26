@@ -10,14 +10,9 @@ angular.module('Dashboard.Controllers', [])
 =            Login            =
 =============================*/
 .controller('login', ['$scope',
-  function ($scope) {
-    $scope.foo = "bar";
-  }
-])
-
-.controller('foo', [
-
-  function () {
-
-  }
+    function($scope) {
+    	$scope.submit = function(){
+    		alert('ik ben vies');
+    	};
+    }
 ])

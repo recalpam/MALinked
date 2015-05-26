@@ -9,10 +9,6 @@ angular.module('MaLinked.Controllers', [])
 
 .controller('home', ['$scope', '$filter', 'db', '$rootScope', function($scope, $filter, db, $rootScope){
 
-	$rootScope.currentState = "home";
-
-	$scope.db = db;
-
 	var facts = {
 		0: '‘Uncomfortable art Biënnale’ het meest favoriete project van de grafische vormgevers is?',
 		1: 'Jelle Sjollema de meest favoriete docent van media- en gamedevelopment is?',
@@ -139,7 +135,6 @@ angular.module('MaLinked.Controllers', [])
 /*==========  Profiel  ==========*/
 .controller('profiel', ['$scope', '$state', '$stateParams', '$filter', 'db', '$rootScope',
 	function($scope, $state, $stateParams, $filter, db, $rootScope) {
-		$rootScope.currentState = "profiel";
 		$('#searchModal').foundation('reveal', 'close');
 		var blockEqualize = $('.block');
 		var blockEqualizeWidth = blockEqualize.width();

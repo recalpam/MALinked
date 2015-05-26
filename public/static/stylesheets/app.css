@@ -6344,10 +6344,10 @@ h1, h2, h3, h4, h5, h6, p, a {
 =            Homepage + Klassen Page            =
 ===============================================*/
 /*==========  Global  ==========*/
-.homepage, .class {
+.home, .klas {
   -webkit-animation: fadein 2s;
   animation: fadein 2s; }
-  .homepage .block, .class .block {
+  .home .block, .klas .block {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transition: all 0.5s ease;
@@ -6359,7 +6359,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     padding: 15px;
     background-position: right bottom;
     background-size: cover; }
-    .homepage .block:hover:not(.nohover), .class .block:hover:not(.nohover) {
+    .home .block:hover:not(.nohover), .klas .block:hover:not(.nohover) {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       -ms-transform: scale(1.1);
@@ -6367,93 +6367,93 @@ h1, h2, h3, h4, h5, h6, p, a {
       transform: scale(1.1);
       z-index: 1;
       cursor: pointer; }
-    .homepage .block .title, .class .block .title {
+    .home .block .title, .klas .block .title {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       font-size: 1.0625rem;
       padding-right: 45%; }
-    .homepage .block .naarklas, .homepage .block .naarprofiel, .class .block .naarklas, .class .block .naarprofiel {
+    .home .block .naarklas, .home .block .naarprofiel, .klas .block .naarklas, .klas .block .naarprofiel {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       font-size: 0.75rem;
       position: absolute;
       bottom: 15px; }
-    .homepage .block.grafischvormgeven, .class .block.grafischvormgeven {
+    .home .block.grafisch-vormgever, .klas .block.grafisch-vormgever {
       background-color: #4fbe96; }
-    .homepage .block.interactiefvormgeven, .class .block.interactiefvormgeven {
+    .home .block.interactief-vormgever, .klas .block.interactief-vormgever {
       background-color: #f4793b; }
-    .homepage .block.audiovisueel, .class .block.audiovisueel {
+    .home .block.audiovisueel-vormgeveranimatie, .klas .block.audiovisueel-vormgeveranimatie {
       background-color: #4f5f8f; }
-    .homepage .block.dtper, .class .block.dtper {
+    .home .block.dtp-er, .klas .block.dtp-er {
       background-color: #cd4c60; }
-    .homepage .block.mediamanager, .class .block.mediamanager {
+    .home .block.mediamanager, .klas .block.mediamanager {
       background-color: #dc7f82; }
-    .homepage .block.audiovisueeltechnicus, .class .block.audiovisueeltechnicus {
+    .home .block.av-technicus, .klas .block.av-technicus {
       background-color: #ef492c; }
-    .homepage .block.evenemententechnicus, .class .block.evenemententechnicus {
+    .home .block.evenemententechnicus, .klas .block.evenemententechnicus {
       background-color: #8db83f; }
-    .homepage .block.geluidtechnicus, .class .block.geluidtechnicus {
+    .home .block.geluidstechnicus, .klas .block.geluidstechnicus {
       background-color: #edb030; }
-    .homepage .block.mediaengamedeveloper, .class .block.mediaengamedeveloper {
+    .home .block.media-en-gamedeveloper, .klas .block.media-en-gamedeveloper {
       background-color: #932545; }
-    .homepage .block.ruimtelijkvormgeven, .class .block.ruimtelijkvormgeven {
+    .home .block.ruimtelijk-vormgever, .klas .block.ruimtelijk-vormgever {
       background-color: #edb032; }
-    .homepage .block.podiumtechnicus, .class .block.podiumtechnicus {
+    .home .block.podiumtechnicus, .klas .block.podiumtechnicus {
       background-color: #3e3b68; }
-    .homepage .block.filmacteur, .class .block.filmacteur {
+    .home .block.filmacteur, .klas .block.filmacteur {
       background-color: #0db5d9; }
-    .homepage .block.signmaker, .class .block.signmaker {
+    .home .block.signmaker, .klas .block.signmaker {
       background-color: #218841; }
-    .homepage .block.gameartist, .class .block.gameartist {
+    .home .block.game-artist, .klas .block.game-artist {
       background-color: #4f2b78; }
 
 /*==========  Homepage  ==========*/
-.homepage .block.wistjedat {
+.home .block.wistjedat {
   background-color: #000000;
   background-image: url(../images/background/malinked-block-light.png); }
-  .homepage .block.wistjedat p {
+  .home .block.wistjedat p {
     font-size: 0.75rem;
     padding-top: 10px;
     padding-right: 30%; }
-    .homepage .block.wistjedat p strong {
+    .home .block.wistjedat p strong {
       font-size: 0.875rem; }
-.homepage .block.overhetma {
+.home .block.overhetma {
   background-color: #000000;
   background-image: url(../images/background/malinked-block-light.png); }
-  .homepage .block.overhetma p {
+  .home .block.overhetma p {
     font-size: 0.75rem;
     padding-top: 10px; }
-.homepage .block.grafischvormgeven {
+.home .block.grafisch-vormgever {
   background-image: url(../images/background/homepage_grafischvormgeven.png); }
-.homepage .block.interactiefvormgeven {
+.home .block.interactief-vormgever {
   background-image: url(../images/background/homepage_interactiefvormgeven.png); }
-.homepage .block.audiovisueel {
+.home .block.audiovisueel-vormgeveranimatie {
   background-image: url(../images/background/homepage_audiovisueelvormgeven.png); }
-.homepage .block.dtper {
+.home .block.dtp-er {
   background-image: url(../images/background/homepage_dtp.png); }
-.homepage .block.mediamanager {
+.home .block.mediamanager {
   background-image: url(../images/background/homepage_mediamanager.png); }
-.homepage .block.audiovisueeltechnicus {
+.home .block.av-technicus {
   background-image: url(../images/background/homepage_audiovisueeltechnicus.png); }
-.homepage .block.evenemententechnicus {
+.home .block.evenemententechnicus {
   background-image: url(../images/background/homepage_evenemententechnicus.png); }
-.homepage .block.geluidtechnicus {
+.home .block.geluidtechnicus {
   background-image: url(../images/background/homepage_dtp.png); }
-.homepage .block.mediaengamedeveloper {
+.home .block.mediaengamedeveloper {
   background-image: url(../images/background/homepage_mediaengamedeveloper.png); }
-.homepage .block.ruimtelijkvormgeven {
+.home .block.ruimtelijkvormgeven {
   background-image: url(../images/background/homepage_ruimtelijkvormgeven.png); }
-.homepage .block.podiumtechnicus {
+.home .block.podiumtechnicus {
   background-image: url(../images/background/homepage_podiumtechnicus.png); }
-.homepage .block.filmacteur {
+.home .block.filmacteur {
   background-image: url(../images/background/homepage_filmacteur.png); }
-.homepage .block.signmaker {
+.home .block.signmaker {
   background-image: url(../images/background/homepage_signmaker.png); }
-.homepage .block.gameartist {
+.home .block.gameartist {
   background-image: url(../images/background/homepage_gameartist.png); }
 
 /*==========  Class  ==========*/
-.homepage .block figure, .class .block figure {
+.home .block figure, .klas .block figure {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
@@ -6462,7 +6462,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   bottom: 0;
   left: 0;
   margin: 0; }
-  .homepage .block figure:after, .class .block figure:after {
+  .home .block figure:after, .klas .block figure:after {
     background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
     background-size: 100%;
     background-image: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
@@ -6473,7 +6473,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     bottom: 0;
     left: 0;
     content: ""; }
-  .homepage .block figure figcaption, .class .block figure figcaption {
+  .home .block figure figcaption, .klas .block figure figcaption {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
@@ -6517,44 +6517,44 @@ h1, h2, h3, h4, h5, h6, p, a {
 /*====================================
 =            Profile page            =
 ====================================*/
-.profile {
+.profiel {
   -webkit-animation: fadein 2s;
   animation: fadein 2s; }
-  .profile .block {
+  .profiel .block {
     -webkit-animation: fadein 2s;
     animation: fadein 2s;
     position: relative;
     float: left;
     padding-right: 15px;
     padding-left: 15px; }
-    .profile .block h2 {
+    .profiel .block h2 {
       font-size: 1.5625rem; }
-    .profile .block p {
+    .profiel .block p {
       font-size: 0.875rem; }
-    .profile .block a {
+    .profiel .block a {
       font-size: 0.875rem; }
     @media only screen and (max-width: 40em) {
-      .profile .block {
+      .profiel .block {
         width: 100%; } }
     @media only screen and (min-width: 40.0625em) {
-      .profile .block {
+      .profiel .block {
         width: 33.33333%; } }
-  .profile .double-block {
+  .profiel .double-block {
     position: relative;
     float: left;
     padding-right: 15px;
     padding-left: 15px; }
     @media only screen and (max-width: 40em) {
-      .profile .double-block {
+      .profiel .double-block {
         width: 100%; } }
     @media only screen and (min-width: 40.0625em) {
-      .profile .double-block {
+      .profiel .double-block {
         width: 66.66666%; } }
-  .profile .toekomstbeeld {
+  .profiel .toekomstbeeld {
     background-image: url(../images/background/malinked-block-dark.png);
     background-repeat: no-repeat;
     background-size: cover; }
-  .profile .hoewas span {
+  .profiel .hoewas span {
     font-size: 15vw;
     position: absolute;
     bottom: 0;
@@ -6562,27 +6562,27 @@ h1, h2, h3, h4, h5, h6, p, a {
     display: block;
     margin-bottom: -10vw;
     color: #FFFFFF; }
-  .profile .project--info {
+  .profiel .project--info {
     background-color: #FFFFFF; }
-    .profile .project--info h2 {
+    .profiel .project--info h2 {
       color: #444444; }
-    .profile .project--info p {
+    .profiel .project--info p {
       color: #444444; }
-    .profile .project--info a {
+    .profiel .project--info a {
       position: absolute;
       bottom: 20px;
       color: #444444; }
-  .profile .project--image {
+  .profiel .project--image {
     overflow: hidden;
     padding: 0; }
-    .profile .project--image img {
+    .profiel .project--image img {
       position: absolute;
       overflow: hidden;
       width: auto;
       min-width: 100%;
       height: auto;
       min-height: 100%; }
-    .profile .project--image:after {
+    .profiel .project--image:after {
       -ms-transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
@@ -6593,16 +6593,16 @@ h1, h2, h3, h4, h5, h6, p, a {
       margin-left: -12.5px;
       content: "";
       background: #FFFFFF; }
-  .profile .hobby {
+  .profiel .hobby {
     color: #FFFFFF;
     background-color: #000000; }
-    .profile .hobby h2 {
+    .profiel .hobby h2 {
       color: #FFFFFF; }
-    .profile .hobby p {
+    .profiel .hobby p {
       color: #FFFFFF; }
-  .profile .favoriet p span {
+  .profiel .favoriet p span {
     font-size: 2.1875rem; }
-  .profile .maps #map-canvas {
+  .profiel .maps #map-canvas {
     position: absolute;
     z-index: 0;
     top: 0;
@@ -6610,46 +6610,46 @@ h1, h2, h3, h4, h5, h6, p, a {
     bottom: -200px;
     left: 0;
     height: 100%; }
-  .profile .maps #pin {
+  .profiel .maps #pin {
     position: relative;
     z-index: 100; }
-  .profile.grafischvormgeven .toekomstbeeld {
+  .profiel.grafisch-vormgever .toekomstbeeld {
     background-color: #4fbe96; }
-    .profile.grafischvormgeven .toekomstbeeld h2, .profile.grafischvormgeven .toekomstbeeld p {
+    .profiel.grafisch-vormgever .toekomstbeeld h2, .profiel.grafisch-vormgever .toekomstbeeld p {
       color: #FFFFFF; }
-  .profile.grafischvormgeven .hoewas {
+  .profiel.grafisch-vormgever .hoewas {
     overflow: hidden;
     background-color: #4fbe96;
     background-repeat: no-repeat;
     background-size: cover; }
-    .profile.grafischvormgeven .hoewas.een {
+    .profiel.grafisch-vormgever .hoewas.een {
       background-image: url(../images/background/hoewas-1.png); }
-    .profile.grafischvormgeven .hoewas.twee {
+    .profiel.grafisch-vormgever .hoewas.twee {
       background-image: url(../images/background/hoewas-2.png); }
-    .profile.grafischvormgeven .hoewas.drie {
+    .profiel.grafisch-vormgever .hoewas.drie {
       background-image: url(../images/background/hoewas-3.png); }
-    .profile.grafischvormgeven .hoewas.vier {
+    .profiel.grafisch-vormgever .hoewas.vier {
       background-image: url(../images/background/hoewas-4.png); }
-    .profile.grafischvormgeven .hoewas.vijf {
+    .profiel.grafisch-vormgever .hoewas.vijf {
       background-image: url(../images/background/hoewas-5.png); }
-    .profile.grafischvormgeven .hoewas.zes {
+    .profiel.grafisch-vormgever .hoewas.zes {
       background-image: url(../images/background/hoewas-6.png); }
-    .profile.grafischvormgeven .hoewas.zeven {
+    .profiel.grafisch-vormgever .hoewas.zeven {
       background-image: url(../images/background/hoewas-7.png); }
-    .profile.grafischvormgeven .hoewas.acht {
+    .profiel.grafisch-vormgever .hoewas.acht {
       background-image: url(../images/background/hoewas-8.png); }
-    .profile.grafischvormgeven .hoewas.negen {
+    .profiel.grafisch-vormgever .hoewas.negen {
       background-image: url(../images/background/hoewas-9.png); }
-    .profile.grafischvormgeven .hoewas.tien {
+    .profiel.grafisch-vormgever .hoewas.tien {
       background-image: url(../images/background/hoewas-10.png); }
-    .profile.grafischvormgeven .hoewas h2, .profile.grafischvormgeven .hoewas p {
+    .profiel.grafisch-vormgever .hoewas h2, .profiel.grafisch-vormgever .hoewas p {
       color: #FFFFFF; }
-  .profile.grafischvormgeven .favoriet {
+  .profiel.grafisch-vormgever .favoriet {
     color: #FFFFFF;
     background-color: #4fbe96; }
-    .profile.grafischvormgeven .favoriet h2 {
+    .profiel.grafisch-vormgever .favoriet h2 {
       color: #FFFFFF; }
-    .profile.grafischvormgeven .favoriet p {
+    .profiel.grafisch-vormgever .favoriet p {
       color: #FFFFFF; }
 
 /*-----  End of Profile page  ------*/
@@ -6724,31 +6724,31 @@ h1, h2, h3, h4, h5, h6, p, a {
         #searchModal .opleidingen-menu ul a li {
           margin-bottom: 20px;
           list-style-type: none; }
-          #searchModal .opleidingen-menu ul a li.grafischvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.grafisch-vormgever.active {
             color: #4fbe96; }
-          #searchModal .opleidingen-menu ul a li.interactiefvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.interactief-vormgever.active {
             color: #f4793b; }
-          #searchModal .opleidingen-menu ul a li.audiovisueelvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.audiovisueel-vormgeveranimatie.active {
             color: #4f5f8f; }
-          #searchModal .opleidingen-menu ul a li.ruimtelijkvormgeven.active {
+          #searchModal .opleidingen-menu ul a li.ruimtelijk-vormgever.active {
             color: #edb032; }
           #searchModal .opleidingen-menu ul a li.filmacteur.active {
             color: #0db5d9; }
-          #searchModal .opleidingen-menu ul a li.audiovisueeltechnicus.active {
+          #searchModal .opleidingen-menu ul a li.av-technicus.active {
             color: #ef492c; }
           #searchModal .opleidingen-menu ul a li.podiumtechnicus.active {
             color: #3e3b68; }
           #searchModal .opleidingen-menu ul a li.evenemententechnicus.active {
             color: #8db83f; }
-          #searchModal .opleidingen-menu ul a li.geluidtechnicus.active {
+          #searchModal .opleidingen-menu ul a li.geluidstechnicus.active {
             color: #edb030; }
-          #searchModal .opleidingen-menu ul a li.mediaengamedevelopment.active {
+          #searchModal .opleidingen-menu ul a li.media-en-gamedeveloper.active {
             color: #932545; }
-          #searchModal .opleidingen-menu ul a li.gameartist.active {
+          #searchModal .opleidingen-menu ul a li.game-artist.active {
             color: #4f2b78; }
           #searchModal .opleidingen-menu ul a li.mediamanager.active {
             color: #dc7f82; }
-          #searchModal .opleidingen-menu ul a li.dtp.active {
+          #searchModal .opleidingen-menu ul a li.dtp-er.active {
             color: #cd4c60; }
           #searchModal .opleidingen-menu ul a li.signmaker.active {
             color: #218841; }
@@ -6845,44 +6845,39 @@ h1, h2, h3, h4, h5, h6, p, a {
     #searchModal .hamburger:hover {
       cursor: pointer; }
   #searchModal .student {
+    background-size: cover;
     position: relative;
     top: -15px;
     width: 100%;
     height: 155px;
-    margin-bottom: 10px; }
-    #searchModal .student.grafischvormgeven {
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    #searchModal .student.grafisch-vormgever {
       background-color: #4fbe96; }
-    #searchModal .student.interactiefvormgeven {
+    #searchModal .student.interactief-vormgever {
       background-color: #f4793b; }
-    #searchModal .student.ruimtelijkvormgeven {
+    #searchModal .student.ruimtelijk-vormgever {
       background-color: #edb032; }
-    #searchModal .student.audiovisueelvormgeven {
+    #searchModal .student.audiovisueel-vormgeveranimatie {
       background-color: #4f5f8f; }
     #searchModal .student.filmacteur {
       background-color: #0db5d9; }
-    #searchModal .student.audiovisueeltechnicus {
+    #searchModal .student.av-technicus {
       background-color: #ef492c; }
     #searchModal .student.podiumtechnicus {
       background-color: #3e3b68; }
     #searchModal .student.evenemententechnicus {
-      background-size: cover;
-      background-color: #8db83f;
-      background-image: url("/static/images/profile-background.png");
-      background-position: center center;
-      background-repeat: no-repeat; }
-    #searchModal .student.geluidtechnicus {
+      background-color: #8db83f; }
+    #searchModal .student.geluidstechnicus {
       background-color: #edb030; }
-    #searchModal .student.mediaengamedevelopment {
+    #searchModal .student.media-en-gamedeveloper {
       background-color: #932545; }
-    #searchModal .student.gameartist {
-      background-size: cover;
-      background-color: #8db83f;
-      background-image: url("/static/images/profile-background.png");
-      background-position: center center;
-      background-repeat: no-repeat; }
+    #searchModal .student.game-artist {
+      background-color: #4f2b78; }
     #searchModal .student.mediamanager {
       background-color: #dc7f82; }
-    #searchModal .student.dtp {
+    #searchModal .student.dtp-er {
       background-color: #cd4c60; }
     #searchModal .student.signmaker {
       background-color: #218841; }
@@ -7020,7 +7015,7 @@ header {
     content: ""; }
 
 /*==========  Homepage  ==========*/
-header.homepage video {
+header.home video {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -7039,14 +7034,14 @@ header.homepage video {
   right: 0;
   left: 0;
   width: 100vw; }
-  header.homepage video.video-blur {
+  header.home video.video-blur {
     -webkit-animation-name: blur-effect-in;
     animation-name: blur-effect-in;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-transition: 0.2s;
     transition: 0.2s; }
-header.homepage .content .search-bar {
+header.home .content .search-bar {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -7059,7 +7054,7 @@ header.homepage .content .search-bar {
   height: 55px;
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.75); }
-  header.homepage .content .search-bar input {
+  header.home .content .search-bar input {
     font-size: 1.5625rem;
     width: 100%;
     height: 100%;
@@ -7068,37 +7063,35 @@ header.homepage .content .search-bar {
     border: none;
     outline: none;
     background-color: transparent; }
-    header.homepage .content .search-bar input:-moz-placeholder {
+    header.home .content .search-bar input:-moz-placeholder {
       color: #F6F6F6; }
-    header.homepage .content .search-bar input::-moz-placeholder {
+    header.home .content .search-bar input::-moz-placeholder {
       color: #F6F6F6; }
-    header.homepage .content .search-bar input:-ms-input-placeholder {
+    header.home .content .search-bar input:-ms-input-placeholder {
       color: #F6F6F6; }
-    header.homepage .content .search-bar input::-webkit-input-placeholder {
+    header.home .content .search-bar input::-webkit-input-placeholder {
       color: #F6F6F6; }
 
 /*==========  Klas en Opleiding  ==========*/
-header.class, header.training {
-  background-image: url(../images/klassen/gv4a.jpg);
+header.klas, header.opleidingen {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
   background-size: cover; }
-  header.class .content .align, header.training .content .align {
+  header.klas .content .align, header.opleidingen .content .align {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.75); }
-    header.class .content .align .row, header.training .content .align .row {
+    header.klas .content .align .row, header.opleidingen .content .align .row {
       min-height: 55px; }
-      header.class .content .align .row h1, header.training .content .align .row h1 {
+      header.klas .content .align .row h1, header.opleidingen .content .align .row h1 {
         font-size: 1.125rem;
         color: #FFFFFF; }
-      header.class .content .align .row p, header.training .content .align .row p {
+      header.klas .content .align .row p, header.opleidingen .content .align .row p {
         font-size: 0.9375rem;
         color: #FFFFFF; }
-    header.class .content .align:after, header.training .content .align:after {
+    header.klas .content .align:after, header.opleidingen .content .align:after {
       background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC43NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
       background-size: 100%;
       background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.75)));
@@ -7112,12 +7105,11 @@ header.class, header.training {
       content: ""; }
 
 /*==========  Profile  ==========*/
-header.profile {
-  background-image: url(../images/klassen/gv4a.jpg);
+header.profiel {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
-  header.profile .content .bar {
+  header.profiel .content .bar {
     -ms-transform: translateY(-75%);
     -webkit-transform: translateY(-75%);
     transform: translateY(-75%);
@@ -7130,26 +7122,26 @@ header.profile {
     height: 55px;
     color: #FFFFFF;
     background-color: rgba(0, 0, 0, 0.75); }
-    header.profile .content .bar .social a {
+    header.profiel .content .bar .social a {
       display: inline-block;
       width: 30px;
       height: 30px;
       margin: 12.5px 0; }
-      header.profile .content .bar .social a.website {
+      header.profiel .content .bar .social a.website {
         background-image: url(../images/social/website.png); }
-      header.profile .content .bar .social a.linkedin {
+      header.profiel .content .bar .social a.linkedin {
         background-image: url(../images/social/linkedin.png); }
-      header.profile .content .bar .social a.dribbble {
+      header.profiel .content .bar .social a.dribbble {
         background-image: url(../images/social/dribbble.png); }
-      header.profile .content .bar .social a.behance {
+      header.profiel .content .bar .social a.behance {
         background-image: url(../images/social/behance.png); }
-      header.profile .content .bar .social a.vimeo {
+      header.profiel .content .bar .social a.vimeo {
         background-image: url(../images/social/vimeo.png); }
-      header.profile .content .bar .social a.youtube {
+      header.profiel .content .bar .social a.youtube {
         background-image: url(../images/social/youtube.png); }
-      header.profile .content .bar .social a.facebook {
+      header.profiel .content .bar .social a.facebook {
         background-image: url(../images/social/facebook.png); }
-  header.profile .content .image {
+  header.profiel .content .image {
     -ms-transform: translate(-50%, -75%);
     -webkit-transform: translate(-50%, -75%);
     transform: translate(-50%, -75%);

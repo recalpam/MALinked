@@ -2,16 +2,15 @@
   <form enctype="multipart/form-data" data-abide>
     <div class="row">
       <div class="small-12 columns">
-        <h3>Gegevens</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <ul class="fileList" id="fileListprofile">
-          <li>
-            <img src="http://placehold.it/400x400" title="Huidige profiel foto">
-          </li>
-        </ul>
+        <div class="student grafisch-vormgever" style="background-image: url(http://placehold.it/1200x420);">
+          <div class="info">
+            <h4>[[Voornaam Achternaam]]</h4>
+            <p>[[Opleiding]]</p>
+          </div>
+          <figure>
+            <img src="http://placehold.it/400x400&text=Profiel" title="Huidige profiel foto">
+          </figure>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -27,14 +26,25 @@
         </div>
       </div>
       <div class="small-12 medium-6 columns">
+        <div class="profile-header-field">
+          <label>Profiel Achtergrond
+            <div class="speedyUpload-container">
+              <div class="input">Geen bestand geselecteerd</div>
+              <input name="image" type="file" data-part="profile" class="speedyUpload">
+            </div>
+            <small class="error">Upload een (geldige) afbeelding!</small>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
         <div class="email-field">
           <label>Persoonlijk e-mailadres
             <input name="email" type="text" placeholder="jaarboek@gmail.com" />
           </label>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="small-12 medium-6 columns">
         <div class="woonplaats-field">
           <label>Woonplaats
@@ -43,6 +53,8 @@
           <small class="error">Vul je woonplaats in!</small>
         </div>
       </div>
+    </div>
+    <div class="row">
       <div class="small-12 medium-6 columns">
         <div class="portfolio-field">
           <label>Link naar portfolio website
@@ -58,12 +70,56 @@
           <small class="error">Vul een geldige link in!</small>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="small-12 medium-6 columns">
         <div class="linkedin-field">
           <label>Link naar LinkedIn profiel
-            <input name="linkedin" type="text" placeholder="https://linkedin.com" pattern="linkedin\.com" />
+            <input name="linkedin" type="text" placeholder="https://linkedin.com/Gebruikersnaam" pattern="linkedin\.com" />
+          </label>
+          <small class="error">Vul een geldige link in!</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <div class="dribbble-field">
+          <label>Link naar Dribbble profiel
+            <input name="dribbble" type="text" placeholder="https://dribbble.com/Gebruikersnaam" pattern="dribbble\.com" />
+          </label>
+          <small class="error">Vul een geldige link in!</small>
+        </div>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <div class="behance-field">
+          <label>Link naar Behance profiel
+            <input name="behance" type="text" placeholder="https://www.behance.net/Gebruikersnaam" pattern="behance\.net" />
+          </label>
+          <small class="error">Vul een geldige link in!</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <div class="vimeo-field">
+          <label>Link naar Vimeo profiel
+            <input name="vimeo" type="text" placeholder="https://vimeo.com/Gebruikersnaam" pattern="vimeo\.com" />
+          </label>
+          <small class="error">Vul een geldige link in!</small>
+        </div>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <div class="youtube-field">
+          <label>Link naar YouTube profiel
+            <input name="youtube" type="text" placeholder="https://youtube.com/user/Gebruikersnaam" pattern="youtube\.com" />
+          </label>
+          <small class="error">Vul een geldige link in!</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <div class="facebook-field">
+          <label>Link naar Facebook profiel
+            <input name="facebook" type="text" placeholder="https://www.facebook.com/Gebruikersnaam" pattern="facebook\.com" />
           </label>
           <small class="error">Vul een geldige link in!</small>
         </div>

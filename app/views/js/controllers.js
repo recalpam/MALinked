@@ -10,15 +10,13 @@ angular.module('MaLinked.Controllers', [])
     function($scope, $filter, db, $rootScope) {
 
         $rootScope.currentState = "home";
-
-        $scope.db = db;
-
         var facts = {
-            0: 'sperma is dikker dan pis.',
-            1: 'er is meer water dan vis.',
-            2: 'dat weet je wat het is.',
-            3: 'een paard schijt meer dan een hagedis.'
-
+            0: 'AV4A de grootste klas is met maarliefst 32 studenten.',
+            1: 'Allround evenemententechnicus de kleinste opleiding is met slechts 3 studenten.',
+            2: 'Er dit jaar 488 studenten afstuderen.',
+            3: 'De studenten hun school gemiddeld een 7,9 hebben beoordeld.',
+            4: 'De meest favorite docent van media-en-gamedeveloper Jelle Sjollema is.',
+            5: 'De meest favorite decont van filmacteur Frederik de Groot is.'
         };
 
         var getRandomFact = function() {
@@ -161,13 +159,5 @@ angular.module('MaLinked.Controllers', [])
     function($scope, db, $stateParams) {
         $scope.db = db;
         $scope.params = $stateParams
-    }
-])
-
-/*==========  Beheer  ==========*/
-.controller('dev', [
-
-    function() {
-
     }
 ])

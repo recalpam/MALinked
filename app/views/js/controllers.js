@@ -10,13 +10,15 @@ angular.module('MaLinked.Controllers', [])
     $scope.db = db;
 
     var facts = {
-        0: 'AV4A de grootste klas is met maarliefst 32 studenten.',
-        1: 'Allround evenemententechnicus de kleinste opleiding is met slechts 3 studenten.',
-        2: 'Er dit jaar 488 studenten afstuderen.',
-        3: 'De studenten hun school gemiddeld een 7,9 hebben beoordeld.',
-        4: 'De meest favorite docent van media-en-gamedeveloper Jelle Sjollema is.',
-        5: 'De meest favorite decont van filmacteur Frederik de Groot is.'
-
+        0: '‘Uncomfortable art Biënnale’ het meest favoriete project van de grafische vormgevers is?',
+        1: 'Jelle Sjollema de meest favoriete docent van media- en gamedevelopment is?',
+        2: '8 de gemiddelde beoordeling van de school is?',
+        3: '7,9 de gemiddelde beoordeling van de stageperiode is?',
+        4: 'Frederik de Groot de meeste favoriete docent van filmacteur is?',
+        5: '29 studenten hun stageperiode een 10 hebben gegeven?',
+        6: 'Er 488 studenten afstuderen dit jaar?',
+        7: 'Evenemententechnicus de kleinste opleiding is met 3 studenten?',
+        8: 'AV4A de grootste klas is met 32 studenten?'
     };
 
     var getRandomFact = function(){

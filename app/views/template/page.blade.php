@@ -50,7 +50,7 @@
 	<body ng-app="MaLinked">
 		
 		<!-- PAGE CONTAINER -->
-		<div class="site">
+		<div class="site hide" ng-class="show">
 			@include('template.header')
 
 			@include('template.modals.zoeken')

@@ -20,7 +20,7 @@ angular.module('MaLinked.Routes', [])
 
           // always include the db because its cached anyway
           resolve: {
-            db: function (API, $http) {
+            db: function (API, $http, $rootScope) {
               return API.sync();
             }
           },

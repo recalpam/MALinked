@@ -5,13 +5,13 @@
  **/
 
 
- /**
+/**
  
  	TODO:
  	- Meer
  	 
  **/
- 
+
 angular.module('MaLinked.Services', [])
     .directive('profielfoto', ['API',
         function(API) {
@@ -28,7 +28,7 @@ angular.module('MaLinked.Services', [])
                                 id: $attrs.studentId
                             });
 
-                            if (!student.file) {
+                            if (!student.file || !student.file[$attrs.size]) {
                                 $scope.uri = "/static/anon.jpg";
                             } else {
                                 $scope.uri = student.file[$attrs.size];

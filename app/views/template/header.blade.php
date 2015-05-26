@@ -52,7 +52,7 @@
 						</div>
 					</div>
 				</div>
-				<profielfoto class="image" student-id="@{{student.id}}" size="medium"></profielfoto>
+				<profielfoto class="image" student-id="@{{ student.id }}" size="medium" alt="@{{ student.fullname }}"/>
 
 			</div>
 			<div class="overlay"></div>

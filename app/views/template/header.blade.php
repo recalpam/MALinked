@@ -52,7 +52,8 @@
 						</div>
 					</div>
 				</div>
-				<img class="image" src="http://placehold.it/400x400" />
+				<profielfoto class="image" student-id="@{{student.id}}" size="medium"></profielfoto>
+
 			</div>
 			<div class="overlay"></div>
 		</angular>

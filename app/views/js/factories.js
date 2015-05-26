@@ -31,9 +31,9 @@ angular.module('MaLinked.Factories', [])
             if (typeof(object) == "object") {
                 for (var candidate in object) {
 
-                	/* Filter based upon params */
+                    /* Filter based upon params */
                     object[candidate].where = function(params) {
-                        return $filter('filter')(this, params, true);
+                        return $filter('filter')(this, params);
                     };
 
                     /* Filter but only return a single value */

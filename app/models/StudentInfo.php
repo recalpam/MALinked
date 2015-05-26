@@ -21,6 +21,19 @@ class StudentInfo extends \Eloquent {
 	 *
 	 * @var array
 	 */
-	protected $hidden = array();
+	protected $hidden = [
+		'id',
+		'student_id',
+		'created_at',
+		'updated_at'
+	];
+
+	public function getFavTeacherAttribute($val){
+		return @unserialize($val);
+	}
+
+	public function getHobbiesAttribute($val){
+		return @unserialize($val);
+	}
 
 }

@@ -18,6 +18,7 @@ angular.module('MaLinked.Services', [])
             var sync = API.sync();
             return {
                 name: 'profielfoto',
+                replace: true,
                 template: '<img src="{{ uri }}" />',
                 controller: function($scope, $element, $attrs, $transclude) {
                     $scope.uri = '';
@@ -27,10 +28,10 @@ angular.module('MaLinked.Services', [])
                                 id: $attrs.studentId
                             });
 
-                            if (!student.file || !student.file.thumbnail) {
+                            if (!student.file) {
                                 $scope.uri = "/static/anon.jpg";
                             } else {
-                                $scope.uri = student.file.thumbnail;
+                                $scope.uri = student.file[$attrs.size];
                             }
                         }
                     });

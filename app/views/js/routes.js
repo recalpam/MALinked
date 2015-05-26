@@ -37,9 +37,9 @@ angular.module('MaLinked.Routes', [])
 
       $stateProvider
         .state(new state('home'))
-        .state(new state('klas', '/klas/:slug'))
-        .state(new state('profiel', '/profiel/:groep/:student'))
-        .state(new state('opleiding', '/opleiding/:slug'))
+        .state(new state('klas', '/klas/{slug}'))
+        .state(new state('profiel', '/profiel/{groep}/{student}'))
+        .state(new state('opleiding', '/opleiding/{slug}'))
         .state(new state('opleidingen'))
         .state(new state('login'))
 

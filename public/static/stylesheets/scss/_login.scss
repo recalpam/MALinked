@@ -1,0 +1,178 @@
+body {
+  background-color: $smoke;
+}
+
+// global button
+
+a.button:hover {
+  background-color: $primary-color;
+}
+
+// header
+header {
+  /* fixed position a zero-height full width container */
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  /* or whatever position is desired */
+  right: 0;
+  left: 0;
+
+  height: 100px;
+  /* center all inline content */
+
+  text-align: center;
+  .row {
+    /* make the block inline */
+    display: inline-block;
+    /* reset container's center alignment */
+
+    text-align: left;
+
+    background-color: $white;
+    .logo {
+      font-size: rem-calc(28);
+      line-height: 100px;
+
+      text-align: center;
+
+      color: $white;
+      background-color: $primary-color;
+      img {
+        width: auto;
+        height: rem-calc(28);
+        margin-top: -4px;
+      }
+    }
+  }
+}
+
+// welcome text
+
+.welcome {
+  padding-left: 40px;
+  h1 {
+    font-size: rem-calc(21);
+    font-weight: bold;
+    line-height: 100px;
+
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// logout button
+
+.logout {
+  line-height: 100px;
+
+  height: 100px;
+  padding-right: 40px;
+
+  text-align: right;
+  a {
+    color: $secondary-color;
+    background-color: $smoke;
+  }
+}
+
+// navigation
+
+section {
+  &.dashboard {
+    /* fixed position a zero-height full width container */
+    position: fixed;
+    top: 100px;
+    /* or whatever position is desired */
+    right: 0;
+    left: 0;
+
+    height: calc(100vh - 100px);
+    /* center all inline content */
+
+    text-align: center;
+    .row {
+      /* make the block inline */
+      display: inline-block;
+
+      height: 100%;
+      /* reset container's center alignment */
+
+      text-align: left;
+
+      background-color: $white-smoke;
+      .nav {
+        margin: 0 -15px;
+
+        background-color: $white;
+        ul {
+          height: 100vh;
+          margin: 0;
+          a {
+            color: $secondary-color;
+            li {
+              font-size: rem-calc(15);
+              line-height: 100px;
+
+              height: 100px;
+              padding: 0 15px;
+
+              list-style: none;
+
+              border-bottom: 1px solid $smoke;
+              background-color: $white;
+              &.active {
+                border-bottom: none;
+                background-color: $white-smoke;
+              }
+            }
+          }
+          .copyright {
+            font-size: 0.9375rem;
+            line-height: 100px;
+
+            height: 100px;
+            padding: 0 15px;
+
+            list-style: none;
+
+            color: $secondary-color;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  &.login {
+    .login-box {
+      margin: 100px 0;
+      padding: 40px 20px 0 20px;
+
+      border: 1px solid #dddddd;
+      background: #ffffff;
+    }
+  }
+}
+
+// content
+
+article {
+  padding: 40px 0;
+  .content {
+    overflow: auto;
+
+    padding: 0 40px;
+    h2 {
+      font-size: 18px;
+
+      margin-bottom: 15px;
+    }
+    textarea {
+      font-family: 'Arial';
+
+      height: 270px;
+
+      resize: none;
+    }
+  }
+}

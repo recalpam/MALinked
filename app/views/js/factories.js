@@ -14,6 +14,18 @@ angular.module('MaLinked.Factories', [])
             return $http.get('/api/db/' + action);
         }
 
+         // $http post
+        var post = function(action, object, fn) {
+            return $http.post('/api/db/' + action, object).
+            success(function(data, status, headers, config) {
+                fn(data, status, headers, config);
+            }).
+            error(function(data, status, headers, config) {
+                console.error(action+ ' failed.');
+                return data;
+            });
+        }
+
         // appends query-like methods to a local object!
         querify = function(object) {
             if (typeof(object) == "object") {
@@ -50,6 +62,10 @@ angular.module('MaLinked.Factories', [])
                 }
                 return sync;
             },
+
+            postLogin: function(object, fn) {
+                post('auth', object, fn);
+            }
 
         }
     }

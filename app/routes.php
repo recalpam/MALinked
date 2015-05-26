@@ -21,8 +21,6 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 	 * Backend-oriented
 	 */
 	Route::group(array('prefix' => 'db'), function(){
-		Route::resource('student', 'API\StudentsController', array());
-
 		Route::resource('auth', 'API\AuthController@postLogin');
 
 		Route::resource('study', 'API\StudiesController', array());
@@ -34,6 +32,10 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 		Route::resource('search', 'API\SearchController',  array());
 
 		Route::controller('sync', 'API\Sync');
+
+		Route::group(array('filter' => 'auth'), function(){
+			Route::resource('student', 'API\StudentsController', array());
+		});
 	});
 
 	/**

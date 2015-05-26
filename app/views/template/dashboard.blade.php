@@ -133,6 +133,7 @@
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.controllers"></script>
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.routes"></script>
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.app"></script>
+		<script type="text/javascript" src="/api/frontend/file/script/factories"></script>
 
 
 	</body>

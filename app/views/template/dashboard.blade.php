@@ -50,13 +50,11 @@
 	<body ng-app="MaLinked">
 
 		<!-- PAGE CONTAINER -->
-		<div class="site">
 
-			@include('template.login')
 
-			<!-- DYNAMIC PAGE -->
-			<ui-view></ui-view>
-		</div>
+
+		<!-- DYNAMIC PAGE -->
+		<ui-view></ui-view>
 
 		<!-- JQUERY TRASH -->
 		<script type="text/javascript" src="/packages/jquery/dist/jquery.js"></script>
@@ -71,9 +69,6 @@
 
 		{{-- FOUNDATION --}}
 		<script src="/packages/foundation/js/foundation.min.js"></script>
-
-		{{-- ZOEK MODAL --}}
-		<script src="/static/scripts/app.js"></script>
 
 		{{-- OUTDATED BROWSER JS --}}
 		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>

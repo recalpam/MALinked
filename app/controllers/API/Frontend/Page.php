@@ -6,7 +6,11 @@ class Page extends \BaseController {
 	/**
 	 * Serve the base template view.
 	 */
-	public function getIndex(){
-		return View::make('template.page');
+  public function getIndex(){
+    return View::make('template.page');
+  }
+
+	public function getDashboard(){
+		return View::make('template.dashboard');
 	}
 }

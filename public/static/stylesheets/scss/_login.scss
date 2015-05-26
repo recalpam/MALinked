@@ -96,7 +96,7 @@ section {
     /* center all inline content */
 
     text-align: center;
-    .row {
+    .dash {
       /* make the block inline */
       display: inline-block;
 
@@ -162,22 +162,151 @@ section {
 // content
 
 article {
-  padding: 40px 0;
-  .content {
-    overflow: auto;
+  overflow: auto;
 
-    padding: 0 40px;
-    h2 {
-      font-size: 18px;
+  height: calc(100vh - 100px);
+  padding: 40px;
+  h2 {
+    font-size: 18px;
 
-      margin-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  textarea {
+    font-family: 'Arial';
+
+    height: 270px;
+
+    resize: none;
+  }
+  .fileList {
+    li {
+      position: relative;
+
+      display: inline-block;
+
+      max-width: 25%;
+      padding: rem-calc(10);
+
+      list-style: none;
+
+      vertical-align: top;
+      .delete-image {
+        font-size: rem-calc(25);
+        line-height: rem-calc(25);
+
+        position: absolute;
+        top: rem-calc(-5);
+        right: rem-calc(-5);
+
+        color: $secondary-color;
+      }
+      &:nth-of-type(4n+1) {
+        padding-left: 0;
+      }
+      &:nth-of-type(4n+4) {
+        padding-right: 0;
+      }
     }
-    textarea {
-      font-family: 'Arial';
+  }
+  form {
+    label {
+      small {
+        font-size: rem-calc(12);
 
-      height: 270px;
+        text-transform: none;
+      }
+      .tag {
+        color: pink !important;
+        border: 1px solid pink !important;
+        background: $secondary-color !important;
+        a {
+          color: pink !important;
+        }
+      }
+    }
+    .circle {
+      padding: rem-calc(15) rem-calc(20);
+    }
+    a {
+      &.vorige-stap {
+        margin-right: rem-calc(15);
 
-      resize: none;
+        color: $secondary-color;
+      }
+    }
+  }
+  .speedyUpload-container {
+    position: relative;
+
+    overflow: hidden;
+    .input {
+      font-family: inherit;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+
+      position: relative;
+
+      display: inline-block;
+      overflow: hidden;
+
+      box-sizing: border-box;
+      width: 100%;
+      height: 2.3125rem;
+      padding: 0.5rem;
+
+      transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+
+      color: #989898;
+      border: 1px solid #cccccc;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+      &:before {
+        content: " ";
+      }
+      &:after {
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 2.3125rem;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        height: 100%;
+        padding: 0 20px;
+
+        content: "BLADEREN";
+        text-transform: uppercase;
+
+        color: #999999;
+        background: #e2e2e2;
+      }
+    }
+    &:hover {
+      .input {
+        &:after {
+          color: $secondary-color;
+        }
+      }
+    }
+    .speedyUpload {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: inline-block;
+
+      min-width: 100%;
+      min-height: 100%;
+
+      cursor: inherit;
+      text-align: right;
+
+      opacity: 0;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

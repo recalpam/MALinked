@@ -6367,22 +6367,22 @@ section.dashboard {
   height: calc(100vh - 100px);
   /* center all inline content */
   text-align: center; }
-  section.dashboard .row {
+  section.dashboard .dash {
     /* make the block inline */
     display: inline-block;
     height: 100%;
     /* reset container's center alignment */
     text-align: left;
     background-color: #F5F5F5; }
-    section.dashboard .row .nav {
+    section.dashboard .dash .nav {
       margin: 0 -15px;
       background-color: #FFFFFF; }
-      section.dashboard .row .nav ul {
+      section.dashboard .dash .nav ul {
         height: 100vh;
         margin: 0; }
-        section.dashboard .row .nav ul a {
+        section.dashboard .dash .nav ul a {
           color: #474747; }
-          section.dashboard .row .nav ul a li {
+          section.dashboard .dash .nav ul a li {
             font-size: 0.9375rem;
             line-height: 100px;
             height: 100px;
@@ -6390,10 +6390,10 @@ section.dashboard {
             list-style: none;
             border-bottom: 1px solid #EEEEEE;
             background-color: #FFFFFF; }
-            section.dashboard .row .nav ul a li.active {
+            section.dashboard .dash .nav ul a li.active {
               border-bottom: none;
               background-color: #F5F5F5; }
-        section.dashboard .row .nav ul .copyright {
+        section.dashboard .dash .nav ul .copyright {
           font-size: 0.9375rem;
           line-height: 100px;
           height: 100px;
@@ -6408,16 +6408,96 @@ section.login .login-box {
   background: #ffffff; }
 
 article {
-  padding: 40px 0; }
-  article .content {
-    overflow: auto;
-    padding: 0 40px; }
-    article .content h2 {
-      font-size: 18px;
-      margin-bottom: 15px; }
-    article .content textarea {
-      font-family: 'Arial';
-      height: 270px;
-      resize: none; }
-
+  overflow: auto;
+  height: calc(100vh - 100px);
+  padding: 40px; }
+  article h2 {
+    font-size: 18px;
+    margin-bottom: 15px; }
+  article textarea {
+    font-family: 'Arial';
+    height: 270px;
+    resize: none; }
+  article .fileList li {
+    position: relative;
+    display: inline-block;
+    max-width: 25%;
+    padding: 0.625rem;
+    list-style: none;
+    vertical-align: top; }
+    article .fileList li .delete-image {
+      font-size: 1.5625rem;
+      line-height: 1.5625rem;
+      position: absolute;
+      top: -0.3125rem;
+      right: -0.3125rem;
+      color: #474747; }
+    article .fileList li:nth-of-type(4n+1) {
+      padding-left: 0; }
+    article .fileList li:nth-of-type(4n+4) {
+      padding-right: 0; }
+  article form label small {
+    font-size: 0.75rem;
+    text-transform: none; }
+  article form label .tag {
+    color: pink !important;
+    border: 1px solid pink !important;
+    background: #474747 !important; }
+    article form label .tag a {
+      color: pink !important; }
+  article form .circle {
+    padding: 0.9375rem 1.25rem; }
+  article form a.vorige-stap {
+    margin-right: 0.9375rem;
+    color: #474747; }
+  article .speedyUpload-container {
+    position: relative;
+    overflow: hidden; }
+    article .speedyUpload-container .input {
+      font-family: inherit;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
+      height: 2.3125rem;
+      padding: 0.5rem;
+      -webkit-transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+              transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+      color: #989898;
+      border: 1px solid #cccccc;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset; }
+      article .speedyUpload-container .input:before {
+        content: " "; }
+      article .speedyUpload-container .input:after {
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 2.3125rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 0 20px;
+        content: "BLADEREN";
+        text-transform: uppercase;
+        color: #999999;
+        background: #e2e2e2; }
+    article .speedyUpload-container:hover .input:after {
+      color: #474747; }
+    article .speedyUpload-container .speedyUpload {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      min-width: 100%;
+      min-height: 100%;
+      cursor: inherit;
+      text-align: right;
+      opacity: 0; }
+      article .speedyUpload-container .speedyUpload:hover {
+        cursor: pointer; }
 /*# sourceMappingURL=dashboard.css.map */

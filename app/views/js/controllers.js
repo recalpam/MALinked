@@ -6,15 +6,22 @@
 angular.module('MaLinked.Controllers', [])
 
 /*==========  Home  ==========*/
-.controller('home', ['$scope', '$filter', 'db', function($scope, $filter, db){
+
+.controller('home', ['$scope', '$filter', 'db', '$rootScope', function($scope, $filter, db, $rootScope){
+    $rootScope.currentState = "home";
+
     $scope.db = db;
 
     var facts = {
-        0: 'sperma is dikker dan pis.',
-        1: 'er is meer water dan vis.',
-        2: 'dat weet je wat het is.',
-        3: 'een paard schijt meer dan een hagedis.'
-
+        0: '‘Uncomfortable art Biënnale’ het meest favoriete project van de grafische vormgevers is?',
+        1: 'Jelle Sjollema de meest favoriete docent van media- en gamedevelopment is?',
+        2: '8 de gemiddelde beoordeling van de school is?',
+        3: '7,9 de gemiddelde beoordeling van de stageperiode is?',
+        4: 'Frederik de Groot de meeste favoriete docent van filmacteur is?',
+        5: '29 studenten hun stageperiode een 10 hebben gegeven?',
+        6: 'Er 488 studenten afstuderen dit jaar?',
+        7: 'Evenemententechnicus de kleinste opleiding is met 3 studenten?',
+        8: 'AV4A de grootste klas is met 32 studenten?'
     };
 
     var getRandomFact = function(){
@@ -30,73 +37,112 @@ angular.module('MaLinked.Controllers', [])
                 'answer': chosen
             }
 
-            facts[rand] = null;
+            return getRandomFact();
 
-            return give;
         }
-
-        return getRandomFact();
-        
     }
 
     var overview = {
-        'Aa' : {
-            'study': db.studies.single( { slug: 'grafisch-vormgever' } ),
+        'Aa': {
+            'study': db.studies.single({
+                slug: 'grafisch-vormgever'
+            }),
             'htmlClass': 'grafischvormgeven'
         },
-        'Ab' : {
-            'study': db.studies.single( { slug: 'interactief-vormgever' } ),
+        'Ab': {
+            'study': db.studies.single({
+                slug: 'interactief-vormgever'
+            }),
             'htmlClass': 'interactiefvormgeven'
-        },'Ac' : {
-            'study': db.studies.single( { slug: 'audiovisueel-vormgeveranimatie' } ),
+        },
+        'Ac': {
+            'study': db.studies.single({
+                slug: 'audiovisueel-vormgeveranimatie'
+            }),
             'htmlClass': 'audiovisueel'
-        },'Ad' : {
-            'study': db.studies.single( { slug: 'dtp-er' } ),
+        },
+        'Ad': {
+            'study': db.studies.single({
+                slug: 'dtp-er'
+            }),
             'htmlClass': 'dtper'
-        },'Ae' : {
-            'study': db.studies.single( { slug: 'mediamanager' } ),
+        },
+        'Ae': {
+            'study': db.studies.single({
+                slug: 'mediamanager'
+            }),
             'htmlClass': 'mediamanager'
-        },'Af' : {
-            'study': db.studies.single( { slug: 'av-technicus' } ),
+        },
+        'Af': {
+            'study': db.studies.single({
+                slug: 'av-technicus'
+            }),
             'htmlClass': 'audiovisueeltechnicus'
-        },'Ag' : {
-            'study': db.studies.single( { slug: 'evenemententechnicus' } ),
+        },
+        'Ag': {
+            'study': db.studies.single({
+                slug: 'evenemententechnicus'
+            }),
             'htmlClass': 'evenemententechnicus'
         },
-        'Ah' : getRandomFact(),
-        'Ai' : getRandomFact(),
-        'Aj' : {
-            'study': db.studies.single( { slug: 'geluidstechnicus' } ),
+        'Ah': getRandomFact(),
+        'Ai': getRandomFact(),
+        'Aj': {
+            'study': db.studies.single({
+                slug: 'geluidstechnicus'
+            }),
             'htmlClass': 'geluidtechnicus'
-        },'Ak' : {
-            'study': db.studies.single( { slug: 'media-en-gamedeveloper' } ),
+        },
+        'Ak': {
+            'study': db.studies.single({
+                slug: 'media-en-gamedeveloper'
+            }),
             'htmlClass': 'mediaengamedeveloper'
-        },'Al' : {
-            'study': db.studies.single( { slug: 'ruimtelijk-vormgever' } ),
+        },
+        'Al': {
+            'study': db.studies.single({
+                slug: 'ruimtelijk-vormgever'
+            }),
             'htmlClass': 'ruimtelijkvormgeven'
-        },'Am' : {
-            'study': db.studies.single( { slug: 'podiumtechnicus' } ),
+        },
+        'Am': {
+            'study': db.studies.single({
+                slug: 'podiumtechnicus'
+            }),
             'htmlClass': 'podiumtechnicus'
-        },'An' : {
-            'study': db.studies.single( { slug: 'filmacteur' } ),
+        },
+        'An': {
+            'study': db.studies.single({
+                slug: 'filmacteur'
+            }),
             'htmlClass': 'filmacteur'
-        },'Ao' : {
-            'study': db.studies.single( { slug: 'signmaker' } ),
+        },
+        'Ao': {
+            'study': db.studies.single({
+                slug: 'signmaker'
+            }),
             'htmlClass': 'signmaker'
-        },'Ap' : {
-            'study': db.studies.single( { slug: 'game-artist' } ),
+        },
+        'Ap': {
+            'study': db.studies.single({
+                slug: 'game-artist'
+            }),
             'htmlClass': 'gameartist'
         }
     };
 
     $scope.studies = overview;
-
 }])
 
 /*==========  Profiel  ==========*/
-.controller('profiel', ['$scope', '$state', '$stateParams', '$filter', 'db',
-    function($scope, $state, $stateParams, $filter, db) {
-
+.controller('profiel', ['$scope', '$state', '$stateParams', '$filter', 'db', '$rootScope',
+    function($scope, $state, $stateParams, $filter, db, $rootScope) {
+        $rootScope.currentState = "profiel";
+        $('#searchModal').foundation('reveal', 'close');
+        var blockEqualize = $('.block');
+        var blockEqualizeWidth = blockEqualize.width();
+        $(blockEqualize).height(blockEqualizeWidth);
+        $rootScope.header.class = "profile";
     }
 ])
 
@@ -112,12 +158,5 @@ angular.module('MaLinked.Controllers', [])
     function($scope, db, $stateParams) {
         $scope.db = db;
         $scope.params = $stateParams
-    }
-])
-
-/*==========  Beheer  ==========*/
-.controller('dev', [
-    function() {
-
     }
 ])

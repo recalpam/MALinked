@@ -37,16 +37,11 @@ angular.module('MaLinked.Routes', [])
 
       $stateProvider
         .state(new state('home'))
-        .state(new state('klas', 'klas/{slug}'))
-        .state(new state('profiel', 'profiel/{groep}/{student}'))
-        .state(new state('opleiding', 'opleiding/{slug}'))
+        .state(new state('klas', '/klas/:slug'))
+        .state(new state('profiel', '/profiel/:groep/:student'))
+        .state(new state('opleiding', '/opleiding/:slug'))
         .state(new state('opleidingen'))
         .state(new state('login'))
-  // .state(new state('dashboard', 'dashboard/waarom-het-ma'))
-  // .state(new state('dashboard', 'dashboard/hobbys-en-gegevens'))
-  // .state(new state('dashboard', 'dashboard/projecten'))
-  // .state(new state('dashboard', 'dashboard/over-de-school'))
-  // .state(new state('dashboard', 'dashboard/toekomstbeeld'))
 
     }
   ])

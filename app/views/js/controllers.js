@@ -139,6 +139,7 @@ angular.module('MaLinked.Controllers', [])
 		var blockEqualize = $('.block');
 		var blockEqualizeWidth = blockEqualize.width();
 		$(blockEqualize).height(blockEqualizeWidth);
+		$scope.student = db.students.single({slug: $stateParams.slug});
 	
 	}
 ])

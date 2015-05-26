@@ -74,4 +74,18 @@ class AuthController extends \BaseController {
 		return true;
 	}
 
+	public function checkLogin(){
+			
+
+		if( Auth::user()->id ){
+			return Response::json(
+				Student::nestedSingle( Auth::user()->id  )
+				, 200, array(), JSON_PRETTY_PRINT);
+		}
+		return Response::json(array(
+				'error' => true,
+				'message' => 'User not authorized'
+			));
+	}
+
 }

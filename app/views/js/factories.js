@@ -1,10 +1,10 @@
 /**
  * MaLinked.Factories Module
  */
-angular.module('MaLinked.Factories', [])
+angular.module('MaLinked.Factories', ['progressApp'])
 
-.factory('API', ['$http', '$filter',
-    function($http, $filter) {
+.factory('API', ['$http', '$filter', 'ngProgress',
+    function($http, $filter, ngProgress) {
 
         // $http promise
         var sync;
@@ -14,14 +14,21 @@ angular.module('MaLinked.Factories', [])
             return $http.get('/api/db/' + action);
         }
 
+        // get token
+        var loginData = false;
+
          // $http post
         var post = function(action, object, fn) {
+            ngProgress.start();
             return $http.post('/api/db/' + action, object).
             success(function(data, status, headers, config) {
+                loginData = data;
+                ngProgress.complete();
                 fn(data, status, headers, config);
             }).
             error(function(data, status, headers, config) {
                 console.error(action+ ' failed.');
+                ngProgress.complete();
                 return data;
             });
         }
@@ -65,6 +72,10 @@ angular.module('MaLinked.Factories', [])
 
             postLogin: function(object, fn) {
                 post('auth', object, fn);
+            },
+
+            getLoginData: function(){
+                return loginData;
             }
 
         }

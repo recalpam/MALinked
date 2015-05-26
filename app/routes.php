@@ -22,6 +22,7 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 	 */
 	Route::group(array('prefix' => 'db'), function(){
 		Route::resource('auth', 'API\AuthController@postLogin');
+		Route::resource('auth.check', 'API\AuthController@checkLogin');
 
 		Route::resource('study', 'API\StudiesController', array());
 		Route::resource('study.groups', 'API\StudiesController@getGroupsByStudy', array());

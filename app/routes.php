@@ -33,7 +33,7 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 
 		Route::controller('sync', 'API\Sync');
 
-		Route::group(array('filter' => 'auth'), function(){
+		Route::group(array('before' => 'auth'), function(){
 			Route::resource('student', 'API\StudentsController', array());
 		});
 	});

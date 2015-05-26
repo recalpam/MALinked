@@ -16,7 +16,7 @@
 	</nav>
 	
 	{{-- HEADER LAYOUT SWITCH --}}
-	<angular ng-switch-on="state.current.name">
+	<angular ng-switch on="state.current.name">
 
 		{{-- HOME LAYOUT --}}
 		<angular ng-switch-when="home">

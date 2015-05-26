@@ -24,7 +24,7 @@ angular.module('MaLinked', [
 =========================================*/
 .config(['$urlRouterProvider',
     function($urlRouterProvider) {
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("home");
     }
 ])
 
@@ -46,21 +46,18 @@ angular.module('MaLinked', [
 
         $rootScope.state = $state;
 
+        /*==========  ngProgress  ==========*/
         $rootScope.show = false;
-
         ngProgress.start();
         $timeout(function() {
             ngProgress.complete();
             $rootScope.show = true;
         }, 2000);
-
         $rootScope
             .$watch('$stateChangeStart', function() {
                 $rootScope.currentState = $state.current.name;
                 ngProgress.start();
             });
-
-
         $rootScope
             .$on('$stateChangeSuccess',
                 function(event, toState, toParams, fromState, fromParams) {
@@ -107,7 +104,7 @@ angular.module('MaLinked', [
             $rootScope.db = querify(response.data);
         });
 
-  
+
 
     }
 ])

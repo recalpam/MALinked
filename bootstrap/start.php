@@ -27,6 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('homestead'),
+  'dylan' => array('Dylan-PC'),
   'alex' => array('Alex-PC'),
 	'steven' => array('MBP-Steven.local'),
 	'docker' => array('4338122fa047'),

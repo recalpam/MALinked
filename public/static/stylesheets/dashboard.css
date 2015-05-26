@@ -6302,6 +6302,16 @@ th.hide-for-touch {
   /* Legacy iOS */
   font-style: normal;
   font-weight: 700; }
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 body {
   background-color: #EEEEEE; }
 
@@ -6367,22 +6377,22 @@ section.dashboard {
   height: calc(100vh - 100px);
   /* center all inline content */
   text-align: center; }
-  section.dashboard .row {
+  section.dashboard .dash {
     /* make the block inline */
     display: inline-block;
     height: 100%;
     /* reset container's center alignment */
     text-align: left;
     background-color: #F5F5F5; }
-    section.dashboard .row .nav {
+    section.dashboard .dash .nav {
       margin: 0 -15px;
       background-color: #FFFFFF; }
-      section.dashboard .row .nav ul {
+      section.dashboard .dash .nav ul {
         height: 100vh;
         margin: 0; }
-        section.dashboard .row .nav ul a {
+        section.dashboard .dash .nav ul a {
           color: #474747; }
-          section.dashboard .row .nav ul a li {
+          section.dashboard .dash .nav ul a li {
             font-size: 0.9375rem;
             line-height: 100px;
             height: 100px;
@@ -6390,10 +6400,10 @@ section.dashboard {
             list-style: none;
             border-bottom: 1px solid #EEEEEE;
             background-color: #FFFFFF; }
-            section.dashboard .row .nav ul a li.active {
+            section.dashboard .dash .nav ul a li.active {
               border-bottom: none;
               background-color: #F5F5F5; }
-        section.dashboard .row .nav ul .copyright {
+        section.dashboard .dash .nav ul .copyright {
           font-size: 0.9375rem;
           line-height: 100px;
           height: 100px;
@@ -6408,16 +6418,187 @@ section.login .login-box {
   background: #ffffff; }
 
 article {
-  padding: 40px 0; }
-  article .content {
-    overflow: auto;
-    padding: 0 40px; }
-    article .content h2 {
-      font-size: 18px;
-      margin-bottom: 15px; }
-    article .content textarea {
-      font-family: 'Arial';
-      height: 270px;
-      resize: none; }
+  overflow: auto;
+  height: calc(100vh - 100px);
+  padding: 40px; }
+  article h2 {
+    font-size: 18px;
+    margin-bottom: 15px; }
+  article textarea {
+    font-family: 'Arial';
+    height: 270px;
+    resize: none; }
+  article .fileList li {
+    position: relative;
+    display: inline-block;
+    max-width: 25%;
+    padding: 0.625rem;
+    list-style: none;
+    vertical-align: top; }
+    article .fileList li .delete-image {
+      font-size: 1.5625rem;
+      line-height: 1.5625rem;
+      position: absolute;
+      top: -0.3125rem;
+      right: -0.3125rem;
+      color: #474747; }
+    article .fileList li:nth-of-type(4n+1) {
+      padding-left: 0; }
+    article .fileList li:nth-of-type(4n+4) {
+      padding-right: 0; }
+  article form label small {
+    font-size: 0.75rem;
+    text-transform: none; }
+  article form label .tag {
+    color: pink !important;
+    border: 1px solid pink !important;
+    background: #474747 !important; }
+    article form label .tag a {
+      color: pink !important; }
+  article form .circle {
+    padding: 0.9375rem 1.25rem; }
+  article form a.vorige-stap {
+    margin-right: 0.9375rem;
+    color: #474747; }
+  article .speedyUpload-container {
+    position: relative;
+    overflow: hidden; }
+    article .speedyUpload-container .input {
+      font-family: inherit;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
+      height: 2.3125rem;
+      padding: 0.5rem;
+      -webkit-transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+              transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+      color: #989898;
+      border: 1px solid #cccccc;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset; }
+      article .speedyUpload-container .input:before {
+        content: " "; }
+      article .speedyUpload-container .input:after {
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 2.3125rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 0 20px;
+        content: "BLADEREN";
+        text-transform: uppercase;
+        color: #999999;
+        background: #e2e2e2; }
+    article .speedyUpload-container:hover .input:after {
+      color: #474747; }
+    article .speedyUpload-container .speedyUpload {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      min-width: 100%;
+      min-height: 100%;
+      cursor: inherit;
+      text-align: right;
+      opacity: 0; }
+      article .speedyUpload-container .speedyUpload:hover {
+        cursor: pointer; }
+  article.hobbys-en-gegevens .student {
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    article.hobbys-en-gegevens .student.grafisch-vormgever {
+      background-color: #4fbe96; }
+    article.hobbys-en-gegevens .student.interactief-vormgever {
+      background-color: #f4793b; }
+    article.hobbys-en-gegevens .student.ruimtelijk-vormgever {
+      background-color: #edb032; }
+    article.hobbys-en-gegevens .student.audiovisueel-vormgeveranimatie {
+      background-color: #4f5f8f; }
+    article.hobbys-en-gegevens .student.filmacteur {
+      background-color: #0db5d9; }
+    article.hobbys-en-gegevens .student.av-technicus {
+      background-color: #ef492c; }
+    article.hobbys-en-gegevens .student.podiumtechnicus {
+      background-color: #3e3b68; }
+    article.hobbys-en-gegevens .student.evenemententechnicus {
+      background-color: #8db83f; }
+    article.hobbys-en-gegevens .student.geluidstechnicus {
+      background-color: #edb030; }
+    article.hobbys-en-gegevens .student.media-en-gamedeveloper {
+      background-color: #932545; }
+    article.hobbys-en-gegevens .student.game-artist {
+      background-color: #4f2b78; }
+    article.hobbys-en-gegevens .student.mediamanager {
+      background-color: #dc7f82; }
+    article.hobbys-en-gegevens .student.dtp-er {
+      background-color: #cd4c60; }
+    article.hobbys-en-gegevens .student.signmaker {
+      background-color: #218841; }
+    article.hobbys-en-gegevens .student:after {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+      background-size: 100%;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, #000000));
+      background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), #000000);
+      background-image: linear-gradient(rgba(0, 0, 0, 0), #000000);
+      position: absolute;
+      z-index: 50;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 83px;
+      content: ""; }
+    article.hobbys-en-gegevens .student .info {
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      margin-left: 155px; }
+      article.hobbys-en-gegevens .student .info h4 {
+        font-size: 1.625rem;
+        margin-bottom: 0;
+        color: #FFFFFF; }
+      article.hobbys-en-gegevens .student .info p {
+        font-size: 1.125rem;
+        color: #FFFFFF; }
+    article.hobbys-en-gegevens .student figure img {
+      position: absolute;
+      z-index: 100;
+      bottom: 10px;
+      left: 10px;
+      float: left;
+      width: auto;
+      height: 135px;
+      margin-top: 0;
+      border-radius: 100%; }
+
+#outdated {
+  height: 100%  !important;
+  color: #FFFFFF !important;
+  background-color: #E5047E !important; }
+  #outdated .content {
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%; }
+
+.full-row {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto; }
+
+.megadiv {
+  height: 10000px; }
 
 /*# sourceMappingURL=dashboard.css.map */

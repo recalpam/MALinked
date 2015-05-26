@@ -60,6 +60,12 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
 		return $student;
 	}
 
+	public static function nestedSingle($id)
+	{
+		return self::with(array('info', 'group', 'group.study', 'file', 'projects', 'projects.projectFile'))->where('students.id' ,'=', $id)->firstOrFail();
+		
+	}
+
 	/**
 	 * Get the full name of a student
 	 * 

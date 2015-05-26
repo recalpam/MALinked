@@ -41,8 +41,11 @@ angular.module('MaLinked', [
 /*==============================
 =            Events            =
 ==============================*/
-.run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state',
-    function($rootScope, $timeout, ngProgress, $rootScope, $state) {
+.run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams',
+    function($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams) {
+
+        $rootScope.state = $state;
+
         $rootScope.show = false;
 
         ngProgress.start();

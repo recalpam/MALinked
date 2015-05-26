@@ -7,7 +7,8 @@ angular.module('Dashboard', [
 
   /*==========  Native  ==========*/
   'Dashboard.Controllers',
-  'Dashboard.Routes'
+  'Dashboard.Routes',
+  'MaLinked.Factories'
 ])
 
 

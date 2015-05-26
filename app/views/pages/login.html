@@ -1,17 +1,16 @@
-<h1>{{foo}}</h1>
 <section class="login">
   <div class="large-3 large-centered columns">
     <div class="login-box">
-      <form>
-         <div class="row">
-           <div class="large-12 columns">
-               <input type="text" name="username" placeholder="Leerling nummer" />
-           </div>
-         </div>
+      <form method="post" ng-submit="checkLogin()">
         <div class="row">
-           <div class="large-12 columns">
-               <input type="password" name="password" placeholder="Wachtwoord" />
-           </div>
+          <div class="large-12 columns">
+            <input type="text" name="username" placeholder="Leerling nummer" ng-model="input.user" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <input type="password" name="password" placeholder="Wachtwoord" ng-model="input.password"/>
+          </div>
         </div>
         <div class="row">
           <div class="large-12 large-centered columns">

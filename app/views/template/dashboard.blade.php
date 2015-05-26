@@ -63,7 +63,7 @@
 				      <img src="/static/images/logo.png"> Ma linked
 				    </div>
 				    <div class="medium-5 columns welcome">
-				      <h1>Welkom Nathan Keyzer</h1>
+				      <h1>Welkom [[Voornaam Achternaam]]</h1>
 				      <a href="#" class="profiel-bekijken">Bekijk je profiel</a>
 				    </div>
 				    <div class="medium-4 columns logout">
@@ -73,16 +73,16 @@
 				</header>
 
 				<section class="dashboard">
-				  <div class="row">
+				  <div class="dash row">
 				    <nav>
 				      <div class="medium-3 columns">
 				        <div class="nav">
 				          <ul>
 				            <a href="/dashboard/waarom-het-ma">
-				              <li class="active">Waarom het Ma?</li>
+				              <li ng-class="{ active: isActive('/waarom-het-ma')}">Waarom het Ma?</li>
 				            </a>
 				            <a href="/dashboard/hobbys-en-gegevens">
-				              <li>Hobby’s en gegevens</li>
+				              <li ng-class="{ active: isActive('/dashboard/hobbys-en-gegevens')}">Hobby’s en gegevens</li>
 				            </a>
 				            <a href="/dashboard/projecten">
 				              <li>Projecten</li>
@@ -127,6 +127,9 @@
 
 		{{-- OUTDATED BROWSER JS --}}
 		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
+
+		{{-- Tags Input --}}
+		<script src="/packages/jquery.tagsinput/jquery.tagsinput.min.js"></script>
 
 		<!-- MALINKED CLIENT -->
 		<script type="text/javascript" src="/api/frontend/file/script/progress"></script>

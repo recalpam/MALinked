@@ -47,7 +47,7 @@
 		</style>
 		<base href="/">
 	</head>
-	<body ng-app="MaLinked">
+	<body ng-app="Dashboard">
 
 		<!-- PAGE CONTAINER -->
 
@@ -75,11 +75,10 @@
 
 		<!-- MALINKED CLIENT -->
 		<script type="text/javascript" src="/api/frontend/file/script/progress"></script>
-		<script type="text/javascript" src="/api/frontend/file/script/controllers"></script>
-		<script type="text/javascript" src="/api/frontend/file/script/services"></script>
-		<script type="text/javascript" src="/api/frontend/file/script/factories"></script>
-		<script type="text/javascript" src="/api/frontend/file/script/routes"></script>
-		<script type="text/javascript" src="/api/frontend/file/script/app"></script>
+		<script type="text/javascript" src="/api/frontend/file/script/dashboard.controllers"></script>
+		<script type="text/javascript" src="/api/frontend/file/script/dashboard.routes"></script>
+		<script type="text/javascript" src="/api/frontend/file/script/dashboard.app"></script>
+		
 
 	</body>
 </html>

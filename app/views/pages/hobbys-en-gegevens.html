@@ -1,0 +1,93 @@
+<article class="hobbys-en-gegevens medium-9 columns content">
+  <form enctype="multipart/form-data" data-abide>
+    <div class="row">
+      <div class="small-12 columns">
+        <h3>Gegevens</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <ul class="fileList" id="fileListprofile">
+          <li>
+            <img src="http://placehold.it/400x400" title="Huidige profiel foto">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <div class="avatar-field">
+          <label>Persoonlijke foto wijzigen
+            <div class="speedyUpload-container">
+              <div class="input">Geen bestand geselecteerd</div>
+              <input name="image" type="file" data-part="profile" class="speedyUpload">
+            </div>
+            <small class="error">Upload een (geldige) afbeelding!</small>
+          </label>
+        </div>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <div class="email-field">
+          <label>Persoonlijk e-mailadres
+            <input name="email" type="text" placeholder="jaarboek@gmail.com" />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <div class="woonplaats-field">
+          <label>Woonplaats
+            <input name="city" type="text" placeholder="Amsterdam" required />
+          </label>
+          <small class="error">Vul je woonplaats in!</small>
+        </div>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <div class="portfolio-field">
+          <label>Link naar portfolio website
+            <div class="row collapse">
+              <div class="small-3 columns">
+                <span class="prefix">http://</span>
+              </div>
+              <div class="small-9 columns">
+                <input name="portfolio" type="text" placeholder="www.mijnportfolio.nl" pattern="^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$">
+              </div>
+            </div>
+          </label>
+          <small class="error">Vul een geldige link in!</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <div class="linkedin-field">
+          <label>Link naar LinkedIn profiel
+            <input name="linkedin" type="text" placeholder="https://linkedin.com" pattern="linkedin\.com" />
+          </label>
+          <small class="error">Vul een geldige link in!</small>
+        </div>
+      </div>
+      <div class="small-12 columns">
+        <div class="hobby-field">
+          <label>Interesses / hobby's<br>
+            <small>Plaats hieronder je interesses/hobby's, meerdere interesses/hobby's kun je onderscheiden met een enter, komma of tab:</small>
+            <input name="hobby" required>
+          </label>
+          <small class="error">Vul geldige interesses / hobby's in!</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <hr>
+      </div>
+    </div>
+    <div class="row text-right">
+      <div class="small-12 columns">
+        <a href="#" class="button">Herstel velden</a>
+        <a href="#" class="button">Opslaan</a>
+      </div>
+    </div>
+  </form>
+</article>

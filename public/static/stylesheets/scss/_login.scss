@@ -1,0 +1,312 @@
+body {
+  background-color: $smoke;
+}
+
+// global button
+
+a.button:hover {
+  background-color: $primary-color;
+}
+
+// header
+header {
+  /* fixed position a zero-height full width container */
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  /* or whatever position is desired */
+  right: 0;
+  left: 0;
+
+  height: 100px;
+  /* center all inline content */
+
+  text-align: center;
+  .row {
+    /* make the block inline */
+    display: inline-block;
+    /* reset container's center alignment */
+
+    text-align: left;
+
+    background-color: $white;
+    .logo {
+      font-size: rem-calc(28);
+      line-height: 100px;
+
+      text-align: center;
+
+      color: $white;
+      background-color: $primary-color;
+      img {
+        width: auto;
+        height: rem-calc(28);
+        margin-top: -4px;
+      }
+    }
+  }
+}
+
+// welcome text
+
+.welcome {
+  padding-left: 40px;
+  h1 {
+    font-size: rem-calc(21);
+    font-weight: bold;
+    line-height: 100px;
+
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    display: block;
+
+    margin-top: -30px;
+  }
+}
+
+// logout button
+
+.logout {
+  line-height: 100px;
+
+  height: 100px;
+  padding-right: 40px;
+
+  text-align: right;
+  a {
+    color: $secondary-color;
+    background-color: $smoke;
+  }
+}
+
+// navigation
+
+section {
+  &.dashboard {
+    /* fixed position a zero-height full width container */
+    position: fixed;
+    top: 100px;
+    /* or whatever position is desired */
+    right: 0;
+    left: 0;
+
+    height: calc(100vh - 100px);
+    /* center all inline content */
+
+    text-align: center;
+    .dash {
+      /* make the block inline */
+      display: inline-block;
+
+      height: 100%;
+      /* reset container's center alignment */
+
+      text-align: left;
+
+      background-color: $white-smoke;
+      .nav {
+        margin: 0 -15px;
+
+        background-color: $white;
+        ul {
+          height: 100vh;
+          margin: 0;
+          a {
+            color: $secondary-color;
+            li {
+              font-size: rem-calc(15);
+              line-height: 100px;
+
+              height: 100px;
+              padding: 0 15px;
+
+              list-style: none;
+
+              border-bottom: 1px solid $smoke;
+              background-color: $white;
+              &.active {
+                border-bottom: none;
+                background-color: $white-smoke;
+              }
+            }
+          }
+          .copyright {
+            font-size: 0.9375rem;
+            line-height: 100px;
+
+            height: 100px;
+            padding: 0 15px;
+
+            list-style: none;
+
+            color: $secondary-color;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  &.login {
+    .login-box {
+      margin: 100px 0;
+      padding: 40px 20px 0 20px;
+
+      border: 1px solid #dddddd;
+      background: #ffffff;
+    }
+  }
+}
+
+// content
+
+article {
+  overflow: auto;
+
+  height: calc(100vh - 100px);
+  padding: 40px;
+  h2 {
+    font-size: 18px;
+
+    margin-bottom: 15px;
+  }
+  textarea {
+    font-family: 'Arial';
+
+    height: 270px;
+
+    resize: none;
+  }
+  .fileList {
+    li {
+      position: relative;
+
+      display: inline-block;
+
+      max-width: 25%;
+      padding: rem-calc(10);
+
+      list-style: none;
+
+      vertical-align: top;
+      .delete-image {
+        font-size: rem-calc(25);
+        line-height: rem-calc(25);
+
+        position: absolute;
+        top: rem-calc(-5);
+        right: rem-calc(-5);
+
+        color: $secondary-color;
+      }
+      &:nth-of-type(4n+1) {
+        padding-left: 0;
+      }
+      &:nth-of-type(4n+4) {
+        padding-right: 0;
+      }
+    }
+  }
+  form {
+    label {
+      small {
+        font-size: rem-calc(12);
+
+        text-transform: none;
+      }
+      .tag {
+        color: pink !important;
+        border: 1px solid pink !important;
+        background: $secondary-color !important;
+        a {
+          color: pink !important;
+        }
+      }
+    }
+    .circle {
+      padding: rem-calc(15) rem-calc(20);
+    }
+    a {
+      &.vorige-stap {
+        margin-right: rem-calc(15);
+
+        color: $secondary-color;
+      }
+    }
+  }
+  .speedyUpload-container {
+    position: relative;
+
+    overflow: hidden;
+    .input {
+      font-family: inherit;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+
+      position: relative;
+
+      display: inline-block;
+      overflow: hidden;
+
+      box-sizing: border-box;
+      width: 100%;
+      height: 2.3125rem;
+      padding: 0.5rem;
+
+      transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+
+      color: #989898;
+      border: 1px solid #cccccc;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+      &:before {
+        content: " ";
+      }
+      &:after {
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 2.3125rem;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        height: 100%;
+        padding: 0 20px;
+
+        content: "BLADEREN";
+        text-transform: uppercase;
+
+        color: #999999;
+        background: #e2e2e2;
+      }
+    }
+    &:hover {
+      .input {
+        &:after {
+          color: $secondary-color;
+        }
+      }
+    }
+    .speedyUpload {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: inline-block;
+
+      min-width: 100%;
+      min-height: 100%;
+
+      cursor: inherit;
+      text-align: right;
+
+      opacity: 0;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

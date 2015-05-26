@@ -22,6 +22,7 @@ class CreateStudentsTable extends Migration {
 			$table->string('nameLast');
 			$table->string('nameInsertion');
 			$table->string('file_id');
+			$table->string('background_file_id');
 			$table->timestamp('birthday');
 			$table->rememberToken();
 			$table->timestamps();

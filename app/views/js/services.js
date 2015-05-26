@@ -30,7 +30,6 @@ angular.module('MaLinked.Services', [])
                             if (!student.file || !student.file.thumbnail) {
                                 $scope.uri = "/static/anon.jpg";
                             } else {
-                            	console.log(student);
                                 $scope.uri = student.file.thumbnail;
                             }
                         }

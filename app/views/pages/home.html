@@ -1,17 +1,16 @@
-<section class="homepage">
-	
+<section class="{{ state.current.name }}">
 	<!-- ROW START -->
 	<div class="row">
 		<div ng-repeat="row in studies">
 		<!-- Load random fact block -->
 		<div class="medium-3 columns block wistjedat nohover" style="height: 250px;" ng-if="row.isFact">
-			<div class="title">Weet je wat het is? ...</div>
+			<div class="title">Wist je al dat?</div>
 			<br>
 			<span>{{ row.answer }}</span>
 		</div>
 		<!-- Load study -->
 		<a ui-sref="opleiding({slug: row.study.slug})" ng-if="!row.isFact">
-			<div class="small-12 medium-3 columns block {{row.htmlClass}}" style="height: 250px;" >
+			<div class="small-12 medium-3 columns block {{row.study.slug}}" style="height: 250px;" >
 				<div class="title">{{ row.study.name }}</div>
 				<div class="naarklas">Bekijk de klas &rsaquo;</div>
 			</div>
@@ -19,5 +18,4 @@
 		</div>
 	</div>
 	<!-- ROW STOP -->
-	
 </section>

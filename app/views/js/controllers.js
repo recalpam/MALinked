@@ -35,11 +35,12 @@ angular.module('MaLinked.Controllers', [])
             give = {
                 'isFact': true,
                 'answer': chosen
-            }
+            };
 
-            return getRandomFact();
-
+            return give;
         }
+
+         return getRandomFact();
     }
 
     var overview = {

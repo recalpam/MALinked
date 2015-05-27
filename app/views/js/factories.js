@@ -7,22 +7,24 @@ angular.module('MaLinked.Factories', ['progressApp'])
     function($http, $filter, ngProgress) {
 
         // $http promise
-        var sync;
+        var sync, loginData;
 
         // $http get
         var get = function(action) {
             return $http.get('/api/db/' + action);
         }
 
-        // get token
-        var loginData = false;
-
          // $http post
         var post = function(action, object, fn) {
             ngProgress.start();
             return $http.post('/api/db/' + action, object).
             success(function(data, status, headers, config) {
-                loginData = data;
+                get('auth/1/check').success(function(data){
+                    if( !data.error == false ){
+                        loginData = data;
+                    }
+                });
+
                 ngProgress.complete();
                 fn(data, status, headers, config);
             }).
@@ -70,12 +72,28 @@ angular.module('MaLinked.Factories', ['progressApp'])
                 return sync;
             },
 
-            postLogin: function(object, fn) {
-                post('auth', object, fn);
-            },
+            user: {
+                // Authenticate user
+                authenticate: function(object, fn) {
+                    post('auth', object, fn);
+                },
 
-            getLoginData: function(){
-                return loginData;
+                // Get the user, returns false if not logged in
+                get: function( fn ){
+                    get('auth/1/check').success(function(data, status, headers, config) {
+                        fn( this.querify(data) );
+                    });
+                },
+
+                // Set data for user
+                set: function( data ){
+
+                },
+
+                // Destroy user session and redirect to home
+                logout: function(){
+
+                }
             }
 
         }

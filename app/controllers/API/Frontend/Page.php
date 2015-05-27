@@ -11,6 +11,8 @@ class Page extends \BaseController {
   }
 
 	public function getDashboard(){
-		return View::make('template.dashboard');
+		$user = ((Auth::user()) ? Auth::user() : null);
+		
+		return View::make('template.dashboard', array( 'user' => $user ) );
 	}
 }

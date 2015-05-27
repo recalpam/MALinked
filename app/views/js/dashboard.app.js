@@ -27,6 +27,7 @@ angular.module('Dashboard', [
 =========================================*/
 .config(['$urlRouterProvider',
   function ($urlRouterProvider) {
+    
     $urlRouterProvider.otherwise("/dashboard/login");
   }
 ])

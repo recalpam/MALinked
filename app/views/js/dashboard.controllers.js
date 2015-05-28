@@ -65,10 +65,6 @@ angular.module('Dashboard.Controllers', [])
             // Show scope
             $scope.show = true;
         });
-
-    
-
-    console.log();
   }
 ])
 

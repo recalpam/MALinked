@@ -6,7 +6,8 @@ class ProjectConvert {
 	public function fire($job, $data){
 
 		$project		= 	Project::where('project_id_old', '=', $data['project_id'])->firstOrFail();
-		$fileName 		= 	md5( uniqid( $project->id.'_')) . '.' . $data['file_extention'];
+		$file 			= 	md5( uniqid( $project->id.'_'));
+		$fileName 		= 	$file . '.' . $data['file_extention'];
 
 		if( $data['file_extention'] == 'pdf' ){
 			$remoteDir 	= 	'pdf';
@@ -48,7 +49,7 @@ class ProjectConvert {
 			'project_id'	=> $project->id,
 			'files_id'		=>	
 				Files::create([
-					'fileHash'		=>	$fileName,
+					'fileHash'		=>	$file,
 					'fileExtension'	=>	$data['file_extention']
 				])->id
 		]);

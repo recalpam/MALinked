@@ -47,7 +47,6 @@ angular.module('Dashboard', [
     $rootScope
           .$watch('$routeChangeStart', function() {
               ngProgress.start();
-              $state.go("login");
           });
 
     $rootScope

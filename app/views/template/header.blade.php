@@ -1,6 +1,6 @@
 {{-- HEADER START --}}
 <header class="@{{ state.current.name }}">
-	
+
 	{{-- NAV --}}
 	<nav class="menu" role="navigation">
 		<div class="row">
@@ -14,13 +14,13 @@
 			</ul>
 		</div>
 	</nav>
-	
+
 	{{-- HEADER LAYOUT SWITCH --}}
 	<angular ng-switch on="state.current.name">
 
 		{{-- HOME LAYOUT --}}
 		<angular ng-switch-when="home">
-			<video preload="auto" autoplay poster="/static/images/video-background.png" loop muted>
+			<video preload="auto" autoplay loop muted>
 				<source src="/static/videos/video-background.webm" type="video/webm">
 				<source src="/static/videos/video-background.mp4" type="video/mp4">
 				Sorry, your browser does not support HTML5 video.
@@ -60,5 +60,5 @@
 
 	{{-- END SWITCH --}}
 	</angular>
-	
+
 </header>

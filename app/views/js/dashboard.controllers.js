@@ -114,8 +114,10 @@ angular.module('Dashboard.Controllers', [])
         $scope.show = true;
     });
     $scope.postData = function(){
-        console.log($scope.userData);
-        console.log(angular.element('#headerImage'));
+        API.user.uploadFileToUrl('put/image', angular.element('#headerImage'));
+        API.user.set('updateHobbiesEnGegevens', $scope.userData, function(){
+            alert('Klaar is Kees');
+        });
     }
   }
 ])

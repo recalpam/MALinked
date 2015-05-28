@@ -38,6 +38,8 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 
 		Route::group(array('before' => 'auth'), function(){
 			Route::resource('student', 'API\StudentsController', array());
+			Route::put('put/updateHobbiesEnGegevens', 'API\StudentsController@HobbiesEnGegevens');
+			Route::put('put/image', 'API\StudentsController@UploadImage');
 		});
 	});
 

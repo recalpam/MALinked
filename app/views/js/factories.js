@@ -35,10 +35,30 @@ angular.module('MaLinked.Factories', ['progressApp'])
             });
         }
 
+        var put = function(action, object, fn) {
+            ngProgress.start();
+            return $http.put('/api/db/' + action, object).
+            success(function(data, status, headers, config) {
+                get('auth/1/check').success(function(data){
+                    if( !data.error == false ){
+                        loginData = data;
+                    }
+                });
+
+                ngProgress.complete();
+                fn(data, status, headers, config);
+            }).
+            error(function(data, status, headers, config) {
+                console.error(action+ ' failed.');
+                ngProgress.complete();
+                return data;
+            });
+        }
+
         var postFile = function(action, file, fn){
             var fd = new FormData();
             fd.append('file', file);
-            $http.post(uploadUrl, fd, {
+            $http.put(action, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
             })
@@ -84,10 +104,6 @@ angular.module('MaLinked.Factories', ['progressApp'])
                 return sync;
             },
 
-            uploadFileToUrl: function(url, file){
-                postFile(url, file, fn);
-            },
-
             user: {
                 // Authenticate user
                 authenticate: function(object, fn) {
@@ -102,13 +118,19 @@ angular.module('MaLinked.Factories', ['progressApp'])
                 },
 
                 // Set data for user
-                set: function( data ){
-
+                set: function( action, object, fn ){
+                    delete object.background_file_id;
+                    delete object.file;
+                    put('put/'+action, object, fn);
                 },
 
                 // Destroy user session and redirect to home
                 logout: function(){
 
+                },
+
+                uploadFileToUrl: function(url, file, fn){
+                    postFile(url, file, fn);
                 }
             }
 

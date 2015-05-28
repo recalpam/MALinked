@@ -62,9 +62,31 @@ class StudentsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$student->update($data);
+		$student->push($data);
 
 		return Response::json($student);
+	}
+
+	public function HobbiesEnGegevens(){
+		$studentInfo = StudentInfo::where('student_id', '=', Input::get('id'))->firstOrFail();
+		$studentInfo->email = Input::get('info.email');
+		$studentInfo->location = Input::get('info.location');
+		$studentInfo->portfolio = Input::get('info.portfolio');
+		$studentInfo->linkedin = Input::get('info.linkedin');
+		$studentInfo->dribbble = Input::get('info.dribbble');
+		$studentInfo->behance = Input::get('info.behance');
+		$studentInfo->vimeo = Input::get('info.vimeo');
+		$studentInfo->youtube = Input::get('info.youtube');
+		$studentInfo->youtube = Input::get('info.youtube');
+		$studentInfo->hobbies = serialize(Input::get('info.hobbies'));
+
+		$studentInfo->push();
+
+		return 'Done';
+	}
+
+	public function UploadImage(){
+		dd(Input::all());
 	}
 
 	

@@ -174,15 +174,12 @@ a.close-reveal-modal {
   }
 }
 
-
 .hamburger {
   @include btn(0px, 0);
-
   top: 30px;
   left: 30px;
   .icon-left {
     @include icon(4px, 15px);
-
     left: 0;
     &:before {
       @include icon-before(4px, 15px, -10px);
@@ -196,7 +193,6 @@ a.close-reveal-modal {
   }
   .icon-right {
     @include icon(4px, 15px);
-
     left: 15px;
     &:before {
       @include icon-before(4px, 15px, -10px);
@@ -219,7 +215,6 @@ a.close-reveal-modal {
     }
     .icon-right {
       transition-duration: 0.5s;
-
       background: transparent;
       &:before {
         transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
@@ -236,14 +231,11 @@ a.close-reveal-modal {
 
 .student {
   @include background-size(cover);
-
   position: relative;
   top: -15px;
-
   width: 100%;
   height: 155px;
   margin-bottom: 10px;
-
   background-repeat: no-repeat;
   background-position: center center;
   &.grafisch-vormgever {
@@ -290,34 +282,26 @@ a.close-reveal-modal {
   }
   &:after {
     @include background-image(linear-gradient(transparent, $black));
-
     position: absolute;
     z-index: 50;
     right: 0;
     bottom: 0;
     left: 0;
-
     height: 83px;
-
     content: "";
   }
   .info {
     position: absolute;
     z-index: 100;
-    right: 0;
+    float: right;
     bottom: 0;
-
-    margin-right: 100px;
     h4 {
       font-size: rem-calc(20);
-
       margin-bottom: 0;
-
       color: $white;
     }
     p {
-      font-size: rem-calc(12  );
-
+      font-size: rem-calc(12);
       color: $white;
     }
   }
@@ -327,14 +311,11 @@ a.close-reveal-modal {
       z-index: 100;
       bottom: 3px;
       left: 3px;
-
       float: left;
-
       width: 80px;
       height: 80px;
-      margin-top: 0;
-
       border-radius: 100%;
+      margin-left: 100px;
     }
   }
 }

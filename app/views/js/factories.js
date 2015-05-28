@@ -9,6 +9,8 @@ angular.module('MaLinked.Factories', ['progressApp'])
         // $http promise
         var sync, loginData;
 
+       
+
         // $http get
         var get = function(action) {
             return $http.get('/api/db/' + action);
@@ -52,6 +54,9 @@ angular.module('MaLinked.Factories', ['progressApp'])
                     };
                 }
             }
+
+             // DEATH TO ALL THE BREAKSPACES!
+            object.br = /<br\s*[\/]?>/gi;
 
             // return the modified (contains appended functionality)
             return object;

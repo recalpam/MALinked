@@ -42,13 +42,13 @@
 							@{{ student.fullname }}
 						</div>
 						<div class="small-12 medium-6 text-right columns social">
-							<a href="#" class="website"></a>
-							<a href="#" class="linkedin"></a>
-							<a href="#" class="dribbble"></a>
-							<a href="#" class="behance"></a>
-							<a href="#" class="vimeo"></a>
-							<a href="#" class="youtube"></a>
-							<a href="#" class="facebook"></a>
+							<a href="@{{student.info.website}}" class="website"></a>
+<!-- 							<a href="@{{student.info.website}}" class="linkedin"></a>
+<a href="#" class="dribbble"></a>
+<a href="#" class="behance"></a>
+<a href="#" class="vimeo"></a>
+<a href="#" class="youtube"></a>
+<a href="#" class="facebook"></a> -->
 						</div>
 					</div>
 				</div>

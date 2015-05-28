@@ -142,11 +142,22 @@ angular.module('MaLinked.Controllers', [])
         var blockEqualizeWidth = blockEqualize.width();
         $(blockEqualize).height(blockEqualizeWidth);
 
-        $rootScope.student = db.students.single({
+        // Retrieve a single student by slug
+        var student = db.students.single({
             slug: $stateParams.student
         });
 
+        // Loop through all info elements
+        for(var key in student.info){
 
+            // Whenever a string is occurred
+            if(typeof(student.info[key])=="string"){
+                student.info[key] = student.info[key].replace(db.br, '\n');
+            }
+        }
+
+
+        $rootScope.student = student;
     }
 ])
 

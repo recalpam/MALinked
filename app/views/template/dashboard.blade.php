@@ -160,6 +160,7 @@
 
 		<!-- MALINKED CLIENT -->
 		<script type="text/javascript" src="/api/frontend/file/script/progress"></script>
+		<script type="text/javascript" src="/api/frontend/file/script/dashboard.services"></script>
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.controllers"></script>
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.routes"></script>
 		<script type="text/javascript" src="/api/frontend/file/script/dashboard.app"></script>

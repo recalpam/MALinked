@@ -51,9 +51,9 @@ class StudentsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update()
 	{
-		$student = Student::findOrFail($id);
+		$student = Student::findOrFail(Auth::user()->id);
 
 		$validator = Validator::make($data = Input::all(), Student::$rules);
 

@@ -68,7 +68,7 @@
 				      <a href="/profiel/{{ Auth::user()->group->slug }}/{{ Auth::user()->slug }}" target="_blank" class="profiel-bekijken">Bekijk je profiel</a>
 				    </div>
 				    <div class="medium-4 columns logout">
-				      <a href="" class="button">Uitloggen</a>
+				      
 				    </div>
 				  </div>
 				</header>
@@ -84,9 +84,6 @@
 				            </a>
 				            <a href="/dashboard/hobbys-en-gegevens">
 				              <li ng-class="{ active: isActive('/dashboard/hobbys-en-gegevens')}">Hobby’s en gegevens</li>
-				            </a>
-				            <a href="/dashboard/projecten">
-				              <li>Projecten</li>
 				            </a>
 				            <a href="/dashboard/over-de-school">
 				              <li>Over de school</li>

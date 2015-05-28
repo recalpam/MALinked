@@ -1,4 +1,4 @@
-<article class="waarom-het-ma medium-9 columns content">
+<article class="waarom-het-ma medium-9 columns content" ng-show="show">
   <form data-abide>
     <div class="row">
       <div class="small-12 columns">
@@ -7,7 +7,7 @@
       <div class="small-12 columns">
         <div class="toekomstbeeld-field">
           <label>Wat is je toekomstbeeld, wat zijn je ambities?
-            <textarea required></textarea>
+            <textarea required>{{ userData.info.future_vision }}</textarea>
           </label>
           <small class="error">Je hebt niks ingevuld!</small>
         </div>
@@ -25,4 +25,7 @@
       </div>
     </div>
   </form>
+</article>
+<article class="waarom-het-ma medium-9 columns content" ng-hide="show">
+  <center><img src="http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/5-1.gif" alt="Loading..."/></center>
 </article>

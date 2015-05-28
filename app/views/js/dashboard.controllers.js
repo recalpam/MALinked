@@ -46,7 +46,6 @@ angular.module('Dashboard.Controllers', [])
   function ($scope, API, $window) {
         // Hide everything and show loadbar while content is being loaded
         $scope.show = false;
-
         var User;
 
         // Start loading content
@@ -75,46 +74,49 @@ angular.module('Dashboard.Controllers', [])
 
 .controller('hobbys-en-gegevens', ['$scope', 'API', '$window',
   function ($scope, API, $window) {
-        // Hide everything and show loadbar while content is being loaded
-        $scope.show = false;
+    // Hide everything and show loadbar while content is being loaded
+    $scope.show = false;
 
-        var User;
+    var User;
 
-        // Start loading content
-        API.user.get(function( data ){
-            // Assign content to User variable
-            User = $scope.userData = data;
+    // Start loading content
+    API.user.get(function( data ){
+        // Assign content to User variable
+        User = $scope.userData = data;
+        
 
-            // User not logged in, redirect
-            if( User.error ){
-                $window.location.href = '/dashboard/login';
-            }
+        // User not logged in, redirect
+        if( User.error ){
+            $window.location.href = '/dashboard/login';
+        }
 
-            function getHobbies() {
-                a = User.info.hobbies;
-                var out = '';
-                for (var i=0; i<a.length; i++) {  
-                   out = out + a[i] + ',';
-                } 
-                return out;
-            }
+        function getHobbies() {
+            a = User.info.hobbies;
+            var out = '';
+            for (var i=0; i<a.length; i++) {  
+               out = out + a[i] + ',';
+            } 
+            return out;
+        }
 
 
-            $('.hobby-field input').val(getHobbies());
+        $('.hobby-field input').val(getHobbies());
 
-            $('.hobby-field input').tagsInput({
-              'interactive': true,
-              'height': '5.625rem',
-              'width': '100%',
-              'defaultText': 'voeg toe',
-              'typeahead': { 'source': User.info.hobbies }
-            });
-
-            // Show scope
-            $scope.show = true;
+        $('.hobby-field input').tagsInput({
+          'interactive': true,
+          'height': '5.625rem',
+          'width': '100%',
+          'defaultText': 'voeg toe',
+          'typeahead': { 'source': User.info.hobbies }
         });
 
-
+        // Show scope
+        $scope.show = true;
+    });
+    $scope.postData = function(){
+        console.log($scope.userData);
+        console.log(angular.element('#headerImage'));
+    }
   }
 ])
 

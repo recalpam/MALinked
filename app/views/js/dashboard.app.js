@@ -34,7 +34,7 @@ angular.module('Dashboard', [
 
 .run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams',
   function($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams) {
-    $rootScope.state = $state;
+    //$rootScope.state = $state;
 
     $rootScope.show = false;
 

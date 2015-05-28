@@ -35,6 +35,18 @@ angular.module('MaLinked.Factories', ['progressApp'])
             });
         }
 
+        var postFile = function(action, file, fn){
+            var fd = new FormData();
+            fd.append('file', file);
+            $http.post(uploadUrl, fd, {
+                transformRequest: angular.identity,
+                headers: {'Content-Type': undefined}
+            })
+            .success(function(data, status, headers, config){
+                fn(data, status, headers, config);
+            });
+        }
+
         // appends query-like methods to a local object!
         querify = function(object) {
             if (typeof(object) == "object") {
@@ -70,6 +82,10 @@ angular.module('MaLinked.Factories', ['progressApp'])
                     });
                 }
                 return sync;
+            },
+
+            uploadFileToUrl: function(url, file){
+                postFile(url, file, fn);
             },
 
             user: {

@@ -1,13 +1,13 @@
 /**
  * MaLinked.Factories Module
  */
-angular.module('MaLinked.Factories', [])
+angular.module('MaLinked.Factories', ['progressApp'])
 
-.factory('API', ['$http', '$filter',
-    function($http, $filter) {
+.factory('API', ['$http', '$filter', 'ngProgress',
+    function($http, $filter, ngProgress) {
 
         // $http promise
-        var sync;
+        var sync, loginData;
 
         // $http get
         var get = function(action) {
@@ -16,12 +16,21 @@ angular.module('MaLinked.Factories', [])
 
          // $http post
         var post = function(action, object, fn) {
+            ngProgress.start();
             return $http.post('/api/db/' + action, object).
             success(function(data, status, headers, config) {
+                get('auth/1/check').success(function(data){
+                    if( !data.error == false ){
+                        loginData = data;
+                    }
+                });
+
+                ngProgress.complete();
                 fn(data, status, headers, config);
             }).
             error(function(data, status, headers, config) {
                 console.error(action+ ' failed.');
+                ngProgress.complete();
                 return data;
             });
         }
@@ -31,9 +40,9 @@ angular.module('MaLinked.Factories', [])
             if (typeof(object) == "object") {
                 for (var candidate in object) {
 
-                	/* Filter based upon params */
+                    /* Filter based upon params */
                     object[candidate].where = function(params) {
-                        return $filter('filter')(this, params, true);
+                        return $filter('filter')(this, params);
                     };
 
                     /* Filter but only return a single value */
@@ -63,8 +72,28 @@ angular.module('MaLinked.Factories', [])
                 return sync;
             },
 
-            postLogin: function(object, fn) {
-                post('auth', object, fn);
+            user: {
+                // Authenticate user
+                authenticate: function(object, fn) {
+                    post('auth', object, fn);
+                },
+
+                // Get the user, returns false if not logged in
+                get: function( fn ){
+                    get('auth/1/check').success(function(data, status, headers, config) {
+                        fn( this.querify(data) );
+                    });
+                },
+
+                // Set data for user
+                set: function( data ){
+
+                },
+
+                // Destroy user session and redirect to home
+                logout: function(){
+
+                }
             }
 
         }

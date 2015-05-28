@@ -24,7 +24,7 @@ angular.module('MaLinked', [
 =========================================*/
 .config(['$urlRouterProvider',
     function($urlRouterProvider) {
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("home");
     }
 ])
 
@@ -41,73 +41,32 @@ angular.module('MaLinked', [
 /*==============================
 =            Events            =
 ==============================*/
-.run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams',
-    function($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams) {
+.run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams', 'API',
+    function($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams, API) {
 
+        API.sync().then(function(response) {
+            $rootScope.db = response;
+        });
         $rootScope.state = $state;
 
+        /*==========  ngProgress  ==========*/
         $rootScope.show = false;
-
         ngProgress.start();
         $timeout(function() {
             ngProgress.complete();
             $rootScope.show = true;
         }, 2000);
-
         $rootScope
             .$watch('$stateChangeStart', function() {
-                $rootScope.currentState = $state.current.name;
+                $rootScope.show = false;
+
                 ngProgress.start();
             });
-
-
         $rootScope
             .$on('$stateChangeSuccess',
                 function(event, toState, toParams, fromState, fromParams) {
                     ngProgress.complete();
+                    $(".site").removeClass("hide");
                 });
-    }
-])
-
-
-/*==================================================
-=            Accessable outside ui-view            =
-==================================================*/
-.run(['$rootScope', '$http',
-    function($rootScope, $http) {
-
-        // $http get
-        var get = function(action) {
-            return $http.get('/api/db/' + action);
-        }
-
-        // appends query-like methods to a local object!
-        querify = function(object) {
-            if (typeof(object) == "object") {
-                for (var candidate in object) {
-
-                    /* Filter based upon params */
-                    object[candidate].where = function(params) {
-                        return $filter('filter')(this, params, true);
-                    };
-
-                    /* Filter but only return a single value */
-                    object[candidate].single = function(params) {
-                        var result = this.where(params);
-                        if (result.length > 0) return result[0];
-                    };
-                }
-            }
-
-            // return the modified (contains appended functionality)
-            return object;
-        };
-
-        get('sync').then(function(response) {
-            $rootScope.db = querify(response.data);
-        });
-
-  
-
     }
 ])

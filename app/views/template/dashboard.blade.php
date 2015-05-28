@@ -54,7 +54,7 @@
 				<!-- DYNAMIC PAGE -->
 				<ui-view></ui-view>
 			</div>
-
+			@if (Auth::user())
 			<div ng-switch-default>
 				<!-- PAGE CONTAINER -->
 				<header>
@@ -62,12 +62,13 @@
 				    <div class="medium-3 columns logo">
 				      <img src="/static/images/logo.png"> Ma linked
 				    </div>
+				     
 				    <div class="medium-5 columns welcome">
-				      <h1>Welkom [[Voornaam Achternaam]]</h1>
-				      <a href="#" class="profiel-bekijken">Bekijk je profiel</a>
+				      <h1>{{ Auth::user()->fullname }}</h1>
+				      <a href="/profiel/{{ Auth::user()->group->slug }}/{{ Auth::user()->slug }}" target="_blank" class="profiel-bekijken">Bekijk je profiel</a>
 				    </div>
 				    <div class="medium-4 columns logout">
-				      <a href="#" class="button">Uitloggen</a>
+				      <a href="" class="button">Uitloggen</a>
 				    </div>
 				  </div>
 				</header>
@@ -109,6 +110,10 @@
 				  </div>
 				</section>
 			</div>
+			@elseif( Request::path() != 'dashboard/login' )
+			 <center>Redirecten naar login</center>
+			 <span style="display: none;">{{ Redirect::intended('dashboard/login') }}</span>
+			@endif
 		</div>
 
 		<!-- JQUERY TRASH -->

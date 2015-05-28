@@ -16,6 +16,7 @@ class CreateStudentInfoTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('student_id');
+			$table->string('location')->nullable();
 			$table->string('fav_teacher')->nullable();
 			$table->string('fav_class')->nullable();
 			$table->text('fav_project')->nullable();
@@ -25,6 +26,11 @@ class CreateStudentInfoTable extends Migration {
 			$table->string('school_match_ambitions')->nullable();
 			$table->text('future_vision')->nullable();
 			$table->string('linkedin')->nullable();
+			$table->string('dribbble')->nullable();
+			$table->string('behance')->nullable();
+			$table->string('vimeo')->nullable();
+			$table->string('youtube')->nullable();
+			$table->string('facebook')->nullable();
 			$table->string('email')->nullable();
 			$table->string('hobbies')->nullable();
 			$table->string('portfolio')->nullable();

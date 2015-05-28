@@ -39,7 +39,7 @@
 				<div class="bar">
 					<div class="row">
 						<div class="small-12 medium-6 columns">
-							Marja de Leeuw
+							@{{ student.fullname }}
 						</div>
 						<div class="small-12 medium-6 text-right columns social">
 							<a href="#" class="website"></a>
@@ -52,7 +52,8 @@
 						</div>
 					</div>
 				</div>
-				<img class="image" src="http://placehold.it/400x400" />
+				<profielfoto class="image" student-id="@{{ student.id }}" size="medium" alt="@{{ student.fullname }}"/>
+
 			</div>
 			<div class="overlay"></div>
 		</angular>

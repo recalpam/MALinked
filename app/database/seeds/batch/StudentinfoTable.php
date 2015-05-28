@@ -644,14 +644,15 @@ In de toekomst zie mij als zelfstandig ondernemer en dan te gaan touren met veel
 		foreach($students AS $student){
 			$insert = array();
 			$insert['student_id'] = $student['sta_student_id'];
+      $insert['location'] = ucfirst($student['location']);
 			$insert['fav_teacher'] = $student['fav_teacher'];
 			$insert['fav_class'] = $student['fav_class'];
-			$insert['fav_project'] = str_replace(array("\n", "\t", "\r"), array("", "", ""), $student['fav_project']),
+			$insert['fav_project'] = str_replace(array("\n", "\t", "\r"), array("", "", ""), $student['fav_project']);
 			$insert['rate_school'] = $student['rate_school'];
 			$insert['rate_internship'] = $student['rate_intern'];
 			$insert['specialize'] = $student['specialize'];
-			$insert['school_match_ambitions'] = str_replace(array("\n", "\t", "\r"), array("", "", ""), $student['school_match_ambitions']),
-			$insert['future_vision'] = str_replace(array("\n", "\t", "\r"), array("", "", ""), $student['futureimage_answer']),$student[''];
+			$insert['school_match_ambitions'] = str_replace(array("\n", "\t", "\r"), array("", "", ""), $student['school_match_ambitions']);
+			$insert['future_vision'] = str_replace(array("\n", "\t", "\r"), array("", "", ""), $student['futureimage_answer']);
 			$insert['linkedin'] = $student['linkedin_uri'];
 			$insert['email'] = $student['personal_email'];
 			$insert['hobbies'] = $student['hobbies'];

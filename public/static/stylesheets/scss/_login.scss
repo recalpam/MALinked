@@ -309,4 +309,108 @@ article {
       }
     }
   }
+  &.hobbys-en-gegevens {
+    .student {
+      @include background-size(cover);
+
+      position: relative;
+
+      width: 100%;
+      height: 200px;
+      margin-bottom: 30px;
+
+      background-repeat: no-repeat;
+      background-position: center center;
+      &.grafisch-vormgever {
+        background-color: $grafisch-vormgever;
+      }
+      &.interactief-vormgever {
+        background-color: $interactief-vormgever;
+      }
+      &.ruimtelijk-vormgever {
+        background-color: $ruimtelijk-vormgever;
+      }
+      &.audiovisueel-vormgeveranimatie {
+        background-color: $audiovisueel-vormgeveranimatie;
+      }
+      &.filmacteur {
+        background-color: $filmacteur;
+      }
+      &.av-technicus {
+        background-color: $av-technicus;
+      }
+      &.podiumtechnicus {
+        background-color: $podiumtechnicus;
+      }
+      &.evenemententechnicus {
+        background-color: $evenemententechnicus;
+      }
+      &.geluidstechnicus {
+        background-color: $geluidstechnicus;
+      }
+      &.media-en-gamedeveloper {
+        background-color: $media-en-gamedeveloper;
+      }
+      &.game-artist {
+        background-color: $game-artist;
+      }
+      &.mediamanager {
+        background-color: $mediamanager;
+      }
+      &.dtp-er {
+        background-color: $dtp-er;
+      }
+      &.signmaker {
+        background-color: $signmaker;
+      }
+      &:after {
+        @include background-image(linear-gradient(transparent, $black));
+
+        position: absolute;
+        z-index: 50;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        height: 83px;
+
+        content: "";
+      }
+      .info {
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+
+        margin-left: 155px;
+        h4 {
+          font-size: rem-calc(26);
+
+          margin-bottom: 0;
+
+          color: $white;
+        }
+        p {
+          font-size: rem-calc(18);
+
+          color: $white;
+        }
+      }
+      figure {
+        img {
+          position: absolute;
+          z-index: 100;
+          bottom: 10px;
+          left: 10px;
+
+          float: left;
+
+          width: auto;
+          height: 135px;
+          margin-top: 0;
+
+          border-radius: 100%;
+        }
+      }
+    }
+  }
 }

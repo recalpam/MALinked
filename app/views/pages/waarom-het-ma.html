@@ -1,10 +1,11 @@
-<article class="waarom-het-ma medium-9 columns content">
+{{user}}
+<article class="waarom-het-ma medium-9 columns content" ng-show="show">
   <form data-abide>
     <div class="row">
       <div class="small-12 columns">
         <div class="waarom-field">
           <label><h2>Waarom heb je voor het Mediacollege gekozen?</h2>
-            <textarea required></textarea>
+            <textarea required>{{ userData.info.why_ma }}</textarea>
           </label>
           <small class="error">Veld is niet ingevuld!</small>
         </div>
@@ -22,4 +23,7 @@
       </div>
     </div>
   </form>
+</article>
+<article class="waarom-het-ma medium-9 columns content" ng-hide="show">
+  <center><img src="http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/5-1.gif" alt="Loading..."/></center>
 </article>

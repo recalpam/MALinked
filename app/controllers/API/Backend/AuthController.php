@@ -42,9 +42,7 @@ class AuthController extends \BaseController {
 		if( Auth::attempt(array('student' => $this->student, 'password' => md5($this->password)), true) ){
 			return Response::json(array(
 				'error' => false,
-				'message' => 'Session created',
-				'token' => Auth::user()->remember_token,
-				'student' => Auth::user()->with(array('info', 'group', 'group.study'))->get()
+				'message' => 'Session created'
 			));
 			
 		}
@@ -72,6 +70,19 @@ class AuthController extends \BaseController {
 		$this->studentResult->password = \Hash::make(md5($this->password));
 		$this->studentResult->save();
 		return true;
+	}
+
+	public function checkLogin()
+	{
+		if( Auth::user() ){
+			return Response::json(
+				Student::nestedSingle( Auth::user()->id  )
+				, 200, array(), JSON_PRETTY_PRINT);
+		}
+		return Response::json(array(
+			'error' => true,
+			'message' => 'User not authorized'
+		));
 	}
 
 }

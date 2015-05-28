@@ -1,4 +1,4 @@
-<article class="waarom-het-ma medium-9 columns content">
+<article class="waarom-het-ma medium-9 columns content" ng-show="show">
   <form data-abide>
     <div class="row">
       <div class="small-12 columns">
@@ -19,7 +19,7 @@
             <div class="spacialiseren-school-field">
               <label>In welke richting wil je je gaan specialiseren?<br>
                 <small>&nbsp;</small>
-                <input  type="text" placeholder="" required>
+                <input  type="text" placeholder="" value="{{ userData.info.specialize }}" required>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
@@ -29,15 +29,15 @@
           <div class="small-12 medium-6 columns">
             <div class="opdracht-school-field">
               <label>Op welke school opdracht ben je het meest trots?
-                <textarea  required></textarea>
+                <textarea  required>{{ userData.info.fav_project }}</textarea>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
           </div>
-          <div class="small-12 medium-6 columns">
+          <div class="small-12 medium-6 columns">  
             <div class="ervaring-school-field">
               <label>Wat was je leukste ervaring op school?
-                <textarea required></textarea>
+                <textarea required>{{ userData.info.best_experience }}</textarea>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
@@ -89,7 +89,7 @@
               <div class="small-12 columns">
                 <div class="vak-school-field">
                   <label>Wat vond je het leukste vak?
-                    <input type="text" placeholder="Gymnastiek" required>
+                    <input type="text" placeholder="Gymnastiek" value="{{ userData.info.fav_class }}" required>
                   </label>
                   <small class="error">Je hebt niks ingevuld!</small>
                 </div>
@@ -99,7 +99,7 @@
           <div class="small-12 medium-6 columns">
             <div class="ambities-school-field">
               <label>Sluit de opleiding aan op je ambities? Leg uit:
-                <textarea required></textarea>
+                <textarea required>{{ userData.info.school_match_ambitions }}</textarea>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
@@ -119,4 +119,7 @@
       </div>
     </div>
   </form>
+</article>
+<article class="waarom-het-ma medium-9 columns content" ng-hide="show">
+  <center><img src="http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/5-1.gif" alt="Loading..."/></center>
 </article>

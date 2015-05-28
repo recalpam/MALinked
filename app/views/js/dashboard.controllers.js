@@ -85,13 +85,24 @@ angular.module('Dashboard.Controllers', [])
             // Assign content to User variable
             User = $scope.userData = data;
 
-
             // User not logged in, redirect
             if( User.error ){
                 $window.location.href = '/dashboard/login';
             }
 
-             $('.hobby-field input').tagsInput({
+            function getHobbies() {
+                a = User.info.hobbies;
+                var out = '';
+                for (var i=0; i<a.length; i++) {  
+                   out = out + a[i] + ',';
+                } 
+                return out;
+            }
+
+
+            $('.hobby-field input').val(getHobbies());
+
+            $('.hobby-field input').tagsInput({
               'interactive': true,
               'height': '5.625rem',
               'width': '100%',
@@ -151,16 +162,28 @@ angular.module('Dashboard.Controllers', [])
                 $window.location.href = '/dashboard/login';
             }
 
+            function getDocenten() {
+                a = User.info.fav_teacher;
+                var out = '';
+                for (var i=0; i<a.length; i++) {  
+                   out = out + a[i] + ',';
+                } 
+                return out;
+            }
+
+
+            $('.docent-school-field input').val(getDocenten());
+
+            $('.docent-school-field input').tagsInput({
+                'interactive': true,
+                'height': '5.625rem',
+                'width': '100%',
+                'defaultText': 'voeg toe'
+            });
+
             // Show scope
             $scope.show = true;
         });
-
-    $('.docent-school-field input').tagsInput({
-      'interactive': true,
-      'height': '5.625rem',
-      'width': '100%',
-      'defaultText': 'voeg toe'
-    });
   }
 ])
 

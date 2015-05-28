@@ -1,15 +1,65 @@
+<script>
+$(document).ready(function(){
+isCalled = false;
+
+// Messy jquery part no time to do it clean
+    function readFile(file, part){
+      if( isCalled ){
+        isCalled = false;
+        return;
+      }
+      isCalled = true;
+
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        var base64 = e.target.result;
+        var regex = /^data:(.+?)\/(.+?);/i;
+        var data = base64.match(regex);
+
+        if( data[2] != 'png' && data[2] != 'jpg' && data[2] != 'jpeg' ){
+          alert('Je mag alleen png of jpeg uploaden.');
+          return;
+        }
+        var imageUrl = 'http://malinked.dev/api/db/previewimage?type=medium&image=';
+        if( part == 'background' ){
+          $('#'+part).css('background', 'url('+ imageUrl + base64 );
+        } else {
+          $('#'+part).attr('src', imageUrl + base64);
+        }
+      }
+
+      reader.readAsDataURL(file);
+    }
+
+
+   $(document).on("change", '.speedyUpload', function(){
+        files = $(this)[0].files;
+        
+        if (typeof window.FileReader === 'function') {
+          for( var k = 0; k < files.length; k++ ){
+            readFile(files[k], $(this).data('part'));
+          }
+        }
+      });
+});
+
+</script>
+
+
+
 <article class="hobbys-en-gegevens medium-9 columns content" ng-show="show">
   <form enctype="multipart/form-data" data-abide>
     <div class="row">
       <div class="small-12 columns">
         <h2>Voorbeeld van je profiel</h2>
-        <div class="student grafisch-vormgever" style="background-image: url(http://placehold.it/1200x420);">
+        <div class="student grafisch-vormgever" style="background-image: url(http://placehold.it/1200x420);" id="background">
           <div class="info">
             <h4>{{ userData.fullname }}</h4>
             <p>{{ userData.group.name }}</p>
           </div>
           <figure>
-            <img src="{{userData.file.medium}}" title="Huidige profiel foto">
+            <img src="{{userData.file.medium}}" title="Huidige profiel foto" id="profilepicture">
           </figure>
         </div>
       </div>
@@ -20,7 +70,7 @@
           <label>Persoonlijke foto wijzigen
             <div class="speedyUpload-container">
               <div class="input">Geen bestand geselecteerd</div>
-              <input name="image" type="file" data-part="profile" class="speedyUpload">
+              <input name="image" type="file" data-part="profilepicture" class="speedyUpload">
             </div>
             <small class="error">Upload een (geldige) afbeelding!</small>
           </label>
@@ -31,7 +81,7 @@
           <label>Profiel Achtergrond
             <div class="speedyUpload-container">
               <div class="input">Geen bestand geselecteerd</div>
-              <input name="image" type="file" data-part="profile" class="speedyUpload">
+              <input name="image" type="file" data-part="background" class="speedyUpload">
             </div>
             <small class="error">Upload een (geldige) afbeelding!</small>
           </label>
@@ -84,7 +134,7 @@
       <div class="small-12 medium-6 columns">
         <div class="dribbble-field">
           <label>Link naar Dribbble profiel
-            <input name="dribbble" type="text" placeholder="https://dribbble.com/Gebruikersnaam" value="{{ userData.info.dribble }}" pattern="dribbble\.com" />
+            <input name="dribbble" type="text" placeholder="https://dribbble.com/Gebruikersnaam" value="{{ userData.info.dribbble }}" pattern="dribbble\.com" />
           </label>
           <small class="error">Vul een geldige link in!</small>
         </div>

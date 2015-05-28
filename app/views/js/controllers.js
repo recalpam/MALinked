@@ -149,112 +149,239 @@ angular.module('MaLinked.Controllers', [])
 
     /*==========  Google Maps  ==========*/
 
-    var mapsData = document.querySelector('#google-maps'),
-      mapsLocation = mapsData.dataset.location,
-      mapsName = mapsData.dataset.name,
-      map,
-      malinked_map = new google.maps.LatLng(mapsLocation);
 
-    /**
-     * The CenterControl adds a control to the map that recenters the map on Chicago.
-     * This constructor takes the control DIV as an argument.
-     * @constructor
-     */
-    function CenterControl(controlDiv, map) {
-
-      // Set CSS for the control border
-      var controlUI = document.createElement('div');
-      controlUI.style.backgroundColor = '#77b93a';
-      controlUI.style.borderRadius = '3px';
-      controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-      controlUI.style.cursor = 'pointer';
-      controlUI.style.marginBottom = '22px';
-      controlUI.style.textAlign = 'center';
-      controlUI.title = 'Klik om een route te berekenen';
-      controlDiv.appendChild(controlUI);
-
-      // Set CSS for the control interior
-      var controlText = document.createElement('div');
-      controlText.style.color = '#333333';
-      controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-      controlText.style.fontSize = '16px';
-      controlText.style.lineHeight = '38px';
-      controlText.style.paddingLeft = '15px';
-      controlText.style.paddingRight = '15px';
-      controlText.innerHTML = 'Locatie';
-      controlUI.appendChild(controlText);
-
-    }
-
-    // Scroll Effect
-    function initialize() {
-      var mapDiv = document.getElementById('map-canvas');
-
-      // Create an array of styles.
-      var styles = [{
-        "featureType": "all",
-        "elementType": "all",
+    var mapsLocation = $rootScope.student.info.location,
+      geocoder = new google.maps.Geocoder(),
+      styles = [{
+        "featureType": "transit",
+        "elementType": "geometry.stroke",
         "stylers": [{
-          "invert_lightness": true
+          "color": "#ad30ad"
         }, {
-          "hue": "#ff1a00"
+          "weight": 2.17
+        }]
+      }, {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{
+          "visibility": "on"
         }, {
-          "saturation": -100
+          "color": "#dc3480"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      }, {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "visibility": "simplified"
+        }]
+      }, {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "visibility": "on"
         }, {
-          "lightness": 33
+          "color": "#ffffff"
+        }]
+      }, {
+        "featureType": "administrative",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      }, {
+        "featureType": "road.local",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#b82172"
+        }]
+      }, {
+        "featureType": "road.local",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "visibility": "on"
         }, {
-          "gamma": 0.5
+          "color": "#b82172"
+        }, {
+          "lightness": -30
+        }, {
+          "gamma": 1.22
+        }]
+      }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }, {
+          "color": "#b82172"
+        }, {
+          "lightness": -24
+        }]
+      }, {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      }, {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#f5c7e0"
+        }]
+      }, {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#ffffff"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      }, {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#f0a8cf"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#8c1255"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "labels.icon",
+        "stylers": [{
+          "visibility": "off"
         }]
       }, {
         "featureType": "water",
-        "elementType": "geometry",
+        "elementType": "geometry.fill",
         "stylers": [{
-          "color": "#2D333C"
+          "color": "#850857"
         }]
-      }];
+      }, {
+        "featureType": "administrative.country",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "visibility": "on"
+        }, {
+          "color": "#800d4c"
+        }, {
+          "weight": 1.9
+        }]
+      }, {
+        "featureType": "administrative.province",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }, {
+          "color": "#c251c2"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "visibility": "off"
+        }, {
+          "color": "#ffffff"
+        }]
+      }, {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "visibility": "on"
+        }, {
+          "color": "#ffa8d9"
+        }]
+      }, {
+        "featureType": "transit",
+        "elementType": "geometry.fill",
+        "stylers": [{
+          "color": "#db539e"
+        }]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#ffffff"
+        }]
+      }, {
+        "featureType": "administrative.locality",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#ffbde1"
+        }]
+      }],
+      contentString = '<div id="content">' +
+      $rootScope.student.nameFirst + ' woont in ' + $rootScope.student.info.location +
+      '</div>';
 
-      // Create a new StyledMapType object, passing it the array of styles,
-      // as well as the name to be displayed on the map type control.
-      var styledMap = new google.maps.StyledMapType(styles, {
-        name: "Styled Map"
-      });
 
+    geocoder.geocode({
+      'address': mapsLocation
+    }, function (results, status) {
 
-      // Create a map object, and include the MapTypeId to add
-      // to the map type control.
-      var mapOptions = {
-        zoom: 14,
-        center: malinked_map,
-        panControl: false,
-        zoomControl: false,
-        mapTypeControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        overviewMapControl: false,
-        scrollwheel: false,
-        mapTypeControlOptions: {
-          mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-        }
+      if (status == google.maps.GeocoderStatus.OK) {
+        var latitude = results[0].geometry.location.lat(),
+          longitude = results[0].geometry.location.lng();
+        $scope.map = {
+          center: {
+            latitude: latitude,
+            longitude: longitude
+          },
+          zoom: 13
+        };
+
+        $scope.options = {
+          scrollwheel: false,
+          panControl: false,
+          zoomControl: false,
+          mapTypeControl: false,
+          scaleControl: false,
+          streetViewControl: false,
+          overviewMapControl: false,
+          scrollwheel: false,
+          styles: styles
+        };
+
+        $scope.marker = {
+          id: 0,
+          coords: {
+            latitude: latitude,
+            longitude: longitude
+          }
+        };
+
+        $scope.marker.options = {
+          labelContent: contentString,
+          labelAnchor: "120 0",
+          labelClass: "marker-labels"
+        };
       }
-      map = new google.maps.Map(mapDiv, mapOptions);
-
-
-      //Associate the styled map with the MapTypeId and set it to display.
-      map.mapTypes.set('map_style', styledMap);
-      map.setMapTypeId('map_style');
-
-      // Create the DIV to hold the control and
-      // call the CenterControl() constructor passing
-      // in this DIV.
-      var centerControlDiv = document.createElement('div');
-      var centerControl = new CenterControl(centerControlDiv, map);
-
-      centerControlDiv.index = 1;
-      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(centerControlDiv);
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-
+    });
   }
 ])
 

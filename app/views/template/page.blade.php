@@ -11,8 +11,33 @@
 	    {{ HTML::script('/packages/modernizr/modernizr.js') }}
 	    {{ HTML::style('/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.css') }}
 
-		{{-- PAGE CSS --}}
+			{{-- PAGE CSS --}}
 	    {{ HTML::style('/static/stylesheets/app.css') }}
+
+	    {{-- Hotjar Tracking Code for beta.malinked.nl --}}
+			<script>
+	    (function(f,b){
+        var c;
+        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+        f._hjSettings={hjid:38392, hjsv:4};
+        c=b.createElement("script");c.async=1;
+        c.src="//static.hotjar.com/c/hotjar-"+f._hjSettings.hjid+".js?sv="+f._hjSettings.hjsv;
+        b.getElementsByTagName("head")[0].appendChild(c);
+	    })(window,document);
+
+			</script>
+
+			{{-- Google Analytics Code for beta.malinked.nl --}}
+			<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-63495875-1', 'auto');
+		  ga('send', 'pageview');
+
+			</script>
 
 	    <base href="/">
 		<style>
@@ -48,7 +73,7 @@
 		<base href="/">
 	</head>
 	<body ng-app="MaLinked">
-		
+
 		<!-- PAGE CONTAINER -->
 		<div class="site hide" ng-class="show">
 			@include('template.header')
@@ -57,8 +82,8 @@
 
 			<!-- DYNAMIC PAGE -->
 			<ui-view></ui-view>
-		</div>	
-		
+		</div>
+
 		<!-- JQUERY TRASH -->
 		<script type="text/javascript" src="/packages/jquery/dist/jquery.js"></script>
 
@@ -70,7 +95,7 @@
 		<script type="text/javascript" src="/packages/angular-material/angular-material.js"></script>
 		<script type="text/javascript" src="/packages/angular-ngprogress/ngProgress.js"></script>
 
-		{{-- FOUNDATION --}}		
+		{{-- FOUNDATION --}}
 		<script src="/packages/foundation/js/foundation.min.js"></script>
 
 		{{-- ZOEK MODAL --}}

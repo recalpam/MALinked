@@ -5,16 +5,17 @@
  **/
 angular.module('MaLinked', [
 
-    /*==========  Third Party  ==========*/
-    'ui.router',
-    'ngMaterial',
-    'progressApp',
+  /*==========  Third Party  ==========*/
+  'ui.router',
+  'ngMaterial',
+  'progressApp',
+  'uiGmapgoogle-maps',
 
-    /*==========  Native  ==========*/
-    'MaLinked.Controllers',
-    'MaLinked.Services',
-    'MaLinked.Factories',
-    'MaLinked.Routes',
+  /*==========  Native  ==========*/
+  'MaLinked.Controllers',
+  'MaLinked.Services',
+  'MaLinked.Factories',
+  'MaLinked.Routes',
 
 
 ])
@@ -23,9 +24,9 @@ angular.module('MaLinked', [
 =            $urlRouteProvider            =
 =========================================*/
 .config(['$urlRouterProvider',
-    function($urlRouterProvider) {
-        $urlRouterProvider.otherwise("home");
-    }
+  function ($urlRouterProvider) {
+    $urlRouterProvider.otherwise("home");
+  }
 ])
 
 
@@ -33,40 +34,51 @@ angular.module('MaLinked', [
 =            $locationProvider            =
 =========================================*/
 .config(['$locationProvider',
-    function($locationProvider) {
-        $locationProvider.html5Mode(true);
-    }
+  function ($locationProvider) {
+    $locationProvider.html5Mode(true);
+  }
 ])
 
 /*==============================
 =            Events            =
 ==============================*/
 .run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams', 'API',
-    function($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams, API) {
+  function ($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams, API) {
 
-        API.sync().then(function(response) {
-            $rootScope.db = response;
-        });
-        $rootScope.state = $state;
+    API.sync().then(function (response) {
+      $rootScope.db = response;
+    });
+    $rootScope.state = $state;
 
-        /*==========  ngProgress  ==========*/
+    /*==========  ngProgress  ==========*/
+    $rootScope.show = false;
+    ngProgress.start();
+    $timeout(function () {
+      ngProgress.complete();
+      $rootScope.show = true;
+    }, 2000);
+    $rootScope
+      .$watch('$stateChangeStart', function () {
         $rootScope.show = false;
-        ngProgress.start();
-        $timeout(function() {
-            ngProgress.complete();
-            $rootScope.show = true;
-        }, 2000);
-        $rootScope
-            .$watch('$stateChangeStart', function() {
-                $rootScope.show = false;
 
-                ngProgress.start();
-            });
-        $rootScope
-            .$on('$stateChangeSuccess',
-                function(event, toState, toParams, fromState, fromParams) {
-                    ngProgress.complete();
-                    $(".site").removeClass("hide");
-                });
-    }
+        ngProgress.start();
+      });
+    $rootScope
+      .$on('$stateChangeSuccess',
+        function (event, toState, toParams, fromState, fromParams) {
+          ngProgress.complete();
+          $(".site").removeClass("hide");
+        });
+  }
 ])
+
+/*===================================
+=            Google Maps            =
+===================================*/
+.config(function (uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    //    key: 'your api key',
+    v: '3.17',
+    libraries: 'weather,geometry,visualization'
+  });
+})

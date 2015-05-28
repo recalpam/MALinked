@@ -94,6 +94,8 @@
 		<script type="text/javascript" src="/packages/angular-animate/angular-animate.js"></script>
 		<script type="text/javascript" src="/packages/angular-material/angular-material.js"></script>
 		<script type="text/javascript" src="/packages/angular-ngprogress/ngProgress.js"></script>
+		<script type="text/javascript" src="/packages/angular-google-maps/lodash.min.js"></script>
+		<script type="text/javascript" src="/packages/angular-google-maps/angular-google-maps.min.js"></script>
 
 		{{-- FOUNDATION --}}
 		<script src="/packages/foundation/js/foundation.min.js"></script>
@@ -103,6 +105,9 @@
 
 		{{-- OUTDATED BROWSER JS --}}
 		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
+
+		{{-- Google Maps API --}}
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&.js"></script>
 
 		<!-- MALINKED CLIENT -->
 		<script type="text/javascript" src="/api/frontend/file/script/progress"></script>

@@ -34,7 +34,7 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 
 		Route::controller('sync', 'API\Sync');
 
-		Route::controller('refresh', 'API\Sync');
+		Route::resource('previewimage', 'API\Sync@previewimage', array());
 
 		Route::group(array('before' => 'auth'), function(){
 			Route::resource('student', 'API\StudentsController', array());

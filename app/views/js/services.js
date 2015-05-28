@@ -72,11 +72,9 @@ angular.module('MaLinked.Services', [])
             },
             // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
             // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-            transclude: false,
             // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
             link: function($scope, iElm, iAttrs, controller) {
                 var block = $('<div class="block"></div>');
-                iElm.empty();
                 for (var key in $scope.infoBlokken) {
                     var infoStudent = $scope.student.info[key];
                     var infoBlok = $scope.infoBlokken[key];

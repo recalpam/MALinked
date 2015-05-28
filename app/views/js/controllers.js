@@ -137,6 +137,8 @@ angular.module('MaLinked.Controllers', [])
 /*==========  Profiel  ==========*/
 .controller('profiel', ['$scope', '$state', '$stateParams', '$filter', '$rootScope', 'db',
     function($scope, $state, $stateParams, $filter, $rootScope, db) {
+
+
         $('#searchModal').foundation('reveal', 'close');
         var blockEqualize = $('.block');
         var blockEqualizeWidth = blockEqualize.width();
@@ -148,13 +150,246 @@ angular.module('MaLinked.Controllers', [])
         });
 
         // Loop through all info elements
-        for(var key in student.info){
-
+        for (var key in student.info) {
             // Whenever a string is occurred
-            if(typeof(student.info[key])=="string"){
+            if (typeof(student.info[key]) == "string") {
                 student.info[key] = student.info[key].replace(db.br, '\n');
             }
         }
+
+        // Maps shizzle
+        var mapsLocation = student.info.location,
+            geocoder = new google.maps.Geocoder(),
+            styles = [{
+                "featureType": "transit",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "color": "#ad30ad"
+                }, {
+                    "weight": 2.17
+                }]
+            }, {
+                "featureType": "landscape",
+                "elementType": "geometry",
+                "stylers": [{
+                    "visibility": "on"
+                }, {
+                    "color": "#dc3480"
+                }]
+            }, {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "visibility": "simplified"
+                }]
+            }, {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "visibility": "on"
+                }, {
+                    "color": "#ffffff"
+                }]
+            }, {
+                "featureType": "administrative",
+                "elementType": "labels.text.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "road.local",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#b82172"
+                }]
+            }, {
+                "featureType": "road.local",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "road.arterial",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "visibility": "on"
+                }, {
+                    "color": "#b82172"
+                }, {
+                    "lightness": -30
+                }, {
+                    "gamma": 1.22
+                }]
+            }, {
+                "featureType": "road.arterial",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }, {
+                    "color": "#b82172"
+                }, {
+                    "lightness": -24
+                }]
+            }, {
+                "featureType": "road",
+                "elementType": "labels.text.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "color": "#f5c7e0"
+                }]
+            }, {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "color": "#ffffff"
+                }]
+            }, {
+                "featureType": "poi",
+                "elementType": "labels.text.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "color": "#f0a8cf"
+                }]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#8c1255"
+                }]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "labels.icon",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#850857"
+                }]
+            }, {
+                "featureType": "administrative.country",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "visibility": "on"
+                }, {
+                    "color": "#800d4c"
+                }, {
+                    "weight": 1.9
+                }]
+            }, {
+                "featureType": "administrative.province",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }, {
+                    "color": "#c251c2"
+                }]
+            }, {
+                "featureType": "water",
+                "elementType": "labels.text.stroke",
+                "stylers": [{
+                    "visibility": "off"
+                }, {
+                    "color": "#ffffff"
+                }]
+            }, {
+                "featureType": "water",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "visibility": "on"
+                }, {
+                    "color": "#ffa8d9"
+                }]
+            }, {
+                "featureType": "transit",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#db539e"
+                }]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "color": "#ffffff"
+                }]
+            }, {
+                "featureType": "administrative.locality",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "color": "#ffbde1"
+                }]
+            }],
+            contentString = '<div id="content">' +
+            student.nameFirst + ' woont in ' + student.info.location +
+            '</div>';
+
+
+        geocoder.geocode({
+            'address': mapsLocation
+        }, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat(),
+                    longitude = results[0].geometry.location.lng();
+                $scope.map = {
+                    center: {
+                        latitude: latitude,
+                        longitude: longitude
+                    },
+                    zoom: 13
+                };
+
+                $scope.options = {
+                    scrollwheel: false,
+                    panControl: false,
+                    zoomControl: false,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    overviewMapControl: false,
+                    scrollwheel: false,
+                    styles: styles
+                };
+
+                $scope.marker = {
+                    id: 0,
+                    coords: {
+                        latitude: latitude,
+                        longitude: longitude
+                    }
+                };
+
+                $scope.marker.options = {
+                    labelContent: contentString,
+                    labelAnchor: "120 0",
+                    labelClass: "marker-labels"
+                };
+            }
+        });
 
 
         $rootScope.student = student;
@@ -163,6 +398,7 @@ angular.module('MaLinked.Controllers', [])
 
 /*==========  Zoeken  ==========*/
 .controller('zoeken', [
+
     function() {
 
     }
@@ -170,6 +406,7 @@ angular.module('MaLinked.Controllers', [])
 
 /*==========  Opleiding  ==========*/
 .controller('opleiding', [
+
     function() {
 
     }

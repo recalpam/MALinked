@@ -6437,11 +6437,11 @@ h1, h2, h3, h4, h5, h6, p, a {
   background-image: url(../images/background/homepage_audiovisueeltechnicus.png); }
 .home .block.evenemententechnicus {
   background-image: url(../images/background/homepage_evenemententechnicus.png); }
-.home .block.geluidtechnicus {
+.home .block.geluidstechnicus {
   background-image: url(../images/background/homepage_dtp.png); }
-.home .block.mediaengamedeveloper {
+.home .block.media-en-gamedeveloper {
   background-image: url(../images/background/homepage_mediaengamedeveloper.png); }
-.home .block.ruimtelijkvormgeven {
+.home .block.ruimtelijk-vormgever {
   background-image: url(../images/background/homepage_ruimtelijkvormgeven.png); }
 .home .block.podiumtechnicus {
   background-image: url(../images/background/homepage_podiumtechnicus.png); }
@@ -6449,7 +6449,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   background-image: url(../images/background/homepage_filmacteur.png); }
 .home .block.signmaker {
   background-image: url(../images/background/homepage_signmaker.png); }
-.home .block.gameartist {
+.home .block.game-artist {
   background-image: url(../images/background/homepage_gameartist.png); }
 
 /*==========  Class  ==========*/
@@ -6560,29 +6560,29 @@ h1, h2, h3, h4, h5, h6, p, a {
     bottom: 0;
     left: 0;
     display: block;
-    margin-bottom: -10vw;
+    margin-bottom: -8vw;
     color: #FFFFFF; }
-  .profiel .project--info {
+  .profiel .project-info {
     background-color: #FFFFFF; }
-    .profiel .project--info h2 {
+    .profiel .project-info h2 {
       color: #444444; }
-    .profiel .project--info p {
+    .profiel .project-info p {
       color: #444444; }
-    .profiel .project--info a {
+    .profiel .project-info a {
       position: absolute;
       bottom: 20px;
       color: #444444; }
-  .profiel .project--image {
+  .profiel .project-image {
     overflow: hidden;
     padding: 0; }
-    .profiel .project--image img {
+    .profiel .project-image img {
       position: absolute;
       overflow: hidden;
       width: auto;
       min-width: 100%;
       height: auto;
       min-height: 100%; }
-    .profiel .project--image:after {
+    .profiel .project-image:after {
       -ms-transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
@@ -6602,7 +6602,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       color: #FFFFFF; }
   .profiel .favoriet p span {
     font-size: 2.1875rem; }
-  .profiel .maps #map-canvas {
+  .profiel .maps ui-gmap-google-map {
     position: absolute;
     z-index: 0;
     top: 0;
@@ -6610,9 +6610,24 @@ h1, h2, h3, h4, h5, h6, p, a {
     bottom: -200px;
     left: 0;
     height: 100%; }
-  .profiel .maps #pin {
-    position: relative;
-    z-index: 100; }
+    .profiel .maps ui-gmap-google-map .angular-google-map {
+      height: 100%; }
+      .profiel .maps ui-gmap-google-map .angular-google-map .angular-google-map-container {
+        height: 100%; }
+        .profiel .maps ui-gmap-google-map .angular-google-map .angular-google-map-container .marker-labels {
+          -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.8));
+          filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.8));
+          font-size: 14px;
+          font-weight: bold;
+          top: 11.25rem !important;
+          width: 15rem;
+          padding: 0.3125rem;
+          text-align: center;
+          white-space: nowrap;
+          pointer-events: none;
+          opacity: 1;
+          color: #333333;
+          background-color: #FFFFFF; }
   .profiel.grafisch-vormgever .toekomstbeeld {
     background-color: #4fbe96; }
     .profiel.grafisch-vormgever .toekomstbeeld h2, .profiel.grafisch-vormgever .toekomstbeeld p {
@@ -6622,26 +6637,6 @@ h1, h2, h3, h4, h5, h6, p, a {
     background-color: #4fbe96;
     background-repeat: no-repeat;
     background-size: cover; }
-    .profiel.grafisch-vormgever .hoewas.een {
-      background-image: url(../images/background/hoewas-1.png); }
-    .profiel.grafisch-vormgever .hoewas.twee {
-      background-image: url(../images/background/hoewas-2.png); }
-    .profiel.grafisch-vormgever .hoewas.drie {
-      background-image: url(../images/background/hoewas-3.png); }
-    .profiel.grafisch-vormgever .hoewas.vier {
-      background-image: url(../images/background/hoewas-4.png); }
-    .profiel.grafisch-vormgever .hoewas.vijf {
-      background-image: url(../images/background/hoewas-5.png); }
-    .profiel.grafisch-vormgever .hoewas.zes {
-      background-image: url(../images/background/hoewas-6.png); }
-    .profiel.grafisch-vormgever .hoewas.zeven {
-      background-image: url(../images/background/hoewas-7.png); }
-    .profiel.grafisch-vormgever .hoewas.acht {
-      background-image: url(../images/background/hoewas-8.png); }
-    .profiel.grafisch-vormgever .hoewas.negen {
-      background-image: url(../images/background/hoewas-9.png); }
-    .profiel.grafisch-vormgever .hoewas.tien {
-      background-image: url(../images/background/hoewas-10.png); }
     .profiel.grafisch-vormgever .hoewas h2, .profiel.grafisch-vormgever .hoewas p {
       color: #FFFFFF; }
   .profiel.grafisch-vormgever .favoriet {
@@ -6650,6 +6645,240 @@ h1, h2, h3, h4, h5, h6, p, a {
     .profiel.grafisch-vormgever .favoriet h2 {
       color: #FFFFFF; }
     .profiel.grafisch-vormgever .favoriet p {
+      color: #FFFFFF; }
+  .profiel.interactief-vormgever .toekomstbeeld {
+    background-color: #f4793b; }
+    .profiel.interactief-vormgever .toekomstbeeld h2, .profiel.interactief-vormgever .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.interactief-vormgever .hoewas {
+    overflow: hidden;
+    background-color: #f4793b;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.interactief-vormgever .hoewas h2, .profiel.interactief-vormgever .hoewas p {
+      color: #FFFFFF; }
+  .profiel.interactief-vormgever .favoriet {
+    color: #FFFFFF;
+    background-color: #f4793b; }
+    .profiel.interactief-vormgever .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.interactief-vormgever .favoriet p {
+      color: #FFFFFF; }
+  .profiel.audiovisueel-vormgeveranimatie .toekomstbeeld {
+    background-color: #4f5f8f; }
+    .profiel.audiovisueel-vormgeveranimatie .toekomstbeeld h2, .profiel.audiovisueel-vormgeveranimatie .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.audiovisueel-vormgeveranimatie .hoewas {
+    overflow: hidden;
+    background-color: #4f5f8f;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.audiovisueel-vormgeveranimatie .hoewas h2, .profiel.audiovisueel-vormgeveranimatie .hoewas p {
+      color: #FFFFFF; }
+  .profiel.audiovisueel-vormgeveranimatie .favoriet {
+    color: #FFFFFF;
+    background-color: #4f5f8f; }
+    .profiel.audiovisueel-vormgeveranimatie .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.audiovisueel-vormgeveranimatie .favoriet p {
+      color: #FFFFFF; }
+  .profiel.dtp-er .toekomstbeeld {
+    background-color: #cd4c60; }
+    .profiel.dtp-er .toekomstbeeld h2, .profiel.dtp-er .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.dtp-er .hoewas {
+    overflow: hidden;
+    background-color: #cd4c60;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.dtp-er .hoewas h2, .profiel.dtp-er .hoewas p {
+      color: #FFFFFF; }
+  .profiel.dtp-er .favoriet {
+    color: #FFFFFF;
+    background-color: #cd4c60; }
+    .profiel.dtp-er .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.dtp-er .favoriet p {
+      color: #FFFFFF; }
+  .profiel.mediamanager .toekomstbeeld {
+    background-color: #dc7f82; }
+    .profiel.mediamanager .toekomstbeeld h2, .profiel.mediamanager .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.mediamanager .hoewas {
+    overflow: hidden;
+    background-color: #dc7f82;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.mediamanager .hoewas h2, .profiel.mediamanager .hoewas p {
+      color: #FFFFFF; }
+  .profiel.mediamanager .favoriet {
+    color: #FFFFFF;
+    background-color: #dc7f82; }
+    .profiel.mediamanager .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.mediamanager .favoriet p {
+      color: #FFFFFF; }
+  .profiel.av-technicus .toekomstbeeld {
+    background-color: #ef492c; }
+    .profiel.av-technicus .toekomstbeeld h2, .profiel.av-technicus .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.av-technicus .hoewas {
+    overflow: hidden;
+    background-color: #ef492c;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.av-technicus .hoewas h2, .profiel.av-technicus .hoewas p {
+      color: #FFFFFF; }
+  .profiel.av-technicus .favoriet {
+    color: #FFFFFF;
+    background-color: #ef492c; }
+    .profiel.av-technicus .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.av-technicus .favoriet p {
+      color: #FFFFFF; }
+  .profiel.evenemententechnicus .toekomstbeeld {
+    background-color: #8db83f; }
+    .profiel.evenemententechnicus .toekomstbeeld h2, .profiel.evenemententechnicus .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.evenemententechnicus .hoewas {
+    overflow: hidden;
+    background-color: #8db83f;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.evenemententechnicus .hoewas h2, .profiel.evenemententechnicus .hoewas p {
+      color: #FFFFFF; }
+  .profiel.evenemententechnicus .favoriet {
+    color: #FFFFFF;
+    background-color: #8db83f; }
+    .profiel.evenemententechnicus .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.evenemententechnicus .favoriet p {
+      color: #FFFFFF; }
+  .profiel.geluidstechnicus .toekomstbeeld {
+    background-color: #edb030; }
+    .profiel.geluidstechnicus .toekomstbeeld h2, .profiel.geluidstechnicus .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.geluidstechnicus .hoewas {
+    overflow: hidden;
+    background-color: #edb030;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.geluidstechnicus .hoewas h2, .profiel.geluidstechnicus .hoewas p {
+      color: #FFFFFF; }
+  .profiel.geluidstechnicus .favoriet {
+    color: #FFFFFF;
+    background-color: #edb030; }
+    .profiel.geluidstechnicus .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.geluidstechnicus .favoriet p {
+      color: #FFFFFF; }
+  .profiel.media-en-gamedeveloper .toekomstbeeld {
+    background-color: #932545; }
+    .profiel.media-en-gamedeveloper .toekomstbeeld h2, .profiel.media-en-gamedeveloper .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.media-en-gamedeveloper .hoewas {
+    overflow: hidden;
+    background-color: #932545;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.media-en-gamedeveloper .hoewas h2, .profiel.media-en-gamedeveloper .hoewas p {
+      color: #FFFFFF; }
+  .profiel.media-en-gamedeveloper .favoriet {
+    color: #FFFFFF;
+    background-color: #932545; }
+    .profiel.media-en-gamedeveloper .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.media-en-gamedeveloper .favoriet p {
+      color: #FFFFFF; }
+  .profiel.game-artist .toekomstbeeld {
+    background-color: #4f2b78; }
+    .profiel.game-artist .toekomstbeeld h2, .profiel.game-artist .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.game-artist .hoewas {
+    overflow: hidden;
+    background-color: #4f2b78;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.game-artist .hoewas h2, .profiel.game-artist .hoewas p {
+      color: #FFFFFF; }
+  .profiel.game-artist .favoriet {
+    color: #FFFFFF;
+    background-color: #4f2b78; }
+    .profiel.game-artist .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.game-artist .favoriet p {
+      color: #FFFFFF; }
+  .profiel.podiumtechnicus .toekomstbeeld {
+    background-color: #3e3b68; }
+    .profiel.podiumtechnicus .toekomstbeeld h2, .profiel.podiumtechnicus .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.podiumtechnicus .hoewas {
+    overflow: hidden;
+    background-color: #3e3b68;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.podiumtechnicus .hoewas h2, .profiel.podiumtechnicus .hoewas p {
+      color: #FFFFFF; }
+  .profiel.podiumtechnicus .favoriet {
+    color: #FFFFFF;
+    background-color: #3e3b68; }
+    .profiel.podiumtechnicus .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.podiumtechnicus .favoriet p {
+      color: #FFFFFF; }
+  .profiel.filmacteur .toekomstbeeld {
+    background-color: #0db5d9; }
+    .profiel.filmacteur .toekomstbeeld h2, .profiel.filmacteur .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.filmacteur .hoewas {
+    overflow: hidden;
+    background-color: #0db5d9;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.filmacteur .hoewas h2, .profiel.filmacteur .hoewas p {
+      color: #FFFFFF; }
+  .profiel.filmacteur .favoriet {
+    color: #FFFFFF;
+    background-color: #0db5d9; }
+    .profiel.filmacteur .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.filmacteur .favoriet p {
+      color: #FFFFFF; }
+  .profiel.signmaker .toekomstbeeld {
+    background-color: #218841; }
+    .profiel.signmaker .toekomstbeeld h2, .profiel.signmaker .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.signmaker .hoewas {
+    overflow: hidden;
+    background-color: #218841;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.signmaker .hoewas h2, .profiel.signmaker .hoewas p {
+      color: #FFFFFF; }
+  .profiel.signmaker .favoriet {
+    color: #FFFFFF;
+    background-color: #218841; }
+    .profiel.signmaker .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.signmaker .favoriet p {
+      color: #FFFFFF; }
+  .profiel.ruimtelijk-vormgever .toekomstbeeld {
+    background-color: #edb032; }
+    .profiel.ruimtelijk-vormgever .toekomstbeeld h2, .profiel.ruimtelijk-vormgever .toekomstbeeld p {
+      color: #FFFFFF; }
+  .profiel.ruimtelijk-vormgever .hoewas {
+    overflow: hidden;
+    background-color: #edb032;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .profiel.ruimtelijk-vormgever .hoewas h2, .profiel.ruimtelijk-vormgever .hoewas p {
+      color: #FFFFFF; }
+  .profiel.ruimtelijk-vormgever .favoriet {
+    color: #FFFFFF;
+    background-color: #edb032; }
+    .profiel.ruimtelijk-vormgever .favoriet h2 {
+      color: #FFFFFF; }
+    .profiel.ruimtelijk-vormgever .favoriet p {
       color: #FFFFFF; }
 
 /*-----  End of Profile page  ------*/

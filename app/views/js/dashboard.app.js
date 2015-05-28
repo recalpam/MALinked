@@ -34,7 +34,7 @@ angular.module('Dashboard', [
 
 .run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams',
   function($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams) {
-    $rootScope.state = $state;
+    //$rootScope.state = $state;
 
     $rootScope.show = false;
 
@@ -47,7 +47,6 @@ angular.module('Dashboard', [
     $rootScope
           .$watch('$routeChangeStart', function() {
               ngProgress.start();
-              $state.go("login");
           });
 
     $rootScope

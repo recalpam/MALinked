@@ -175,13 +175,13 @@ h1, h2, h3, h4, h5, h6, p, a {
     &.evenemententechnicus {
       background-image: url(../images/background/homepage_evenemententechnicus.png);
     }
-    &.geluidtechnicus {
+    &.geluidstechnicus {
       background-image: url(../images/background/homepage_dtp.png);
     }
-    &.mediaengamedeveloper {
+    &.media-en-gamedeveloper {
       background-image: url(../images/background/homepage_mediaengamedeveloper.png);
     }
-    &.ruimtelijkvormgeven {
+    &.ruimtelijk-vormgever {
       background-image: url(../images/background/homepage_ruimtelijkvormgeven.png);
     }
     &.podiumtechnicus {
@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     &.signmaker {
       background-image: url(../images/background/homepage_signmaker.png);
     }
-    &.gameartist {
+    &.game-artist {
       background-image: url(../images/background/homepage_gameartist.png);
     }
   }
@@ -337,12 +337,12 @@ h1, h2, h3, h4, h5, h6, p, a {
 
       display: block;
 
-      margin-bottom: -10vw;
+      margin-bottom: -8vw;
 
       color: $white;
     }
   }
-  .project--info {
+  .project-info {
     background-color: $white;
     h2 {
       color: $tuatara;
@@ -357,7 +357,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       color: $tuatara;
     }
   }
-  .project--image {
+  .project-image {
     overflow: hidden;
 
     padding: 0;
@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     }
   }
   .maps {
-    #map-canvas {
+    ui-gmap-google-map {
       position: absolute;
       z-index: 0;
       top: 0;
@@ -413,10 +413,31 @@ h1, h2, h3, h4, h5, h6, p, a {
       left: 0;
 
       height: 100%;
-    }
-    #pin {
-      position: relative;
-      z-index: 100;
+      .angular-google-map {
+        height: 100%;
+        .angular-google-map-container {
+          height: 100%;
+          .marker-labels {
+            @include filter(drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.8)));
+
+            font-size: 14px;
+            font-weight: bold;
+
+            top: rem-calc(180) !important;
+
+            width: rem-calc(240);
+            padding: rem-calc(5);
+
+            text-align: center;
+            white-space: nowrap;
+            pointer-events: none;
+
+            opacity: 1;
+            color: $oil;
+            background-color: $white;
+          }
+        }
+      }
     }
   }
   &.grafisch-vormgever {
@@ -432,36 +453,6 @@ h1, h2, h3, h4, h5, h6, p, a {
       background-color: $grafisch-vormgever;
       background-repeat: no-repeat;
       background-size: cover;
-      &.een {
-        background-image: url(../images/background/hoewas-1.png);
-      }
-      &.twee {
-        background-image: url(../images/background/hoewas-2.png);
-      }
-      &.drie {
-        background-image: url(../images/background/hoewas-3.png);
-      }
-      &.vier {
-        background-image: url(../images/background/hoewas-4.png);
-      }
-      &.vijf {
-        background-image: url(../images/background/hoewas-5.png);
-      }
-      &.zes {
-        background-image: url(../images/background/hoewas-6.png);
-      }
-      &.zeven {
-        background-image: url(../images/background/hoewas-7.png);
-      }
-      &.acht {
-        background-image: url(../images/background/hoewas-8.png);
-      }
-      &.negen {
-        background-image: url(../images/background/hoewas-9.png);
-      }
-      &.tien {
-        background-image: url(../images/background/hoewas-10.png);
-      }
       h2, p {
         color: $white;
       }
@@ -469,6 +460,370 @@ h1, h2, h3, h4, h5, h6, p, a {
     .favoriet {
       color: $white;
       background-color: $grafisch-vormgever;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.interactief-vormgever {
+    .toekomstbeeld {
+      background-color: $interactief-vormgever;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $interactief-vormgever;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $interactief-vormgever;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.audiovisueel-vormgeveranimatie {
+    .toekomstbeeld {
+      background-color: $audiovisueel-vormgeveranimatie;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $audiovisueel-vormgeveranimatie;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $audiovisueel-vormgeveranimatie;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.dtp-er {
+    .toekomstbeeld {
+      background-color: $dtp-er;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $dtp-er;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $dtp-er;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.mediamanager {
+    .toekomstbeeld {
+      background-color: $mediamanager;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $mediamanager;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $mediamanager;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.av-technicus {
+    .toekomstbeeld {
+      background-color: $av-technicus;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $av-technicus;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $av-technicus;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.evenemententechnicus {
+    .toekomstbeeld {
+      background-color: $evenemententechnicus;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $evenemententechnicus;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $evenemententechnicus;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.geluidstechnicus {
+    .toekomstbeeld {
+      background-color: $geluidstechnicus;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $geluidstechnicus;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $geluidstechnicus;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.media-en-gamedeveloper {
+    .toekomstbeeld {
+      background-color: $media-en-gamedeveloper;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $media-en-gamedeveloper;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $media-en-gamedeveloper;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.game-artist {
+    .toekomstbeeld {
+      background-color: $game-artist;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $game-artist;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $game-artist;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.podiumtechnicus {
+    .toekomstbeeld {
+      background-color: $podiumtechnicus;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $podiumtechnicus;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $podiumtechnicus;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.filmacteur {
+    .toekomstbeeld {
+      background-color: $filmacteur;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $filmacteur;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $filmacteur;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.signmaker {
+    .toekomstbeeld {
+      background-color: $signmaker;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $signmaker;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $signmaker;
+      h2 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
+  &.ruimtelijk-vormgever {
+    .toekomstbeeld {
+      background-color: $ruimtelijk-vormgever;
+      h2, p {
+        color: $white;
+      }
+    }
+    .hoewas {
+      overflow: hidden;
+
+      background-color: $ruimtelijk-vormgever;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h2, p {
+        color: $white;
+      }
+    }
+    .favoriet {
+      color: $white;
+      background-color: $ruimtelijk-vormgever;
       h2 {
         color: $white;
       }

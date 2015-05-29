@@ -451,6 +451,6 @@ angular.module('MaLinked.Controllers', [])
 
         $scope.groep = klas;
 
-        $rootScope.headerClass = klas.study.slug;
+        $rootScope.headerClass = klas.name;
     }
 ])

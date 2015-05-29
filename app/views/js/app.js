@@ -45,6 +45,8 @@ angular.module('MaLinked', [
 .run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams', 'API',
   function ($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams, API) {
 
+    $rootScope.headerClass = "foobar";
+
     API.sync().then(function (response) {
       $rootScope.db = response;
     });

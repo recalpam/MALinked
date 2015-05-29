@@ -1,5 +1,5 @@
 {{-- HEADER START --}}
-<header class="@{{ state.current.name }}">
+<header class="@{{ state.current.name }}" ng-class="@{{ headerClass }}">
 
 	{{-- NAV --}}
 	<nav class="menu" role="navigation">
@@ -34,7 +34,7 @@
 			</div>
 			<div class="overlay"></div>
 		</angular>
-
+	
 		{{-- PROFIEL LAYOUT --}}
 		<angular ng-switch-when="profiel">
 			<div class="content">

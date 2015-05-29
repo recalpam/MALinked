@@ -1,6 +1,6 @@
 <?php namespace API;
 
-use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study;
+use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study, File, Config, DB;
 use Intervention\Image\ImageManager;
 
 class StudentsController extends \BaseController {
@@ -68,6 +68,24 @@ class StudentsController extends \BaseController {
 		return Response::json($student);
 	}
 
+	public function WaaromHetMa(){
+		$studentInfo = StudentInfo::where('student_id', '=', Input::get('id'))->firstOrFail();
+		$studentInfo->why_ma = Input::get('info.why_ma');
+
+		$studentInfo->push();
+
+		return 'Done';
+	}
+
+	public function updateFutureVision(){
+		$studentInfo = StudentInfo::where('student_id', '=', Input::get('id'))->firstOrFail();
+		$studentInfo->future_vision = Input::get('info.future_vision');
+
+		$studentInfo->push();
+
+		return 'Done';
+	}
+
 	public function HobbiesEnGegevens(){
 		$studentInfo = StudentInfo::where('student_id', '=', Input::get('id'))->firstOrFail();
 		$studentInfo->email = Input::get('info.email');
@@ -80,6 +98,21 @@ class StudentsController extends \BaseController {
 		$studentInfo->youtube = Input::get('info.youtube');
 		$studentInfo->youtube = Input::get('info.youtube');
 		$studentInfo->hobbies = serialize(Input::get('info.hobbies'));
+		
+		$studentInfo->push();
+
+		return 'Done';
+	}
+
+	public function updateAboutSchool(){
+		$studentInfo = StudentInfo::where('student_id', '=', Auth::user()->id)->firstOrFail();
+		$studentInfo->fav_teacher = serialize(Input::get('info.fav_teacher'));
+		$studentInfo->fav_project = Input::get('info.fav_project');
+		$studentInfo->fav_class = Input::get('info.fav_class');
+		$studentInfo->best_experience = Input::get('info.best_experience');
+		$studentInfo->rate_school = Input::get('info.rate_school');
+		$studentInfo->rate_internship = Input::get('info.rate_internship');
+		$studentInfo->school_match_ambitions = Input::get('info.school_match_ambitions');
 
 		$studentInfo->push();
 
@@ -93,13 +126,74 @@ class StudentsController extends \BaseController {
 			$type = explode('/', $file['type']);
 			$type = end($type);
 
-			$fileName = md5($file['name'].rand(0,99999).time()).'.'.$type;
+			if( $type != 'png' && $type != 'jpeg' && $type != 'jpg' ){
+				exit;
+			}
 
-		//	if( Input::get('') )
-			$manager = new ImageManager();
-			$manager->make($remoteFile)->save( Config::get('files.path') . $fileName, 90);
+			$fileName = md5($file['name'].rand(0,99999).time());
+
+			switch( Input::get('type') ){
+				case 'header':
+					$this->proccessHeaderImage($file['tmp_name'], $fileName, $type);
+				 break;
+				case 'profile':
+					$this->proccessProfileImage($file['tmp_name'], $fileName, $type);
+				 break;
+				default:
+					exit;
+				 break;
+			} 
 			
 		}
+	}
+
+	private function proccessHeaderImage($fileTmp, $fileName, $type){
+		$student = Auth::user();
+		$manager = new ImageManager();
+		$fullFilename = $fileName .'.'. $type;
+
+		$manager->make($fileTmp)->save( Config::get('files.path') . $fullFilename, 90);
+
+		$insert = array(
+			'fileHash' => $fileName,
+			'fileExtension' => $type,
+			'fileName' => 'Header foto van '. $student->nameFirst
+		);
+
+		// Link stored file to student
+		if( DB::table('files')->insert($insert) ){
+			$file_id = DB::getPdo()->lastInsertId();
+			$student->background_file_id = $file_id;
+			$student->push();
+		}
+	}
+
+	private function proccessProfileImage($fileTmp, $fileName, $type){
+		$student = Auth::user();
+		$manager = new ImageManager();
+		$fullFilename = $fileName .'.'. $type;
+		// original
+		$manager->make($fileTmp)->save( Config::get('files.path') . $fullFilename, 90);
+		// large
+		$manager->make($fileTmp)->fit(500)->save( Config::get('files.images.large') . $fullFilename, 90);
+		// medium
+		$manager->make($fileTmp)->fit(250)->save(Config::get('files.images.medium') .$fullFilename, 90);
+		// thumbail
+		$manager->make($fileTmp)->fit(80)->save( Config::get('files.images.thumbnails') .$fullFilename, 75);
+
+		$insert = array(
+			'fileHash' => $fileName,
+			'fileExtension' => $type,
+			'fileName' => 'Profielfoto van '. $student->nameFirst
+		);
+
+		// Link stored file to student
+		if( DB::table('files')->insert($insert) ){
+			$file_id = DB::getPdo()->lastInsertId();
+			$student->file_id = $file_id;
+			$student->push();
+		}
+		
 	}
 
 	

@@ -75,10 +75,6 @@
 	<body ng-app="Dashboard">
 
 		<div ng-switch on="state.current.name">
-			<div ng-switch-when="login">
-				<!-- DYNAMIC PAGE -->
-				<ui-view></ui-view>
-			</div>
 			@if (Auth::user())
 			<div ng-switch-default>
 				<!-- PAGE CONTAINER -->
@@ -135,6 +131,8 @@
 			@elseif( Request::path() != 'dashboard/login' )
 			 <center>Redirecten naar login</center>
 			 <span style="display: none;">{{ Redirect::intended('dashboard/login') }}</span>
+			 @else
+			 <ui-view></ui-view>
 			@endif
 		</div>
 

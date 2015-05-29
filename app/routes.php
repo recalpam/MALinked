@@ -38,8 +38,11 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 
 		Route::group(array('before' => 'auth'), function(){
 			Route::resource('student', 'API\StudentsController', array());
-			Route::post('put/updateHobbiesEnGegevens', 'API\StudentsController@HobbiesEnGegevens');
+			Route::put('put/updateWhyMa', 'API\StudentsController@WaaromHetMa');
+			Route::put('put/updateHobbiesEnGegevens', 'API\StudentsController@HobbiesEnGegevens');
 			Route::post('put/image', 'API\StudentsController@UploadImage');
+			Route::put('put/updateFutureVision', 'API\StudentsController@updateFutureVision');
+			Route::put('put/updateAboutSchool', 'API\StudentsController@updateAboutSchool');
 		});
 	});
 

@@ -57,11 +57,11 @@ angular.module('MaLinked.Factories', ['progressApp'])
             });
         }
 
-        var postFile = function(action, file, type, fn){
+        var postFile = function(action, type, file, fn){
             var fd = new FormData();
             fd.append('file', file[0].files[0]);
             fd.append('type', type);
-            console.log(fd);
+
             $http.post(action, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
@@ -138,8 +138,9 @@ angular.module('MaLinked.Factories', ['progressApp'])
 
                 },
 
-                uploadFileToUrl: function(file, fn){
-                    postFile('api/db/put/image', file, fn);
+                uploadFileToUrl: function(part, file, fn){
+                    console.log(file);
+                    postFile('api/db/put/image', part, file, fn);
                 }
             }
 

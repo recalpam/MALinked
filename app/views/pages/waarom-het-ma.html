@@ -1,11 +1,10 @@
-{{user}}
 <article class="waarom-het-ma medium-9 columns content" ng-show="show">
-  <form data-abide>
+  <form method="post" ng-submit="postData()" data-abide>
     <div class="row">
       <div class="small-12 columns">
         <div class="waarom-field">
           <label><h2>Waarom heb je voor het Mediacollege gekozen?</h2>
-            <textarea required>{{ userData.info.why_ma }}</textarea>
+            <textarea ng-model="userData.info.why_ma" required></textarea>
           </label>
           <small class="error">Veld is niet ingevuld!</small>
         </div>
@@ -19,7 +18,7 @@
     <div class="row text-right">
       <div class="small-12 columns">
         <a href="#" class="button">Herstel velden</a>
-        <a href="#" class="button">Opslaan</a>
+        <input type="submit" value="Opslaan" class="button" />
       </div>
     </div>
   </form>

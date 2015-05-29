@@ -432,6 +432,11 @@ angular.module('MaLinked.Controllers', [])
 /*==========  Opleiding  ==========*/
 .controller('opleiding', ['$scope', 'db', '$state', '$stateParams', 
 
+<<<<<<< HEAD
+  function () {
+
+  }
+=======
     function($scope, db, $state, $stateParams) {
         console.log($stateParams);
         var study = db.studies.single({
@@ -444,4 +449,5 @@ angular.module('MaLinked.Controllers', [])
         console.log(study.id);
         console.log($scope.thisGroups);
     }
+>>>>>>> df0e2e48d07382a7778d235a7df9dfdb791cdff7
 ])

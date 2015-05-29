@@ -1,5 +1,5 @@
 <article class="waarom-het-ma medium-9 columns content" ng-show="show">
-  <form data-abide>
+  <form method="post" ng-submit="postData()" data-abide>
     <div class="row">
       <div class="small-12 columns">
         <h2>Toekomstbeeld</h2>
@@ -7,7 +7,7 @@
       <div class="small-12 columns">
         <div class="toekomstbeeld-field">
           <label>Wat is je toekomstbeeld, wat zijn je ambities?
-            <textarea required>{{ userData.info.future_vision }}</textarea>
+            <textarea ng-model="userData.info.future_vision" required></textarea>
           </label>
           <small class="error">Je hebt niks ingevuld!</small>
         </div>
@@ -21,7 +21,7 @@
     <div class="row text-right">
       <div class="small-12 columns">
         <a href="#" class="button">Herstel velden</a>
-        <a href="#" class="button">Opslaan</a>
+        <input type="submit" value="Opslaan" class="button" />
       </div>
     </div>
   </form>

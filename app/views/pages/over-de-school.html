@@ -1,5 +1,5 @@
 <article class="waarom-het-ma medium-9 columns content" ng-show="show">
-  <form data-abide>
+  <form method="post" ng-submit="postData()" data-abide>
     <div class="row">
       <div class="small-12 columns">
         <h2>Vragen over de school</h2>
@@ -10,7 +10,7 @@
             <div class="docent-school-field">
               <label>Van welke docent(en) heb je het meeste geleerd?<br>
                 <small>Meerdere docenten kun je onderscheiden met een enter, komma of tab:</small>
-                <input type="text" placeholder="Naam/namen van de docent(en)" required>
+                <input ng-model="userData.info.fav_teacher" type="text" placeholder="Naam/namen van de docent(en)" required>
               </label>
               <small class="error">Vul (een) docent naam/namen in!</small>
             </div>
@@ -19,7 +19,7 @@
             <div class="spacialiseren-school-field">
               <label>In welke richting wil je je gaan specialiseren?<br>
                 <small>&nbsp;</small>
-                <input  type="text" placeholder="" value="{{ userData.info.specialize }}" required>
+                <input ng-model="userData.info.specialize" type="text" placeholder="" value="{{ userData.info.specialize }}" required>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
@@ -29,7 +29,7 @@
           <div class="small-12 medium-6 columns">
             <div class="opdracht-school-field">
               <label>Op welke school opdracht ben je het meest trots?
-                <textarea  required>{{ userData.info.fav_project }}</textarea>
+                <textarea ng-model="userData.info.fav_project" required>{{ userData.info.fav_project }}</textarea>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
@@ -37,7 +37,7 @@
           <div class="small-12 medium-6 columns">  
             <div class="ervaring-school-field">
               <label>Wat was je leukste ervaring op school?
-                <textarea required>{{ userData.info.best_experience }}</textarea>
+                <textarea ng-model="userData.info.best_experience" required>{{ userData.info.best_experience }}</textarea>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
@@ -49,7 +49,7 @@
               <div class="small-12 columns">
                 <div class="rate-klas-school-field">
                   <label>Hoe was je klas? (keuze van 1 tot 10)
-                    <select>
+                    <select ng-model="userData.info.rate_school" convert-to-number>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -57,7 +57,7 @@
                       <option value="5">5</option>
                       <option value="6">6</option>
                       <option value="7">7</option>
-                      <option value="8" selected>8</option>
+                      <option value="8">8</option>
                       <option value="9">9</option>
                       <option value="10">10</option>
                     </select>
@@ -69,7 +69,7 @@
               <div class="small-12 columns">
                 <div class="rate-stage-school-field">
                   <label>Wat voor cijfer geef je je stage? (keuze van 1 tot 10)
-                    <select>
+                    <select ng-model="userData.info.rate_internship" convert-to-number>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -89,7 +89,7 @@
               <div class="small-12 columns">
                 <div class="vak-school-field">
                   <label>Wat vond je het leukste vak?
-                    <input type="text" placeholder="Gymnastiek" value="{{ userData.info.fav_class }}" required>
+                    <input ng-model="userData.info.fav_class" type="text" placeholder="Gymnastiek" value="{{ userData.info.fav_class }}" required>
                   </label>
                   <small class="error">Je hebt niks ingevuld!</small>
                 </div>
@@ -99,7 +99,7 @@
           <div class="small-12 medium-6 columns">
             <div class="ambities-school-field">
               <label>Sluit de opleiding aan op je ambities? Leg uit:
-                <textarea required>{{ userData.info.school_match_ambitions }}</textarea>
+                <textarea ng-model="userData.info.school_match_ambitions" required>{{ userData.info.school_match_ambitions }}</textarea>
               </label>
               <small class="error">Je hebt niks ingevuld!</small>
             </div>
@@ -115,7 +115,7 @@
     <div class="row text-right">
       <div class="small-12 columns">
         <a href="#" class="button">Herstel velden</a>
-        <a href="#" class="button">Opslaan</a>
+        <input type="submit" class="button" value="Opslaan" />
       </div>
     </div>
   </form>

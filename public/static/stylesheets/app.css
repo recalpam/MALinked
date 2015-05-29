@@ -6473,6 +6473,9 @@ h1, h2, h3, h4, h5, h6, p, a {
     bottom: 0;
     left: 0;
     content: ""; }
+  .home .block figure img, .class .block figure img {
+    width: 100%;
+    height: 100%; }
   .home .block figure figcaption, .class .block figure figcaption {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -7422,6 +7425,124 @@ header .content {
   right: 0;
   bottom: 0;
   left: 0; }
+
+/*==========  Header Afbeeldingen  ==========*/
+header {
+  /*==========  Opleiding Foto's  ==========*/
+  /*==========  Klassen Foto's  ==========*/ }
+  header.opleiding.grafisch-vormgever {
+    background-image: url(../images/opleiding/grafisch-vormgever.jpg); }
+  header.opleiding.interactief-vormgever {
+    background-image: url(../images/opleiding/interactief-vormgever.jpg); }
+  header.opleiding.audiovisueel-vormgeveranimatie {
+    background-image: url(../images/opleiding/audiovisueel-vormgeveranimatie.jpg); }
+  header.opleiding.dtp-er {
+    background-image: url(../images/opleiding/dtp-er.jpg); }
+  header.opleiding.mediamanager {
+    background-image: url(../images/opleiding/mediamanager.jpg); }
+  header.opleiding.av-technicus {
+    background-image: url(../images/opleiding/av-technicus.jpg); }
+  header.opleiding.evenemententechnicus {
+    background-image: url(../images/opleiding/evenemententechnicus.jpg); }
+  header.opleiding.geluidstechnicus {
+    background-image: url(../images/opleiding/geluidstechnicus.jpg); }
+  header.opleiding.media-en-gamedeveloper {
+    background-image: url(../images/opleiding/media-en-gamedeveloper.jpg); }
+  header.opleiding.ruimtelijk-vormgever {
+    background-image: url(../images/opleiding/ruimtelijk-vormgever.jpg); }
+  header.opleiding.podiumtechnicus {
+    background-image: url(../images/opleiding/podiumtechnicus.jpg); }
+  header.opleiding.filmacteur {
+    background-image: url(../images/opleiding/filmacteur.jpg); }
+  header.opleiding.signmaker {
+    background-image: url(../images/opleiding/signmaker.jpg); }
+  header.opleiding.game-artist {
+    background-image: url(../images/opleiding/game-artist.jpg); }
+  header.klas {
+    /*==========  Grafisch Vormgever  ==========*/
+    /*==========  Interactief Vormgever  ==========*/
+    /*==========  Audiovisueel Vormgeveranimatie  ==========*/
+    /*==========  DTP-er  ==========*/
+    /*==========  Mediamanager  ==========*/
+    /*==========  AV Technicus  ==========*/
+    /*==========  Evenemententechnicus  ==========*/
+    /*==========  Geluidstechnicus  ==========*/
+    /*==========  Media en Gamedeveloper  ==========*/
+    /*==========  Ruimtelijk Vormgever  ==========*/
+    /*==========  Podiumtechnicus  ==========*/
+    /*==========  Filmacteur  ==========*/
+    /*==========  Signmaker  ==========*/
+    /*==========  Game Artist  ==========*/ }
+    header.klas.GV4A {
+      background-image: url(../images/klassen/GV4A.jpg); }
+    header.klas.GV4B {
+      background-image: url(../images/klassen/GV4B.jpg); }
+    header.klas.GV4C {
+      background-image: url(../images/klassen/GV4C.jpg); }
+    header.klas.GV4D {
+      background-image: url(../images/klassen/GV4D.jpg); }
+    header.klas.GV4E {
+      background-image: url(../images/klassen/GV4E.jpg); }
+    header.klas.IV4A {
+      background-image: url(../images/klassen/IV4A.jpg); }
+    header.klas.AV4A {
+      background-image: url(../images/klassen/AV4A.jpg); }
+    header.klas.D2A {
+      background-image: url(../images/klassen/D2A.jpg); }
+    header.klas.D2B {
+      background-image: url(../images/klassen/D2B.jpg); }
+    header.klas.D3Y {
+      background-image: url(../images/klassen/D3Y.jpg); }
+    header.klas.D3Z {
+      background-image: url(../images/klassen/D3Z.jpg); }
+    header.klas.MM4A {
+      background-image: url(../images/klassen/MM4A.jpg); }
+    header.klas.AT4B {
+      background-image: url(../images/klassen/AT4B.jpg); }
+    header.klas.AT4L {
+      background-image: url(../images/klassen/AT4L.jpg); }
+    header.klas.AT3X {
+      background-image: url(../images/klassen/AT3X.jpg); }
+    header.klas.ET3X {
+      background-image: url(../images/klassen/ET3X.jpg); }
+    header.klas.AT4G {
+      background-image: url(../images/klassen/AT4G.jpg); }
+    header.klas.GT4A {
+      background-image: url(../images/klassen/GT4A.jpg); }
+    header.klas.GD4B {
+      background-image: url(../images/klassen/GD4B.jpg); }
+    header.klas.GD4A {
+      background-image: url(../images/klassen/GD4A.jpg); }
+    header.klas.MD4A {
+      background-image: url(../images/klassen/MD4A.jpg); }
+    header.klas.RV4A {
+      background-image: url(../images/klassen/RV4A.jpg); }
+    header.klas.RV4B {
+      background-image: url(../images/klassen/RV4B.jpg); }
+    header.klas.RV4B {
+      background-image: url(../images/klassen/RV4B.jpg); }
+    header.klas.PT3X {
+      background-image: url(../images/klassen/PT3X.jpg); }
+    header.klas.PT2X {
+      background-image: url(../images/klassen/PT2X.jpg); }
+    header.klas.PT4G {
+      background-image: url(../images/klassen/PT4G.jpg); }
+    header.klas.PT4L {
+      background-image: url(../images/klassen/PT4L.jpg); }
+    header.klas.PT4T {
+      background-image: url(../images/klassen/PT4T.jpg); }
+    header.klas.FA4A {
+      background-image: url(../images/klassen/FA4A.jpg); }
+    header.klas.FA3B {
+      background-image: url(../images/klassen/FA3B.jpg); }
+    header.klas.S2A {
+      background-image: url(../images/klassen/S2A.jpg); }
+    header.klas.S3A {
+      background-image: url(../images/klassen/S3A.jpg); }
+    header.klas.GA4B {
+      background-image: url(../images/klassen/GA4B.jpg); }
+    header.klas.GA4A {
+      background-image: url(../images/klassen/GA4A.jpg); }
 
 /*-----  End of Header  ------*/
 #outdated {

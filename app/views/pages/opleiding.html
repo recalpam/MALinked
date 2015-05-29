@@ -3,7 +3,7 @@
 		<div class="small-12 medium-6 columns end" ng-repeat="row in study.groups">
 			<a ui-sref="klas({slug: row.slug})">
 				<figure>
-					<img src="/static/images/klassen/gv4a.jpg">
+					<img src="/static/images/klassen/{{ row.name }}.jpg">
 					<figcaption>
 					{{ row.name }}
 					</figcaption>

@@ -316,4 +316,194 @@ header {
     left: 0;
   }
 }
+
+/*==========  Header Afbeeldingen  ==========*/
+header {
+
+  /*==========  Opleiding Foto's  ==========*/
+  &.opleiding {
+    &.grafisch-vormgever {
+      background-image: url(../images/opleiding/grafisch-vormgever.jpg);
+    }
+    &.interactief-vormgever {
+      background-image: url(../images/opleiding/interactief-vormgever.jpg);
+    }
+    &.audiovisueel-vormgeveranimatie {
+      background-image: url(../images/opleiding/audiovisueel-vormgeveranimatie.jpg);
+    }
+    &.dtp-er {
+      background-image: url(../images/opleiding/dtp-er.jpg);
+    }
+    &.mediamanager {
+      background-image: url(../images/opleiding/mediamanager.jpg);
+    }
+    &.av-technicus {
+      background-image: url(../images/opleiding/av-technicus.jpg);
+    }
+    &.evenemententechnicus {
+      background-image: url(../images/opleiding/evenemententechnicus.jpg);
+    }
+    &.geluidstechnicus {
+      background-image: url(../images/opleiding/geluidstechnicus.jpg);
+    }
+    &.media-en-gamedeveloper {
+      background-image: url(../images/opleiding/media-en-gamedeveloper.jpg);
+    }
+    &.ruimtelijk-vormgever {
+      background-image: url(../images/opleiding/ruimtelijk-vormgever.jpg);
+    }
+    &.podiumtechnicus {
+      background-image: url(../images/opleiding/podiumtechnicus.jpg);
+    }
+    &.filmacteur {
+      background-image: url(../images/opleiding/filmacteur.jpg);
+    }
+    &.signmaker {
+      background-image: url(../images/opleiding/signmaker.jpg);
+    }
+    &.game-artist {
+      background-image: url(../images/opleiding/game-artist.jpg);
+    }
+  }
+
+  /*==========  Klassen Foto's  ==========*/
+
+  &.klas {
+
+    /*==========  Grafisch Vormgever  ==========*/
+    &.GV4A {
+      background-image: url(../images/klassen/GV4A.jpg);
+    }
+    &.GV4B {
+      background-image: url(../images/klassen/GV4B.jpg);
+    }
+    &.GV4C {
+      background-image: url(../images/klassen/GV4C.jpg);
+    }
+    &.GV4D {
+      background-image: url(../images/klassen/GV4D.jpg);
+    }
+    &.GV4E {
+      background-image: url(../images/klassen/GV4E.jpg);
+    }
+
+    /*==========  Interactief Vormgever  ==========*/
+    &.IV4A {
+      background-image: url(../images/klassen/IV4A.jpg);
+    }
+
+    /*==========  Audiovisueel Vormgeveranimatie  ==========*/
+    &.AV4A {
+      background-image: url(../images/klassen/AV4A.jpg);
+    }
+
+    /*==========  DTP-er  ==========*/
+    &.D2A {
+      background-image: url(../images/klassen/D2A.jpg);
+    }
+    &.D2B {
+      background-image: url(../images/klassen/D2B.jpg);
+    }
+    &.D3Y {
+      background-image: url(../images/klassen/D3Y.jpg);
+    }
+    &.D3Z {
+      background-image: url(../images/klassen/D3Z.jpg);
+    }
+
+    /*==========  Mediamanager  ==========*/
+    &.MM4A {
+      background-image: url(../images/klassen/MM4A.jpg);
+    }
+
+    /*==========  AV Technicus  ==========*/
+    &.AT4B {
+      background-image: url(../images/klassen/AT4B.jpg);
+    }
+    &.AT4L {
+      background-image: url(../images/klassen/AT4L.jpg);
+    }
+    &.AT3X {
+      background-image: url(../images/klassen/AT3X.jpg);
+    }
+
+    /*==========  Evenemententechnicus  ==========*/
+    &.ET3X {
+      background-image: url(../images/klassen/ET3X.jpg);
+    }
+
+    /*==========  Geluidstechnicus  ==========*/
+    &.AT4G {
+      background-image: url(../images/klassen/AT4G.jpg);
+    }
+    &.GT4A {
+      background-image: url(../images/klassen/GT4A.jpg);
+    }
+
+    /*==========  Media en Gamedeveloper  ==========*/
+    &.GD4B {
+      background-image: url(../images/klassen/GD4B.jpg);
+    }
+    &.GD4A {
+      background-image: url(../images/klassen/GD4A.jpg);
+    }
+    &.MD4A {
+      background-image: url(../images/klassen/MD4A.jpg);
+    }
+
+    /*==========  Ruimtelijk Vormgever  ==========*/
+    &.RV4A {
+      background-image: url(../images/klassen/RV4A.jpg);
+    }
+    &.RV4B {
+      background-image: url(../images/klassen/RV4B.jpg);
+    }
+    &.RV4B {
+      background-image: url(../images/klassen/RV4B.jpg);
+    }
+
+    /*==========  Podiumtechnicus  ==========*/
+    &.PT3X {
+      background-image: url(../images/klassen/PT3X.jpg);
+    }
+    &.PT2X {
+      background-image: url(../images/klassen/PT2X.jpg);
+    }
+    &.PT4G {
+      background-image: url(../images/klassen/PT4G.jpg);
+    }
+    &.PT4L {
+      background-image: url(../images/klassen/PT4L.jpg);
+    }
+    &.PT4T {
+      background-image: url(../images/klassen/PT4T.jpg);
+    }
+
+    /*==========  Filmacteur  ==========*/
+    &.FA4A {
+      background-image: url(../images/klassen/FA4A.jpg);
+    }
+    &.FA3B {
+      background-image: url(../images/klassen/FA3B.jpg);
+    }
+
+    /*==========  Signmaker  ==========*/
+    &.S2A {
+      background-image: url(../images/klassen/S2A.jpg);
+    }
+    &.S3A {
+      background-image: url(../images/klassen/S3A.jpg);
+    }
+
+    /*==========  Game Artist  ==========*/
+    &.GA4B {
+      background-image: url(../images/klassen/GA4B.jpg);
+    }
+    &.GA4A {
+      background-image: url(../images/klassen/GA4A.jpg);
+    }
+  }
+}
+
+
 /*-----  End of Header  ------*/

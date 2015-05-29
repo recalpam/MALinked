@@ -78,6 +78,31 @@ angular.module('MaLinked.Services', [])
                 for (var key in $scope.infoBlokken) {
                     var infoStudent = $scope.student.info[key];
                     var infoBlok = $scope.infoBlokken[key];
+                    var projects = $scope.student.projects;
+
+                    if (projects.length > 0) {
+                        console.log("in project");
+                        var project = projects.pop();
+                        iElm.append(
+                            block.clone().addClass("project--info")
+                            .append($('<h2></h2>').text(project.title))
+                            .append($('<p></p>').text(project.description))
+                        );
+
+                        if (project.project_file.length > 0) {
+                            var file = project.project_file.pop();
+                            if (file.fileExtension == "png" || file.fileExtension == "jpg" || file.fileExtension == "jpeg") {
+                                iElm.append(
+                                    block.clone().addClass("project--image")
+                                    .append($('<img/>').attr("src",file.medium))
+                                );
+                            }
+
+                        }
+                    }
+
+                    console.log("na project", projects);
+
                     iElm.append(
                         block.clone().addClass(key)
                         .append($('<h2></h2>').text(infoBlok.title))

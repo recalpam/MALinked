@@ -50,24 +50,26 @@ angular.module('MaLinked.Services', [])
             // scope: {}, // {} = isolate, true = child, false/undefined = no change
             controller: function($scope, $element, $attrs, $transclude) {
                 // Single object generator
-                function infoBlok(title) {
+                function infoBlok(title, css, container) {
                     return {
-                        title: title
+                        title: title,
+                        css: css,
+                        container: container
                     };
                 };
                 // Assign to scope so children can access the neccisary data.
                 $scope.infoBlokken = {
-                    future_vision: infoBlok('Mijn toekomstbeeld'),
-                    fav_teacher: infoBlok('Favoriete Leraren'),
-                    fav_project: infoBlok('Favoriete Projecten'),
-                    fav_class: infoBlok('Favoriete Klas'),
-                    rate_school: infoBlok('Schoolcijfer'),
-                    rate_internship: infoBlok('Stagecijfer'),
-                    specialize: infoBlok('Specializaties'),
-                    school_match_ambitions: infoBlok('Tevreden over MA?'),
-                    hobbies: infoBlok('Hobbies'),
-                    why_ma: infoBlok('Waarom gekozen voor MA?'),
-                    best_experience: infoBlok('Memorabel Moment')
+                    future_vision: infoBlok('Mijn toekomstbeeld', 'toekomstbeeld'),
+                    fav_teacher: infoBlok('Favoriete Leraren', 'favoriet'),
+                    fav_project: infoBlok('Favoriete Projecten', 'favoriet'),
+                    fav_class: infoBlok('Favoriete Klas', 'favoriet'),
+                    rate_school: infoBlok('Schoolcijfer', 'hoewas', 'span'),
+                    rate_internship: infoBlok('Stagecijfer', 'hoewas', 'span'),
+                    specialize: infoBlok('Specializaties', 'favoriet'),
+                    school_match_ambitions: infoBlok('Tevreden over MA?', 'favoriet'),
+                    hobbies: infoBlok('Hobbies', 'favoriet'),
+                    why_ma: infoBlok('Waarom gekozen voor MA?', 'favoriet'),
+                    best_experience: infoBlok('Memorabel Moment', 'favoriet')
                 };
             },
             // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
@@ -80,8 +82,9 @@ angular.module('MaLinked.Services', [])
                     var infoBlok = $scope.infoBlokken[key];
                     var projects = $scope.student.projects;
 
+                    if (!infoStudent) continue;
+
                     if (projects.length > 0) {
-                        console.log("in project");
                         var project = projects.pop();
                         iElm.append(
                             block.clone().addClass("project--info")
@@ -101,13 +104,22 @@ angular.module('MaLinked.Services', [])
                         }
                     }
 
-                    console.log("na project", projects);
+                    if (!infoBlok.container) {
+                        iElm.append(
+                            block.clone().addClass(infoBlok.css)
+                            .append($('<h2></h2>').text(infoBlok.title))
+                            .append($('<p></p>').text(infoStudent))
+                        );
+                    }
 
-                    iElm.append(
-                        block.clone().addClass(key)
-                        .append($('<h2></h2>').text(infoBlok.title))
-                        .append($('<p></p>').text(infoStudent.toString()))
-                    );
+                    if (infoBlok.container=="span") {
+                        iElm.append(
+                            block.clone().addClass(infoBlok.css)
+                            .append($('<h2></h2>').text(infoBlok.title))
+                            .append($('<span></span>').text(infoStudent))
+                        );
+                    }
+
                 }
                 var blockEqualize = $('.block');
                 var blockEqualizeWidth = blockEqualize.width();

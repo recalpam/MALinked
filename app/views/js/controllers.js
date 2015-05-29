@@ -445,3 +445,7 @@ angular.module('MaLinked.Controllers', [])
     console.log($scope.thisGroups);
   }
 ])
+
+.controller('opleidingen', ['$scope', function($scope){
+  
+}])

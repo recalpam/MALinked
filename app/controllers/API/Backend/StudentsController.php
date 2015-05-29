@@ -1,6 +1,7 @@
 <?php namespace API;
 
 use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study;
+use Intervention\Image\ImageManager;
 
 class StudentsController extends \BaseController {
 
@@ -86,7 +87,19 @@ class StudentsController extends \BaseController {
 	}
 
 	public function UploadImage(){
-		dd(Input::all());
+	//	dd($_FILES);
+		if( $_FILES ){
+			$file = $_FILES['file'];
+			$type = explode('/', $file['type']);
+			$type = end($type);
+
+			$fileName = md5($file['name'].rand(0,99999).time()).'.'.$type;
+
+		//	if( Input::get('') )
+			$manager = new ImageManager();
+			$manager->make($remoteFile)->save( Config::get('files.path') . $fileName, 90);
+			
+		}
 	}
 
 	

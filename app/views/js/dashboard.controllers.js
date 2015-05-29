@@ -65,6 +65,12 @@ angular.module('Dashboard.Controllers', [])
             // Show scope
             $scope.show = true;
         });
+
+        $scope.postData = function(){
+            API.user.set('updateWhyMa', $scope.userData, function(){
+                alert('Klaar is Kees');
+            });
+        }
   }
 ])
 
@@ -110,7 +116,13 @@ angular.module('Dashboard.Controllers', [])
         $scope.show = true;
     });
     $scope.postData = function(){
-        API.user.uploadFileToUrl('header', angular.element('#headerImage'));
+        if( typeof angular.element('#headerImage').val() != 'undefined'){
+            API.user.uploadFileToUrl('header', angular.element('#headerImage'));
+        }
+        if( typeof angular.element('#profilepicture').val() != 'undefined'){
+            API.user.uploadFileToUrl('profile', angular.element('#profilepicture'));
+        }
+        
         API.user.set('updateHobbiesEnGegevens', $scope.userData, function(){
             alert('Klaar is Kees');
         });
@@ -184,6 +196,12 @@ angular.module('Dashboard.Controllers', [])
             // Show scope
             $scope.show = true;
         });
+
+        $scope.postData = function(){
+            API.user.set('updateAboutSchool', $scope.userData, function(){
+                alert('Klaar is Kees');
+            });
+        }
   }
 ])
 
@@ -199,6 +217,7 @@ angular.module('Dashboard.Controllers', [])
             // Assign content to User variable
             User = $scope.userData = data;
 
+             User.info.future_vision = User.info.future_vision.replace(/<br\s*[\/]?>/gi, "\r\n");
 
             // User not logged in, redirect
             if( User.error ){
@@ -208,6 +227,12 @@ angular.module('Dashboard.Controllers', [])
             // Show scope
             $scope.show = true;
         });
+
+        $scope.postData = function(){
+            API.user.set('updateFutureVision', $scope.userData, function(){
+                alert('Klaar is Kees');
+            });
+        }
 
     $scope.foo = "bar";
   }

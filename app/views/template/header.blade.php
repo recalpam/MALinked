@@ -9,7 +9,7 @@
 				<span class="text">Ma Linked</span>
 			</div>
 			<ul>
-				<a ui-sref="opleidingen"><li>Opleidingen</li></a>
+				<a ui-sref="home"><li>Opleidingen</li></a>
 				<a href="#" data-reveal-id="searchModal"><li>Zoeken</li></a>
 			</ul>
 		</div>

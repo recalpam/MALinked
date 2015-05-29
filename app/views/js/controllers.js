@@ -433,16 +433,9 @@ angular.module('MaLinked.Controllers', [])
 .controller('opleiding', ['$scope', 'db', '$state', '$stateParams',
 
   function ($scope, db, $state, $stateParams) {
-    console.log($stateParams);
-    var study = $scope.study = db.studies.single({
+    $scope.study = $scope.study = db.studies.single({
       slug: $stateParams.slug
     });
-
-    $scope.thisGroups = db.group.where({
-      study_id: study.id
-    });
-    console.log(study.id);
-    console.log($scope.thisGroups);
   }
 ])
 

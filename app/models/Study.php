@@ -18,12 +18,17 @@ class Study extends \Eloquent {
 		// 'title' => 'required'
 	];
 
+
 	// Don't forget to fill this array
 	protected $fillable = ['color', 'name'];
 
 	public function groups()
 	{
 		return $this->hasMany('Group');
+	}
+
+	public static function nested(){
+		return self::with(array('groups'));
 	}
 
 }

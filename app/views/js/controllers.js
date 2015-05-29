@@ -424,10 +424,11 @@ angular.module('MaLinked.Controllers', [])
 ])
 
 /*==========  Zoeken  ==========*/
-.controller('zoeken', [
+.controller('login', ['$window',
 
-    function() {
-
+    function($window) {
+    	//console.log($window.location);
+    	$window.location.href = $window.location.origin + "/dashboard/login";
     }
 ])
 
@@ -452,5 +453,9 @@ angular.module('MaLinked.Controllers', [])
         $scope.groep = klas;
 
         $rootScope.headerClass = klas.name;
+
+         var blockEqualize = $('.block');
+        var blockEqualizeWidth = blockEqualize.width();
+        $(blockEqualize).height(blockEqualizeWidth);
     }
 ])

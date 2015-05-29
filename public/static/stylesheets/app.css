@@ -7245,11 +7245,9 @@ header {
 
 /*==========  Homepage  ==========*/
 header.home video {
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
-  filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
+  -ms-transform: translate(50%);
+  -webkit-transform: translate(50%);
+  transform: translate(50%);
   -webkit-animation-name: blur-effect-out;
   animation-name: blur-effect-out;
   -webkit-animation-duration: 0.5s;
@@ -7259,10 +7257,12 @@ header.home video {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   position: absolute;
-  top: 50%;
-  right: 0;
-  left: 0;
-  width: 100vw; }
+  right: 50%;
+  overflow: hidden;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%; }
   header.home video.video-blur {
     -webkit-animation-name: blur-effect-in;
     animation-name: blur-effect-in;
@@ -7302,25 +7302,25 @@ header.home .content .search-bar {
       color: #F6F6F6; }
 
 /*==========  Klas en Opleiding  ==========*/
-header.klas, header.opleidingen {
+header.klas, header.opleiding {
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
-  header.klas .content .align, header.opleidingen .content .align {
+  background-position: center; }
+  header.klas .content .align, header.opleiding .content .align {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.75); }
-    header.klas .content .align .row, header.opleidingen .content .align .row {
+    header.klas .content .align .row, header.opleiding .content .align .row {
       min-height: 55px; }
-      header.klas .content .align .row h1, header.opleidingen .content .align .row h1 {
+      header.klas .content .align .row h1, header.opleiding .content .align .row h1 {
         font-size: 1.125rem;
         color: #FFFFFF; }
-      header.klas .content .align .row p, header.opleidingen .content .align .row p {
+      header.klas .content .align .row p, header.opleiding .content .align .row p {
         font-size: 0.9375rem;
         color: #FFFFFF; }
-    header.klas .content .align:after, header.opleidingen .content .align:after {
+    header.klas .content .align:after, header.opleiding .content .align:after {
       background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC43NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
       background-size: 100%;
       background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.75)));
@@ -7335,9 +7335,9 @@ header.klas, header.opleidingen {
 
 /*==========  Profile  ==========*/
 header.profiel {
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
+  background-position: center; }
   header.profiel .content .bar {
     -ms-transform: translateY(-75%);
     -webkit-transform: translateY(-75%);
@@ -7382,7 +7382,7 @@ header.profiel {
     border-radius: 125px; }
 header .content {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   top: 0;
   right: 0;
   bottom: 0;

@@ -6344,10 +6344,10 @@ h1, h2, h3, h4, h5, h6, p, a {
 =            Homepage + Klassen Page            =
 ===============================================*/
 /*==========  Global  ==========*/
-.home, .klas {
+.home, .class {
   -webkit-animation: fadein 2s;
   animation: fadein 2s; }
-  .home .block, .klas .block {
+  .home .block, .class .block {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transition: all 0.5s ease;
@@ -6359,7 +6359,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     padding: 15px;
     background-position: right bottom;
     background-size: cover; }
-    .home .block:hover:not(.nohover), .klas .block:hover:not(.nohover) {
+    .home .block:hover:not(.nohover), .class .block:hover:not(.nohover) {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       -ms-transform: scale(1.1);
@@ -6367,44 +6367,44 @@ h1, h2, h3, h4, h5, h6, p, a {
       transform: scale(1.1);
       z-index: 1;
       cursor: pointer; }
-    .home .block .title, .klas .block .title {
+    .home .block .title, .class .block .title {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       font-size: 1.0625rem;
       padding-right: 45%; }
-    .home .block .naarklas, .home .block .naarprofiel, .klas .block .naarklas, .klas .block .naarprofiel {
+    .home .block .naarklas, .home .block .naarprofiel, .class .block .naarklas, .class .block .naarprofiel {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       font-size: 0.75rem;
       position: absolute;
       bottom: 15px; }
-    .home .block.grafisch-vormgever, .klas .block.grafisch-vormgever {
+    .home .block.grafisch-vormgever, .class .block.grafisch-vormgever {
       background-color: #4fbe96; }
-    .home .block.interactief-vormgever, .klas .block.interactief-vormgever {
+    .home .block.interactief-vormgever, .class .block.interactief-vormgever {
       background-color: #f4793b; }
-    .home .block.audiovisueel-vormgeveranimatie, .klas .block.audiovisueel-vormgeveranimatie {
+    .home .block.audiovisueel-vormgeveranimatie, .class .block.audiovisueel-vormgeveranimatie {
       background-color: #4f5f8f; }
-    .home .block.dtp-er, .klas .block.dtp-er {
+    .home .block.dtp-er, .class .block.dtp-er {
       background-color: #cd4c60; }
-    .home .block.mediamanager, .klas .block.mediamanager {
+    .home .block.mediamanager, .class .block.mediamanager {
       background-color: #dc7f82; }
-    .home .block.av-technicus, .klas .block.av-technicus {
+    .home .block.av-technicus, .class .block.av-technicus {
       background-color: #ef492c; }
-    .home .block.evenemententechnicus, .klas .block.evenemententechnicus {
+    .home .block.evenemententechnicus, .class .block.evenemententechnicus {
       background-color: #8db83f; }
-    .home .block.geluidstechnicus, .klas .block.geluidstechnicus {
+    .home .block.geluidstechnicus, .class .block.geluidstechnicus {
       background-color: #edb030; }
-    .home .block.media-en-gamedeveloper, .klas .block.media-en-gamedeveloper {
+    .home .block.media-en-gamedeveloper, .class .block.media-en-gamedeveloper {
       background-color: #932545; }
-    .home .block.ruimtelijk-vormgever, .klas .block.ruimtelijk-vormgever {
+    .home .block.ruimtelijk-vormgever, .class .block.ruimtelijk-vormgever {
       background-color: #edb032; }
-    .home .block.podiumtechnicus, .klas .block.podiumtechnicus {
+    .home .block.podiumtechnicus, .class .block.podiumtechnicus {
       background-color: #3e3b68; }
-    .home .block.filmacteur, .klas .block.filmacteur {
+    .home .block.filmacteur, .class .block.filmacteur {
       background-color: #0db5d9; }
-    .home .block.signmaker, .klas .block.signmaker {
+    .home .block.signmaker, .class .block.signmaker {
       background-color: #218841; }
-    .home .block.game-artist, .klas .block.game-artist {
+    .home .block.game-artist, .class .block.game-artist {
       background-color: #4f2b78; }
 
 /*==========  Homepage  ==========*/
@@ -6453,7 +6453,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   background-image: url(../images/background/homepage_gameartist.png); }
 
 /*==========  Class  ==========*/
-.home .block figure, .klas .block figure {
+.home .block figure, .class .block figure {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
@@ -6462,7 +6462,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   bottom: 0;
   left: 0;
   margin: 0; }
-  .home .block figure:after, .klas .block figure:after {
+  .home .block figure:after, .class .block figure:after {
     background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
     background-size: 100%;
     background-image: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
@@ -6473,7 +6473,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     bottom: 0;
     left: 0;
     content: ""; }
-  .home .block figure figcaption, .klas .block figure figcaption {
+  .home .block figure figcaption, .class .block figure figcaption {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
@@ -6933,6 +6933,42 @@ h1, h2, h3, h4, h5, h6, p, a {
       padding-top: 25px;
       color: #FFFFFF;
       background-color: transparent; }
+      #searchModal input.search-bar .logo {
+        display: inline;
+        overflow: hidden;
+        height: 32px; }
+        #searchModal input.search-bar .logo:hover span.text {
+          overflow: hidden;
+          width: 115px;
+          height: 32px; }
+        #searchModal input.search-bar .logo span.icon {
+          display: inline-block;
+          float: left;
+          width: 32px;
+          height: 32px;
+          background-image: url(../images/icon.png);
+          background-repeat: no-repeat;
+          background-size: contain; }
+        #searchModal input.search-bar .logo span.text {
+          -webkit-transition: width 0.5s;
+          transition: width 0.5s;
+          line-height: 32px;
+          display: inline-block;
+          float: left;
+          overflow: hidden;
+          width: 0;
+          padding-left: 15px;
+          white-space: nowrap;
+          color: #FFFFFF; }
+        #searchModal input.search-bar .logo span.info {
+          -webkit-transition: width 0.5s;
+          transition: width 0.5s;
+          line-height: 32px;
+          display: inline-block;
+          float: left;
+          overflow: hidden;
+          white-space: nowrap;
+          color: #FFFFFF; }
   #searchModal .border {
     width: 100%;
     max-width: 38.75rem;
@@ -7126,9 +7162,8 @@ h1, h2, h3, h4, h5, h6, p, a {
     #searchModal .student .info {
       position: absolute;
       z-index: 100;
-      right: 0;
       bottom: 0;
-      margin-right: 100px; }
+      margin-left: 100px; }
       #searchModal .student .info h4 {
         font-size: 1.25rem;
         margin-bottom: 0;

@@ -2,7 +2,7 @@
 	<div class="search-bar full-row">
 		<div class="logo">
 			<span class="icon"></span>
-			<div class="hamburger open">
+			<div class="hamburger open hide">
 				<div class="icon-left"></div>
 				<div class="icon-right"></div>
 			</div>
@@ -13,7 +13,7 @@
 			<a class="close-reveal-modal" aria-label="Close">Sluiten &#215;</a>
 		</div>
 	</div>
-	<div class="opleidingen-menu">
+	<div class="opleidingen-menu hide">
 		<ul>
 			<a ng-repeat="study in db.studies">
 				<li class="grafischvormgeven active">
@@ -23,7 +23,8 @@
 		</ul>
 	</div>
 	<div class="full-row">
-		<div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-offset-4 medium-4 large-offset-3 large-3 columns">
+		{{-- <div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-offset-4 medium-4 large-offset-3 large-3 columns"> --}}
+		<div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-4 large-3 columns end">
 			<div class="student gameartist">
 				<div class="info">
 					<h4>@{{ student.fullname }}</h4>

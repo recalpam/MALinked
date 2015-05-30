@@ -439,7 +439,7 @@ angular.module('MaLinked.Controllers', [])
         });
 
         $scope.thisGroups = db.group.where({
-            study_id: study.id
+            study_id: '^'+ study.id + '$'
         });
         console.log(study.id);
         console.log($scope.thisGroups);

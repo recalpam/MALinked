@@ -1,14 +1,3 @@
-<html>
-<head>
-	<title>Ma linked Offline</title>
-</head>
-<body>
-<p>Ma Linked is bezig met een grote update. <br/>
-Na deze update zullen alle gegevens die je hebt ingevuld sind de livegang van de beta verwijderd zijn.</p>
-
-<p>Probeer het later nog eens.</p>
-</body>
-</html>
 <?php
 /**
  * Laravel - A PHP Framework For Web Artisans
@@ -29,7 +18,7 @@ Na deze update zullen alle gegevens die je hebt ingevuld sind de livegang van de
 |
 */
 
-//require __DIR__.'/../bootstrap/autoload.php';
+require __DIR__.'/../bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +32,7 @@ Na deze update zullen alle gegevens die je hebt ingevuld sind de livegang van de
 |
 */
 
-//$app = require_once __DIR__.'/../bootstrap/start.php';
+$app = require_once __DIR__.'/../bootstrap/start.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +46,4 @@ Na deze update zullen alle gegevens die je hebt ingevuld sind de livegang van de
 |
 */
 
-//$app->run();
+$app->run();

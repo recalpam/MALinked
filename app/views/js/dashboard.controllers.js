@@ -60,7 +60,9 @@ angular.module('Dashboard.Controllers', [])
             }
 
             // Replace <br /> with \n
-            User.info.why_ma = User.info.why_ma.replace(/<br\s*[\/]?>/gi, "\r\n");
+            if(User.info.why_ma){
+                 User.info.why_ma = User.info.why_ma.replace(/<br\s*[\/]?>/gi, "\r\n");
+            }
 
             // Show scope
             $scope.show = true;
@@ -217,7 +219,9 @@ angular.module('Dashboard.Controllers', [])
             // Assign content to User variable
             User = $scope.userData = data;
 
+            if(User.info.future_vision){
              User.info.future_vision = User.info.future_vision.replace(/<br\s*[\/]?>/gi, "\r\n");
+            }
 
             // User not logged in, redirect
             if( User.error ){

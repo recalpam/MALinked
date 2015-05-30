@@ -1,14 +1,14 @@
 <section class="training opleidingen">
-  <div class="row">
-    <div class="small-12 medium-6 columns" ng-repeat="row in thisGroups">
-      <a href="#">
-        <figure>
-          <img src="/static/images/klassen/gv4a.jpg">
-          <figcaption>
-          {{ row.name }}
-          </figcaption>
-        </figure>
-      </a>
-    </div>
-  </div>
+	<div class="row">
+		<div class="small-12 medium-6 columns end" ng-repeat="row in study.groups">
+			<a ui-sref="klas({slug: row.slug})">
+				<figure>
+					<img src="/static/images/klassen/{{ row.name }}.jpg">
+					<figcaption>
+					{{ row.name }}
+					</figcaption>
+				</figure>
+			</a>
+		</div>
+	</div>
 </section>

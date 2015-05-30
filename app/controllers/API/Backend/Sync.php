@@ -25,8 +25,8 @@ class Sync extends \BaseController {
 
 		$data = new \stdClass;
 		$data->students = Student::nested()->get();
-		$data->studies = Study::all();
-		$data->group = Group::all();
+		$data->studies = Study::nested()->get();
+		$data->group = Group::nested()->get();
 
 		//Cache::forever('API\Sync', json_encode($data));
 

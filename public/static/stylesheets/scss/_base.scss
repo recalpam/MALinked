@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 ===============================================*/
 
 /*==========  Global  ==========*/
-.home, .klas {
+.home, .class {
   @include animation(fadein 2s);
   .block {
     @include backface-visibility(hidden);
@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 
 /*==========  Class  ==========*/
-.home, .klas {
+.home, .class {
   .block {
     figure {
       @include backface-visibility(hidden);
@@ -223,6 +223,10 @@ h1, h2, h3, h4, h5, h6, p, a {
         left: 0;
 
         content: "";
+      }
+      img {
+        width: 100%;
+        height: 100%;
       }
       figcaption {
         @include backface-visibility(hidden);
@@ -440,7 +444,8 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.grafisch-vormgever {
+  &[class*=' grafisch-vormgever'] {
+  // &.grafisch-vormgever {
     .toekomstbeeld {
       background-color: $grafisch-vormgever;
       h2, p {
@@ -468,7 +473,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.interactief-vormgever {
+  &[class*=' interactief-vormgever'] {
     .toekomstbeeld {
       background-color: $interactief-vormgever;
       h2, p {
@@ -496,7 +501,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.audiovisueel-vormgeveranimatie {
+  &[class*=' animatieav-vormgeven'] {
     .toekomstbeeld {
       background-color: $audiovisueel-vormgeveranimatie;
       h2, p {
@@ -524,7 +529,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.dtp-er {
+  &[class*=' medewerker-dtp-niveau'], &[class*=' allround-dtp-er-niveau'] {
     .toekomstbeeld {
       background-color: $dtp-er;
       h2, p {
@@ -552,7 +557,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.mediamanager {
+  &[class*=' mediamanager'] {
     .toekomstbeeld {
       background-color: $mediamanager;
       h2, p {
@@ -580,7 +585,8 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.av-technicus {
+  &[class*=' allround-medewerker-av-productie'], &[class*=' av-techniek-cameraman'], &[class*=' av-techniek-lichttechnicus'] {
+  // &.allround-medewerker-av-productie, &.av-techniek-cameraman, &.av-techniek-lichttechnicus {
     .toekomstbeeld {
       background-color: $av-technicus;
       h2, p {
@@ -608,7 +614,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.evenemententechnicus {
+  &[class*=' allround-evenemententechnicus'] {
     .toekomstbeeld {
       background-color: $evenemententechnicus;
       h2, p {
@@ -636,7 +642,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.geluidstechnicus {
+  &[class*=' av-techniek-geluidstechnicus'] {
     .toekomstbeeld {
       background-color: $geluidstechnicus;
       h2, p {
@@ -664,7 +670,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.media-en-gamedeveloper {
+  &[class*=' game-developer'], &[class*=' media-developer'] {
     .toekomstbeeld {
       background-color: $media-en-gamedeveloper;
       h2, p {
@@ -692,7 +698,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.game-artist {
+  &[class*=' game-artist'] {
     .toekomstbeeld {
       background-color: $game-artist;
       h2, p {
@@ -720,7 +726,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.podiumtechnicus {
+  &[class*=' allround-podiumtechnicus'], &[class*=' medewerker-podium-en-evenemententechniek'], &[class*=' podiumtechnicus'] {
     .toekomstbeeld {
       background-color: $podiumtechnicus;
       h2, p {
@@ -748,7 +754,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.filmacteur {
+  &[class*=' filmacteur'] {
     .toekomstbeeld {
       background-color: $filmacteur;
       h2, p {
@@ -776,7 +782,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.signmaker {
+  &[class*=' medewerker-sign-niveau'], &[class*=' allround-signmaker-niveau'] {
     .toekomstbeeld {
       background-color: $signmaker;
       h2, p {
@@ -804,7 +810,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  &.ruimtelijk-vormgever {
+  &[class*=' vormgever-productpresentatie'], &[class*=' stand-winkel-en-decorvormgever'] {
     .toekomstbeeld {
       background-color: $ruimtelijk-vormgever;
       h2, p {
@@ -905,6 +911,64 @@ h1, h2, h3, h4, h5, h6, p, a {
       color: $white;
       background-color: transparent;
       // z-index: 1000;
+      .logo {
+        display: inline;
+        overflow: hidden;
+
+        height: 32px;
+        &:hover {
+          span {
+            &.text {
+              overflow: hidden;
+
+              width: 115px;
+              height: 32px;
+            }
+          }
+        }
+        span {
+          &.icon {
+            display: inline-block;
+            float: left;
+
+            width: 32px;
+            height: 32px;
+
+            background-image: url(../images/icon.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+          &.text {
+            @include transition(width 0.5s);
+
+            line-height: 32px;
+
+            display: inline-block;
+            float: left;
+            overflow: hidden;
+
+            width: 0;
+            padding-left: 15px;
+
+            white-space: nowrap;
+
+            color: $white;
+          }
+          &.info {
+            @include transition(width 0.5s);
+
+            line-height: 32px;
+
+            display: inline-block;
+            float: left;
+            overflow: hidden;
+
+            white-space: nowrap;
+
+            color: $white;
+          }
+        }
+      }
     }
   }
   .border {
@@ -1135,10 +1199,9 @@ h1, h2, h3, h4, h5, h6, p, a {
     .info {
       position: absolute;
       z-index: 100;
-      right: 0;
       bottom: 0;
 
-      margin-right: 100px;
+      margin-left: 100px;
       h4 {
         font-size: rem-calc(20);
 

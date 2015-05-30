@@ -30,4 +30,8 @@ class Group extends \Eloquent {
 		return $this->hasMany('Student');
 	}
 
+	public static function nested(){
+		return self::with(array('students', 'students.file', 'study'));
+	}
+
 }

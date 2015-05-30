@@ -1,5 +1,5 @@
 {{-- HEADER START --}}
-<header class="@{{ state.current.name }}">
+<header class="@{{ state.current.name }} @{{ headerClass }}" ng-class="@{{ headerClass }}">
 
 	{{-- NAV --}}
 	<nav class="menu" role="navigation">
@@ -9,7 +9,7 @@
 				<span class="text">Ma Linked</span>
 			</div>
 			<ul>
-				<a ui-sref="#" ng-click="goToOpleidingen()"><li>Opleidingen</li></a>
+				<a ui-sref="home"><li>Opleidingen</li></a>
 				<a href="#" data-reveal-id="searchModal"><li>Zoeken</li></a>
 			</ul>
 		</div>
@@ -66,10 +66,10 @@
         <div class="align">
           <div class="row">
             <div class="small-12 columns">
-              <h1>Grafisch Vormgeven 4A</h1>
+              <h1>@{{ study.name }}</h1>
             </div>
             <div class="small-12 columns">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat in voluptate non proident.</p>
+              {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat in voluptate non proident.</p> --}}
             </div>
           </div>
         </div>

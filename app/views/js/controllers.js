@@ -174,6 +174,8 @@ angular.module('MaLinked.Controllers', [])
       slug: $stateParams.student
     });
 
+    $rootScope.headerClass = student.group.study.slug;
+
     // Loop through all info elements
     for (var key in student.info) {
       // Whenever a string is occurred
@@ -422,26 +424,46 @@ angular.module('MaLinked.Controllers', [])
 ])
 
 /*==========  Zoeken  ==========*/
-.controller('zoeken', [
+.controller('login', ['$window',
 
-  function () {
-
+  function ($window) {
+    //console.log($window.location);
+    $window.location.href = $window.location.origin + "/dashboard/login";
   }
 ])
 
 /*==========  Opleiding  ==========*/
-.controller('opleiding', ['$scope', 'db', '$state', '$stateParams', 
+.controller('opleiding', ['$scope', 'db', '$state', '$stateParams', '$rootScope',
 
-    function($scope, db, $state, $stateParams) {
-        console.log($stateParams);
-        var study = db.studies.single({
-            slug: $stateParams.slug
-        });
+  function ($scope, db, $state, $stateParams, $rootScope) {
+    $scope.study = db.studies.single({
+      slug: $stateParams.slug
+    });
 
-        $scope.thisGroups = db.group.where({
-            study_id: '^'+ study.id + '$'
-        });
-        console.log(study.id);
-        console.log($scope.thisGroups);
-    }
+    $rootScope.headerClass = $scope.study.slug;
+  }
+
+])
+
+.controller('klas', ['$scope', 'db', '$stateParams', '$rootScope',
+  function ($scope, db, $stateParams, $rootScope) {
+    var klas = db.group.single({
+      slug: $stateParams.slug
+    });
+
+    $scope.groep = klas;
+
+    $rootScope.headerClass = klas.name;
+
+    var blockEqualize = $('.block');
+    var blockEqualizeWidth = blockEqualize.width();
+    $(blockEqualize).height(blockEqualizeWidth);
+
+    // Ugly Fix
+    setTimeout(function () {
+      var blockEqualize = $('.block');
+      var blockEqualizeWidth = blockEqualize.width();
+      $(blockEqualize).height(blockEqualizeWidth);
+    }, 500);
+  }
 ])

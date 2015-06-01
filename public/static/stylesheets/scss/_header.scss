@@ -185,6 +185,7 @@ header {
           color: $white;
           border: none;
           outline: none;
+          // background: transparent url("/static/images/search-icon.png") no-repeat scroll 600px;
           background-color: transparent;
         }
       }
@@ -306,6 +307,48 @@ header {
         border-radius: 125px;
       }
     }
+    &.grafisch-vormgever {
+      background-color: $grafisch-vormgever;
+    }
+    &.interactief-vormgever {
+      background-color: $interactief-vormgever;
+    }
+    &.audiovisueel-vormgeveranimatie {
+      background-color: $audiovisueel-vormgeveranimatie;
+    }
+    &.dtp-er {
+      background-color: $dtp-er;
+    }
+    &.mediamanager {
+      background-color: $mediamanager;
+    }
+    &.av-technicus {
+      background-color: $av-technicus;
+    }
+    &.evenemententechnicus {
+      background-color: $evenemententechnicus;
+    }
+    &.geluidstechnicus {
+      background-color: $geluidstechnicus;
+    }
+    &.media-en-gamedeveloper {
+      background-color: $media-en-gamedeveloper;
+    }
+    &.ruimtelijk-vormgever {
+      background-color: $ruimtelijk-vormgever;
+    }
+    &.podiumtechnicus {
+      background-color: $podiumtechnicus;
+    }
+    &.filmacteur {
+      background-color: $filmacteur;
+    }
+    &.signmaker {
+      background-color: $signmaker;
+    }
+    &.game-artist {
+      background-color: $game-artist;
+    }
   }
   .content {
     position: absolute;
@@ -319,7 +362,6 @@ header {
 
 /*==========  Header Afbeeldingen  ==========*/
 header {
-
   /*==========  Opleiding Foto's  ==========*/
   &.opleiding {
     &.grafisch-vormgever {
@@ -365,11 +407,8 @@ header {
       background-image: url(../images/opleiding/game-artist.jpg);
     }
   }
-
   /*==========  Klassen Foto's  ==========*/
-
   &.klas {
-
     /*==========  Grafisch Vormgever  ==========*/
     &.GV4A {
       background-image: url(../images/klassen/GV4A.jpg);
@@ -386,17 +425,14 @@ header {
     &.GV4E {
       background-image: url(../images/klassen/GV4E.jpg);
     }
-
     /*==========  Interactief Vormgever  ==========*/
     &.IV4A {
       background-image: url(../images/klassen/IV4A.jpg);
     }
-
     /*==========  Audiovisueel Vormgeveranimatie  ==========*/
     &.AV4A {
       background-image: url(../images/klassen/AV4A.jpg);
     }
-
     /*==========  DTP-er  ==========*/
     &.D2A {
       background-image: url(../images/klassen/D2A.jpg);
@@ -410,12 +446,10 @@ header {
     &.D3Z {
       background-image: url(../images/klassen/D3Z.jpg);
     }
-
     /*==========  Mediamanager  ==========*/
     &.MM4A {
       background-image: url(../images/klassen/MM4A.jpg);
     }
-
     /*==========  AV Technicus  ==========*/
     &.AT4B {
       background-image: url(../images/klassen/AT4B.jpg);
@@ -426,12 +460,10 @@ header {
     &.AT3X {
       background-image: url(../images/klassen/AT3X.jpg);
     }
-
     /*==========  Evenemententechnicus  ==========*/
     &.ET3X {
       background-image: url(../images/klassen/ET3X.jpg);
     }
-
     /*==========  Geluidstechnicus  ==========*/
     &.AT4G {
       background-image: url(../images/klassen/AT4G.jpg);
@@ -439,7 +471,6 @@ header {
     &.GT4A {
       background-image: url(../images/klassen/GT4A.jpg);
     }
-
     /*==========  Media en Gamedeveloper  ==========*/
     &.GD4B {
       background-image: url(../images/klassen/GD4B.jpg);
@@ -450,7 +481,6 @@ header {
     &.MD4A {
       background-image: url(../images/klassen/MD4A.jpg);
     }
-
     /*==========  Ruimtelijk Vormgever  ==========*/
     &.RV4A {
       background-image: url(../images/klassen/RV4A.jpg);
@@ -461,7 +491,6 @@ header {
     &.RV4B {
       background-image: url(../images/klassen/RV4B.jpg);
     }
-
     /*==========  Podiumtechnicus  ==========*/
     &.PT3X {
       background-image: url(../images/klassen/PT3X.jpg);
@@ -478,7 +507,6 @@ header {
     &.PT4T {
       background-image: url(../images/klassen/PT4T.jpg);
     }
-
     /*==========  Filmacteur  ==========*/
     &.FA4A {
       background-image: url(../images/klassen/FA4A.jpg);
@@ -486,7 +514,6 @@ header {
     &.FA3B {
       background-image: url(../images/klassen/FA3B.jpg);
     }
-
     /*==========  Signmaker  ==========*/
     &.S2A {
       background-image: url(../images/klassen/S2A.jpg);
@@ -494,7 +521,6 @@ header {
     &.S3A {
       background-image: url(../images/klassen/S3A.jpg);
     }
-
     /*==========  Game Artist  ==========*/
     &.GA4B {
       background-image: url(../images/klassen/GA4B.jpg);

@@ -8,9 +8,12 @@
 			</div>
 		</div>
 		<div class="search">
-			<input class="" name="search-bar" ng-model="search.fullname" placeholder="" onfocus="this.placeholder=''" onblur="this.placeholder=''">
+			<input class="" name="search-bar" ng-model="search.fullname" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
 			<div class="border"></div>
-			<a class="close-reveal-modal" aria-label="Close">Sluiten &#215;</a>
+			<a class="close-reveal-modal" aria-label="Close">
+				<div class="icon-left"></div>
+				<div class="icon-right"></div>
+			</a>
 		</div>
 	</div>
 	<div class="opleidingen-menu hide">

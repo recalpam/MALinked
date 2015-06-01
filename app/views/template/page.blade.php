@@ -110,6 +110,7 @@
 		<script type="text/javascript" src="/packages/angular-ngprogress/ngProgress.js"></script>
 		<script type="text/javascript" src="/packages/angular-google-maps/lodash.min.js"></script>
 		<script type="text/javascript" src="/packages/angular-google-maps/angular-google-maps.min.js"></script>
+		<script type="text/javascript" src="/packages/angular-hotkeys/hotkeys.min.js"></script>
 
 		{{-- FOUNDATION --}}
 		<script src="/packages/foundation/js/foundation.min.js"></script>

@@ -10,6 +10,7 @@ angular.module('MaLinked', [
   'ngMaterial',
   'progressApp',
   'uiGmapgoogle-maps',
+  'cfp.hotkeys',
 
   /*==========  Native  ==========*/
   'MaLinked.Controllers',
@@ -25,7 +26,7 @@ angular.module('MaLinked', [
 =========================================*/
 .config(['$urlRouterProvider',
   function ($urlRouterProvider) {
-	$urlRouterProvider.otherwise("home");
+    $urlRouterProvider.otherwise("home");
   }
 ])
 
@@ -35,7 +36,7 @@ angular.module('MaLinked', [
 =========================================*/
 .config(['$locationProvider',
   function ($locationProvider) {
-	$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
   }
 ])
 
@@ -45,33 +46,33 @@ angular.module('MaLinked', [
 .run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams', 'API',
   function ($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams, API) {
 
-  	//$rootScope.search = {};
-	$rootScope.headerClass = "foobar";
+    //$rootScope.search = {};
+    $rootScope.headerClass = "foobar";
 
-	API.sync().then(function (response) {
-	  $rootScope.db = response;
-	});
-	$rootScope.state = $state;
+    API.sync().then(function (response) {
+      $rootScope.db = response;
+    });
+    $rootScope.state = $state;
 
-	/*==========  ngProgress  ==========*/
-	$rootScope.show = false;
-	ngProgress.start();
-	$timeout(function () {
-	  ngProgress.complete();
-	  $rootScope.show = true;
-	}, 2000);
-	$rootScope
-	  .$watch('$stateChangeStart', function () {
-		$rootScope.show = false;
-		ngProgress.start();
-	  });
-	$rootScope
-	  .$on('$stateChangeSuccess',
-		function (event, toState, toParams, fromState, fromParams) {
-		  ngProgress.complete();
-		  $(".site").removeClass("hide");
-		  $(this).scrollTop(0);
-		});
+    /*==========  ngProgress  ==========*/
+    $rootScope.show = false;
+    ngProgress.start();
+    $timeout(function () {
+      ngProgress.complete();
+      $rootScope.show = true;
+    }, 2000);
+    $rootScope
+      .$watch('$stateChangeStart', function () {
+        $rootScope.show = false;
+        ngProgress.start();
+      });
+    $rootScope
+      .$on('$stateChangeSuccess',
+        function (event, toState, toParams, fromState, fromParams) {
+          ngProgress.complete();
+          $(".site").removeClass("hide");
+          $(this).scrollTop(0);
+        });
   }
 ])
 
@@ -80,8 +81,8 @@ angular.module('MaLinked', [
 ===================================*/
 .config(function (uiGmapGoogleMapApiProvider) {
   uiGmapGoogleMapApiProvider.configure({
-	//    key: 'your api key',
-	v: '3.17',
-	libraries: 'weather,geometry,visualization'
+    //    key: 'your api key',
+    v: '3.17',
+    libraries: 'weather,geometry,visualization'
   });
 })

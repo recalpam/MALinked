@@ -5,7 +5,8 @@ class Files extends \Eloquent {
 	protected $appends = [
 		'thumbnail',
 		'medium',
-		'large'
+		'large',
+		'original'
 	]; 
 
 	// Add your validation rules here
@@ -37,5 +38,9 @@ class Files extends \Eloquent {
 
 	public function getLargeAttribute(){
 		return url()."/dynamic/files/large/{$this->fileHash}.{$this->fileExtension}";
+	}
+
+	public function getOriginalAttribute(){
+		return url()."/dynamic/files/{$this->fileHash}.{$this->fileExtension}";
 	}
 }

@@ -8,7 +8,7 @@
 			</div>
 		</div>
 		<div class="search">
-			<input class="" name="search-bar" ng-model="search.fullname" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
+			<input class="" name="search-bar" ng-model="search" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
 			<div class="border"></div>
 			<a class="close-reveal-modal" aria-label="Close">
 				<div class="icon-left"></div>

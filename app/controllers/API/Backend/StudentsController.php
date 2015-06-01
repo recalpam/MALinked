@@ -97,8 +97,10 @@ class StudentsController extends \BaseController {
 		$studentInfo->vimeo = Input::get('info.vimeo');
 		$studentInfo->youtube = Input::get('info.youtube');
 		$studentInfo->youtube = Input::get('info.youtube');
-		$studentInfo->hobbies = serialize(Input::get('info.hobbies'));
-		
+
+		$hobbies = serialize(Input::get('info.hobbies'));
+		$studentInfo->hobbies = $hobbies;
+
 		$studentInfo->push();
 
 		return 'Done';
@@ -106,7 +108,10 @@ class StudentsController extends \BaseController {
 
 	public function updateAboutSchool(){
 		$studentInfo = StudentInfo::where('student_id', '=', Auth::user()->id)->firstOrFail();
-		$studentInfo->fav_teacher = serialize(Input::get('info.fav_teacher'));
+
+		$fav_teacher = serialize(Input::get('info.fav_teacher'));
+		$studentInfo->fav_teacher = $fav_teacher;
+
 		$studentInfo->fav_project = Input::get('info.fav_project');
 		$studentInfo->fav_class = Input::get('info.fav_class');
 		$studentInfo->best_experience = Input::get('info.best_experience');

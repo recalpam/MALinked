@@ -14,29 +14,29 @@ angular.module('MaLinked.Services', [])
 =            PROFIELFOTO            =
 ===================================*/
 .directive('profielfoto', ['API',
-  function (API) {
-    var sync = API.sync();
-    return {
-      name: 'profielfoto',
-      replace: true,
-      template: '<img src="{{ uri }}" />',
-      controller: function ($scope, $element, $attrs, $transclude) {
-        $scope.uri = '';
-        sync.then(function (db) {
-          if ($attrs.studentId) {
-            var student = db.students.single({
-              id: $attrs.studentId
-            });
-            if (!student.file || !student.file[$attrs.size]) {
-              $scope.uri = "/static/anon.jpg";
-            } else {
-              $scope.uri = student.file[$attrs.size];
+    function(API) {
+        var sync = API.sync();
+        return {
+            name: 'profielfoto',
+            replace: true,
+            template: '<img src="{{ uri }}" />',
+            controller: function($scope, $element, $attrs, $transclude) {
+                $scope.uri = '';
+                sync.then(function(db) {
+                    if ($attrs.studentId) {
+                        var student = db.students.single({
+                            id: $attrs.studentId
+                        });
+                        if (!student.file || !student.file[$attrs.size]) {
+                            $scope.uri = "/static/anon.jpg";
+                        } else {
+                            $scope.uri = student.file[$attrs.size];
+                        }
+                    }
+                });
             }
-          }
-        });
-      }
-    };
-  }
+        };
+    }
 ])
 /*======================================
 =            PROFIELBLOKKEN            =
@@ -84,47 +84,47 @@ angular.module('MaLinked.Services', [])
 
           if (!infoStudent) continue;
 
-          if (projects.length > 0) {
-            var project = projects.pop();
-            iElm.append(
-              block.clone().addClass("project-info")
-              .append($('<h2></h2>').text(project.title))
-              .append($('<p></p>').text(project.description))
-            );
+                    if (projects.length > 0) {
+                        var project = projects.pop();
+                        iElm.append(
+                            block.clone().addClass("project-info")
+                            .append($('<h2></h2>').text(project.title))
+                            .append($('<p></p>').text(project.description))
+                        );
 
-            if (project.project_file.length > 0) {
-              var file = project.project_file.pop();
-              if (file.fileExtension == "png" || file.fileExtension == "jpg" || file.fileExtension == "jpeg") {
-                iElm.append(
-                  block.clone().addClass("project-image")
-                  .append($('<img/>').attr("src", file.medium))
-                );
-              }
+                        if (project.project_file.length > 0) {
+                            var file = project.project_file.pop();
+                            if (file.fileExtension == "png" || file.fileExtension == "jpg" || file.fileExtension == "jpeg") {
+                                iElm.append(
+                                    block.clone().addClass("project-image")
+                                    .append($('<img/>').attr("src", file.medium))
+                                );
+                            }
 
+                        }
+                    }
+
+                    if (!infoBlok.container) {
+                        iElm.append(
+                            block.clone().addClass(infoBlok.css)
+                            .append($('<h2></h2>').text(infoBlok.title))
+                            .append($('<p></p>').text(infoStudent))
+                        );
+                    }
+
+                    if (infoBlok.container == "span") {
+                        iElm.append(
+                            block.clone().addClass(infoBlok.css)
+                            .append($('<h2></h2>').text(infoBlok.title))
+                            .append($('<span></span>').text(infoStudent))
+                        );
+                    }
+
+                }
+                var blockEqualize = $('.block');
+                var blockEqualizeWidth = blockEqualize.width();
+                $(blockEqualize).height(blockEqualizeWidth);
             }
-          }
-
-          if (!infoBlok.container) {
-            iElm.append(
-              block.clone().addClass(infoBlok.css)
-              .append($('<h2></h2>').text(infoBlok.title))
-              .append($('<p></p>').text(infoStudent))
-            );
-          }
-
-          if (infoBlok.container == "span") {
-            iElm.append(
-              block.clone().addClass(infoBlok.css)
-              .append($('<h2></h2>').text(infoBlok.title))
-              .append($('<span></span>').text(infoStudent))
-            );
-          }
-
-        }
-        var blockEqualize = $('.block');
-        var blockEqualizeWidth = blockEqualize.width();
-        $(blockEqualize).height(blockEqualizeWidth);
-      }
-    };
-  }
+        };
+    }
 ])

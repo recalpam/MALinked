@@ -13,7 +13,6 @@
 
 			{{-- PAGE CSS --}}
 	    {{ HTML::style('/static/stylesheets/app.css') }}
-
 	    {{-- Hotjar Tracking Code for beta.malinked.nl --}}
 			<script>
 	    (function(f,b){

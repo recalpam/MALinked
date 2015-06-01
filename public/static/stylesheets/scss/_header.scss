@@ -171,6 +171,18 @@ header {
         color: $white;
         background-color: rgba(0, 0, 0, 0.75);
         // z-index: 1000;
+        p {
+          &.searchinfo {
+            position: absolute;
+
+            display: inline-block;
+
+            margin-top: -29px;
+            padding: 5px 5px 0;
+
+            background-color: rgba(0, 0, 0, 0.75);
+          }
+        }
         input {
           @include input-placeholder {
             color: $vapor;

@@ -28,6 +28,7 @@
 			<div class="content">
 				<a href="#" data-reveal-id="searchModal">
 					<div class="search-bar row">
+						<p class="searchinfo">Examen kandidaten 2014/2015 Mediacollege Amsterdam</p>
 						<input name="search-bar" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
 					</div>
 				</a>

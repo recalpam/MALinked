@@ -19,7 +19,8 @@ angular.module('MaLinked.Controllers', [])
             5: '29 studenten hun stageperiode een 10 hebben gegeven?',
             6: 'Er 488 studenten afstuderen dit jaar?',
             7: 'Evenemententechnicus de kleinste opleiding is met 3 studenten?',
-            8: 'AV4A de grootste klas is met 32 studenten?'
+            8: 'AV4A de grootste klas is met 32 studenten?',
+            9: 'malinked.nl ontwikkeld is door studenten van Media Development en Interactief Vormgeven!!'
         };
 
         var getRandomFact = function() {
@@ -447,6 +448,7 @@ angular.module('MaLinked.Controllers', [])
 ])
 
 .controller('klas', ['$scope', 'db', '$stateParams', '$rootScope',
+
     function($scope, db, $stateParams, $rootScope) {
         var klas = db.group.single({
             slug: $stateParams.slug

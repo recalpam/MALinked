@@ -77,7 +77,6 @@ angular.module('MaLinked.Factories', ['progressApp'])
         querify = function(object) {
             if (typeof(object) == "object") {
                 for (var candidate in object) {
-
                     /* Filter based upon params */
                     object[candidate].where = function(params) {
                         return $filter('filter')(this, params);
@@ -122,7 +121,7 @@ angular.module('MaLinked.Factories', ['progressApp'])
                 // Get the user, returns false if not logged in
                 get: function( fn ){
                     get('auth/1/check').success(function(data, status, headers, config) {
-                        fn( this.querify(data) );
+                        fn( data );
                     });
                 },
 

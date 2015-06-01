@@ -1171,46 +1171,46 @@ h1, h2, h3, h4, h5, h6, p, a {
 
     background-repeat: no-repeat;
     background-position: center center;
-    &.grafisch-vormgever {
+    &[class*=' grafisch-vormgever'] {
       background-color: $grafisch-vormgever;
     }
-    &.interactief-vormgever {
+    &[class*=' interactief-vormgever'] {
       background-color: $interactief-vormgever;
     }
-    &.ruimtelijk-vormgever {
+    &[class*=' vormgever-productpresentatie'], &[class*=' stand-winkel-en-decorvormgever'] {
       background-color: $ruimtelijk-vormgever;
     }
-    &.audiovisueel-vormgeveranimatie {
+    &[class*=' animatieav-vormgeven'] {
       background-color: $audiovisueel-vormgeveranimatie;
     }
-    &.filmacteur {
+    &[class*=' filmacteur'] {
       background-color: $filmacteur;
     }
-    &.av-technicus {
+    &[class*=' av-techniek'], &[class*=' allround-medewerker-av-productie'] {
       background-color: $av-technicus;
     }
-    &.podiumtechnicus {
+    &[class*=' medewerker-podium'], &[class*=' allround-podium'], &[class*=' podiumtechnicus'] {
       background-color: $podiumtechnicus;
     }
-    &.evenemententechnicus {
+    &[class*=' evenemententechnicus'] {
       background-color: $evenemententechnicus;
     }
-    &.geluidstechnicus {
+    &[class*=' av-techniek-geluidstechnicus'] {
       background-color: $geluidstechnicus;
     }
-    &.media-en-gamedeveloper {
+    &[class*=' game-developer'], &[class*=' media-developer'] {
       background-color: $media-en-gamedeveloper;
     }
-    &.game-artist {
+    &[class*=' game-artist'] {
       background-color: $game-artist;
     }
-    &.mediamanager {
+    &[class*=' mediamanager'] {
       background-color: $mediamanager;
     }
-    &.dtp-er {
+    &[class*=' medewerker-dtp'], &[class*=' allround-dtp'] {
       background-color: $dtp-er;
     }
-    &.signmaker {
+    &[class*=' allround-sign'], &[class*=' medewerker-sign'] {
       background-color: $signmaker;
     }
     &:after {
@@ -1225,6 +1225,9 @@ h1, h2, h3, h4, h5, h6, p, a {
       height: 83px;
 
       content: "";
+    }
+    &:hover {
+      cursor: pointer;
     }
     .info {
       position: absolute;

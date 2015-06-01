@@ -118,12 +118,18 @@ angular.module('Dashboard.Controllers', [])
     });
     $scope.postData = function(){
         var hobbies = $(".hobby-field input").val();
-        var explodeHobbies = hobbies.split(',');
-        var hobbiesObj = {};
-        for (var i=0; i<explodeHobbies.length; i++) {  
-               hobbiesObj[i] = explodeHobbies[i];
+        if( hobbies.length > 0 ){
+            var explodeHobbies = hobbies.split(',');
+            var hobbiesObj = {};
+            for (var i=0; i<explodeHobbies.length; i++) {  
+                   hobbiesObj[i] = explodeHobbies[i];
+            }
+
+            $scope.userData.info.hobbies = hobbiesObj;
+        } else {
+            $scope.userData.info.hobbies = {};
         }
-        $scope.userData.info.hobbies = hobbiesObj;
+        
 
         if( typeof angular.element('#headerImage').val() != 'undefined'){
             API.user.uploadFileToUrl('header', angular.element('#headerImage'));
@@ -208,14 +214,18 @@ angular.module('Dashboard.Controllers', [])
 
         $scope.postData = function(){
             var hobbies = $(".docent-school-field input").val();
-            var explodeHobbies = hobbies.split(',');
-            var fav_teacher = {};
+            if( hobbies.length > 0 ){
+                var explodeHobbies = hobbies.split(',');
+                var fav_teacher = {};
 
-            for (var i=0; i<explodeHobbies.length; i++) {  
-                   fav_teacher[i] = explodeHobbies[i];
+                for (var i=0; i<explodeHobbies.length; i++) {  
+                       fav_teacher[i] = explodeHobbies[i];
+                }
+
+                $scope.userData.info.fav_teacher = fav_teacher;
+                } else {
+                $scope.userData.info.hobbies = {};
             }
-
-            $scope.userData.info.fav_teacher = fav_teacher;
 
             API.user.set('updateAboutSchool', $scope.userData, function(){
                $('#savedPopup').slideDown('fast').delay(2100).slideUp('fast');

@@ -13,7 +13,6 @@
 
 			{{-- PAGE CSS --}}
 	    {{ HTML::style('/static/stylesheets/app.css') }}
-
 	    {{-- Hotjar Tracking Code for beta.malinked.nl --}}
 			<script>
 	    (function(f,b){
@@ -101,6 +100,11 @@
 
 		<!-- JQUERY TRASH -->
 		<script type="text/javascript" src="/packages/jquery/dist/jquery.js"></script>
+		<script type="text/javascript">
+			$("document").ready(function(){
+				$(this).scrollTop(0);
+			});
+		</script>
 
 		<!-- ANGULARJS -->
 		<script type="text/javascript" src="/packages/angular/angular.js"></script>

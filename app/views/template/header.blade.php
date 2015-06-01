@@ -1,6 +1,5 @@
 {{-- HEADER START --}}
 <header class="@{{ state.current.name }} @{{ headerClass }}" ng-class="@{{ headerClass }}">
-
 	{{-- NAV --}}
 	<nav class="menu" role="navigation">
 		<div class="row">
@@ -14,10 +13,8 @@
 			</ul>
 		</div>
 	</nav>
-
 	{{-- HEADER LAYOUT SWITCH --}}
 	<angular ng-switch on="state.current.name">
-
 		{{-- HOME LAYOUT --}}
 		<angular ng-switch-when="home">
 			<video preload="auto" autoplay loop muted>
@@ -34,9 +31,13 @@
 			</div>
 			<div class="overlay"></div>
 		</angular>
-
 		{{-- PROFIEL LAYOUT --}}
 		<angular ng-switch-when="profiel">
+		<style>
+			header {
+				background-image: url(@{{student.background_file.original}});
+			}
+		</style>
 			<div class="content">
 				<div class="bar">
 					<div class="row">
@@ -45,39 +46,35 @@
 						</div>
 						<div class="small-12 medium-6 text-right columns social">
 							<a href="@{{student.info.website}}" class="website"></a>
-<!-- 							<a href="@{{student.info.website}}" class="linkedin"></a>
-<a href="#" class="dribbble"></a>
-<a href="#" class="behance"></a>
-<a href="#" class="vimeo"></a>
-<a href="#" class="youtube"></a>
-<a href="#" class="facebook"></a> -->
+							<!-- 							<a href="@{{student.info.website}}" class="linkedin"></a>
+							<a href="#" class="dribbble"></a>
+							<a href="#" class="behance"></a>
+							<a href="#" class="vimeo"></a>
+							<a href="#" class="youtube"></a>
+							<a href="#" class="facebook"></a> -->
 						</div>
 					</div>
 				</div>
-				<profielfoto class="image" student-id="@{{ student.id }}" size="medium" alt="@{{ student.fullname }}"/>
-
-			</div>
-			<div class="overlay"></div>
+				<img class="image" src="@{{student.file.medium || '/static/anon.jpg'}}" />
+					
+				<div class="overlay"></div>
+			</angular>
+			{{-- OPLEIDING LAYOUT --}}
+			<angular ng-switch-when="opleiding">
+				<div class="content">
+					<div class="align">
+						<div class="row">
+							<div class="small-12 columns">
+								<h1>@{{ study.name }}</h1>
+							</div>
+							<div class="small-12 columns">
+								{{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat in voluptate non proident.</p> --}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</angular>
+			{{-- END SWITCH --}}
 		</angular>
-
-		{{-- OPLEIDING LAYOUT --}}
-		<angular ng-switch-when="opleiding">
-      <div class="content">
-        <div class="align">
-          <div class="row">
-            <div class="small-12 columns">
-              <h1>@{{ study.name }}</h1>
-            </div>
-            <div class="small-12 columns">
-              {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat in voluptate non proident.</p> --}}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="overlay"></div>
-		</angular>
-
-	{{-- END SWITCH --}}
-	</angular>
-
-</header>
+	</header>

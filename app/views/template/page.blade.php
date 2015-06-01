@@ -84,6 +84,21 @@
 			<ui-view></ui-view>
 		</div>
 
+		<footer>
+			<div class="row">
+				<div class="small-12 medium-8 columns">
+					&copy; <?php echo date("Y") ?> - <a ui-sref="home">malinked.nl</a> is onderdeel van het <a href="http://ma-web.nl" target="_blank">Mediacollege Amsterdam</a>
+				</div>
+				<div class="small-12 medium-4 columns text-right">
+					<ul>
+						<li><a ui-sref="login">Inloggen</a></li>
+						<li> - </li>
+						<li><a ui-sref="team">Team</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
 		<!-- JQUERY TRASH -->
 		<script type="text/javascript" src="/packages/jquery/dist/jquery.js"></script>
 

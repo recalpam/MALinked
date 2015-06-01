@@ -28,7 +28,7 @@
 	<div class="full-row">
 		{{-- <div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-offset-4 medium-4 large-offset-3 large-3 columns"> --}}
 		<div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-4 large-3 columns end">
-			<div class="student gameartist">
+			<div class="student @{{ student.group.slug }}">
 				<div class="info">
 					<h4>@{{ student.fullname }}</h4>
 					<p>@{{ student.group.fullname }}</p>
@@ -38,16 +38,5 @@
 				</figure>
 			</div>
 		</div>
-		<!-- <div class="small-12 medium-offset-4 medium-4 large-offset-3 large-3 columns">
-			<div class="student gameartist">
-				<div class="info">
-					<h4>Lisley de Jong</h4>
-					<p>Game Artist</p>
-				</div>
-				<figure>
-					<img src="/static/images/profile-photo.png">
-				</figure>
-			</div>
-		</div> -->
 	</div>
 </div>

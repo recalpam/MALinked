@@ -216,11 +216,11 @@ article {
         text-transform: none;
       }
       .tag {
-        color: pink !important;
-        border: 1px solid pink !important;
-        background: $secondary-color !important;
+        color: $white !important;
+        border: 1px solid $primary-color !important;
+        background: $magenta !important;
         a {
-          color: pink !important;
+          color: $white !important;
         }
       }
     }

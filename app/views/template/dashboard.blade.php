@@ -13,6 +13,7 @@
 
 			{{-- PAGE CSS --}}
 	    {{ HTML::style('/static/stylesheets/dashboard.css') }}
+	    {{ HTML::style('/packages/jquery.tagsinput/jquery.tagsinput.css') }}
 
 	    {{-- Hotjar Tracking Code for beta.malinked.nl --}}
 			<script>
@@ -108,7 +109,7 @@
 				      <a href="/profiel/{{ Auth::user()->group->slug }}/{{ Auth::user()->slug }}" target="_blank" class="profiel-bekijken">Bekijk je profiel</a>
 				    </div>
 				    <div class="medium-4 columns logout">
-				      
+
 				    </div>
 				  </div>
 				</header>

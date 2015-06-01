@@ -136,10 +136,10 @@ angular.module('MaLinked.Controllers', [])
         /*==========  Search Bar Click Focus Search Input  ==========*/
         setTimeout(function() {
             if ($('header.home .content .search-bar input').length) {
-                console.log('doet het wel');
+
 
                 $('header.home .content .search-bar input').on('click', function() {
-                    console.log('click');
+
 
                     setTimeout(function() {
                         if ($('#searchModal input').length) {
@@ -151,7 +151,7 @@ angular.module('MaLinked.Controllers', [])
         }, 1000);
 
         $('header.home .content .search-bar input').click(function() {
-            console.log('click');
+
             setTimeout(function() {
                 $('#searchModal input').focus();
             }, 3000);

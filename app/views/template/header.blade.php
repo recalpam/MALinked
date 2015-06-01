@@ -15,6 +15,19 @@
 	</nav>
 	{{-- HEADER LAYOUT SWITCH --}}
 	<angular ng-switch on="state.current.name">
+		{{-- TEAM LAYOUT --}}
+		<angular ng-switch-when="team">
+			<div class="content">
+				<div class="align">
+					<div class="row">
+						<div class="small-12 columns">
+							<h1>Het Ma linked team</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="overlay"></div>
+		</angular>
 		{{-- HOME LAYOUT --}}
 		<angular ng-switch-when="home">
 			<video preload="auto" autoplay loop muted>
@@ -32,13 +45,29 @@
 			</div>
 			<div class="overlay"></div>
 		</angular>
+			{{-- OPLEIDING LAYOUT --}}
+			<angular ng-switch-when="opleiding">
+				<div class="content">
+					<div class="align">
+						<div class="row">
+							<div class="small-12 columns">
+								<h1>@{{ study.name }}</h1>
+							</div>
+							<div class="small-12 columns">
+								{{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat in voluptate non proident.</p> --}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</angular>
 		{{-- PROFIEL LAYOUT --}}
 		<angular ng-switch-when="profiel">
-		<style>
-			header {
-				background-image: url(@{{student.background_file.original}});
-			}
-		</style>
+			<style>
+				header {
+					background-image: url(@{{student.background_file.original}});
+				}
+			</style>
 			<div class="content">
 				<div class="bar">
 					<div class="row">
@@ -57,24 +86,6 @@
 					</div>
 				</div>
 				<img class="image" src="@{{student.file.medium || '/static/anon.jpg'}}" />
-					
-					
-				<div class="overlay"></div>
-			</angular>
-			{{-- OPLEIDING LAYOUT --}}
-			<angular ng-switch-when="opleiding">
-				<div class="content">
-					<div class="align">
-						<div class="row">
-							<div class="small-12 columns">
-								<h1>@{{ study.name }}</h1>
-							</div>
-							<div class="small-12 columns">
-								{{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat in voluptate non proident.</p> --}}
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="overlay"></div>
 			</angular>
 			{{-- END SWITCH --}}

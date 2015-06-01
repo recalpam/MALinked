@@ -116,7 +116,7 @@
 		<script src="/packages/foundation/js/foundation.min.js"></script>
 
 		{{-- ZOEK MODAL --}}
-		<script src="/static/scripts/zoeken.js"></script>
+		<script src="/static/scripts/app.js"></script>
 
 		{{-- OUTDATED BROWSER JS --}}
 		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>

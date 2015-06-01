@@ -41,6 +41,7 @@ angular.module('MaLinked.Routes', [])
         .state(new state('profiel', '/profiel/{groep}/{student}'))
         .state(new state('opleiding', '/opleiding/{slug}'))
         .state(new state('opleidingen'))
+        .state(new state('team'))
         .state(new state('login'))
 
     }

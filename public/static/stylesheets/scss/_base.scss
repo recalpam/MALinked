@@ -842,6 +842,31 @@ h1, h2, h3, h4, h5, h6, p, a {
 /*-----  End of Profile page  ------*/
 
 
+/*=================================
+=            Team page            =
+=================================*/
+.team {
+  figure {
+    img {
+      @include border-radius(100%);
+    }
+    figcaption {
+      text-align: center;
+      h2 {
+        color: $magenta;
+        font-size: rem-calc(25);
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+/*-----  End of Team page  ------*/
+
+
+
+
 /*==============================
 =            Search            =
 ==============================*/

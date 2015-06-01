@@ -60,16 +60,16 @@ angular.module('MaLinked.Services', [])
         // Assign to scope so children can access the neccisary data.
         $scope.infoBlokken = {
           future_vision: infoBlok('Mijn toekomstbeeld', 'toekomstbeeld'),
-          fav_teacher: infoBlok('Favoriete Leraren', 'favoriet'),
-          fav_project: infoBlok('Favoriete Projecten', 'favoriet'),
-          fav_class: infoBlok('Favoriete Klas', 'favoriet'),
-          rate_school: infoBlok('Schoolcijfer', 'hoewas', 'span'),
-          rate_internship: infoBlok('Stagecijfer', 'hoewas', 'span'),
+          fav_teacher: infoBlok('Favoriete leraren', 'favoriet'),
+          fav_project: infoBlok('Favoriete projecten', 'favoriet'),
+          fav_class: infoBlok('Favoriete vak', 'favoriet'),
+          rate_school: infoBlok('Hoe was de klas van', 'hoewas', 'span'),
+          rate_internship: infoBlok('Hoe was de stage van', 'hoewas', 'span'),
           specialize: infoBlok('Specialisaties', 'favoriet'),
-          school_match_ambitions: infoBlok('Tevreden over MA?', 'favoriet'),
-          hobbies: infoBlok('Hobbies', 'favoriet'),
-          why_ma: infoBlok('Waarom gekozen voor MA?', 'favoriet'),
-          best_experience: infoBlok('Memorabel Moment', 'favoriet')
+          school_match_ambitions: infoBlok('Ben je tevreden over het Mediacollege?', 'favoriet'),
+          hobbies: infoBlok('Hobby’s', 'favoriet'),
+          why_ma: infoBlok('Waarom heb je voor het Mediacollege gekozen?', 'favoriet'),
+          best_experience: infoBlok('Wat was de leukste ervaring van ... op school?', 'favoriet')
         };
       },
       // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements

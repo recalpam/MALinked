@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="logo" ui-sref="home">
 				<span class="icon"></span>
-				<span class="text">Ma Linked</span>
+				<span class="text">Ma linked</span>
 			</div>
 			<ul>
 				<a ui-sref="home"><li>Opleidingen</li></a>
@@ -71,6 +71,20 @@
             </div>
             <div class="small-12 columns">
               {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat in voluptate non proident.</p> --}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overlay"></div>
+		</angular>
+
+		{{-- TEAM LAYOUT --}}
+		<angular ng-switch-when="team">
+      <div class="content">
+        <div class="align">
+          <div class="row">
+            <div class="small-12 columns">
+              <h1>Het Ma linked team</h1>
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@
         <div class="row">
           <div class="logo">
             <span class="icon"></span>
-            <span class="text">Ma Linked</span>
+            <span class="text">Ma linked</span>
             <span class="info">Marja de Leeuw</span>
           </div>
           <ul>

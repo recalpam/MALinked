@@ -27,16 +27,21 @@
 	</div>
 	<div class="full-row">
 		{{-- <div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-offset-4 medium-4 large-offset-3 large-3 columns"> --}}
-		<div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-4 large-3 columns end">
-			<div class="student @{{ student.group.slug }}">
-				<div class="info">
-					<h4>@{{ student.fullname }}</h4>
-					<p>@{{ student.group.fullname }}</p>
+			<div ng-repeat="student in db.students | filter:search | limitTo: 20" ui-sref="profiel({ groep:student.group.slug, student:student.slug })" class="small-12 medium-4 large-3 columns end">
+				<style>
+					#@{{student.slug}} {
+						background-image: url(@{{student.background_file.original}});
+					}
+				</style>
+				<div id="@{{student.slug}}" class="student @{{ student.group.slug }}">
+					<div class="info">
+						<h4>@{{ student.fullname }}</h4>
+						<p>@{{ student.group.fullname }}</p>
+					</div>
+					<figure>
+						<profielfoto student-id="@{{ student.id }}" size="thumbnail" alt="@{{ student.fullname }}"/>
+						</figure>
+					</div>
 				</div>
-				<figure>
-					<profielfoto student-id="@{{ student.id }}" size="thumbnail" alt="@{{ student.fullname }}"/>
-				</figure>
 			</div>
 		</div>
-	</div>
-</div>

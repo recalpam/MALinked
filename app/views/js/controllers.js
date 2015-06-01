@@ -143,13 +143,13 @@ angular.module('MaLinked.Controllers', [])
 
     $scope.studies = overview;
 
-    /*==========  Search Bar Click Focus Search Input  ==========*/
-    setTimeout(function () {
-      if ($('header.home .content .search-bar input').length) {
-        console.log('doet het wel');
+        /*==========  Search Bar Click Focus Search Input  ==========*/
+        setTimeout(function() {
+            if ($('header.home .content .search-bar input').length) {
 
-        $('header.home .content .search-bar input').on('click', function () {
-          console.log('click');
+
+                $('header.home .content .search-bar input').on('click', function() {
+
 
           setTimeout(function () {
             if ($('#searchModal input').length) {
@@ -160,13 +160,14 @@ angular.module('MaLinked.Controllers', [])
       }
     }, 1000);
 
-    $('header.home .content .search-bar input').click(function () {
-      console.log('click');
-      setTimeout(function () {
-        $('#searchModal input').focus();
-      }, 3000);
-    });
-  }
+        $('header.home .content .search-bar input').click(function() {
+
+            setTimeout(function() {
+                $('#searchModal input').focus();
+            }, 3000);
+        });
+
+    }
 ])
 
 /*==========  Profiel  ==========*/

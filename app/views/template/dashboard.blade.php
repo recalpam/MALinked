@@ -69,6 +69,24 @@
 			    right: 0;
 			    z-index: 99999;
 			}
+
+			#savedPopup{
+				width: 100px;
+				height: auto;
+				font-size: 10pt;
+				margin-left: 50%;
+				padding: 5px;
+				left: -50px;
+				top: 0;
+				text-align: center;
+				position: fixed;
+				z-index: 1001;
+				background: #eb068c;
+				color: #ffffff;
+				border: 0;
+				border-radius:  0 0 3px 3px;
+				display: none;
+			}
 		</style>
 		<base href="/">
 	</head>
@@ -77,6 +95,7 @@
 		<div ng-switch on="state.current.name">
 			@if (Auth::user())
 			<div ng-switch-default>
+				<div id="savedPopup">&#10004; Opgeslagen</div>
 				<!-- PAGE CONTAINER -->
 				<header>
 				  <div class="row">

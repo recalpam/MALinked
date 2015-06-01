@@ -9,7 +9,7 @@
 			</div>
 			<ul>
 				<a ui-sref="home"><li>Opleidingen</li></a>
-				<a href="#" data-reveal-id="searchModal"><li>Zoeken</li></a>
+				<a href="#" ng-click="zoekModal()"><li>Zoeken</li></a>
 			</ul>
 		</div>
 	</nav>
@@ -23,10 +23,10 @@
 				Sorry, your browser does not support HTML5 video.
 			</video>
 			<div class="content">
-				<a href="#" data-reveal-id="searchModal">
+				<a ng-click="zoekModal()">
 					<div class="search-bar row">
 						<p class="searchinfo">Examen kandidaten 2014/2015 Mediacollege Amsterdam</p>
-						<input name="search-bar" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
+						<input ng-model="search" name="search-bar" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
 					</div>
 				</a>
 			</div>

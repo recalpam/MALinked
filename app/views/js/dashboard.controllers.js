@@ -32,7 +32,6 @@ angular.module('Dashboard.Controllers', [])
                     $window.location.href = '/dashboard/waarom-het-ma';
                 }
                 
-                console.log(data);
             });
             
         };
@@ -70,7 +69,7 @@ angular.module('Dashboard.Controllers', [])
 
         $scope.postData = function(){
             API.user.set('updateWhyMa', $scope.userData, function(){
-                alert('Klaar is Kees');
+                $('#savedPopup').slideDown('fast').delay(2100).slideUp('fast');
             });
         }
   }
@@ -126,7 +125,7 @@ angular.module('Dashboard.Controllers', [])
         }
         
         API.user.set('updateHobbiesEnGegevens', $scope.userData, function(){
-            alert('Klaar is Kees');
+            $('#savedPopup').slideDown('fast').delay(2100).slideUp('fast');
         });
     }
   }
@@ -201,7 +200,7 @@ angular.module('Dashboard.Controllers', [])
 
         $scope.postData = function(){
             API.user.set('updateAboutSchool', $scope.userData, function(){
-                alert('Klaar is Kees');
+               $('#savedPopup').slideDown('fast').delay(2100).slideUp('fast');
             });
         }
   }
@@ -234,7 +233,7 @@ angular.module('Dashboard.Controllers', [])
 
         $scope.postData = function(){
             API.user.set('updateFutureVision', $scope.userData, function(){
-                alert('Klaar is Kees');
+                $('#savedPopup').slideDown('fast').delay(2100).slideUp('fast');
             });
         }
 

@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6, p, a {
       background-image: url(../images/background/homepage_evenemententechnicus.png);
     }
     &.geluidstechnicus {
-      background-image: url(../images/background/homepage_dtp.png);
+      background-image: url(../images/background/homepage_geluidtechnicus.png);
     }
     &.media-en-gamedeveloper {
       background-image: url(../images/background/homepage_mediaengamedeveloper.png);
@@ -445,7 +445,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     }
   }
   &[class*=' grafisch-vormgever'] {
-  // &.grafisch-vormgever {
+    // &.grafisch-vormgever {
     .toekomstbeeld {
       background-color: $grafisch-vormgever;
       h2, p {
@@ -586,7 +586,7 @@ h1, h2, h3, h4, h5, h6, p, a {
     }
   }
   &[class*=' allround-medewerker-av-productie'], &[class*=' av-techniek-cameraman'], &[class*=' av-techniek-lichttechnicus'] {
-  // &.allround-medewerker-av-productie, &.av-techniek-cameraman, &.av-techniek-lichttechnicus {
+    // &.allround-medewerker-av-productie, &.av-techniek-cameraman, &.av-techniek-lichttechnicus {
     .toekomstbeeld {
       background-color: $av-technicus;
       h2, p {
@@ -847,7 +847,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 ==============================*/
 #searchModal {
   position: fixed;
-  top: 0;
+  top: 0 !important;
   right: 0;
   bottom: 0;
   left: 0;
@@ -979,9 +979,6 @@ h1, h2, h3, h4, h5, h6, p, a {
 
     background-color: $white;
   }
-  a.close-reveal-modal {
-    padding-top: 25px;
-  }
   .opleidingen-menu {
     position: absolute;
     z-index: 100000;
@@ -1071,11 +1068,44 @@ h1, h2, h3, h4, h5, h6, p, a {
       }
     }
   }
-  .hamburger {
-    @include btn(0px, 0);
+  .close-reveal-modal {
+    @include btnsearch(30px, 30px);
+    .icon-left {
+      @include icon(4px, 15px);
 
-    top: 30px;
-    left: 30px;
+      left: 0;
+
+      background: transparent;
+      &:before {
+        @include icon-before(4px, 15px, -10px);
+        @include transform(rotateZ(45deg) scaleX(1.4) translate(2px, 2px));
+      }
+      &:after {
+        @include icon-after(4px, 15px, 10px);
+        @include transform(rotateZ(-45deg) scaleX(1.4) translate(2px, -2px));
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .icon-right {
+      @include icon(4px, 15px);
+
+      left: 15px;
+
+      background: transparent;
+      &:before {
+        @include icon-before(4px, 15px, -10px);
+        @include transform(rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px));
+      }
+      &:after {
+        @include icon-after(4px, 15px, 10px);
+        @include transform(rotateZ(45deg) scaleX(1.4) translate(-2px, -2px));
+      }
+    }
+  }
+  .hamburger {
+    @include btn(30px, 30px);
     .icon-left {
       @include icon(4px, 15px);
 

@@ -16,6 +16,17 @@
   height: 30px;
 }
 
+@mixin btnsearch($right, $top) {
+  @include transition-duration(0.5s);
+
+  position: absolute;
+  top: $top;
+  right: $right;
+
+  width: 30px;
+  height: 30px;
+}
+
 @mixin icon($height, $width) {
   @include transition-duration(0.5s);
 

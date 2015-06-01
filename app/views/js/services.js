@@ -65,7 +65,7 @@ angular.module('MaLinked.Services', [])
           fav_class: infoBlok('Favoriete Klas', 'favoriet'),
           rate_school: infoBlok('Schoolcijfer', 'hoewas', 'span'),
           rate_internship: infoBlok('Stagecijfer', 'hoewas', 'span'),
-          specialize: infoBlok('Specializaties', 'favoriet'),
+          specialize: infoBlok('Specialisaties', 'favoriet'),
           school_match_ambitions: infoBlok('Tevreden over MA?', 'favoriet'),
           hobbies: infoBlok('Hobbies', 'favoriet'),
           why_ma: infoBlok('Waarom gekozen voor MA?', 'favoriet'),

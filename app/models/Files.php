@@ -38,5 +38,4 @@ class Files extends \Eloquent {
 	public function getLargeAttribute(){
 		return url()."/dynamic/files/large/{$this->fileHash}.{$this->fileExtension}";
 	}
-
 }

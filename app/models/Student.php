@@ -78,7 +78,7 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
     }
 
 	public static function nested(){
-		return self::with(array('info', 'group', 'group.study', 'file', 'projects', 'projects.projectFile'));
+		return self::with(array('info', 'group', 'group.study', 'file', 'backgroundFile', 'projects', 'projects.projectFile'));
 	}
 
 	public function info()
@@ -100,6 +100,11 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface, S
 	{
 		return $this->hasMany('Project');
 	}
+
+	public function backgroundFile(){
+		return $this->hasOne('files', 'id', 'background_file_id');
+	}
+
 
 	public static function search($term){
 		return DB::select( DB::raw("select `students`.`id` as `studentID`, `students`.`nameFirst` as `studentFirstname`, `students`.`nameInsertion` as `studentInsertion`, `students`.`nameLast` as `studentLastname`, `groups`.`name` as `groupName`, `groups`.`fullname` as `groupNameFull`, `studies`.`name` as `studyName`, `studies`.`color` as `studyColor` from `students` left join `groups` on `students`.`group_id` = `groups`.`id` left join `studies` on `groups`.`study_id` = `studies`.`id` where CONCAT_WS(' ', `nameFirst`, `nameInsertion`, `nameLast`) LIKE '%$term%' OR CONCAT_WS(' ', `nameFirst`, `nameLast`) LIKE '%$term%' limit 25 offset 0" ) );

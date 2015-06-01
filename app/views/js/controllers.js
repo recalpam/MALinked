@@ -186,6 +186,14 @@ angular.module('MaLinked.Controllers', [])
             }
         }
 
+         // Loop through all info elements
+        for (var key in student.projects) {
+            // Whenever a string is occurred
+            if (typeof(student.projects[key].description) == "string") {
+                student.projects[key].description = student.projects[key].description.replace(db.br, '\n');
+            }
+        }
+
         // Maps shizzle
         var mapsLocation = student.info.location,
             geocoder = new google.maps.Geocoder(),

@@ -38,7 +38,7 @@ function msieversion() {
 };
 
 
-/*==========  Header Scroll  ==========*/
+/*==========  Header Scroll  ==========
 // Cache
 var $content = $('header .content'),
   $blur = $('header .overlay'),
@@ -89,9 +89,8 @@ Scroller.prototype = {
     var currentScrollY = this.latestKnownScrollY;
     this.ticking = false;
 
-    /**
-     * Do The Dirty Work Here
-     */
+
+    // Do The Dirty Work Here
     var slowScroll = currentScrollY / 2,
       blurScroll = currentScrollY * 2;
 
@@ -110,6 +109,7 @@ Scroller.prototype = {
 // Attach!
 var scroller = new Scroller();
 scroller.init();
+*/
 
 
 /*==========  Window Resize  ==========*/
@@ -139,29 +139,17 @@ $(document).ready(function () {
 
 
 /*================================
-=            Homepage            =
+=             Search             =
 ================================*/
 
 
-/*==========  Play/Pause  ==========*/
-var video = $("video").get(0);
-
-function playVid() {
-  video.play();
-}
-
-function pauseVid() {
-  video.pause();
-}
+/*==========  Hamburger Menu  ==========*/
+$(".hamburger").click(function () {
+  console.log('hamburger click 1');
+  $(this).toggleClass('open');
+  $(".opleidingen-menu").slideToggle("slow");
+  // $( ".opleidingen-menu" ).toggle("slide", "left", "slow");
+});
 
 
-/*==========  Header Scroll  ==========*/
-// binnen te standaard Header Scroll in "Do The Dirty Work Here"
-if ((blurScroll / (wHeight / 2)) > 1) {
-  pauseVid();
-} else {
-  playVid();
-}
-
-
-/*-----  End of Homepage  ------*/
+/*-----  End of Search  ------*/

@@ -69,7 +69,7 @@ angular.module('MaLinked', [
         // Apply modal event listeners
         $(document).foundation('reveal', 'reflow');
 
-        
+
         // Event on modal open
         $(document).on('opened.fndtn.reveal', '[data-reveal]', function() {
             $("#live-search-input").focus();
@@ -77,9 +77,9 @@ angular.module('MaLinked', [
 
         // Event modal closed
         $(document).on('closed.fndtn.reveal', '[data-reveal]', function() {
-        	modalVisible = false;
+            modalVisible = false;
         });
-        
+
 
         $rootScope.headerClass = "foobar";
 

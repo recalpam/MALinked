@@ -133,7 +133,7 @@
 				              <li>Toekomstbeeld</li>
 				            </a>
 				            <div class="copyright">
-				              &copy; 2015 - Ma Linked
+				              &copy; 2015 - Ma linked
 				            </div>
 				          </ul>
 				        </div>

@@ -1,0 +1,33 @@
+<section class="{{ state.current.name }}">
+	<div class="row">
+		<div class="small-12 medium-4 columns" ng-repeat="swag in swagTeam">
+			<a ui-sref="profiel({ groep:swag.group.slug, student:swag.slug })">
+				<figure>
+					<img src="{{ swag.file.medium }}" height="500" width="500" alt="Profiel foto {{ swag.fullname }}">
+					<figcaption>
+						<h2>{{ swag.fullname }}</h2>
+						<p>{{ swag.group.fullname }}</p>
+					</figcaption>
+				</figure>
+			</a>
+		</div>
+		<div class="small-12 medium-offset-2 medium-4 columns">
+			<figure>
+				<img src="/static/images/team/janine-spijker.png" height="500" width="500" alt="Profiel foto Janine Spijker">
+				<figcaption>
+					<h2>Janine Spijker</h2>
+					<p>Mediamanager</p>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="small-12 medium-4 columns end">
+			<figure>
+				<img src="/static/images/team/narada-le-blanc.png" height="500" width="500" alt="Profiel foto Narada le Blanc">
+				<figcaption>
+					<h2>Narada le Blanc</h2>
+					<p>Mediamanager</p>
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>

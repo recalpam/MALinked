@@ -433,7 +433,43 @@ angular.module('MaLinked.Controllers', [])
     }
 ])
 
-/*==========  Zoeken  ==========*/
+/*==========  Team  ==========*/
+.controller('team', ['$scope', 'db', '$state', '$stateParams', '$rootScope',
+
+  function ($scope, db, $state, $stateParams, $rootScope) {
+    // Retrieve a single student by slug
+    // var student = db.students.single({
+    //   slug: $stateParams.student
+    // });
+
+    var swagTeam = [
+      db.students.single({
+        slug: 'donny-hegener'
+      }),
+      db.students.single({
+        slug: 'steven-de-jong'
+      }),
+      db.students.single({
+        slug: 'nathan-keyzer'
+      }),
+      db.students.single({
+        slug: 'alex-lisenkov'
+      }),
+      db.students.single({
+        slug: 'kimberly-nijzink'
+      }),
+      db.students.single({
+        slug: 'dylan-van-zanten'
+      })
+
+    ];
+
+    $scope.swagTeam = swagTeam;
+
+  }
+])
+
+/*==========  Login  ==========*/
 .controller('login', ['$window',
 
     function($window) {

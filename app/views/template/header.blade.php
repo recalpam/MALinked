@@ -39,7 +39,8 @@
 				<a ng-click="zoekModal()">
 					<div class="search-bar row">
 						<p class="searchinfo">Examen kandidaten 2014/2015 Mediacollege Amsterdam</p>
-						<input ng-model="search" name="search-bar" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
+						<input class="hide-for-small-only" id="live-search-input" name="search-bar" ng-model="search" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
+						<input class="hide-for-medium-up" id="live-search-input" name="search-bar" ng-model="search" placeholder="Zoeken" onfocus="this.placeholder=''" onblur="this.placeholder='Zoeken'">
 					</div>
 				</a>
 			</div>
@@ -75,13 +76,27 @@
 							@{{ student.fullname }}
 						</div>
 						<div class="small-12 medium-6 text-right columns social">
-							<a href="@{{student.info.website}}" class="website"></a>
-							<!-- 							<a href="@{{student.info.website}}" class="linkedin"></a>
-							<a href="#" class="dribbble"></a>
-							<a href="#" class="behance"></a>
-							<a href="#" class="vimeo"></a>
-							<a href="#" class="youtube"></a>
-							<a href="#" class="facebook"></a> -->
+							<angular ng-if="student.info.email">
+								<a href="mailto:@{{ student.info.email }}" class="email"></a>
+							</angular>
+							<angular ng-if="student.info.email">
+								<a href="http://@{{ student.info.portfolio }}" target="_blank" class="website"></a>
+							</angular>
+							<angular ng-if="student.info.dribbble">
+								<a href="https://@{{ student.info.dribbble }}" target="_blank" class="dribbble"></a>
+							</angular>
+							<angular ng-if="student.info.behance">
+								<a href="https://@{{ student.info.behance }}" target="_blank" class="behance"></a>
+							</angular>
+							<angular ng-if="student.info.vimeo">
+								<a href="https://@{{ student.info.vimeo }}" target="_blank" class="vimeo"></a>
+							</angular>
+							<angular ng-if="student.info.youtube">
+								<a href="https://@{{ student.info.youtube }}" target="_blank" class="youtube"></a>
+							</angular>
+							<angular ng-if="student.info.facebook">
+								<a href="https://@{{ student.info.facebook }}" target="_blank" class="facebook"></a>
+							</angular>
 						</div>
 					</div>
 				</div>

@@ -10,7 +10,7 @@ angular.module('MaLinked.Controllers', [])
 .controller('home', ['$scope', '$filter', '$rootScope', 'db', '$window',
   function ($scope, $filter, $rootScope, db, $window) {
 
-/*    hotkeys.add({
+    /*    hotkeys.add({
       combo: 't+e+a+m',
       description: 'Team hotkey',
       callback: function (event, hotkey) {
@@ -29,7 +29,8 @@ angular.module('MaLinked.Controllers', [])
       6: 'Er 488 studenten afstuderen dit jaar?',
       7: 'Evenemententechnicus de kleinste opleiding is met 3 studenten?',
       8: 'AV4A de grootste klas is met 32 studenten?',
-      9: 'malinked.nl is ontwikkeld door studenten van Media Development en Interactief Vormgeven?'/*,
+      9: 'malinked.nl is ontwikkeld door studenten van Media Development en Interactief Vormgeven?'
+      /*,
       10: 'Wanneer je de letters a + e + m + t er iets gebeurd?'*/
     };
 
@@ -143,12 +144,12 @@ angular.module('MaLinked.Controllers', [])
 
     $scope.studies = overview;
 
-        /*==========  Search Bar Click Focus Search Input  ==========*/
-        setTimeout(function() {
-            if ($('header.home .content .search-bar input').length) {
+    /*==========  Search Bar Click Focus Search Input  ==========*/
+    setTimeout(function () {
+      if ($('header.home .content .search-bar input').length) {
 
 
-                $('header.home .content .search-bar input').on('click', function() {
+        $('header.home .content .search-bar input').on('click', function () {
 
 
           setTimeout(function () {
@@ -160,14 +161,14 @@ angular.module('MaLinked.Controllers', [])
       }
     }, 1000);
 
-        $('header.home .content .search-bar input').click(function() {
+    $('header.home .content .search-bar input').click(function () {
 
-            setTimeout(function() {
-                $('#searchModal input').focus();
-            }, 3000);
-        });
+      setTimeout(function () {
+        $('#searchModal input').focus();
+      }, 3000);
+    });
 
-    }
+  }
 ])
 
 /*==========  Profiel  ==========*/

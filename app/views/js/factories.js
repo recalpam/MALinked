@@ -58,6 +58,7 @@ angular.module('MaLinked.Factories', ['progressApp'])
         }
 
         var postFile = function(action, type, file, fn){
+            ngProgress.start();
             var fd = new FormData();
             fd.append('file', file[0].files[0]);
             fd.append('type', type);
@@ -67,6 +68,43 @@ angular.module('MaLinked.Factories', ['progressApp'])
                 headers: {'Content-Type': undefined}
             })
             .success(function(data, status, headers, config){
+                ngProgress.complete();
+                if( fn ){
+                    fn(data, status, headers, config);
+                }
+            });
+        }
+
+        var deleteFile = function(action, file_id, fn){
+            ngProgress.start();
+
+            $http.put(action, {'file_id': file_id})
+            .success(function(data, status, headers, config){
+                ngProgress.complete();
+                if( fn ){
+                    fn(data, status, headers, config);
+                }
+            });
+        }
+
+        var newProject = function( action, fn ){
+            ngProgress.start();
+
+            $http.put(action, {})
+            .success(function(data, status, headers, config){
+                ngProgress.complete();
+                if( fn ){
+                    fn(data, status, headers, config);
+                }
+            });
+        }
+
+        var deleteProject = function( action, id, fn ){
+            ngProgress.start();
+
+            $http.put(action, {'id': id})
+            .success(function(data, status, headers, config){
+                ngProgress.complete();
                 if( fn ){
                     fn(data, status, headers, config);
                 }
@@ -140,6 +178,19 @@ angular.module('MaLinked.Factories', ['progressApp'])
                 uploadFileToUrl: function(part, file, fn){
                     console.log(file);
                     postFile('api/db/put/image', part, file, fn);
+                },
+
+                deleteUploadedFile: function(file_id, fn){
+                    console.log(file_id);
+                    deleteFile('api/db/delete/file', file_id, fn);
+                },
+
+                newProject: function(fn){
+                    newProject('api/db/put/newProject', fn);
+                },
+
+                deleteProject: function(id, fn){
+                    deleteProject('api/db/put/deleteProject', id, fn);
                 }
             }
 

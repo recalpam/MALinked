@@ -1,6 +1,6 @@
 <?php namespace API;
 
-use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study, File, Config, DB;
+use View, Validator, Redirect, Input, Student, Response, Auth, StudentInfo, Group, Study, Files, Config, DB, ProjectFile, Project;
 use Intervention\Image\ImageManager;
 
 class StudentsController extends \BaseController {
@@ -96,7 +96,7 @@ class StudentsController extends \BaseController {
 		$studentInfo->behance = Input::get('info.behance');
 		$studentInfo->vimeo = Input::get('info.vimeo');
 		$studentInfo->youtube = Input::get('info.youtube');
-		$studentInfo->youtube = Input::get('info.youtube');
+		$studentInfo->facebook = Input::get('info.facebook');
 
 		$hobbies = serialize(Input::get('info.hobbies'));
 		$studentInfo->hobbies = $hobbies;
@@ -125,13 +125,12 @@ class StudentsController extends \BaseController {
 	}
 
 	public function UploadImage(){
-	//	dd($_FILES);
 		if( $_FILES ){
 			$file = $_FILES['file'];
 			$type = explode('/', $file['type']);
 			$type = end($type);
 
-			if( $type != 'png' && $type != 'jpeg' && $type != 'jpg' ){
+			if( $type != 'png' && $type != 'jpeg' && $type != 'jpg' && $type != 'pdf' ){
 				exit;
 			}
 
@@ -144,10 +143,13 @@ class StudentsController extends \BaseController {
 				case 'profile':
 					$this->proccessProfileImage($file['tmp_name'], $fileName, $type);
 				 break;
+				case 'project':
+					$this->proccessProjectFile($file['tmp_name'], $fileName, $type, $file['name'], Input::get('projectid'));
+				 break;
 				default:
 					exit;
 				 break;
-			} 
+			}
 			
 		}
 	}
@@ -199,6 +201,100 @@ class StudentsController extends \BaseController {
 			$student->push();
 		}
 		
+	}
+
+	private function proccessProjectFile($fileTmp, $fileName, $type, $name, $projectid){
+		$student = Auth::user();
+
+		$fullFilename = $fileName .'.'. $type;
+
+		if( $type == 'pdf' ){
+			$handle = fopen(Config::get('files.path').$fullFilename, 'w');
+			fwrite($handle, file_get_contents($fileTmp));
+			fclose($handle);
+		} else {
+			$manager = new ImageManager();
+			// original
+			$manager->make($fileTmp)->save( Config::get('files.path') . $fullFilename, 90);
+			// large
+			$manager->make($fileTmp)->fit(500)->save( Config::get('files.images.large') . $fullFilename, 90);
+			// medium
+			$manager->make($fileTmp)->fit(250)->save(Config::get('files.images.medium') .$fullFilename, 90);
+			// thumbail
+			$manager->make($fileTmp)->fit(80)->save( Config::get('files.images.thumbnails') .$fullFilename, 75);
+		}
+		
+
+		$insert = array(
+			'fileHash' => $fileName,
+			'fileExtension' => $type,
+			'fileName' => $name
+		);
+
+		// Link stored file to student
+		if( DB::table('files')->insert($insert) ){
+			$file_id = DB::getPdo()->lastInsertId();
+			ProjectFile::create( array(
+				'project_id' => $projectid,
+				'files_id' => $file_id
+			) );
+		}
+
+		dd($file_id);
+		
+	}
+
+	public function DeleteFile(){
+		if( Input::get('file_id') ){
+			$file_id = Input::get('file_id');
+			if( Files::userHasRights( $file_id ) ){
+				$file = ProjectFile::where('files_id', '=', $file_id);
+				$file->delete();
+				die('deleted');
+			}
+		}
+	}
+
+	public function updateProjects(){
+		foreach( Input::all() as $projectPost ){
+			if( $projectPost['id'] && isset($projectPost['id']) ){
+				// Update
+				$project = Project::where('id', '=', $projectPost['id'])->firstOrFail();
+				$project->title = $projectPost['title'];
+				$project->description = $projectPost['description'];
+				$project->url = $projectPost['url'];
+
+				$project->push();
+
+				
+			} else {
+				// Insert
+			}
+		}
+		die('Updated');
+	}
+
+	public function newProject(){
+		$insert = array();
+		$insert['student_id'] = Auth::user()->id;
+		$insert['title'] = 'Projectnaam';
+		$insert['description'] = 'Super awesome project';
+		$insert['url'] = 'http://www.youtu.be/';
+
+		Project::insert($insert);
+
+		die('Inserted');
+	}
+
+	public function deleteProject(){
+		$hasRights = Project::where('id', '=', Input::get('id'))
+							->where('student_id', '=', Auth::user()->id, 'AND')->get();
+
+		if( count($hasRights) ){
+			$hasRights[0]->delete();
+		}
+
+		die('Deleted');
 	}
 
 	

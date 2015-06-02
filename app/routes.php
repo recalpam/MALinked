@@ -41,8 +41,12 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 			Route::put('put/updateWhyMa', 'API\StudentsController@WaaromHetMa');
 			Route::put('put/updateHobbiesEnGegevens', 'API\StudentsController@HobbiesEnGegevens');
 			Route::post('put/image', 'API\StudentsController@UploadImage');
+			Route::put('delete/file', 'API\StudentsController@DeleteFile');
 			Route::put('put/updateFutureVision', 'API\StudentsController@updateFutureVision');
 			Route::put('put/updateAboutSchool', 'API\StudentsController@updateAboutSchool');
+			Route::put('put/updateProjects', 'API\StudentsController@updateProjects');
+			Route::put('put/newProject', 'API\StudentsController@newProject');
+			Route::put('put/deleteProject', 'API\StudentsController@deleteProject');
 		});
 	});
 

@@ -145,8 +145,8 @@ angular.module('Dashboard.Controllers', [])
   }
 ])
 
-.controller('projecten', ['$scope', 'API', '$window',
-  function ($scope, API, $window) {
+.controller('projecten', ['$scope', 'API', '$window', '$state', 
+  function ($scope, API, $window, $state) {
         // Hide everything and show loadbar while content is being loaded
         $scope.show = false;
 
@@ -157,6 +157,19 @@ angular.module('Dashboard.Controllers', [])
             // Assign content to User variable
             User = $scope.userData = data;
 
+            // Replace <br /> with \n
+            if(User.info.why_ma){
+                 User.info.why_ma = User.info.why_ma.replace(/<br\s*[\/]?>/gi, "\r\n");
+            }
+
+            $scope.fixedProjecten = {};
+
+             if( User.projects.length > 0 ){
+                for (var i=0; i<User.projects.length; i++) {  
+                   $scope.fixedProjecten[i] = User.projects[i];
+                   $scope.fixedProjecten[i].description = $scope.fixedProjecten[i].description.replace(/<br\s*[\/]?>/gi, "\r\n");
+                }
+            }
 
             // User not logged in, redirect
             if( User.error ){
@@ -165,6 +178,47 @@ angular.module('Dashboard.Controllers', [])
 
             // Show scope
             $scope.show = true;
+
+
+            // File removal
+            $scope.deleteImage = function($event){
+                var target = angular.element($event.currentTarget);
+                console.log(target);
+                API.user.deleteUploadedFile(target.data('id'), function(){
+                   target.parent('li').remove();
+                });
+            }
+
+            // Save data
+            $scope.saveData = function(){
+                API.user.set('updateProjects', $scope.fixedProjecten, function(){
+                    $('#savedPopup').slideDown('fast').delay(2100).slideUp('fast');
+                });
+            }
+
+            // New project
+            $scope.copyShit = function(){
+                if(  $('.counter').length >= 5  ){
+                    $('#errorPopup').slideDown('fast').delay(2100).slideUp('fast');
+                    alert('Je mag maximaal 5 projecten toevoegen');
+                } else {
+                    API.user.newProject(function(){
+                        $state.reload();
+                    });
+                }  
+            }
+
+            // Delete project
+            $scope.deleteProject = function($event){
+                var target = angular.element($event.currentTarget);
+                var r = confirm("Weet je zeker dat je dit project wilt vewrijderen");
+                if (r == true) {
+                    API.user.deleteProject(target.data('id'), function(){
+                        $state.reload();
+                    });
+                }
+                 
+            }
         });
 
     $scope.foo = "bar";

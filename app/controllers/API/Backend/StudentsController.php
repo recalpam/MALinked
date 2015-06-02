@@ -252,7 +252,9 @@ class StudentsController extends \BaseController {
 				$file->delete();
 				die('deleted');
 			}
+			die('Not authorized');
 		}
+		die('No ID set');
 	}
 
 	public function updateProjects(){

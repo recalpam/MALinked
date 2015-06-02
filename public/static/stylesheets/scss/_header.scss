@@ -25,6 +25,8 @@ header {
         overflow: hidden;
 
         height: 32px;
+
+        cursor: pointer;
         &:hover {
           span {
             &.text {
@@ -104,7 +106,7 @@ header {
     @include background-image(linear-gradient($black-40, $black-60));
 
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
@@ -181,6 +183,9 @@ header {
             padding: 5px 5px 0;
 
             background-color: rgba(0, 0, 0, 0.75);
+            @media #{$small-only} {
+              margin-top: -75px;
+            }
           }
         }
         input {
@@ -267,6 +272,7 @@ header {
         line-height: 55px;
 
         position: absolute;
+        z-index: 1;
         top: 75%;
         right: 0;
         left: 0;
@@ -282,6 +288,9 @@ header {
             width: 30px;
             height: 30px;
             margin: 12.5px 0;
+            &.email {
+              background-image: url(../images/social/mail.png);
+            }
             &.website {
               background-image: url(../images/social/website.png);
             }
@@ -310,6 +319,7 @@ header {
         @include transform(translate(-50%, -75%));
 
         position: absolute;
+        z-index: 2;
         top: 75%;
         left: 50%;
 
@@ -539,6 +549,34 @@ header {
     }
     &.GA4A {
       background-image: url(../images/klassen/GA4A.jpg);
+    }
+  }
+}
+
+/*==========  Header Team  ==========*/
+header {
+  &.team {
+    @include background-size(cover);
+
+    height: 50vh;
+
+    background-image: url(../images/team/team-header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    .content {
+      position: relative;
+
+      height: 100%;
+      .align {
+        @include vertical-align;
+
+        text-align: center;
+        h1 {
+          @include filter(drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.8)));
+
+          color: $white;
+        }
+      }
     }
   }
 }

@@ -16,11 +16,10 @@
   height: 30px;
 }
 
-@mixin btnsearch($right, $top) {
+@mixin btnsearch($right) {
   @include transition-duration(0.5s);
 
   position: absolute;
-  top: $top;
   right: $right;
 
   width: 30px;

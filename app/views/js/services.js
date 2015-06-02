@@ -42,47 +42,47 @@ angular.module('MaLinked.Services', [])
 =            PROFIELBLOKKEN            =
 ========================================*/
 .directive('profielblokken', ['API', '$compile',
-    function(API, $compile) {
-        // Runs during compile
-        return {
-            name: 'profielblokken',
-            // terminal: true,
-            // scope: {}, // {} = isolate, true = child, false/undefined = no change
-            controller: function($scope, $element, $attrs, $transclude) {
-                // Single object generator
-                function infoBlok(title, css, container) {
-                    return {
-                        title: title,
-                        css: css,
-                        container: container
-                    };
-                };
-                // Assign to scope so children can access the neccisary data.
-                $scope.infoBlokken = {
-                    future_vision: infoBlok('Mijn toekomstbeeld', 'toekomstbeeld'),
-                    fav_teacher: infoBlok('Favoriete Leraren', 'favoriet'),
-                    fav_project: infoBlok('Favoriete Projecten', 'favoriet'),
-                    fav_class: infoBlok('Favoriete Klas', 'favoriet'),
-                    rate_school: infoBlok('Schoolcijfer', 'hoewas', 'span'),
-                    rate_internship: infoBlok('Stagecijfer', 'hoewas', 'span'),
-                    specialize: infoBlok('Specialisaties', 'favoriet'),
-                    school_match_ambitions: infoBlok('Tevreden over MA?', 'favoriet'),
-                    hobbies: infoBlok('Hobbies', 'favoriet'),
-                    why_ma: infoBlok('Waarom gekozen voor MA?', 'favoriet'),
-                    best_experience: infoBlok('Memorabel Moment', 'favoriet')
-                };
-            },
-            // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-            // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-            // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-            link: function($scope, iElm, iAttrs, controller) {
-                var block = $('<div class="block"></div>');
-                for (var key in $scope.infoBlokken) {
-                    var infoStudent = $scope.student.info[key];
-                    var infoBlok = $scope.infoBlokken[key];
-                    var projects = $scope.student.projects;
+  function (API, $compile) {
+    // Runs during compile
+    return {
+      name: 'profielblokken',
+      // terminal: true,
+      // scope: {}, // {} = isolate, true = child, false/undefined = no change
+      controller: function ($scope, $element, $attrs, $transclude) {
+        // Single object generator
+        function infoBlok(title, css, container) {
+          return {
+            title: title,
+            css: css,
+            container: container
+          };
+        };
+        // Assign to scope so children can access the neccisary data.
+        $scope.infoBlokken = {
+          future_vision: infoBlok('Mijn toekomstbeeld is..', 'toekomstbeeld'),
+          fav_teacher: infoBlok('Mijn favoriete leraren zijn..', 'favoriet'),
+          fav_project: infoBlok('Mijn favoriete projecten..', 'favoriet'),
+          fav_class: infoBlok('Mijn favoriete vak was..', 'favoriet'),
+          rate_school: infoBlok('Ik geef mijn klas een..', 'hoewas', 'span'),
+          rate_internship: infoBlok('Ik geef mijn stage een..', 'hoewas', 'span'),
+          specialize: infoBlok('Mijn specialisaties zijn..', 'favoriet'),
+          school_match_ambitions: infoBlok('Ben je tevreden over het MA?', 'favoriet'),
+          hobbies: infoBlok('Mijn hobby\'s zijn..', 'favoriet'),
+          why_ma: infoBlok('Waarom heb je voor het Mediacollege gekozen?', 'favoriet'),
+          best_experience: infoBlok('Het leukste op het MA was..', 'favoriet')
+        };
+      },
+      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+      // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+      // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+      link: function ($scope, iElm, iAttrs, controller) {
+        var block = $('<div class="block"></div>');
+        for (var key in $scope.infoBlokken) {
+          var infoStudent = $scope.student.info[key];
+          var infoBlok = $scope.infoBlokken[key];
+          var projects = $scope.student.projects;
 
-                    if (!infoStudent) continue;
+          if (!infoStudent) continue;
 
                     if (projects.length > 0) {
                         var project = projects.pop();

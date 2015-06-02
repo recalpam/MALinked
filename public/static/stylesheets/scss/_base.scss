@@ -59,14 +59,16 @@ h1, h2, h3, h4, h5, h6, p, a {
 
     background-position: right bottom;
     background-size: cover;
-    &:hover:not(.nohover) {
-      @include backface-visibility(hidden);
-      @include transform(scale(1.1));
-      // @include transform(rotate(-370deg));
+    @media #{$medium-up} {
+      &:hover:not(.nohover) {
+        @include backface-visibility(hidden);
+        @include transform(scale(1.1));
+        // @include transform(rotate(-370deg));
 
-      z-index: 1;
+        z-index: 1;
 
-      cursor: pointer;
+        cursor: pointer;
+      }
     }
     .title {
       @include backface-visibility(hidden);
@@ -842,6 +844,33 @@ h1, h2, h3, h4, h5, h6, p, a {
 /*-----  End of Profile page  ------*/
 
 
+/*=================================
+=            Team page            =
+=================================*/
+.team {
+  figure {
+    img {
+      @include border-radius(100%);
+    }
+    figcaption {
+      text-align: center;
+      h2 {
+        font-size: rem-calc(25);
+
+        margin-bottom: 0;
+
+        color: $magenta;
+      }
+    }
+  }
+}
+
+
+/*-----  End of Team page  ------*/
+
+
+
+
 /*==============================
 =            Search            =
 ==============================*/
@@ -874,110 +903,53 @@ h1, h2, h3, h4, h5, h6, p, a {
         color: $white;
       }
     }
-  }
-  .search {
-    margin-bottom: 85px;
-  }
-  span.search-icon {
-    width: 19px;
-    height: 19px;
-  }
-  input {
-    font-size: rem-calc(28);
+    .logo {
+      display: inline;
+      overflow: hidden;
 
-    display: block;
-
-    width: 100%;
-    max-width: rem-calc(620);
-    height: 35px;
-    margin: 0 auto;
-    margin-bottom: 5px;
-
-    color: $white;
-    border: none;
-    outline: none;
-    background: transparent url("/static/images/search-icon.png") no-repeat scroll 600px;
-    &.search-bar {
-      @include transform(translateY(-50%));
-
-      font-size: rem-calc(25);
-      line-height: 35px;
-
-      top: 0;
-
-      margin-bottom: 50px;
-      padding-top: 25px;
-
-      color: $white;
-      background-color: transparent;
-      // z-index: 1000;
-      .logo {
-        display: inline;
-        overflow: hidden;
-
-        height: 32px;
-        &:hover {
-          span {
-            &.text {
-              overflow: hidden;
-
-              width: 115px;
-              height: 32px;
-            }
-          }
-        }
+      height: 32px;
+      &:hover {
         span {
-          &.icon {
-            display: inline-block;
-            float: left;
-
-            width: 32px;
-            height: 32px;
-
-            background-image: url(../images/icon.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-          }
           &.text {
-            @include transition(width 0.5s);
-
-            line-height: 32px;
-
-            display: inline-block;
-            float: left;
             overflow: hidden;
 
-            width: 0;
-            padding-left: 15px;
-
-            white-space: nowrap;
-
-            color: $white;
-          }
-          &.info {
-            @include transition(width 0.5s);
-
-            line-height: 32px;
-
-            display: inline-block;
-            float: left;
-            overflow: hidden;
-
-            white-space: nowrap;
-
-            color: $white;
+            width: 115px;
+            height: 32px;
           }
         }
       }
-    }
-  }
-  .border {
-    width: 100%;
-    max-width: rem-calc(620);
-    height: 1px;
-    margin: 0 auto;
+      span {
+        &.icon {
+          display: inline-block;
+          float: left;
 
-    background-color: $white;
+          width: 32px;
+          height: 32px;
+          margin-top: 15px;
+
+          background-image: url(../images/icon.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+    input {
+      font-size: rem-calc(28);
+
+      display: block;
+
+      width: 100%;
+      height: 35px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      padding: 30px 0;
+
+      color: $white;
+      border: none;
+      border-bottom: 1px solid $white;
+      outline: none;
+      background: transparent url("/static/images/search-icon.png") no-repeat scroll right;
+    }
   }
   .opleidingen-menu {
     position: absolute;
@@ -1069,7 +1041,9 @@ h1, h2, h3, h4, h5, h6, p, a {
     }
   }
   .close-reveal-modal {
-    @include btnsearch(30px, 30px);
+    @include btnsearch(0px);
+
+    padding-right: 0;
     .icon-left {
       @include icon(4px, 15px);
 

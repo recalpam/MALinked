@@ -100,11 +100,6 @@
 
 		<!-- JQUERY TRASH -->
 		<script type="text/javascript" src="/packages/jquery/dist/jquery.js"></script>
-		<script type="text/javascript">
-			$("document").ready(function(){
-				$(this).scrollTop(0);
-			});
-		</script>
 
 		<!-- ANGULARJS -->
 		<script type="text/javascript" src="/packages/angular/angular.js"></script>
@@ -115,12 +110,13 @@
 		<script type="text/javascript" src="/packages/angular-ngprogress/ngProgress.js"></script>
 		<script type="text/javascript" src="/packages/angular-google-maps/lodash.min.js"></script>
 		<script type="text/javascript" src="/packages/angular-google-maps/angular-google-maps.min.js"></script>
+		<script type="text/javascript" src="/packages/angular-hotkeys/hotkeys.min.js"></script>
 
 		{{-- FOUNDATION --}}
 		<script src="/packages/foundation/js/foundation.min.js"></script>
 
 		{{-- ZOEK MODAL --}}
-		<script src="/static/scripts/zoeken.js"></script>
+		<script src="/static/scripts/app.js"></script>
 
 		{{-- OUTDATED BROWSER JS --}}
 		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>

@@ -45,6 +45,43 @@ angular.module('MaLinked', [
 .run(['$rootScope', '$timeout', 'ngProgress', '$rootScope', '$state', '$stateParams', 'API',
   function ($rootScope, $timeout, ngProgress, $rootScope, $state, $stateParams, API) {
 
+    // Modal state
+    var modalVisible = false;
+
+    // Toggle #zoekModal
+    $rootScope.zoekModal = function () {
+      if (modalVisible) {
+        $('#searchModal').foundation('reveal', 'close');
+      } else {
+        $('#searchModal').foundation('reveal', 'open');
+      }
+
+      modalVisible = !modalVisible;
+    }
+
+    // Bind global hotkey
+    jQuery(document).on('keypress', function (e) {
+      if (!modalVisible) {
+        $rootScope.zoekModal();
+      }
+    });
+
+    // Apply modal event listeners
+    $(document).foundation('reveal', 'reflow');
+    $(document).foundation('clearing', 'reflow');
+
+
+    // Event on modal open
+    $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+      $("#live-search-input").focus();
+    });
+
+    // Event modal closed
+    $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
+      modalVisible = false;
+    });
+
+
     $rootScope.headerClass = "foobar";
 
     API.sync().then(function (response) {
@@ -58,18 +95,21 @@ angular.module('MaLinked', [
     $timeout(function () {
       ngProgress.complete();
       $rootScope.show = true;
+      $('footer').show();
     }, 2000);
     $rootScope
       .$watch('$stateChangeStart', function () {
         $rootScope.show = false;
-
         ngProgress.start();
+        $('footer').hide();
       });
     $rootScope
       .$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
           ngProgress.complete();
           $(".site").removeClass("hide");
+          $(this).scrollTop(0);
+          $('footer').show();
         });
   }
 ])

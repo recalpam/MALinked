@@ -4,6 +4,11 @@
 
 /*==========  Global  ==========*/
 footer {
+  @include animation-delay(10s);
+  @include animation(fadein 2s);
+
+  display: none;
+
   padding: 30px 0;
 
   color: $white;
@@ -14,8 +19,9 @@ footer {
 
     list-style-type: none;
     li {
-      margin-left: 5px;
       display: inline;
+
+      margin-left: 5px;
     }
   }
 }

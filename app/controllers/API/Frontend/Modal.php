@@ -1,8 +1,8 @@
 <?php namespace API\Frontend;
 use View as V;
-use File as F;
+use Files as F;
 use Response as R;
-use Config, Validator, Redirect, Input, Student, Auth, Butler, Files, ProjectFile;
+use Config, Validator, Redirect, Input, Student, Auth, Butler, ProjectFile;
 
 class Modal extends \BaseController {
 
@@ -31,7 +31,7 @@ class Modal extends \BaseController {
 	}
 
 	public function getGroupFile($id){
-		$file = public_path().'/dynamic/files/'.Files::find($id)->fileHash.'.'.Files::find($id)->fileExtension;
+		$file = public_path().'/dynamic/files/'.F::find($id)->fileHash.'.'.F::find($id)->fileExtension;
 		if(F::exists($file)){	
 			return R::download($file);
 		}else{

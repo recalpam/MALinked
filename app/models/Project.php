@@ -19,7 +19,7 @@ class Project extends \Eloquent {
 
 	public function projectFile()
 	{
-		return $this->belongsToMany('files', 'project_file');
+		return $this->belongsToMany('Files', 'project_file');
 	}
 
 	public static function nestedSingle($id){

@@ -175,7 +175,6 @@ angular.module('MaLinked.Controllers', [])
 .controller('profiel', ['$scope', '$state', '$stateParams', '$filter', '$rootScope', 'db',
   function ($scope, $state, $stateParams, $filter, $rootScope, db) {
 
-
     $('#searchModal').foundation('reveal', 'close');
     var blockEqualize = $('.block');
     var blockEqualizeWidth = blockEqualize.width();
@@ -188,6 +187,7 @@ angular.module('MaLinked.Controllers', [])
 
     $rootScope.headerClass = student.group.study.slug;
     $rootScope.student = student;
+    // $rootScope.projects = student.projects.slice(0);
 
     // Loop through all info elements
     for (var key in student.info) {
@@ -438,6 +438,8 @@ angular.module('MaLinked.Controllers', [])
         };
       }
     });
+
+
 
 
 

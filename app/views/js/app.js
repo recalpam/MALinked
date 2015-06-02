@@ -68,8 +68,6 @@ angular.module('MaLinked', [
 
     // Apply modal event listeners
     $(document).foundation('reveal', 'reflow');
-    $(document).foundation('clearing', 'reflow');
-
 
     // Event on modal open
     $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {

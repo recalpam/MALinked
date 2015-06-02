@@ -51,8 +51,9 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 	 */
 	Route::group(array('prefix' => 'frontend'), function(){
 		Route::controller('file', 'API\Frontend\Asset');
+		Route::controller('modal', 'API\Frontend\Modal');
 	});
-	
+
 });
 
 
@@ -64,7 +65,7 @@ Route::get('donny', function(){
 	//return Response::json(Student::with('group.study')->find(1), 200, array(), JSON_PRETTY_PRINT);
 	//return Config::get('butler::dir.scripts');
 	return Response::json(StudentInfo::all(), 200, array(), JSON_PRETTY_PRINT);
-	
+
 });
 
 /**

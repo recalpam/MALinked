@@ -10,6 +10,8 @@
 	    {{-- OUTDATED BROWSER & JS --}}
 	    {{ HTML::script('/packages/modernizr/modernizr.js') }}
 	    {{ HTML::style('/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.css') }}
+	    {{ HTML::style('/packages/jquery.slick/1.5.0/slick.css') }}
+	    {{ HTML::style('/packages/jquery.slick/1.5.0/slick-theme.css') }}
 
 			{{-- PAGE CSS --}}
 	    {{ HTML::style('/static/stylesheets/app.css') }}
@@ -112,11 +114,15 @@
 		<script type="text/javascript" src="/packages/angular-google-maps/angular-google-maps.min.js"></script>
 		<script type="text/javascript" src="/packages/angular-hotkeys/hotkeys.min.js"></script>
 
+
 		{{-- FOUNDATION --}}
 		<script src="/packages/foundation/js/foundation.min.js"></script>
 
 		{{-- ZOEK MODAL --}}
 		<script src="/static/scripts/app.js"></script>
+
+		{{-- Slick Carousel --}}
+		<script src="/packages/jquery.slick/1.5.0/slick.min.js"></script>
 
 		{{-- OUTDATED BROWSER JS --}}
 		<script src="/packages/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>

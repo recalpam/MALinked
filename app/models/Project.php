@@ -22,4 +22,8 @@ class Project extends \Eloquent {
 		return $this->belongsToMany('files', 'project_file');
 	}
 
+	public static function nestedSingle($id){
+		return self::with(array('projectFile'))->where('id' ,'=', $id)->firstOrFail();
+	}
+
 }

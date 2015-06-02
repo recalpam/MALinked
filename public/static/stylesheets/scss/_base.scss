@@ -12,21 +12,44 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-family: 'AkzidenzGrotesk';
 }
 
-#lightbox {
+/*==========  Lightbox  ==========*/
+#projectsModal {
   position: fixed;
-  z-index: 10000;
-  top: 0;
+  top: 0 !important;
   left: 0;
 
-  display: none;
-
   width: 100%;
+  max-width: 100%;
   height: 100%;
 
-  text-align: center;
-
-  background: $black-40;
+  border: none;
+  background: $black-80;
+  box-shadow: none;
+  .project {
+    .header {
+      height: 60px;
+    }
+    height: 100vh;
+    h1 {
+      color: $magenta;
+      font-size: rem-calc(28);
+    }
+    p {
+      color: $white;
+    }
+    img {
+      height: auto;
+      max-height: 90vh;
+      margin: auto;
+    }
+  }
+  a {
+    &.close-reveal-modal {
+      color: $white;
+    }
+  }
 }
+
 
 /*-----  End of Global  ------*/
 
@@ -443,6 +466,15 @@ h1, h2, h3, h4, h5, h6, p, a {
             background-color: $white;
           }
         }
+      }
+      a[href^="http://maps.google.com/maps"] {
+        display: none !important;
+      }
+      .gmnoprint a, .gmnoprint span {
+        display: none;
+      }
+      .gmnoprint div {
+        background: none !important;
       }
     }
   }
@@ -935,14 +967,14 @@ h1, h2, h3, h4, h5, h6, p, a {
     }
     input {
       font-size: rem-calc(28);
+      line-height: 60px;
 
       display: block;
 
       width: 100%;
-      height: 35px;
+      height: 60px;
       margin: 0 auto;
       margin-bottom: 20px;
-      padding: 30px 0;
 
       color: $white;
       border: none;

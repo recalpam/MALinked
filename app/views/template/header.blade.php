@@ -39,8 +39,8 @@
 				<a ng-click="zoekModal()">
 					<div class="search-bar row">
 						<p class="searchinfo">Examen kandidaten 2014/2015 Mediacollege Amsterdam</p>
-						<input class="hide-for-small-only" id="live-search-input" name="search-bar" ng-model="search" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
-						<input class="hide-for-medium-up" id="live-search-input" name="search-bar" ng-model="search" placeholder="Zoeken" onfocus="this.placeholder=''" onblur="this.placeholder='Zoeken'">
+						<input class="hide-for-small-only" name="search-bar" ng-model="search" placeholder="Zoek direct op een opleiding, klas of student" onfocus="this.placeholder=''" onblur="this.placeholder='Zoek direct op een opleiding, klas of student'">
+						<input class="hide-for-medium-up" name="search-bar" ng-model="search" placeholder="Zoeken" onfocus="this.placeholder=''" onblur="this.placeholder='Zoeken'">
 					</div>
 				</a>
 			</div>

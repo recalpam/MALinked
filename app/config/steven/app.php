@@ -13,6 +13,9 @@ return array(
 	|
 	*/
 
+	'ssl'	=>	false,
+	
+
 	'debug' => true,
 
 	'url' => 'http://malinked.dev',

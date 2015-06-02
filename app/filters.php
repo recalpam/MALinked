@@ -13,7 +13,9 @@
 
 App::before(function($request)
 {
-	//
+	if( ! Request::secure() && Config::get('app.ssl') ){
+    	return Redirect::secure( Request::path() );
+    }
 });
 
 

@@ -43,4 +43,39 @@ class Files extends \Eloquent {
 	public function getOriginalAttribute(){
 		return url()."/dynamic/files/{$this->fileHash}.{$this->fileExtension}";
 	}
+
+	public static function userHasRights( $fileId, $userId = false){
+		if( !$userId ){
+			if( Auth::user()->id ){
+				$userId = Auth::user()->id;
+			} else {
+				return false;
+			}
+		}
+
+		// Is in user table
+		$student = Student::where( 'file_id', '=', $fileId)
+							->where( 'background_file_id', '=', $fileId, 'OR' )
+							->where( 'id', '=', $userId, 'AND' )->get();
+
+		if(count($student)){
+			return true;
+		}
+
+		// Is a project file
+		$project = ProjectFile::where( 'files_id', '=', $fileId)->get();
+
+		if(count($project)){
+			$projectResult = Project::where('id', '=', $project[0]->project_id)
+							->where('student_id', '=', $userId, 'AND')->get();
+
+			if(count($projectResult)){
+				return true;
+			}
+		}
+
+		return false;
+
+	//	dd($file_id, $user_id);
+	}
 }

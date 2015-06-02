@@ -88,6 +88,24 @@
 				border-radius:  0 0 3px 3px;
 				display: none;
 			}
+
+			#errorPopup{
+				width: 100px;
+				height: auto;
+				font-size: 10pt;
+				margin-left: 50%;
+				padding: 5px;
+				left: -50px;
+				top: 0;
+				text-align: center;
+				position: fixed;
+				z-index: 1001;
+				background: #FE060C;
+				color: #ffffff;
+				border: 0;
+				border-radius:  0 0 3px 3px;
+				display: none;
+			}
 		</style>
 		<base href="/">
 	</head>
@@ -97,6 +115,7 @@
 			@if (Auth::user())
 			<div ng-switch-default>
 				<div id="savedPopup">&#10004; Opgeslagen</div>
+				<div id="errorPopup">&#x2718; Fout</div>
 				<!-- PAGE CONTAINER -->
 				<header>
 				  <div class="row">
@@ -125,6 +144,9 @@
 				            </a>
 				            <a href="/dashboard/hobbys-en-gegevens">
 				              <li ng-class="{ active: isActive('/dashboard/hobbys-en-gegevens')}">Hobby’s en gegevens</li>
+				            </a>
+				            <a href="/dashboard/projecten">
+				              <li>Projecten</li>
 				            </a>
 				            <a href="/dashboard/over-de-school">
 				              <li>Over de school</li>

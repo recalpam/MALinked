@@ -20,6 +20,13 @@ lastFilename = '';
         }
         lastFilename = file.name;
 
+
+        console.log(file.size);
+        if( file.size > 1000000 ){
+          alert('Bestanden mogen niet groter dan 1MB zijn');
+          return;
+        }
+
         if( data[2] != 'png' && data[2] != 'jpg' && data[2] != 'jpeg' && data[2] != 'pdf' ){
           $('.in'+part).html('Geen bestanden geceleteerd');
           that.val('');

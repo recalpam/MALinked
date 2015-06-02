@@ -106,23 +106,29 @@ angular.module('MaLinked.Services', [])
             }
           }
 
-          if (!infoBlok.container) {
+          if (typeof (infoStudent) == typeof ([])) {
+            // WANNEER ARRAY/OPSOMMING
+            //
+            var onzeLijst = $('<ul></ul>');
             iElm.append(
               block.clone().addClass(infoBlok.css)
               .append($('<h2></h2>').text(infoBlok.title))
-              .append($('<p></p>').text(infoStudent))
+              .append(onzeLijst)
             );
-          }
 
-          if (infoBlok.container == "span") {
+            for (var i = 0; i < infoStudent.length; ++i) {
+              onzeLijst.append($("<li></li>").text(infoStudent[i]));
+            }
+          } else {
+
+            // WANNER GEEN ARRAY
+
             iElm.append(
               block.clone().addClass(infoBlok.css)
               .append($('<h2></h2>').text(infoBlok.title))
               .append($('<span></span>').text(infoStudent))
             );
           }
-
-          projcounter++;
 
         }
 

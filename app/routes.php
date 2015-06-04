@@ -55,6 +55,7 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 	 */
 	Route::group(array('prefix' => 'frontend'), function(){
 		Route::controller('file', 'API\Frontend\Asset');
+		Route::controller('modal', 'API\Frontend\Modal');
 	});
 	
 });

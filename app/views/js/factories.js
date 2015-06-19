@@ -176,12 +176,10 @@ angular.module('MaLinked.Factories', ['progressApp'])
                 },
 
                 uploadFileToUrl: function(part, file, fn){
-                    console.log(file);
                     postFile('api/db/put/image', part, file, fn);
                 },
 
                 deleteUploadedFile: function(file_id, fn){
-                    console.log(file_id);
                     deleteFile('api/db/delete/file', file_id, fn);
                 },
 

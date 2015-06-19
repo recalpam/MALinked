@@ -21,7 +21,7 @@ angular.module('MaLinked.Controllers', [])
 
     var facts = {
       0: '‘Uncomfortable art Biënnale’ het meest favoriete project van de grafische vormgevers is?',
-      1: 'Jelle Sjollema de meest favoriete docent van media- en gamedevelopment is?',
+      1: 'Jelle Sjollema de meest favoriete docent van media- en gamedeveloper is?',
       2: '8 de gemiddelde beoordeling van de school is?',
       3: '7,9 de gemiddelde beoordeling van de stageperiode is?',
       4: 'Frederik de Groot de meeste favoriete docent van filmacteur is?',
@@ -41,6 +41,8 @@ angular.module('MaLinked.Controllers', [])
 
       if (facts[rand] != null) {
         var chosen = facts[rand];
+
+        facts[rand] = null;
 
         give = {
           'isFact': true,
@@ -477,7 +479,7 @@ angular.module('MaLinked.Controllers', [])
 
     ];
 
-    $scope.swagTeam = swagTeam;
+    $scope.swagTeam = swagTeam; // TEAM SWAG FTW
 
   }
 ])

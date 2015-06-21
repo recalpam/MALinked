@@ -15,6 +15,20 @@
 
 			{{-- PAGE CSS --}}
 	    {{ HTML::style('/static/stylesheets/app.css') }}
+
+	    <!-- Meta Data for malinked.nl -->
+	    <meta name="title" content="Ma linked" />
+	    <meta name="description" content="Examen kandidaten 2014/2015 Mediacollege Amsterdam" />
+	    <meta name="keywords" content="Ma linked, Jaarboek, 2014, 2015, Mediacollege, Amsterdam, Studenten" />
+	    <meta name="robots" content="index, follow">
+
+	    <!-- Facebook Open Graph for malinked.nl -->
+	    <meta property="og:url" content="http://malinked.nl" />
+	    <meta property="og:type" content="website" />
+	    <meta property="og:title" content="Ma linked" />
+	    {{-- <meta property="og:image" content="http://malinked.nl/static/images/facebook-opengraph.jpg" /> --}}
+	    <meta property="og:description" content="Examen kandidaten 2014/2015 Mediacollege Amsterdam" />
+
 	    {{-- Hotjar Tracking Code for beta.malinked.nl --}}
 			<script>
 	    (function(f,b){

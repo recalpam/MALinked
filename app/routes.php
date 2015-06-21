@@ -61,6 +61,9 @@ Route::group(array('prefix' => 'api', 'except' => array('create', 'edit', 'destr
 });
 
 
+// Sitemap
+Route::controller('sitemap.xml', 'API\Frontend\Sitemap');
+
 /**
  * Dev4Donny (c)
  */

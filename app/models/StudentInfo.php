@@ -24,8 +24,7 @@ class StudentInfo extends \Eloquent {
 	protected $hidden = [
 		'id',
 		'student_id',
-		'created_at',
-		'updated_at'
+		'created_at'
 	];
 
 	public function getFavTeacherAttribute($val){

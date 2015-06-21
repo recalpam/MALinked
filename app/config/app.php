@@ -124,7 +124,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Recalpam\Butler\ButlerServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Cviebrock\EloquentSluggable\SluggableServiceProvider'
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Roumen\Sitemap\SitemapServiceProvider'
 	),
 
 	/*
